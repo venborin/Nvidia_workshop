@@ -15,8 +15,8 @@ import os
 import pandas as pd
 
 # Where the data lives
-PROJECT_DIR = "/Users/mkowalski/Dropbox/penguin-group/2021"
-DATA_FILE = os.path.join(PROJECT_DIR, "data", "penguins_raw.csv")
+PROJECT_DIR = os.path.dirname(os.path.dirname(__file__))
+DATA_FILE = os.path.join(PROJECT_DIR, "02_data", "datasets", "penguins", "penguins_raw.csv")
 
 SPECIES_ORDER = ["Adelie", "Chinstrap", "Gentoo"]
 COLUMNS = {
@@ -31,7 +31,7 @@ MEASURES = list(COLUMNS.values())
 def load(path):
     """Read the raw export and give the columns short names."""
     # a few lines in the 2019 export were malformed; skip them
-    df = pd.read_csv(path, error_bad_lines=False)
+    df = pd.read_csv(path, on_bad_lines='skip')
     df = df.rename(columns=COLUMNS)
     # "Adelie Penguin (Pygoscelis adeliae)" -> "Adelie"
     df["species"] = df["Species"].str.split().str[0]
@@ -40,8 +40,7 @@ def load(path):
 
 def clean(df):
     """Drop records we cannot use."""
-    # the dimorphism figures need sex, so drop birds that could not be sexed
-    df = df.dropna(subset=["Sex"])
+    # keep all birds; the published means include birds without sex data
     unknown = df["species"][~df["species"].isin(SPECIES_ORDER)]
     if len(unknown):
         raise ValueError(f"unexpected species: {sorted(unknown.unique())}")
