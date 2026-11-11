@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Implementation & Scaling — Coupled Cluster Theory</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+<h1>Coupled Cluster Theory for the N-Body Problem</h1>
+<p class="subtitle">Page 3: Implementation & Scaling</p>
+</header>
+<main>
+<nav class="breadcrumb"><a href="theory.html">← Page 2: The Amplitude Equations</a> | <a href="eom-cc.html">Page 4: EOM-CC Extensions →</a> | <a href="tutorial.html">Socratic Tutorial</a></nav>
+
+<section>
+<h2>From equations to tensor contractions</h2>
+<p>
+The CCSD amplitude equations are sums of tensor contractions. For example, the doubles update term:
+</p>
+<p class="equation">∑<sub>me</sub> ⟨mb||ej⟩ t<sub>im</sub><sup>ae</sup></p>
+<p>
+is a contraction of a two-electron integral (4-index) with a doubles amplitude (4-index) over two indices,
+producing a new 4-index tensor. Naively, this is O(o²v⁴) where o = occupied orbitals, v = virtual orbitals.
+With N basis functions, o ~ N/2, v ~ N/2, so O(N⁶) per iteration.
+</p>
+</section>
+
+<section>
+<h2>Factorization: reducing the prefactor</h2>
+<p>
+The key to production CC codes is <strong>factorization</strong>—rewriting contractions to avoid forming
+intermediate 6-index tensors. For the term above:
+</p>
+<pre># Naive:  O(o²v⁴) memory & flops
+W_mbej = integral(m,b,e,j)
+T_imae = t(i,m,a,e)
+# Form 6-index intermediate? No—factorize:
+
+# Step 1: contract e (virtual) — O(o²v³)
+tmp_mbj = ∑_e W_mbej * T_imae
+
+# Step 2: contract m (occupied) — O(o²v³)
+result_ija = ∑_m tmp_mbj
+</pre>
+<p>
+This reduces peak memory from O(o²v⁴) to O(o²v³) and often reduces flops by a constant factor.
+Modern codes (MRCC, CFOUR, NWChem, PySCF, TCC) use automated factorization (e.g., <code>einsum</code> path optimization,
+or the <strong>Tensor Contraction Engine</strong>).
+</p>
+</section>
+
+<div class="socratic" data-question="factorization-order">
+<p>In the factorized contraction ∑<sub>me</sub> ⟨mb||ej⟩ t<sub>im</sub><sup>ae</sup>, contracting e first gives an intermediate tmp<sub>mbj</sub>(i,a). What determines the optimal contraction order, and how does it change if the integral tensor has permutational symmetry (e.g., ⟨mb||ej⟩ = −⟨bm||ej⟩)?</p>
+</div>
+
+<section>
+<h2>Spin adaptation and spatial orbitals</h2>
+<p>
+Spin-orbital equations have 4× more amplitudes than spatial-orbital (spin-adapted) equations.
+Spin-adapted CCSD uses singlet/triplet-coupled amplitudes, reducing the doubles amplitude count from
+o²v² to ~½ o²v². The equations become more complex (spin-coupling coefficients), but the O(N⁶) scaling
+prefactor drops significantly.
+</p>
+<p>
+Most production codes use spin-adapted spatial orbitals with <strong>density fitting</strong> (RI) or
+<strong>Cholesky decomposition</strong> of the two-electron integrals:
+</p>
+<p class="equation">⟨pq||rs⟩ ≈ ∑<sub>P</sub> B<sub>pq</sub><sup>P</sup> B<sub>rs</sub><sup>P</sup></p>
+<p>
+where P runs over auxiliary basis functions (size ~ 3–4× N). This reduces integral storage from O(N⁴) to O(N³)
+and many contractions from O(N⁶) to O(N⁵).
+</p>
+</section>
+
+<section>
+<h2>Iterative solution: DIIS and convergence</h2>
+<p>
+The amplitude equations are solved by fixed-point iteration:
+</p>
+<p class="equation">t<sup>(n+1)</sup> = t<sup>(n)</sup> + ω · (RHS(t<sup>(n)</sup>) / D)</p>
+<p>
+where D is the diagonal of the Jacobian (orbital energy denominators) and ω is a damping factor.
+<strong>DIIS (Direct Inversion in the Iterative Subspace)</strong> accelerates convergence by extrapolating
+from previous residuals. It is essential for CCSD; without it, convergence is often erratic or divergent.
+</p>
+</section>
+
+<div class="socratic" data-question="diis-residual">
+<p>DIIS builds a linear combination of previous residual vectors to minimize the norm of the extrapolated residual. Why does minimizing the residual norm not guarantee minimizing the error in the amplitudes? When might DIIS converge to a saddle point instead of the physical solution?</p>
+</div>
+
+<section>
+<h2>Scaling summary</h2>
+<table>
+<thead>
+<tr><th>Method</th><th>Formal scaling</th><th>With DF/RI</th><th>Memory (DF)</th></tr>
+</thead>
+<tbody>
+<tr><td>HF</td><td>O(N⁴)</td><td>O(N³)</td><td>O(N²)</td></tr>
+<tr><td>MP2</td><td>O(N⁵)</td><td>O(N⁴)</td><td>O(N³)</td></tr>
+<tr><td>CCSD</td><td>O(N⁶)</td><td>O(N⁵)</td><td>O(N⁴)</td></tr>
+<tr><td>CCSD(T)</td><td>O(N⁷)</td><td>O(N⁶)</td><td>O(N⁴)</td></tr>
+<tr><td>CCSDT</td><td>O(N⁸)</td><td>—</td><td>O(N⁶)</td></tr>
+</tbody>
+</table>
+<p>
+For large systems, local correlation (DLPNO-CCSD(T)) reduces scaling to near-linear by exploiting
+nearsightedness of electron correlation. The (T) correction remains the bottleneck for high accuracy.
+</p>
+</section>
+
+<section>
+<h2>Further reading</h2>
+<ul>
+<li>Bartlett & Musiał, <em>Rev. Mod. Phys.</em> <strong>79</strong>, 291 (2007) — the CC review</li>
+<li>Helgaker, Jørgensen & Olsen, <em>Molecular Electronic-Structure Theory</em> (Wiley, 2000)</li>
+<li>Crawford & Schaefer, <em>Rev. Comp. Chem.</em> <strong>14</strong>, 33 (2000) — CC for chemists</li>
+<li>Kállay et al., <em>J. Chem. Phys.</em> <strong>115</strong>, 2945 (2001) — CCSD(T) theory</li>
+<li>Neese et al., <em>J. Chem. Phys.</em> <strong>150</strong>, 204112 (2019) — DLPNO-CCSD(T)</li>
+</ul>
+</section>
+
+<nav class="pagination">
+<a href="theory.html" class="prev">← Back: The Amplitude Equations</a>
+<a href="eom-cc.html" class="next">Next: EOM-CC Extensions →</a>
+</nav>
+</main>
+<script src="socratic.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The Amplitude Equations — Coupled Cluster Theory</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+<h1>Coupled Cluster Theory for the N-Body Problem</h1>
+<p class="subtitle">Page 2: The Amplitude Equations</p>
+</header>
+<main>
+<nav class="breadcrumb"><a href="index.html">← Page 1: Why Coupled Cluster?</a> | <a href="implementation.html">Page 3: Implementation →</a> | <a href="eom-cc.html">Page 4: EOM-CC Extensions →</a> | <a href="tutorial.html">Socratic Tutorial</a></nav>
+
+<section>
+<h2>Projecting onto excited determinants</h2>
+<p>
+The CC energy is <code>E = ⟨Φ₀|Ĥ̄|Φ₀⟩</code>. The amplitudes <code>t</code> are determined by projecting the similarity-transformed
+Schrödinger equation onto all excited determinants ⟨Φ<sub>μ</sub>|:
+</p>
+<p class="equation">⟨Φ<sub>μ</sub>| Ĥ̄ |Φ₀⟩ = 0 &nbsp; for all μ ≠ 0</p>
+<p>
+These are the <strong>amplitude equations</strong>. They are nonlinear because Ĥ̄ contains products of T̂ with itself.
+For CCSD (singles and doubles), we project onto singly and doubly excited determinants:
+</p>
+<p class="equation">⟨Φ<sub>i</sub><sup>a</sup>| Ĥ̄ |Φ₀⟩ = 0 &nbsp;&nbsp;&nbsp; ⟨Φ<sub>ij</sub><sup>ab</sup>| Ĥ̄ |Φ₀⟩ = 0</p>
+</section>
+
+<section>
+<h2>The similarity-transformed Hamiltonian Ĥ̄</h2>
+<p>
+Using the BCH expansion and normal-ordering with respect to |Φ₀⟩ (Wick's theorem), Ĥ̄ can be written as a sum of
+zero-, one-, two-, three-, and four-body operators. For CCSD, only the zero-, one-, and two-body parts contribute
+to the projected equations (three- and four-body parts give zero when contracted with singles/doubles projectors).
+</p>
+<p>
+The key intermediates (using spin-orbital notation, indices i,j,k... occupied; a,b,c... virtual):
+</p>
+<ul>
+<li><strong>Fock matrix:</strong> f<sub>pq</sub> = h<sub>pq</sub> + ∑<sub>i</sub> ⟨pi||qi⟩</li>
+<li><strong>Dressed one-body operator:</strong> F̃<sub>pq</sub> = f<sub>pq</sub> + ∑<sub>ie</sub> t<sub>i</sub><sup>e</sup> ⟨pe||qi⟩ + ½ ∑<sub>iemn</sub> t<sub>im</sub><sup>en</sup> ⟨pe||mn⟩ + …</li>
+<li><strong>Dressed two-body operator:</strong> W̃<sub>pqrs</sub> = ⟨pq||rs⟩ + ∑<sub>e</sub> t<sub>e</sub><sup>r</sup> ⟨pq||es⟩ + … (includes T₂ contributions)</li>
+</ul>
+<p>
+These intermediates absorb the infinite series of contractions from e<sup>−T̂</sup>Ĥe<sup>T̂</sup> into effective
+one- and two-body operators that can be evaluated efficiently.
+</p>
+</section>
+
+<div class="socratic" data-question="ccsd-intermediates">
+<p>In CCSD, the dressed two-body operator W̃ contains terms like ∑<sub>e</sub> t<sub>e</sub><sup>r</sup> ⟨pq||es⟩. Why does this term involve a <em>single</em> excitation amplitude t<sub>e</sub><sup>r</sup> rather than a double excitation? Draw the diagram.</p>
+</div>
+
+<section>
+<h2>CCSD amplitude equations (spin-orbital form)</h2>
+<p class="equation">0 = f<sub>ai</sub> + ∑<sub>e</sub> f<sub>ae</sub> t<sub>i</sub><sup>e</sup> − ∑<sub>m</sub> f<sub>mi</sub> t<sub>m</sub><sup>a</sup> + ∑<sub>me</sub> ⟨am||ei⟩ t<sub>m</sub><sup>e</sup> + ½ ∑<sub>mnef</sub> ⟨mn||ef⟩ t<sub>im</sub><sup>ef</sup> + …</p>
+<p class="equation">0 = ⟨ab||ij⟩ + P(ij)P(ab) [ ∑<sub>e</sub> ⟨ab||ej⟩ t<sub>i</sub><sup>e</sup> − ∑<sub>m</sub> ⟨mb||ij⟩ t<sub>m</sub><sup>a</sup> ] + ½ ∑<sub>ef</sub> ⟨ab||ef⟩ t<sub>ij</sub><sup>ef</sup> + ½ ∑<sub>mn</sub> ⟨mn||ij⟩ t<sub>mn</sub><sup>ab</sup> + ∑<sub>me</sub> ⟨mb||ej⟩ t<sub>im</sub><sup>ae</sup> + …</p>
+<p>
+Where P(ij) and P(ab) are antisymmetrizers. These are solved iteratively (e.g., DIIS-accelerated fixed-point iteration).
+</p>
+</section>
+
+<section>
+<h2>CCSD(T): Perturbative triples</h2>
+<p>
+Full CCSDT scales as O(N⁸) and is prohibitively expensive. CCSD(T) adds a non-iterative perturbative correction
+for connected triples:
+</p>
+<p class="equation">ΔE<sub>(T)</sub> = ¹/₃₆ ∑<sub>ijkabc</sub> (t<sub>ijk</sub><sup>abc</sup>)<sup>*</sup> ⟨Φ<sub>ijk</sub><sup>abc</sup>| Ĥ̄ |Φ₀⟩<sub>C</sub></p>
+<p>
+where the triples amplitudes are approximated from the CCSD amplitudes via first-order perturbation theory:
+</p>
+<p class="equation">t<sub>ijk</sub><sup>abc</sup> ≈ ⟨Φ<sub>ijk</sub><sup>abc</sup>| Ĥ̄ |Φ₀⟩<sub>C</sub> / (ε<sub>i</sub> + ε<sub>j</sub> + ε<sub>k</sub> − ε<sub>a</sub> − ε<sub>b</sub> − ε<sub>c</sub>)</p>
+<p>
+This gives near-CCSDT accuracy at O(N⁷) cost, making it the "gold standard" for single-reference systems.
+</p>
+</section>
+
+<div class="socratic" data-question="ccsd-t-denominator">
+<p>The CCSD(T) energy denominator is ε<sub>i</sub> + ε<sub>j</sub> + ε<sub>k</sub> − ε<sub>a</sub> − ε<sub>b</sub> − ε<sub>c</sub>. What physical assumption justifies this diagonal denominator, and when might it break down (causing the famous "non-iterative triples" failure)?</p>
+</div>
+
+<nav class="pagination">
+<a href="index.html" class="prev">← Back: Why Coupled Cluster?</a>
+<a href="implementation.html" class="next">Next: Implementation & Scaling →</a>
+</nav>
+</main>
+<script src="socratic.js" defer></script>
+</body>
+</html>

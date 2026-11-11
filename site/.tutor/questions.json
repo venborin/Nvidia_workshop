@@ -1,0 +1,59 @@
+{
+  "brief": "PhD students in Chemistry with background in second quantization, Hartree-Fock, and many-body perturbation theory. Emphasize diagrammatic reasoning, size extensivity, and practical computational implications.",
+  "questions": {
+    "cc-size-extensive": {
+      "question": "Why does the exponential ansatz e^T guarantee size extensivity, whereas a linear CI expansion (1 + T₁ + T₂ + …) does not?",
+      "answer": "Size extensivity means the energy scales linearly with system size for non-interacting fragments. The exponential e^T = 1 + T + ½T² + … generates all powers of T. For two non-interacting systems A and B, T = T_A + T_B, and e^T = e^{T_A} e^{T_B}. The energy E = ⟨Φ₀|e^{-T}He^T|Φ₀⟩ then factorizes as E_A + E_B because linked diagrams from A and B cannot connect (H is two-body, T_A acts only on A, T_B only on B). In contrast, a linear CI expansion truncates at some excitation level. For two fragments, the product of determinants includes excitations on both fragments simultaneously (e.g., T_A² T_B²), which are missing from a truncated linear expansion, breaking extensivity.",
+      "misconceptions": [
+        "Confusing size extensivity with size consistency (they coincide for non-interacting fragments but differ for interacting systems).",
+        "Thinking that including all excitations up to N in CI fixes extensivity (FCI is extensive, but truncated CI is not).",
+        "Believing the exponential is just a reparameterization; the key is that it generates disconnected cluster products that cancel in the energy."
+      ]
+    },
+    "bch-termination": {
+      "question": "The BCH expansion of e^{-T} H e^T terminates at four commutators. What property of H and T makes this happen, and why would it fail if H contained three-body operators?",
+      "answer": "The BCH series is e^{-T}He^T = H + [H,T] + ½[[H,T],T] + … Each commutator with T increases the particle rank by at most 1 (T is a sum of excitation operators, each raising particle rank). The electronic Hamiltonian H contains only one- and two-body operators. Starting from a two-body H, after one commutator: up to three-body; after two: up to four-body; after three: up to five-body; after four: up to six-body. But the vacuum expectation ⟨Φ₀|…|Φ₀⟩ is zero for any operator with particle rank > 4 (since it cannot be fully contracted with the reference). So terms beyond four commutators give zero when sandwiched. If H contained three-body operators, the chain would be: 3-body → 4 → 5 → 6 → 7-body after four commutators, and a fifth commutator would produce 8-body operators that can still have non-zero vacuum expectation (via 4 pairs of contractions), so the series would not terminate at four.",
+      "misconceptions": [
+        "Thinking the termination is due to T being nilpotent (T^k = 0 for k > N_electrons). While true, the BCH termination at four commutators is a stronger statement that holds even in the thermodynamic limit.",
+        "Confusing the number of commutators (4) with the maximum excitation level in CCSDTQ (4). They are related but distinct.",
+        "Not recognizing that normal-ordering and Wick's theorem are what make the vacuum expectation of >4-body operators vanish."
+      ]
+    },
+    "ccsd-intermediates": {
+      "question": "In CCSD, the dressed two-body operator W̃ contains terms like ∑_e t_e^r ⟨pq||es⟩. Why does this term involve a single excitation amplitude t_e^r rather than a double excitation? Draw the diagram.",
+      "answer": "This term comes from the commutator [H, T₁] in the BCH expansion. The Hamiltonian H has a two-body part V = ¼∑⟨pq||rs⟩a†a†aa. The single excitation operator is T₁ = ∑t_i^a a†_a a_i. The commutator [V, T₁] contracts one index of V with one index of T₁, leaving a two-body operator (three creation/annihilation operators after normal-ordering). Diagrammatically: a two-electron integral line (two incoming, two outgoing) with one outgoing line connected to a T₁ vertex (one incoming hole, one outgoing particle). The remaining three external lines form the dressed two-body operator. This is a 'one-particle–one-hole' insertion into the interaction line. Double excitations T₂ would give [V, T₂] which is a three-body operator (contributes to dressed three-body part, not W̃).",
+      "misconceptions": [
+        "Thinking T₁ appears in W̃ because singles are 'more important'—it's purely about operator rank.",
+        "Confusing this with the T₂ amplitude equation where ⟨ab||ij⟩ is the driving term; that comes from ⟨Φ_ij^ab|H|Φ₀⟩, not from dressing.",
+        "Not drawing the diagram: the key is seeing one vertex of type T₁ (1 hole, 1 particle) attached to one vertex of type V (2 holes, 2 particles)."
+      ]
+    },
+    "ccsd-t-denominator": {
+      "question": "The CCSD(T) energy denominator is ε_i + ε_j + ε_k − ε_a − ε_b − ε_c. What physical assumption justifies this diagonal denominator, and when might it break down (causing the famous 'non-iterative triples' failure)?",
+      "answer": "The denominator comes from first-order perturbation theory: the triples amplitude t_ijk^abc is approximated as the connected matrix element ⟨Φ_ijk^abc|H̄|Φ₀⟩_C divided by the unperturbed energy difference. The unperturbed Hamiltonian is the Fock operator F, so the energy of |Φ_ijk^abc⟩ is E₀ + ε_a + ε_b + ε_c − ε_i − ε_j − ε_k. The assumption is that the reference determinant |Φ₀⟩ is a good zeroth-order state and the triples are weakly coupled to it. This breaks down when: (1) the HOMO-LUMO gap is small or negative (near-degeneracy, bond breaking, transition metals), making the denominator small or zero; (2) there is strong multi-reference character where the HF reference is qualitatively wrong; (3) the triples are strongly coupled to other triples (intruder states). In these cases, the perturbative estimate is unreliable and full CCSDT or multi-reference methods are needed.",
+      "misconceptions": [
+        "Thinking the denominator is 'just' orbital energy differences—it's specifically the diagonal of the Fock operator in the HF basis.",
+        "Believing CCSD(T) always improves over CCSD; it can be worse when the denominator is small (the 'non-iterative triples' catastrophe).",
+        "Not knowing that the (T) correction is not variational and can give energies below the exact energy."
+      ]
+    },
+    "factorization-order": {
+      "question": "In the factorized contraction ∑_me ⟨mb||ej⟩ t_im^ae, contracting e first gives an intermediate tmp_mbj(i,a). What determines the optimal contraction order, and how does it change if the integral tensor has permutational symmetry (e.g., ⟨mb||ej⟩ = −⟨bm||ej⟩)?",
+      "answer": "The optimal contraction order minimizes the total FLOP count (or equivalently, the size of the largest intermediate). For ∑_me W_mbej T_imae, contracting e first: cost = o²v³ (W has 4 indices, T has 4, shared index e; intermediate has 3 indices m,b,j plus free i,a). Contracting m first: cost = o³v³ (intermediate e,b,j,i,a — 5 indices). So e-first is better. With permutational symmetry ⟨mb||ej⟩ = −⟨bm||ej⟩, the integral tensor can be stored in a packed triangular form (m<b). This changes the index ranges and can make m-first more competitive if it allows using the symmetry to reduce the effective dimension of the intermediate. Also, symmetry can enable factorizations like W_mbej = -W_bmej, allowing reuse of intermediates. Modern tensor contraction engines (opt_einsum, TCE) search over all orders with symmetry-aware cost models.",
+      "misconceptions": [
+        "Thinking the optimal order is always 'contract the index with the smallest dimension first'—it depends on the full index structure.",
+        "Ignoring that symmetry can reduce the effective rank of tensors, changing the cost model.",
+        "Not considering that intermediate storage (memory) may be the real bottleneck, not FLOPs."
+      ]
+    },
+    "diis-residual": {
+      "question": "DIIS builds a linear combination of previous residual vectors to minimize the norm of the extrapolated residual. Why does minimizing the residual norm not guarantee minimizing the error in the amplitudes? When might DIIS converge to a saddle point instead of the physical solution?",
+      "answer": "The residual r = f(t) − t (or RHS − D·t). DIIS minimizes ||∑ c_i r_i|| subject to ∑ c_i = 1. This minimizes the residual in the subspace spanned by past residuals. The error e = t_exact − t is related to the residual by the Jacobian J: r ≈ J e. Minimizing ||r|| minimizes ||J e||, not ||e||. If J is ill-conditioned (large condition number), a small residual can correspond to a large error in directions where J has small eigenvalues. DIIS can converge to a saddle point if the iteration map has multiple fixed points and the residual norm is smaller at a saddle point than at the physical solution in the explored subspace. This happens when: (1) the initial guess is poor and the iteration enters the basin of attraction of an unphysical solution; (2) the system has near-degeneracy and the CC equations have multiple solutions (e.g., symmetry-broken UHF references). Level shifting or damping helps avoid this.",
+      "misconceptions": [
+        "Thinking DIIS minimizes the energy—it minimizes the residual norm, which is a proxy.",
+        "Believing that if DIIS converges, it must be to the physical solution.",
+        "Not knowing that the residual norm can decrease while the error increases (if J is ill-conditioned)."
+      ]
+    }
+  }
+}

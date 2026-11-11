@@ -1,0 +1,506 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Socratic Tutorial: Coupled Cluster Theory</title>
+<link rel="stylesheet" href="style.css">
+<style>
+  .tutorial-container { max-width: 800px; margin: 0 auto; }
+  .progress-bar { height: 6px; background: #e3e8ee; border-radius: 3px; margin: 16px 0; overflow: hidden; }
+  .progress-fill { height: 100%; background: #1a7a8a; border-radius: 3px; transition: width 0.3s; }
+  .progress-text { font-size: 0.9rem; color: #6a7a8a; margin-bottom: 8px; }
+  
+  .question-card {
+    border: 1px solid #c9d6d4;
+    border-left: 4px solid #0d6a65;
+    border-radius: 10px;
+    padding: 20px;
+    margin: 24px 0;
+    background: #f6faf9;
+    color: #15242a;
+  }
+  @media (prefers-color-scheme: dark) {
+    .question-card { background: #152328; color: #e3ecec; border-color: #27383e; border-left-color: #62c4ba; }
+  }
+  
+  .question-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 12px;
+  }
+  .question-badge {
+    font: 700 12px/1 system-ui, sans-serif;
+    letter-spacing: .06em;
+    text-transform: uppercase;
+    color: #0d6a65;
+    background: #d7f0dc;
+    padding: 4px 10px;
+    border-radius: 999px;
+  }
+  @media (prefers-color-scheme: dark) {
+    .question-badge { color: #152328; background: #62c4ba; }
+  }
+  .question-text { font-size: 1.05rem; line-height: 1.6; margin: 0; }
+  
+  .answer-area {
+    margin-top: 16px;
+    padding-top: 16px;
+    border-top: 1px solid #d6dee6;
+  }
+  @media (prefers-color-scheme: dark) {
+    .answer-area { border-top-color: #27383e; }
+  }
+  
+  .answer-textarea {
+    width: 100%;
+    min-height: 80px;
+    padding: 12px;
+    border: 1px solid #c9d6d4;
+    border-radius: 8px;
+    font: inherit;
+    background: #fff;
+    color: inherit;
+    resize: vertical;
+    font-family: inherit;
+  }
+  @media (prefers-color-scheme: dark) {
+    .answer-textarea { background: #0f191d; border-color: #27383e; color: #e3ecec; }
+  }
+  .answer-textarea:focus { outline: 3px solid #f2b705; outline-offset: 2px; }
+  
+  .check-btn {
+    margin-top: 12px;
+    padding: 10px 20px;
+    background: #0d6a65;
+    color: #fff;
+    border: 0;
+    border-radius: 8px;
+    font: 600 15px system-ui, sans-serif;
+    cursor: pointer;
+    transition: background 0.15s;
+  }
+  .check-btn:hover:not(:disabled) { background: #0a504d; }
+  .check-btn:disabled { opacity: 0.5; cursor: not-allowed; }
+  .check-btn:focus-visible { outline: 3px solid #f2b705; outline-offset: 2px; }
+  
+  .feedback {
+    margin-top: 16px;
+    padding: 12px 16px;
+    border-radius: 8px;
+    display: none;
+  }
+  .feedback.show { display: block; animation: fadeIn 0.2s; }
+  @keyframes fadeIn { from { opacity: 0; transform: translateY(-4px); } to { opacity: 1; transform: translateY(0); } }
+  
+  .feedback.correct { background: #d7f0dc; border: 1px solid #a8d5b0; color: #1d5b2a; }
+  .feedback.partly { background: #fdf0c8; border: 1px solid #f0d890; color: #6b4e00; }
+  .feedback.notyet { background: #f6e0dc; border: 1px solid #e8b8ac; color: #7a2a1d; }
+  .feedback.info { background: #e8f0fe; border: 1px solid #b8d0f0; color: #1a4a7a; }
+  @media (prefers-color-scheme: dark) {
+    .feedback.correct { background: #17353a; border-color: #2d5a3d; color: #8fd4b8; }
+    .feedback.partly { background: #3a321a; border-color: #5a4d2a; color: #d4c080; }
+    .feedback.notyet { background: #3a2a2a; border-color: #5a3d3d; color: #d49890; }
+    .feedback.info { background: #1a2a3a; border-color: #2a3d5a; color: #98b8e0; }
+  }
+  
+  .feedback-verdict {
+    display: inline-block;
+    font: 700 12px/1 system-ui, sans-serif;
+    padding: 4px 10px;
+    border-radius: 999px;
+    margin-right: 8px;
+    vertical-align: middle;
+  }
+  .feedback.correct .feedback-verdict { background: #a8d5b0; color: #1d5b2a; }
+  .feedback.partly .feedback-verdict { background: #f0d890; color: #6b4e00; }
+  .feedback.notyet .feedback-verdict { background: #e8b8ac; color: #7a2a1d; }
+  
+  .model-answer {
+    margin-top: 16px;
+    padding: 16px;
+    background: #fff;
+    border: 1px solid #e3e8ee;
+    border-radius: 8px;
+    display: none;
+  }
+  @media (prefers-color-scheme: dark) {
+    .model-answer { background: #0f191d; border-color: #27383e; }
+  }
+  .model-answer.show { display: block; }
+  .model-answer h4 { margin: 0 0 8px; font-size: 0.9rem; color: #0d6a65; }
+  @media (prefers-color-scheme: dark) { .model-answer h4 { color: #62c4ba; } }
+  .model-answer p { margin: 8px 0; font-size: 0.95rem; line-height: 1.6; }
+  .model-answer ul { margin: 8px 0; padding-left: 20px; font-size: 0.95rem; }
+  .model-answer li { margin: 4px 0; }
+  
+  .misconceptions {
+    margin-top: 12px;
+    padding: 12px;
+    background: #fff8e8;
+    border: 1px solid #f0d890;
+    border-radius: 8px;
+    font-size: 0.9rem;
+  }
+  @media (prefers-color-scheme: dark) {
+    .misconceptions { background: #2a251a; border-color: #4a4020; }
+  }
+  .misconceptions h4 { margin: 0 0 8px; font-size: 0.85rem; color: #6b4e00; }
+  @media (prefers-color-scheme: dark) { .misconceptions h4 { color: #d4c080; } }
+  .misconceptions ul { margin: 0; padding-left: 18px; }
+  .misconceptions li { margin: 4px 0; color: #5a5030; }
+  @media (prefers-color-scheme: dark) { .misconceptions li { color: #b8a870; } }
+  
+  .nav-buttons {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 32px;
+    padding-top: 20px;
+    border-top: 2px solid #e3e8ee;
+  }
+  @media (prefers-color-scheme: dark) { .nav-buttons { border-top-color: #27383e; } }
+  .nav-btn {
+    padding: 10px 20px;
+    border-radius: 6px;
+    font-weight: 500;
+    text-decoration: none;
+    transition: background 0.15s;
+  }
+  .nav-btn.primary { background: #1a7a8a; color: #fff; }
+  .nav-btn.primary:hover { background: #0d5a6a; color: #fff; }
+  .nav-btn.secondary { background: #6a7a8a; color: #fff; }
+  .nav-btn.secondary:hover { background: #5a6a7a; color: #fff; }
+  .nav-btn:focus-visible { outline: 3px solid #f2b705; outline-offset: 2px; }
+  
+  .intro {
+    background: #f0f4f7;
+    border: 1px solid #d6dee6;
+    border-radius: 10px;
+    padding: 24px;
+    margin-bottom: 24px;
+  }
+  @media (prefers-color-scheme: dark) { .intro { background: #172328; border-color: #27383e; } }
+  .intro h2 { margin-top: 0; color: #0d4a5e; }
+  @media (prefers-color-scheme: dark) { .intro h2 { color: #62c4ba; } }
+  .intro ul { margin: 12px 0; }
+  .intro li { margin: 6px 0; }
+  
+  .completed-badge {
+    display: inline-block;
+    background: #1a7a8a;
+    color: #fff;
+    padding: 2px 8px;
+    border-radius: 999px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    margin-left: 8px;
+    vertical-align: middle;
+  }
+  
+  .hint-box {
+    margin-top: 12px;
+    padding: 12px 16px;
+    background: #e8f0fe;
+    border: 1px solid #b8d0f0;
+    border-radius: 8px;
+    font-size: 0.95rem;
+    display: none;
+  }
+  @media (prefers-color-scheme: dark) { .hint-box { background: #1a2a3a; border-color: #2a3d5a; } }
+  .hint-box.show { display: block; }
+  .hint-box summary { cursor: pointer; font-weight: 500; color: #1a4a7a; }
+  @media (prefers-color-scheme: dark) { .hint-box summary { color: #98b8e0; } }
+</style>
+</head>
+<body>
+<div class="tutorial-container">
+<header>
+<h1>Socratic Tutorial: Coupled Cluster Theory</h1>
+<p class="subtitle">Interactive guided questioning for PhD students in Chemistry</p>
+</header>
+<main>
+<div class="intro">
+<h2>How this works</h2>
+<p>This tutorial uses the <strong>Socratic method</strong>: you answer each question in your own words, then receive a guiding follow-up question (not the answer). The goal is to build understanding through reasoning, not recall.</p>
+<ul>
+<li>Type your answer in the text box</li>
+<li>Click "Check my answer" — the tutor evaluates key concepts, not wording</li>
+<li>If <span style="background:#d7f0dc;color:#1d5b2a;padding:2px 8px;border-radius:999px;font-size:0.8rem;font-weight:600;">Correct</span>, you move on with a follow-up question</li>
+<li>If <span style="background:#fdf0c8;color:#6b4e00;padding:2px 8px;border-radius:999px;font-size:0.8rem;font-weight:600;">Partly</span> or <span style="background:#f6e0dc;color:#7a2a1d;padding:2px 8px;border-radius:999px;font-size:0.8rem;font-weight:600;">Not yet</span>, you get a hint and try again</li>
+<li>After finishing, you can reveal the model answer and common misconceptions</li>
+</ul>
+<p><strong>Prerequisites:</strong> Second quantization, Hartree–Fock, basic many-body perturbation theory. This covers the same material as the three course pages.</p>
+</div>
+
+<div class="progress-text" id="progressText">Question 1 of 6</div>
+<div class="progress-bar"><div class="progress-fill" id="progressFill" style="width: 16.66%;"></div></div>
+
+<!-- Questions will be injected here -->
+<div id="questionsContainer"></div>
+
+<div class="nav-buttons">
+<a href="index.html" class="nav-btn secondary">← Back to Course</a>
+<button class="nav-btn primary" id="nextBtn" disabled>Finish Tutorial</button>
+</div>
+</main>
+</div>
+
+<script>
+// ============ TUTOR DATA ============
+const TUTOR_DATA = {
+  brief: "PhD students in Chemistry with background in second quantization, Hartree-Fock, and many-body perturbation theory. Emphasize diagrammatic reasoning, size extensivity, and practical computational implications.",
+  questions: [
+    {
+      id: "cc-size-extensive",
+      question: "Why does the exponential ansatz e^T guarantee size extensivity, whereas a linear CI expansion (1 + T₁ + T₂ + …) does not?",
+      keywords: ["factoriz", "disconnect", "non-interact", "fragment", "e^T_A e^T_B", "product", "linked", "cancel", "extensivity"],
+      followup: {
+        correct: "Good. Now consider: if you have two non-interacting He atoms at infinite separation, the exact energy is 2×E(He). In CCSD, the T operator for the combined system is T = T_A + T_B. Why does e^T = e^{T_A}e^{T_B} guarantee the energy adds up, but (1+T_A+T_B+...) does not?",
+        partly: "You're on the right track. Think about what happens when you multiply (1+T_A)(1+T_B). What terms appear that shouldn't be there for size extensivity?",
+        notyet: "Hint: For two non-interacting systems A and B, the exact wavefunction is a product: |Ψ_AB⟩ = |Ψ_A⟩⊗|Ψ_B⟩. The exponential e^{T_A+T_B} = e^{T_A}e^{T_B} naturally factorizes. What does a truncated linear expansion miss?"
+      },
+      modelAnswer: "Size extensivity means the energy scales linearly with system size for non-interacting fragments. The exponential e^T = 1 + T + ½T² + … generates all powers of T. For two non-interacting systems A and B, T = T_A + T_B, and e^T = e^{T_A} e^{T_B}. The energy E = ⟨Φ₀|e^{-T}He^T|Φ₀⟩ then factorizes as E_A + E_B because linked diagrams from A and B cannot connect (H is two-body, T_A acts only on A, T_B only on B). In contrast, a linear CI expansion truncates at some excitation level. For two fragments, the product of determinants includes excitations on both fragments simultaneously (e.g., T_A² T_B²), which are missing from a truncated linear expansion, breaking extensivity.",
+      misconceptions: [
+        "Confusing size extensivity with size consistency (they coincide for non-interacting fragments but differ for interacting systems).",
+        "Thinking that including all excitations up to N in CI fixes extensivity (FCI is extensive, but truncated CI is not).",
+        "Believing the exponential is just a reparameterization; the key is that it generates disconnected cluster products that cancel in the energy."
+      ]
+    },
+    {
+      id: "bch-termination",
+      question: "The BCH expansion of e^{-T} H e^T terminates at four commutators. What property of H and T makes this happen, and why would it fail if H contained three-body operators?",
+      keywords: ["particle rank", "body", "commutator", "vacuum", "expectation", "normal-order", "wick", "four", "terminat", "three-body"],
+      followup: {
+        correct: "Exactly. Each commutator with T raises the particle rank by at most 1. Starting from a 2-body H, after 4 commutators you reach 6-body operators whose vacuum expectation vanishes. Now: if H had 3-body terms, how many commutators before termination?",
+        partly: "Close. The key is the particle rank (number of creation/annihilation operators). H is 2-body. T₁ is 1-hole-1-particle (rank 1). Each commutator increases rank by 1. How many commutators until the operator has >4 creation and >4 annihilation operators?",
+        notyet: "Hint: The BCH series is H + [H,T] + ½[[H,T],T] + … Each commutator with T adds at most one creation and one annihilation operator. The vacuum expectation ⟨Φ₀|O|Φ₀⟩ is zero unless O has equal numbers of creation/annihilation operators that can be fully contracted. H starts as 2-body (2 creators, 2 annihilators). How many commutators until it's 6-body?"
+      },
+      modelAnswer: "The BCH series is e^{-T}He^T = H + [H,T] + ½[[H,T],T] + … Each commutator with T increases the particle rank by at most 1 (T is a sum of excitation operators, each raising particle rank). The electronic Hamiltonian H contains only one- and two-body operators. Starting from a two-body H, after one commutator: up to three-body; after two: up to four-body; after three: up to five-body; after four: up to six-body. But the vacuum expectation ⟨Φ₀|…|Φ₀⟩ is zero for any operator with particle rank > 4 (since it cannot be fully contracted with the reference). So terms beyond four commutators give zero when sandwiched. If H contained three-body operators, the chain would be: 3-body → 4 → 5 → 6 → 7-body after four commutators, and a fifth commutator would produce 8-body operators that can still have non-zero vacuum expectation (via 4 pairs of contractions), so the series would not terminate at four.",
+      misconceptions: [
+        "Thinking the termination is due to T being nilpotent (T^k = 0 for k > N_electrons). While true, the BCH termination at four commutators is a stronger statement that holds even in the thermodynamic limit.",
+        "Confusing the number of commutators (4) with the maximum excitation level in CCSDTQ (4). They are related but distinct.",
+        "Not recognizing that normal-ordering and Wick's theorem are what make the vacuum expectation of >4-body operators vanish."
+      ]
+    },
+    {
+      id: "ccsd-intermediates",
+      question: "In CCSD, the dressed two-body operator W̃ contains terms like ∑_e t_e^r ⟨pq||es⟩. Why does this term involve a single excitation amplitude t_e^r rather than a double excitation? Draw the diagram.",
+      keywords: ["commutator", "[H,T1]", "rank", "one-body", "two-body", "diagram", "vertex", "hole", "particle", "insertion"],
+      followup: {
+        correct: "Right — it comes from [V, T₁] where V is the two-body part of H. The commutator contracts one index of V with one index of T₁, leaving a two-body operator. Now: what operator rank does [V, T₂] produce, and where does it appear in Ĥ̄?",
+        partly: "You have the right idea about operator ranks. V is 2-body, T₁ is 1-hole-1-particle. Their commutator gives a 2-body operator (net). What about [V, T₂]? T₂ is 2-hole-2-particle.",
+        notyet: "Hint: Think diagrammatically. V has two incoming and two outgoing lines. T₁ has one incoming (hole) and one outgoing (particle). When you connect one line of V to T₁, how many external lines remain? What rank is the resulting operator?"
+      },
+      modelAnswer: "This term comes from the commutator [H, T₁] in the BCH expansion. The Hamiltonian H has a two-body part V = ¼∑⟨pq||rs⟩a†a†aa. The single excitation operator is T₁ = ∑t_i^a a†_a a_i. The commutator [V, T₁] contracts one index of V with one index of T₁, leaving a two-body operator (three creation/annihilation operators after normal-ordering). Diagrammatically: a two-electron integral line (two incoming, two outgoing) with one outgoing line connected to a T₁ vertex (one incoming hole, one outgoing particle). The remaining three external lines form the dressed two-body operator. This is a 'one-particle–one-hole' insertion into the interaction line. Double excitations T₂ would give [V, T₂] which is a three-body operator (contributes to dressed three-body part, not W̃).",
+      misconceptions: [
+        "Thinking T₁ appears in W̃ because singles are 'more important'—it's purely about operator rank.",
+        "Confusing this with the T₂ amplitude equation where ⟨ab||ij⟩ is the driving term; that comes from ⟨Φ_ij^ab|H|Φ₀⟩, not from dressing.",
+        "Not drawing the diagram: the key is seeing one vertex of type T₁ (1 hole, 1 particle) attached to one vertex of type V (2 holes, 2 particles)."
+      ]
+    },
+    {
+      id: "ccsd-t-denominator",
+      question: "The CCSD(T) energy denominator is ε_i + ε_j + ε_k − ε_a − ε_b − ε_c. What physical assumption justifies this diagonal denominator, and when might it break down (causing the famous 'non-iterative triples' failure)?",
+      keywords: ["perturbation", "first-order", "Fock", "zeroth-order", "gap", "degeneracy", "near-degeneracy", "multi-reference", "intruder", "breakdown"],
+      followup: {
+        correct: "Perfect. The denominator comes from Rayleigh–Schrödinger perturbation theory with the Fock operator as the zeroth-order Hamiltonian. The assumption is weak coupling of triples to the reference. When does this fail? Think about bond dissociation, transition metals, or systems with small HOMO-LUMO gaps.",
+        partly: "You're thinking along the right lines. The denominator is the unperturbed energy difference between the triples excitation and the reference. What determines the unperturbed energies? The Fock operator. When is the Fock operator a poor zeroth-order Hamiltonian?",
+        notyet: "Hint: In perturbation theory, the first-order amplitude is the matrix element divided by the energy difference (E₀ - E_n). Here the 'unperturbed' Hamiltonian is the Fock operator F. The energy of |Φ_ijk^abc⟩ under F is E₀ + ε_a + ε_b + ε_c - ε_i - ε_j - ε_k. What assumption about the reference makes this valid?"
+      },
+      modelAnswer: "The denominator comes from first-order perturbation theory: the triples amplitude t_ijk^abc is approximated as the connected matrix element ⟨Φ_ijk^abc|H̄|Φ₀⟩_C divided by the unperturbed energy difference. The unperturbed Hamiltonian is the Fock operator F, so the energy of |Φ_ijk^abc⟩ is E₀ + ε_a + ε_b + ε_c − ε_i − ε_j − ε_k. The assumption is that the reference determinant |Φ₀⟩ is a good zeroth-order state and the triples are weakly coupled to it. This breaks down when: (1) the HOMO-LUMO gap is small or negative (near-degeneracy, bond breaking, transition metals), making the denominator small or zero; (2) there is strong multi-reference character where the HF reference is qualitatively wrong; (3) the triples are strongly coupled to other triples (intruder states). In these cases, the perturbative estimate is unreliable and full CCSDT or multi-reference methods are needed.",
+      misconceptions: [
+        "Thinking the denominator is 'just' orbital energy differences—it's specifically the diagonal of the Fock operator in the HF basis.",
+        "Believing CCSD(T) always improves over CCSD; it can be worse when the denominator is small (the 'non-iterative triples' catastrophe).",
+        "Not knowing that the (T) correction is not variational and can give energies below the exact energy."
+      ]
+    },
+    {
+      id: "factorization-order",
+      question: "In the factorized contraction ∑_me ⟨mb||ej⟩ t_im^ae, contracting e first gives an intermediate tmp_mbj(i,a). What determines the optimal contraction order, and how does it change if the integral tensor has permutational symmetry (e.g., ⟨mb||ej⟩ = −⟨bm||ej⟩)?",
+      keywords: ["flop", "cost", "intermediate", "memory", "dimension", "symmetry", "packed", "triangular", "opt_einsum", "contraction engine"],
+      followup: {
+        correct: "Good. The optimal order minimizes the largest intermediate dimension (or total FLOPs). Contracting the virtual index e first gives O(o²v³) vs O(o³v³) for m-first. With symmetry ⟨mb||ej⟩ = −⟨bm||ej⟩, the integral can be stored for m<b only. How does this change the effective dimension of the m index?",
+        partly: "You're right about minimizing FLOPs/intermediate size. Contracting e first: intermediate has indices m,b,j plus free i,a = 5 indices but one is summed (e), so 4 active. Contracting m first: intermediate has e,b,j,i,a = 5 active. The symmetry reduces the m dimension by ~2x (triangular packing). Does this make m-first competitive?",
+        notyet: "Hint: Count the indices in the intermediate. W has 4 indices (m,b,e,j), T has 4 (i,m,a,e), shared index is e or m. Contracting e: sum over v, result has m,b,j,i,a → 5 indices but one is the loop index. Contracting m: sum over o, result has e,b,j,i,a. Since o ≈ v ≈ N/2, which gives the smaller intermediate? What if symmetry cuts the m dimension in half?"
+      },
+      modelAnswer: "The optimal contraction order minimizes the total FLOP count (or equivalently, the size of the largest intermediate). For ∑_me W_mbej T_imae, contracting e first: cost = o²v³ (W has 4 indices, T has 4, shared index e; intermediate has 3 indices m,b,j plus free i,a). Contracting m first: cost = o³v³ (intermediate e,b,j,i,a — 5 indices). So e-first is better. With permutational symmetry ⟨mb||ej⟩ = −⟨bm||ej⟩, the integral tensor can be stored in a packed triangular form (m<b). This changes the index ranges and can make m-first more competitive if it allows using the symmetry to reduce the effective dimension of the intermediate. Also, symmetry can enable factorizations like W_mbej = -W_bmej, allowing reuse of intermediates. Modern tensor contraction engines (opt_einsum, TCE) search over all orders with symmetry-aware cost models.",
+      misconceptions: [
+        "Thinking the optimal order is always 'contract the index with the smallest dimension first'—it depends on the full index structure.",
+        "Ignoring that symmetry can reduce the effective rank of tensors, changing the cost model.",
+        "Not considering that intermediate storage (memory) may be the real bottleneck, not FLOPs."
+      ]
+    },
+    {
+      id: "diis-residual",
+      question: "DIIS builds a linear combination of previous residual vectors to minimize the norm of the extrapolated residual. Why does minimizing the residual norm not guarantee minimizing the error in the amplitudes? When might DIIS converge to a saddle point instead of the physical solution?",
+      keywords: ["Jacobian", "condition", "ill-conditioned", "eigenvalue", "error", "residual", "saddle", "fixed point", "basin", "damping", "level shift"],
+      followup: {
+        correct: "Exactly. The residual r ≈ J·e where J is the Jacobian. Minimizing ||r|| minimizes ||J e||, not ||e||. If J has small eigenvalues (ill-conditioned), a tiny residual can hide large error in those directions. When might the iteration map have multiple fixed points?",
+        partly: "Good intuition. The residual and error are related by the Jacobian: r = f(t) - t ≈ J (t_exact - t). If J is ill-conditioned, ||r|| can be small while ||e|| is large. What causes multiple fixed points in the CC equations?",
+        notyet: "Hint: The residual is r = RHS(t) - D·t (or f(t) - t). The error is e = t_exact - t. They're related by the Jacobian J = ∂r/∂t. Minimizing ||r|| is minimizing ||J e||. When does ||J e|| ≪ ||e||? And: the CC equations are nonlinear — they can have multiple solutions. When does this happen?"
+      },
+      modelAnswer: "The residual r = f(t) − t (or RHS − D·t). DIIS minimizes ||∑ c_i r_i|| subject to ∑ c_i = 1. This minimizes the residual in the subspace spanned by past residuals. The error e = t_exact − t is related to the residual by the Jacobian J: r ≈ J e. Minimizing ||r|| minimizes ||J e||, not ||e||. If J is ill-conditioned (large condition number), a small residual can correspond to a large error in directions where J has small eigenvalues. DIIS can converge to a saddle point if the iteration map has multiple fixed points and the residual norm is smaller at a saddle point than at the physical solution in the explored subspace. This happens when: (1) the initial guess is poor and the iteration enters the basin of attraction of an unphysical solution; (2) the system has near-degeneracy and the CC equations have multiple solutions (e.g., symmetry-broken UHF references). Level shifting or damping helps avoid this.",
+      misconceptions: [
+        "Thinking DIIS minimizes the energy—it minimizes the residual norm, which is a proxy.",
+        "Believing that if DIIS converges, it must be to the physical solution.",
+        "Not knowing that the residual norm can decrease while the error increases (if J is ill-conditioned)."
+      ]
+    }
+  ]
+};
+
+// ============ TUTOR STATE ============
+let currentQuestion = 0;
+let questionStates = []; // { answered: bool, verdict: string, showAnswer: bool }
+let userAnswers = [];
+
+// ============ INIT ============
+function init() {
+  const container = document.getElementById('questionsContainer');
+  TUTOR_DATA.questions.forEach((q, idx) => {
+    questionStates.push({ answered: false, verdict: null, showAnswer: false });
+    userAnswers.push('');
+    const card = document.createElement('div');
+    card.className = 'question-card';
+    card.id = `q-${idx}`;
+    card.style.display = idx === 0 ? 'block' : 'none';
+    card.innerHTML = `
+      <div class="question-header">
+        <span class="question-badge">Question ${idx + 1}</span>
+        <p class="question-text">${q.question}</p>
+      </div>
+      <div class="answer-area">
+        <textarea class="answer-textarea" id="answer-${idx}" placeholder="Your answer, in your own words..." aria-label="Your answer"></textarea>
+        <button class="check-btn" id="check-${idx}" onclick="checkAnswer(${idx})">Check my answer</button>
+        <div class="hint-box" id="hint-${idx}"><summary>💡 Show hint</summary><div id="hintText-${idx}"></div></div>
+        <div class="feedback" id="feedback-${idx}"></div>
+        <div class="model-answer" id="model-${idx}">
+          <h4>Model answer</h4>
+          <div id="modelText-${idx}"></div>
+          <div class="misconceptions">
+            <h4>Common misconceptions</h4>
+            <ul id="misconceptions-${idx}"></ul>
+          </div>
+        </div>
+      </div>
+    `;
+    container.appendChild(card);
+    
+    // Add enter key handler (Ctrl+Enter)
+    const textarea = card.querySelector('.answer-textarea');
+    textarea.addEventListener('keydown', (e) => {
+      if ((e.metaKey || e.ctrlKey) && e.key === 'Enter') {
+        e.preventDefault();
+        checkAnswer(idx);
+      }
+    });
+  });
+  updateProgress();
+}
+
+function updateProgress() {
+  const answered = questionStates.filter(s => s.answered).length;
+  const total = TUTOR_DATA.questions.length;
+  document.getElementById('progressText').textContent = `Question ${currentQuestion + 1} of ${total} (${answered} completed)`;
+  document.getElementById('progressFill').style.width = `${((currentQuestion + 1) / total) * 100}%`;
+  
+  const nextBtn = document.getElementById('nextBtn');
+  if (currentQuestion === total - 1 && questionStates[currentQuestion].answered) {
+    nextBtn.textContent = 'Finish Tutorial';
+    nextBtn.disabled = false;
+    nextBtn.onclick = finishTutorial;
+  } else if (questionStates[currentQuestion].answered) {
+    nextBtn.textContent = 'Next Question →';
+    nextBtn.disabled = false;
+    nextBtn.onclick = nextQuestion;
+  } else {
+    nextBtn.disabled = true;
+  }
+}
+
+function checkAnswer(idx) {
+  const q = TUTOR_DATA.questions[idx];
+  const textarea = document.getElementById(`answer-${idx}`);
+  const answer = textarea.value.trim();
+  
+  if (!answer) {
+    alert('Please write an answer first.');
+    return;
+  }
+  
+  userAnswers[idx] = answer;
+  const verdict = evaluateAnswer(answer, q.keywords);
+  questionStates[idx] = { answered: true, verdict, showAnswer: false };
+  
+  // Show feedback
+  const feedback = document.getElementById(`feedback-${idx}`);
+  const followup = q.followup[verdict];
+  const verdictLabel = { correct: 'Correct', partly: 'Partly', notyet: 'Not yet' }[verdict];
+  feedback.className = `feedback ${verdict} show`;
+  feedback.innerHTML = `<span class="feedback-verdict">${verdictLabel}</span>${followup}`;
+  
+  // Disable input
+  textarea.disabled = true;
+  document.getElementById(`check-${idx}`).disabled = true;
+  
+  // Show hint box for partly/notyet
+  if (verdict !== 'correct') {
+    document.getElementById(`hint-${idx}`).classList.add('show');
+    document.getElementById(`hintText-${idx}`).textContent = followup;
+  }
+  
+  updateProgress();
+}
+
+function evaluateAnswer(answer, keywords) {
+  const lower = answer.toLowerCase();
+  let matches = 0;
+  keywords.forEach(kw => {
+    if (lower.includes(kw.toLowerCase())) matches++;
+  });
+  // Require at least 2 keyword matches for "correct", 1 for "partly"
+  if (matches >= 2) return 'correct';
+  if (matches >= 1) return 'partly';
+  return 'notyet';
+}
+
+function nextQuestion() {
+  document.getElementById(`q-${currentQuestion}`).style.display = 'none';
+  currentQuestion++;
+  document.getElementById(`q-${currentQuestion}`).style.display = 'block';
+  updateProgress();
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+function finishTutorial() {
+  // Show all model answers
+  TUTOR_DATA.questions.forEach((q, idx) => {
+    questionStates[idx].showAnswer = true;
+    document.getElementById(`modelText-${idx}`).innerHTML = q.modelAnswer.replace(/\n/g, '<br>');
+    const miscList = document.getElementById(`misconceptions-${idx}`);
+    q.misconceptions.forEach(m => {
+      const li = document.createElement('li');
+      li.textContent = m;
+      miscList.appendChild(li);
+    });
+    document.getElementById(`model-${idx}`).classList.add('show');
+    
+    // Add completed badge to question badge
+    const badge = document.querySelector(`#q-${idx} .question-badge`);
+    badge.insertAdjacentHTML('afterend', '<span class="completed-badge">Done</span>');
+  });
+  
+  document.getElementById('progressText').textContent = 'Tutorial complete! Review the model answers below.';
+  document.getElementById('progressFill').style.width = '100%';
+  document.getElementById('nextBtn').style.display = 'none';
+  
+  // Scroll to first unanswered or top
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+// Start
+document.addEventListener('DOMContentLoaded', init);
+</script>
+</body>
+</html>

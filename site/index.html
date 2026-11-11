@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Coupled Cluster Theory for the N-Body Problem</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+<h1>Coupled Cluster Theory for the N-Body Problem</h1>
+<p class="subtitle">A short course for PhD students in Chemistry</p>
+</header>
+<main>
+<section>
+<h2>Welcome</h2>
+<p>
+This three-page course introduces the <strong>coupled cluster (CC) method</strong> as a framework for
+solving the many-body Schrödinger equation—the quantum N-body problem for electrons in molecules.
+It assumes you know second quantization, the Hartree–Fock reference, and basic many-body perturbation theory.
+</p>
+</section>
+
+<section>
+<h2>What you will learn</h2>
+<ul>
+<li><strong>Page 1 (this page):</strong> Why CC? The exponential ansatz, size extensivity, and the linked-cluster theorem.</li>
+<li><strong>Page 2 (<a href="theory.html">theory.html</a>):</strong> The amplitude equations, similarity-transformed Hamiltonian, and CCSD/CCSD(T) in practice.</li>
+<li><strong>Page 3 (<a href="implementation.html">implementation.html</a>):</strong> Tensor contractions, factorization, and what makes CC scale to production calculations.</li>
+<li><strong>Page 4 (<a href="eom-cc.html">eom-cc.html</a>):</strong> Equation-of-Motion CC for excited, open-shell, and charge-transfer states.</li>
+<li><strong>Socratic Tutorial (<a href="tutorial.html">tutorial.html</a>):</strong> Interactive guided questioning — test your understanding with automated feedback (no backend needed).</li>
+</ul>
+</section>
+
+<section>
+<h2>The N-body problem in electronic structure</h2>
+<p>
+The time-independent Schrödinger equation for <em>N</em> electrons in the field of clamped nuclei:
+</p>
+<p class="equation">Ĥ |Ψ⟩ = E |Ψ⟩</p>
+<p>
+with the Hamiltonian in second quantization:
+</p>
+<p class="equation">Ĥ = ∑<sub>pq</sub> h<sub>pq</sub> a<sup>†</sup><sub>p</sub> a<sub>q</sub> + ¼ ∑<sub>pqrs</sub> ⟨pq||rs⟩ a<sup>†</sup><sub>p</sub> a<sup>†</sup><sub>q</sub> a<sub>s</sub> a<sub>r</sub></p>
+<p>
+The Hilbert space dimension grows factorially with system size. Coupled cluster tames this by writing the exact
+wavefunction as an exponential of excitation operators acting on a single Slater determinant |Φ₀⟩ (usually Hartree–Fock):
+</p>
+<p class="equation">|Ψ<sub>CC</sub>⟩ = e<sup>T̂</sup> |Φ₀⟩, &nbsp; T̂ = T̂₁ + T̂₂ + T̂₃ + …</p>
+<p>
+where <code>T̂₁ = ∑<sub>ia</sub> t<sub>i</sub><sup>a</sup> a<sup>†</sup><sub>a</sub> a<sub>i</sub></code> (singles), <code>T̂₂ = ¼ ∑<sub>ijab</sub> t<sub>ij</sub><sup>ab</sup> a<sup>†</sup><sub>a</sub> a<sup>†</sup><sub>b</sub> a<sub>j</sub> a<sub>i</sub></code> (doubles), etc.
+</p>
+</section>
+
+<div class="socratic" data-question="cc-size-extensive">
+<p>Why does the exponential ansatz e<sup>T̂</sup> guarantee size extensivity, whereas a linear CI expansion (1 + T̂₁ + T̂₂ + …) does not?</p>
+</div>
+
+<section>
+<h2>The linked-cluster theorem</h2>
+<p>
+The energy is obtained by projecting the Schrödinger equation onto the reference:
+</p>
+<p class="equation">E = ⟨Φ₀| e<sup>−T̂</sup> Ĥ e<sup>T̂</sup> |Φ₀⟩ = ⟨Φ₀| Ĥ̄ |Φ₀⟩</p>
+<p>
+The similarity-transformed Hamiltonian <code>Ĥ̄ = e<sup>−T̂</sup> Ĥ e<sup>T̂</sup></code> expands via the Baker–Campbell–Hausdorff (BCH) formula.
+Because Ĥ contains at most two-body operators and T̂ is a sum of excitation operators, the BCH series
+<strong>terminates exactly at four nested commutators</strong>:
+</p>
+<p class="equation">Ĥ̄ = Ĥ + [Ĥ, T̂] + ½ [[Ĥ, T̂], T̂] + ⅙ [[[Ĥ, T̂], T̂], T̂] + ¹/₂⁴ [[[[Ĥ, T̂], T̂], T̂], T̂]</p>
+<p>
+Only <em>linked</em> (connected) diagrams survive in the expectation value ⟨Φ₀|Ĥ̄|Φ₀⟩. Unlinked diagrams cancel
+diagram-by-diagram—this is the linked-cluster theorem. It is the algebraic reason CC is size-extensive.
+</p>
+</section>
+
+<div class="socratic" data-question="bch-termination">
+<p>The BCH expansion of e<sup>−T̂</sup> Ĥ e<sup>T̂</sup> terminates at four commutators. What property of Ĥ and T̂ makes this happen, and why would it fail if Ĥ contained three-body operators?</p>
+</div>
+
+<nav class="pagination">
+<a href="theory.html" class="next">Next: The Amplitude Equations →</a>
+</nav>
+</main>
+<script src="socratic.js" defer></script>
+</body>
+</html>
