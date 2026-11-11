@@ -1,0 +1,109 @@
+[
+ {
+  "role": "system",
+  "content": "(the standard system message; tools offered: search_records, read_document, summarize_csv)"
+ },
+ {
+  "role": "user",
+  "content": "Using the instrument log, which condition gave the highest mean reading, and how much higher was it than baseline? Give the numbers you used."
+ },
+ {
+  "role": "assistant",
+  "content": "",
+  "tool_calls": [
+   {
+    "id": "call",
+    "type": "function",
+    "function": {
+     "name": "search_records",
+     "arguments": "{\"query\": \"instrument log\"}"
+    }
+   }
+  ]
+ },
+ {
+  "role": "tool",
+  "tool_call_id": "call",
+  "content": "no matches"
+ },
+ {
+  "role": "assistant",
+  "content": "",
+  "tool_calls": [
+   {
+    "id": "call",
+    "type": "function",
+    "function": {
+     "name": "search_records",
+     "arguments": "{\"query\": \"instrument\"}"
+    }
+   }
+  ]
+ },
+ {
+  "role": "tool",
+  "tool_call_id": "call",
+  "content": "no matches"
+ },
+ {
+  "role": "assistant",
+  "content": "",
+  "tool_calls": [
+   {
+    "id": "call",
+    "type": "function",
+    "function": {
+     "name": "search_records",
+     "arguments": "{\"query\": \"mean reading\"}"
+    }
+   }
+  ]
+ },
+ {
+  "role": "tool",
+  "tool_call_id": "call",
+  "content": "no matches"
+ },
+ {
+  "role": "assistant",
+  "content": "",
+  "tool_calls": [
+   {
+    "id": "call",
+    "type": "function",
+    "function": {
+     "name": "search_records",
+     "arguments": "{\"query\": \"baseline\"}"
+    }
+   }
+  ]
+ },
+ {
+  "role": "tool",
+  "tool_call_id": "call",
+  "content": "no matches"
+ },
+ {
+  "role": "assistant",
+  "content": "",
+  "tool_calls": [
+   {
+    "id": "call",
+    "type": "function",
+    "function": {
+     "name": "search_records",
+     "arguments": ""
+    }
+   }
+  ]
+ },
+ {
+  "role": "tool",
+  "tool_call_id": "call",
+  "content": "error from search_records: search_records() missing 1 required positional argument: 'query'"
+ },
+ {
+  "role": "note",
+  "content": "The next request was rejected by the endpoint (HTTP 400) and the run ended without an answer."
+ }
+]

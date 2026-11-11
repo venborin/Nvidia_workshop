@@ -1,0 +1,11 @@
+Title: No Detectable Effect of Free Pizza on Office Hours Attendance in the First Two Weeks
+Year: 2022
+Field: education research
+
+Several groups have reported that free food brings more students to office hours. If pizza works by lowering the barrier to a first visit, an effect should be visible early, before the usual rise ahead of the first exam. We tested that prediction in the first two weeks of term and at the small end of the incentives reported.
+
+Office hours in an introductory chemistry course were offered to 72 students, split into two groups of 36 by the alphabetical order of their surnames. The first group was told in the syllabus that one slice of pizza would be available to each visitor; the second group was not told. Pizza was available to everyone who came, at two sessions a week in weeks 1 and 2, with a check at each session that the supply never ran out. Attendance was recorded as distinct students who came at least once, by one teaching assistant who did not know which group a student was in.
+
+The share of students who came at least once was 22.2 percent in the group that was told and 19.4 percent in the group that was not, 8 and 7 students, a difference that is well inside the variation we see between terms. Repeat visits were rare in both groups, 2 and 3 students. Questions per visit were the same in both groups. We found no group difference in any measure we recorded, and the study had enough students to detect a 30 percentage point shift in the share attending.
+
+The limitation is that this design cannot rule out an effect that appears later in the term or with a larger incentive. Counting distinct students misses a student who would have come once anyway and came three times for pizza, so an incentive that raises repeat visits without drawing new students would be invisible here. The null result is specific to one slice per visitor, announced in the syllabus, in weeks 1 and 2, counted as distinct students.

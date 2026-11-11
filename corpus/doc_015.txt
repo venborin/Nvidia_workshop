@@ -1,0 +1,11 @@
+Title: Benchmarking Four Variant Calling Pipelines on Simulated and Reference Genomes
+Year: 2021
+Field: genomics
+
+Variant calling pipelines are usually compared on a single reference sample, which rewards tuning to that sample's variant spectrum. We benchmarked four pipelines across a wider set of inputs, including simulated reads with known truth, to separate genuine accuracy differences from fit to a familiar benchmark.
+
+We assembled 12 input datasets: 4 reference samples with published truth sets, 6 simulated read sets generated with known variant catalogs at coverages from 10 to 60 fold, and 2 low coverage sets at 5 fold. Each dataset was processed through 4 pipelines differing in aligner and caller combination, for 48 runs in total, under identical hardware and container versions. Agreement was scored as precision and recall against truth, stratified by variant type and by repeat context.
+
+On single nucleotide variants at 30 fold coverage all four pipelines reached recall above 98.5 percent, and the spread among them was 0.7 percentage points. Insertions and deletions separated the pipelines sharply, with recall ranging from 81.2 to 94.6 percent at the same coverage. The ordering of pipelines on insertions and deletions reversed between reference samples and simulated data for 2 of the 4 pipelines, which indicates that at least part of the apparent advantage on reference samples is specific to those samples. At 5 fold coverage precision fell below 90 percent for every pipeline, and the best performer on high coverage data was the worst at low coverage. Runtime differed by a factor of 6.3 across pipelines for the same input.
+
+Simulated reads are the limitation. Our simulator models sequencing error and fragment length but not the systematic artifacts that drive real false positives, so simulated performance is optimistic in absolute terms for all four pipelines. The reversal in ordering is the result we would defend; the absolute recall figures on simulated data are not directly comparable to the reference sample figures.

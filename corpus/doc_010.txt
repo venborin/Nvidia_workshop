@@ -1,0 +1,11 @@
+Title: Combined Measurement and Kinetic Modeling of Conversion Loss Under Thermal Cycling
+Year: 2025
+Field: chemistry
+
+Neither cycling experiments nor site level calculations alone explain why copper zeolite catalysts lose low temperature nitrogen oxide conversion in a nonlinear way as cycles accumulate. We combined a cycling campaign with a lumped kinetic model of site conversion to test whether a single deactivation pathway accounts for the observed shape.
+
+Cu-MZL-8 at 3.1 weight percent copper was cycled in 4 reactors between 200 and 780 degrees Celsius in a wet stream, with conversion at 220 degrees Celsius measured after each block of 50 cycles out to 750 cycles. In parallel we fit a two state model in which isolated copper sites convert irreversibly to inactive clusters with a rate that depends on peak temperature through an Arrhenius term. The model has 3 adjustable parameters and was fit to 60 conversion measurements.
+
+Measured conversion fell from 91 percent to 82 percent over the first 300 cycles and then to 61 percent by 750 cycles, so the loss accelerates rather than saturating. The fitted model reproduces this shape with an activation energy of 1.05 electron volts, close to the hydrated migration barrier reported from first principles calculations, and it attributes the acceleration to autocatalytic cluster growth rather than to a change in the active site inventory alone. A single pathway is therefore sufficient to explain the curve, and no second mechanism needs to be invoked. Extrapolating the fitted model to a 1500 cycle duty predicts 38 percent retention, with the prediction interval spanning 29 to 48 percent.
+
+The fit is not a validation. Three parameters against one monotone curve is a weak test, and a model with a saturating second site would likely fit the same data within our scatter of 2 percentage points. Discriminating between them would need cycling at two different peak temperatures, which we did not run.

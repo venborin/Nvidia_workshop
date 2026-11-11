@@ -1,0 +1,925 @@
+{
+ "url": "https://api.openalex.org/works/doi:10.1111/gcb.14762?select=id,doi,display_name,publication_year,publication_date,type,authorships,primary_location,biblio,abstract_inverted_index,cited_by_count,open_access,relevance_score",
+ "fetched_utc": "2026-11-09T00:08:29Z",
+ "status": 200,
+ "body": {
+  "id": "https://openalex.org/W2961618348",
+  "doi": "https://doi.org/10.1111/gcb.14762",
+  "display_name": "Deep soil inventories reveal that impacts of cover crops and compost on soil carbon sequestration differ in surface and subsurface soils",
+  "publication_year": 2019,
+  "publication_date": "2019-07-14",
+  "type": "article",
+  "authorships": [
+   {
+    "author_position": "first",
+    "author": {
+     "id": "https://openalex.org/A5072538840",
+     "display_name": "Nicole E. Tautges",
+     "orcid": "https://orcid.org/0000-0003-1708-6966",
+     "observed_orcids": [
+      "https://orcid.org/0000-0003-1708-6966"
+     ]
+    },
+    "institutions": [
+     {
+      "id": "https://openalex.org/I84218800",
+      "display_name": "University of California, Davis",
+      "ror": "https://ror.org/05rrcem69",
+      "country_code": "US",
+      "type": "education",
+      "lineage": [
+       "https://openalex.org/I84218800"
+      ]
+     }
+    ],
+    "countries": [
+     "US"
+    ],
+    "is_corresponding": true,
+    "raw_author_name": "Nicole E. Tautges",
+    "raw_affiliation_strings": [
+     "Agricultural Sustainability Institute, University of California Davis, Davis, California"
+    ],
+    "raw_orcid": "https://orcid.org/0000-0003-1708-6966",
+    "affiliations": [
+     {
+      "raw_affiliation_string": "Agricultural Sustainability Institute, University of California Davis, Davis, California",
+      "institution_ids": [
+       "https://openalex.org/I84218800"
+      ]
+     }
+    ]
+   },
+   {
+    "author_position": "middle",
+    "author": {
+     "id": "https://openalex.org/A5007559754",
+     "display_name": "Jessica L. Chiartas",
+     "orcid": "https://orcid.org/0000-0002-6867-6811",
+     "observed_orcids": [
+      "https://orcid.org/0000-0002-6867-6811"
+     ]
+    },
+    "institutions": [
+     {
+      "id": "https://openalex.org/I84218800",
+      "display_name": "University of California, Davis",
+      "ror": "https://ror.org/05rrcem69",
+      "country_code": "US",
+      "type": "education",
+      "lineage": [
+       "https://openalex.org/I84218800"
+      ]
+     }
+    ],
+    "countries": [
+     "US"
+    ],
+    "is_corresponding": false,
+    "raw_author_name": "Jessica L. Chiartas",
+    "raw_affiliation_strings": [
+     "Department of Land, Air and Water Resources, University of California Davis, Davis, California"
+    ],
+    "raw_orcid": null,
+    "affiliations": [
+     {
+      "raw_affiliation_string": "Department of Land, Air and Water Resources, University of California Davis, Davis, California",
+      "institution_ids": [
+       "https://openalex.org/I84218800"
+      ]
+     }
+    ]
+   },
+   {
+    "author_position": "middle",
+    "author": {
+     "id": "https://openalex.org/A5017277591",
+     "display_name": "Amélie C. M. Gaudin",
+     "orcid": "https://orcid.org/0000-0003-4007-9991",
+     "observed_orcids": [
+      "https://orcid.org/0000-0003-4007-9991"
+     ]
+    },
+    "institutions": [
+     {
+      "id": "https://openalex.org/I84218800",
+      "display_name": "University of California, Davis",
+      "ror": "https://ror.org/05rrcem69",
+      "country_code": "US",
+      "type": "education",
+      "lineage": [
+       "https://openalex.org/I84218800"
+      ]
+     }
+    ],
+    "countries": [
+     "US"
+    ],
+    "is_corresponding": false,
+    "raw_author_name": "Amélie C. M. Gaudin",
+    "raw_affiliation_strings": [
+     "Department of Plant Sciences, University of California Davis, Davis, California"
+    ],
+    "raw_orcid": null,
+    "affiliations": [
+     {
+      "raw_affiliation_string": "Department of Plant Sciences, University of California Davis, Davis, California",
+      "institution_ids": [
+       "https://openalex.org/I84218800"
+      ]
+     }
+    ]
+   },
+   {
+    "author_position": "middle",
+    "author": {
+     "id": null,
+     "display_name": "Anthony T. O'Geen",
+     "orcid": null,
+     "observed_orcids": []
+    },
+    "institutions": [
+     {
+      "id": "https://openalex.org/I84218800",
+      "display_name": "University of California, Davis",
+      "ror": "https://ror.org/05rrcem69",
+      "country_code": "US",
+      "type": "education",
+      "lineage": [
+       "https://openalex.org/I84218800"
+      ]
+     }
+    ],
+    "countries": [
+     "US"
+    ],
+    "is_corresponding": false,
+    "raw_author_name": "Anthony T. O'Geen",
+    "raw_affiliation_strings": [
+     "Department of Land, Air and Water Resources, University of California Davis, Davis, California"
+    ],
+    "raw_orcid": null,
+    "affiliations": [
+     {
+      "raw_affiliation_string": "Department of Land, Air and Water Resources, University of California Davis, Davis, California",
+      "institution_ids": [
+       "https://openalex.org/I84218800"
+      ]
+     }
+    ]
+   },
+   {
+    "author_position": "middle",
+    "author": {
+     "id": null,
+     "display_name": "Israel Herrera",
+     "orcid": null,
+     "observed_orcids": []
+    },
+    "institutions": [
+     {
+      "id": "https://openalex.org/I84218800",
+      "display_name": "University of California, Davis",
+      "ror": "https://ror.org/05rrcem69",
+      "country_code": "US",
+      "type": "education",
+      "lineage": [
+       "https://openalex.org/I84218800"
+      ]
+     }
+    ],
+    "countries": [
+     "US"
+    ],
+    "is_corresponding": false,
+    "raw_author_name": "Israel Herrera",
+    "raw_affiliation_strings": [
+     "Agricultural Sustainability Institute, University of California Davis, Davis, California"
+    ],
+    "raw_orcid": null,
+    "affiliations": [
+     {
+      "raw_affiliation_string": "Agricultural Sustainability Institute, University of California Davis, Davis, California",
+      "institution_ids": [
+       "https://openalex.org/I84218800"
+      ]
+     }
+    ]
+   },
+   {
+    "author_position": "last",
+    "author": {
+     "id": "https://openalex.org/A5059528569",
+     "display_name": "Kate M. Scow",
+     "orcid": "https://orcid.org/0000-0002-2649-1122",
+     "observed_orcids": [
+      "https://orcid.org/0000-0002-2649-1122"
+     ]
+    },
+    "institutions": [
+     {
+      "id": "https://openalex.org/I84218800",
+      "display_name": "University of California, Davis",
+      "ror": "https://ror.org/05rrcem69",
+      "country_code": "US",
+      "type": "education",
+      "lineage": [
+       "https://openalex.org/I84218800"
+      ]
+     }
+    ],
+    "countries": [
+     "US"
+    ],
+    "is_corresponding": false,
+    "raw_author_name": "Kate M. Scow",
+    "raw_affiliation_strings": [
+     "Agricultural Sustainability Institute, University of California Davis, Davis, California",
+     "Department of Land, Air and Water Resources, University of California Davis, Davis, California"
+    ],
+    "raw_orcid": null,
+    "affiliations": [
+     {
+      "raw_affiliation_string": "Agricultural Sustainability Institute, University of California Davis, Davis, California",
+      "institution_ids": [
+       "https://openalex.org/I84218800"
+      ]
+     },
+     {
+      "raw_affiliation_string": "Department of Land, Air and Water Resources, University of California Davis, Davis, California",
+      "institution_ids": [
+       "https://openalex.org/I84218800"
+      ]
+     }
+    ]
+   }
+  ],
+  "primary_location": {
+   "id": "doi:10.1111/gcb.14762",
+   "doi": "https://doi.org/10.1111/gcb.14762",
+   "is_oa": false,
+   "landing_page_url": "https://doi.org/10.1111/gcb.14762",
+   "pdf_url": null,
+   "source": {
+    "id": "https://openalex.org/S74970393",
+    "display_name": "Global Change Biology",
+    "issn_l": "1354-1013",
+    "issn": [
+     "1354-1013",
+     "1365-2486"
+    ],
+    "is_oa": false,
+    "is_in_doaj": false,
+    "is_core": true,
+    "listed_in": [
+     "anvur-class-a",
+     "anvur-scientific",
+     "cwts-core",
+     "dongbi-a",
+     "jufo-3",
+     "ki-jl-2",
+     "medline",
+     "norway-2",
+     "poland-200",
+     "russia-white-list-1",
+     "vabb-shw"
+    ],
+    "host_organization": "https://openalex.org/P4310320595",
+    "host_organization_name": "Wiley",
+    "host_organization_lineage": [
+     "https://openalex.org/P4310320595"
+    ],
+    "host_organization_lineage_names": [
+     "Wiley"
+    ],
+    "type": "journal"
+   },
+   "license": null,
+   "license_id": null,
+   "version": "publishedVersion",
+   "is_accepted": true,
+   "is_published": true,
+   "raw_source_name": "Global Change Biology",
+   "raw_type": "journal-article"
+  },
+  "biblio": {
+   "volume": "25",
+   "issue": "11",
+   "first_page": "3753",
+   "last_page": "3766"
+  },
+  "abstract_inverted_index": {
+   "Increasing": [
+    0
+   ],
+   "soil": [
+    1,
+    15,
+    116,
+    204,
+    219,
+    238,
+    249,
+    256
+   ],
+   "organic": [
+    2,
+    6
+   ],
+   "carbon": [
+    3,
+    243
+   ],
+   "(SOC)": [
+    4
+   ],
+   "via": [
+    5
+   ],
+   "inputs": [
+    7
+   ],
+   "is": [
+    8
+   ],
+   "a": [
+    9,
+    163
+   ],
+   "key": [
+    10
+   ],
+   "strategy": [
+    11
+   ],
+   "for": [
+    12,
+    255
+   ],
+   "increasing": [
+    13
+   ],
+   "long-term": [
+    14,
+    31
+   ],
+   "C": [
+    16,
+    117,
+    205,
+    220,
+    257,
+    272
+   ],
+   "storage": [
+    17
+   ],
+   "and": [
+    18,
+    24,
+    45,
+    58,
+    104,
+    125,
+    148,
+    259
+   ],
+   "improving": [
+    19
+   ],
+   "the": [
+    20,
+    53,
+    56,
+    78,
+    85,
+    92,
+    154,
+    176,
+    188,
+    207,
+    235,
+    241,
+    266
+   ],
+   "climate": [
+    21,
+    36
+   ],
+   "change": [
+    22,
+    90
+   ],
+   "mitigation": [
+    23
+   ],
+   "adaptation": [
+    25
+   ],
+   "potential": [
+    26,
+    253
+   ],
+   "of": [
+    27,
+    39,
+    55,
+    94,
+    115,
+    132,
+    160,
+    196,
+    248,
+    268
+   ],
+   "agricultural": [
+    28
+   ],
+   "systems.": [
+    29,
+    48
+   ],
+   "A": [
+    30
+   ],
+   "trial": [
+    32
+   ],
+   "in": [
+    33,
+    43,
+    74,
+    84,
+    175,
+    187,
+    193,
+    206,
+    217,
+    226,
+    230,
+    245
+   ],
+   "California's": [
+    34
+   ],
+   "Mediterranean": [
+    35
+   ],
+   "revealed": [
+    37
+   ],
+   "impacts": [
+    38
+   ],
+   "management": [
+    40,
+    269
+   ],
+   "on": [
+    41,
+    271
+   ],
+   "SOC": [
+    42,
+    49,
+    83,
+    138,
+    168,
+    231
+   ],
+   "maize-tomato": [
+    44,
+    136
+   ],
+   "wheat-fallow": [
+    46,
+    86
+   ],
+   "cropping": [
+    47
+   ],
+   "was": [
+    50,
+    112
+   ],
+   "measured": [
+    51,
+    203
+   ],
+   "at": [
+    52,
+    59,
+    62,
+    119
+   ],
+   "initiation": [
+    54
+   ],
+   "experiment": [
+    57
+   ],
+   "year": [
+    60
+   ],
+   "19,": [
+    61
+   ],
+   "five": [
+    63
+   ],
+   "depth": [
+    64,
+    120
+   ],
+   "increments": [
+    65
+   ],
+   "down": [
+    66
+   ],
+   "to": [
+    67,
+    162,
+    251,
+    262
+   ],
+   "2": [
+    68,
+    80,
+    155,
+    236
+   ],
+   "m,": [
+    69
+   ],
+   "taking": [
+    70
+   ],
+   "into": [
+    71
+   ],
+   "account": [
+    72
+   ],
+   "changes": [
+    73
+   ],
+   "bulk": [
+    75
+   ],
+   "density.": [
+    76
+   ],
+   "Across": [
+    77
+   ],
+   "entire": [
+    79
+   ],
+   "m": [
+    81,
+    156,
+    237
+   ],
+   "profile,": [
+    82
+   ],
+   "systems": [
+    87
+   ],
+   "did": [
+    88
+   ],
+   "not": [
+    89
+   ],
+   "with": [
+    91,
+    108,
+    121,
+    145,
+    222
+   ],
+   "addition": [
+    93,
+    159
+   ],
+   "N": [
+    95,
+    123
+   ],
+   "fertilizer,": [
+    96
+   ],
+   "winter": [
+    97
+   ],
+   "cover": [
+    98
+   ],
+   "crops": [
+    99
+   ],
+   "(WCC),": [
+    100
+   ],
+   "or": [
+    101
+   ],
+   "irrigation": [
+    102
+   ],
+   "alone": [
+    103
+   ],
+   "decreased": [
+    105,
+    181
+   ],
+   "by": [
+    106,
+    140,
+    170,
+    182
+   ],
+   "5.6%": [
+    107
+   ],
+   "no": [
+    109
+   ],
+   "inputs.": [
+    110
+   ],
+   "There": [
+    111
+   ],
+   "some": [
+    113
+   ],
+   "evidence": [
+    114
+   ],
+   "gains": [
+    118
+   ],
+   "both": [
+    122,
+    146
+   ],
+   "fertilizer": [
+    124
+   ],
+   "irrigation,": [
+    126
+   ],
+   "though": [
+    127
+   ],
+   "high": [
+    128
+   ],
+   "variation": [
+    129
+   ],
+   "precluded": [
+    130
+   ],
+   "detection": [
+    131
+   ],
+   "significant": [
+    133,
+    228
+   ],
+   "changes.": [
+    134
+   ],
+   "In": [
+    135
+   ],
+   "rotations,": [
+    137
+   ],
+   "increased": [
+    139,
+    167,
+    221
+   ],
+   "12.6%": [
+    141
+   ],
+   "(21.8": [
+    142
+   ],
+   "Mg": [
+    143,
+    173,
+    185,
+    198
+   ],
+   "C/ha)": [
+    144,
+    174,
+    186
+   ],
+   "WCC": [
+    147,
+    161,
+    223
+   ],
+   "composted": [
+    149
+   ],
+   "poultry": [
+    150
+   ],
+   "manure": [
+    151
+   ],
+   "inputs,": [
+    152
+   ],
+   "across": [
+    153
+   ],
+   "profile.": [
+    157,
+    239
+   ],
+   "The": [
+    158
+   ],
+   "conventionally": [
+    164
+   ],
+   "managed": [
+    165
+   ],
+   "system": [
+    166
+   ],
+   "stocks": [
+    169
+   ],
+   "3.5%": [
+    171
+   ],
+   "(1.44": [
+    172
+   ],
+   "0-30": [
+    177
+   ],
+   "cm": [
+    178,
+    190
+   ],
+   "layer,": [
+    179,
+    191
+   ],
+   "but": [
+    180
+   ],
+   "10.8%": [
+    183
+   ],
+   "(14.86": [
+    184
+   ],
+   "30-200": [
+    189
+   ],
+   "resulting": [
+    192
+   ],
+   "overall": [
+    194
+   ],
+   "losses": [
+    195,
+    229
+   ],
+   "13.4": [
+    197
+   ],
+   "C/ha.": [
+    199
+   ],
+   "If": [
+    200
+   ],
+   "we": [
+    201,
+    211
+   ],
+   "only": [
+    202
+   ],
+   "top": [
+    208
+   ],
+   "30": [
+    209
+   ],
+   "cm,": [
+    210
+   ],
+   "would": [
+    212
+   ],
+   "have": [
+    213
+   ],
+   "assumed": [
+    214
+   ],
+   "an": [
+    215
+   ],
+   "increase": [
+    216
+   ],
+   "total": [
+    218
+   ],
+   "alone,": [
+    224
+   ],
+   "whereas": [
+    225
+   ],
+   "reality": [
+    227
+   ],
+   "occurred": [
+    232
+   ],
+   "when": [
+    233
+   ],
+   "considering": [
+    234
+   ],
+   "Ignoring": [
+    240
+   ],
+   "subsoil": [
+    242
+   ],
+   "dynamics": [
+    244
+   ],
+   "deeper": [
+    246
+   ],
+   "layers": [
+    247
+   ],
+   "fails": [
+    250
+   ],
+   "recognize": [
+    252
+   ],
+   "opportunities": [
+    254
+   ],
+   "sequestration,": [
+    258
+   ],
+   "may": [
+    260
+   ],
+   "lead": [
+    261
+   ],
+   "false": [
+    263
+   ],
+   "conclusions": [
+    264
+   ],
+   "about": [
+    265
+   ],
+   "impact": [
+    267
+   ],
+   "practices": [
+    270
+   ],
+   "sequestration.": [
+    273
+   ]
+  },
+  "cited_by_count": 292,
+  "open_access": {
+   "is_oa": true,
+   "oa_status": "green",
+   "oa_url": "https://escholarship.org/content/qt0bv4b9xw/qt0bv4b9xw.pdf?t=q2b9uq",
+   "any_repository_has_fulltext": true
+  }
+ }
+}

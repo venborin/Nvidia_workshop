@@ -1,0 +1,15 @@
+{
+  "query": "cover crops soil organic carbon",
+  "note": "Saved answer (06_build/digest/fixtures/no-abstract.json): two INVENTED records with no abstract and no DOI, for testing only.",
+  "error": null,
+  "date_utc": "2026-11-08T00:00:00Z",
+  "records": [
+    {"title": "INVENTED test record: winter rye and soil carbon on two Oklahoma farms", "year": 2026,
+     "doi": null, "openalex_id": "https://openalex.org/W0000000001", "venue": "Test Journal of Nothing",
+     "authors": [{"name": "A. Example", "family": "Example"}], "abstract": null},
+    {"title": "INVENTED test record: a second paper with no abstract", "year": 2026,
+     "doi": null, "openalex_id": "https://openalex.org/W0000000002", "venue": null,
+     "authors": [{"name": "B. Sample", "family": "Sample"}, {"name": "C. Placeholder", "family": "Placeholder"}],
+     "abstract": null}
+  ]
+}

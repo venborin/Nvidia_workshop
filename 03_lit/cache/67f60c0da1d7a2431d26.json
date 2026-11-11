@@ -1,0 +1,358 @@
+{
+ "url": "https://api.crossref.org/works/10.1038/s41598-020-69407-y",
+ "fetched_utc": "2026-11-06T14:34:35Z",
+ "status": 200,
+ "body": {
+  "status": "ok",
+  "message-type": "work",
+  "message-version": "1.0.0",
+  "message": {
+   "indexed": {
+    "date-parts": [
+     [
+      2026,
+      2,
+      3
+     ]
+    ],
+    "date-time": "2026-02-03T17:36:56Z",
+    "timestamp": 1770140216590,
+    "version": "3.49.0"
+   },
+   "reference-count": 27,
+   "publisher": "Springer Science and Business Media LLC",
+   "issue": "1",
+   "license": [
+    {
+     "start": {
+      "date-parts": [
+       [
+        2020,
+        7,
+        28
+       ]
+      ],
+      "date-time": "2020-07-28T00:00:00Z",
+      "timestamp": 1595894400000
+     },
+     "content-version": "tdm",
+     "delay-in-days": 0,
+     "URL": "https://creativecommons.org/licenses/by/4.0"
+    },
+    {
+     "start": {
+      "date-parts": [
+       [
+        2020,
+        7,
+        28
+       ]
+      ],
+      "date-time": "2020-07-28T00:00:00Z",
+      "timestamp": 1595894400000
+     },
+     "content-version": "vor",
+     "delay-in-days": 0,
+     "URL": "https://creativecommons.org/licenses/by/4.0"
+    }
+   ],
+   "funder": [
+    {
+     "DOI": "10.13039/501100010038",
+     "name": "Earmarked Fund for China Agriculture Research System",
+     "doi-asserted-by": "crossref",
+     "award": [
+      "CARS-01-26"
+     ],
+     "award-info": [
+      {
+       "award-number": [
+        "CARS-01-26"
+       ]
+      }
+     ],
+     "id": [
+      {
+       "id": "10.13039/501100010038",
+       "id-type": "DOI",
+       "asserted-by": "crossref"
+      }
+     ]
+    },
+    {
+     "name": "the China-UK joint Red Soil Critical Zone project from the National Natural Science Foundation of China",
+     "award": [
+      "41571130053"
+     ],
+     "award-info": [
+      {
+       "award-number": [
+        "41571130053"
+       ]
+      }
+     ]
+    }
+   ],
+   "content-domain": {
+    "domain": [
+     "link.springer.com"
+    ],
+    "crossmark-restriction": false
+   },
+   "short-container-title": [
+    "Sci Rep"
+   ],
+   "abstract": "<jats:title>Abstract</jats:title><jats:p>Using symbiotic farming methods [cover crops and chicken grazing (+ C)] in a winter fallow field, we found that the soil organic matter and total nitrogen of the + C treatment were 5.2% and 26.6% higher, respectively, than those of a treatment with cover crops and no chicken grazing (− C). The annual rice grain yield of the + C treatment was 3.8% higher than that of the − C treatment and 12.3% higher than that of the bare fallow field (CK), while the annual CH<jats:sub>4</jats:sub> emissions of the + C treatment were 26.9% lower than those of the − C treatment and 10.6% lower than those of the CK treatment. The 100-year global warming potential of the + C treatment was 6.2% lower than that of the − C treatment. Therefore, the use of winter cover crops and chicken grazing in a winter fallow field was effective at reducing CH<jats:sub>4</jats:sub> emissions and significantly improving soil nutrients and rice yield.</jats:p>",
+   "DOI": "10.1038/s41598-020-69407-y",
+   "type": "journal-article",
+   "created": {
+    "date-parts": [
+     [
+      2020,
+      7,
+      28
+     ]
+    ],
+    "date-time": "2020-07-28T10:04:50Z",
+    "timestamp": 1595930690000
+   },
+   "update-policy": "https://doi.org/10.1007/springer_crossmark_policy",
+   "source": "Crossref",
+   "is-referenced-by-count": 9,
+   "title": [
+    "Cover crops and chicken grazing in a winter fallow field improve soil carbon and nitrogen contents and decrease methane emissions"
+   ],
+   "prefix": "10.1038",
+   "volume": "10",
+   "author": [
+    {
+     "ORCID": "https://orcid.org/0000-0001-5988-8356",
+     "authenticated-orcid": false,
+     "given": "Huabin",
+     "family": "Zheng",
+     "sequence": "first",
+     "affiliation": [],
+     "role": [
+      {
+       "role": "author",
+       "vocabulary": "crossref"
+      }
+     ]
+    },
+    {
+     "given": "Linhong",
+     "family": "Zhou",
+     "sequence": "additional",
+     "affiliation": [],
+     "role": [
+      {
+       "role": "author",
+       "vocabulary": "crossref"
+      }
+     ]
+    },
+    {
+     "given": "Jiabing",
+     "family": "Wei",
+     "sequence": "additional",
+     "affiliation": [],
+     "role": [
+      {
+       "role": "author",
+       "vocabulary": "crossref"
+      }
+     ]
+    },
+    {
+     "given": "Qiyuan",
+     "family": "Tang",
+     "sequence": "additional",
+     "affiliation": [],
+     "role": [
+      {
+       "role": "author",
+       "vocabulary": "crossref"
+      }
+     ]
+    },
+    {
+     "given": "Yingbin",
+     "family": "Zou",
+     "sequence": "additional",
+     "affiliation": [],
+     "role": [
+      {
+       "role": "author",
+       "vocabulary": "crossref"
+      }
+     ]
+    },
+    {
+     "given": "Jianwu",
+     "family": "Tang",
+     "sequence": "additional",
+     "affiliation": [],
+     "role": [
+      {
+       "role": "author",
+       "vocabulary": "crossref"
+      }
+     ]
+    },
+    {
+     "given": "Huaqin",
+     "family": "Xu",
+     "sequence": "additional",
+     "affiliation": [],
+     "role": [
+      {
+       "role": "author",
+       "vocabulary": "crossref"
+      }
+     ]
+    }
+   ],
+   "member": "297",
+   "published-online": {
+    "date-parts": [
+     [
+      2020,
+      7,
+      28
+     ]
+    ]
+   },
+   "container-title": [
+    "Scientific Reports"
+   ],
+   "original-title": [],
+   "language": "en",
+   "link": [
+    {
+     "URL": "https://www.nature.com/articles/s41598-020-69407-y.pdf",
+     "content-type": "application/pdf",
+     "content-version": "vor",
+     "intended-application": "text-mining"
+    },
+    {
+     "URL": "https://www.nature.com/articles/s41598-020-69407-y",
+     "content-type": "text/html",
+     "content-version": "vor",
+     "intended-application": "text-mining"
+    },
+    {
+     "URL": "https://www.nature.com/articles/s41598-020-69407-y.pdf",
+     "content-type": "application/pdf",
+     "content-version": "vor",
+     "intended-application": "similarity-checking"
+    }
+   ],
+   "deposited": {
+    "date-parts": [
+     [
+      2022,
+      12,
+      6
+     ]
+    ],
+    "date-time": "2022-12-06T14:46:20Z",
+    "timestamp": 1670337980000
+   },
+   "score": 1,
+   "resource": {
+    "primary": {
+     "URL": "https://www.nature.com/articles/s41598-020-69407-y"
+    }
+   },
+   "subtitle": [],
+   "short-title": [],
+   "issued": {
+    "date-parts": [
+     [
+      2020,
+      7,
+      28
+     ]
+    ]
+   },
+   "references-count": 27,
+   "journal-issue": {
+    "issue": "1",
+    "published-online": {
+     "date-parts": [
+      [
+       2020,
+       12
+      ]
+     ]
+    }
+   },
+   "alternative-id": [
+    "69407"
+   ],
+   "URL": "https://doi.org/10.1038/s41598-020-69407-y",
+   "relation": {},
+   "ISSN": [
+    "2045-2322"
+   ],
+   "issn-type": [
+    {
+     "value": "2045-2322",
+     "type": "electronic"
+    }
+   ],
+   "subject": [],
+   "published": {
+    "date-parts": [
+     [
+      2020,
+      7,
+      28
+     ]
+    ]
+   },
+   "assertion": [
+    {
+     "value": "16 July 2019",
+     "order": 1,
+     "name": "received",
+     "label": "Received",
+     "group": {
+      "name": "ArticleHistory",
+      "label": "Article History"
+     }
+    },
+    {
+     "value": "7 July 2020",
+     "order": 2,
+     "name": "accepted",
+     "label": "Accepted",
+     "group": {
+      "name": "ArticleHistory",
+      "label": "Article History"
+     }
+    },
+    {
+     "value": "28 July 2020",
+     "order": 3,
+     "name": "first_online",
+     "label": "First Online",
+     "group": {
+      "name": "ArticleHistory",
+      "label": "Article History"
+     }
+    },
+    {
+     "value": "The authors declare no competing interests.",
+     "order": 1,
+     "name": "Ethics",
+     "group": {
+      "name": "EthicsHeading",
+      "label": "Competing interests"
+     }
+    }
+   ],
+   "article-number": "12607"
+  }
+ }
+}

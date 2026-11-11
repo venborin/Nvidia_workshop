@@ -1,0 +1,34 @@
+# Your own documents for the labs. They stay in your Codespace.
+mine/*
+
+# What the labs write. Built from your documents, so it can hold their text;
+# kept out of git so it is never committed by accident.
+03_table/records.jsonl
+03_table/records.unusable*.jsonl
+03_table/evidence.html
+03_table/checked.txt
+**/trace*.json
+
+# Everything the stops write, built from your own files: never committed.
+# To show something, copy it into site/share/ (public on your site); or download
+# it all with: bash export.sh
+results/*
+!results/README.md
+results-*.zip
+
+# The website OpenClaw builds: served from the Codespace, never committed.
+# bash publish-site.sh puts it on GitHub Pages instead.
+site/
+
+# Secrets: nothing with a key in it belongs in git.
+.env
+.env.*
+*.key
+
+# Junk
+__pycache__/
+.ipynb_checkpoints/
+.DS_Store
+
+# Keep the folder and its note, nothing else in it.
+!mine/README.md

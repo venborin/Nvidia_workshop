@@ -1,0 +1,11 @@
+Title: Free Pizza Increases Office Hours Attendance in Introductory Statistics
+Year: 2021
+Field: education research
+
+Students who come to office hours tend to do better in introductory courses, but most never come. We tested whether a cheap incentive, free pizza, would bring more of them in.
+
+The course had eight lab sections, 236 students in all, and every section shared the same office hours, three sessions a week. Before week 5, the four afternoon lab sections, 121 students, were told that pizza would be served; the four morning lab sections, 115 students, received no announcement. Pizza was then available to everyone who came, at all nine sessions in weeks 5 through 7. Two teaching assistants who did not know which sections had been told counted attendance from the sign-in sheets, where each student wrote their section.
+
+Across the nine sessions, attendance averaged 7.6 students per session from the afternoon sections and 4.1 from the morning sections, an increase of 85 percent. These are visits, not distinct students: a student who came to three sessions was counted three times. The two assistants' counts agreed within one student per session. Students from the afternoon sections asked about as many questions per visit as the others, so the result is not explained by students coming only to eat. The pizza cost $412.
+
+The main limitation is that attendance is not learning. Three weeks of sign-in sheets cannot show whether the extra visitors understood more. Resolving that requires comparing exam scores between the two groups, which we plan to do at the end of the term.

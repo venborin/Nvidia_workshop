@@ -1,0 +1,4 @@
+kind,column,matched to,matched,mean_err,max_err,pct_range,median_rel,extra,duplicates
+x axis,time (min),Time (min),60/60,0.0,0.0,0.0,,1,0
+series,control (absorbance),Control (Absorbance at 600 nm),60/60,0.0395,0.144,6.3,4.7,,
+series,treated (absorbance),Treated (Absorbance at 600 nm),60/60,0.0605,0.148,9.6,9.8,,

@@ -1,0 +1,308 @@
+{
+ "url": "https://api.crossref.org/works/10.1111/gcb.15680",
+ "fetched_utc": "2026-11-08T20:21:25Z",
+ "status": 200,
+ "body": {
+  "status": "ok",
+  "message-type": "work",
+  "message-version": "1.0.0",
+  "message": {
+   "indexed": {
+    "date-parts": [
+     [
+      2026,
+      11,
+      5
+     ]
+    ],
+    "date-time": "2026-11-05T03:41:00Z",
+    "timestamp": 1793850060604,
+    "version": "4.6.1"
+   },
+   "reference-count": 73,
+   "publisher": "Wiley",
+   "issue": "16",
+   "license": [
+    {
+     "start": {
+      "date-parts": [
+       [
+        2021,
+        6,
+        7
+       ]
+      ],
+      "date-time": "2021-06-07T00:00:00Z",
+      "timestamp": 1623024000000
+     },
+     "content-version": "vor",
+     "delay-in-days": 0,
+     "URL": "http://creativecommons.org/licenses/by-nc-nd/4.0/"
+    }
+   ],
+   "content-domain": {
+    "domain": [
+     "onlinelibrary.wiley.com"
+    ],
+    "crossmark-restriction": true
+   },
+   "short-container-title": [
+    "Global Change Biology"
+   ],
+   "published-print": {
+    "date-parts": [
+     [
+      2021,
+      8
+     ]
+    ]
+   },
+   "abstract": "<jats:title>Abstract</jats:title><jats:p>Over the last 200 years, conversion of non‐cultivated land for agriculture has substantially reduced global soil organic carbon (SOC) stocks in upper soil layers. Nevertheless, practices such as no‐ or reduced tillage, application of organic soil amendments, and maintenance of continuous cover can increase SOC in agricultural fields. While these management practices have been well studied, the effects on SOC of cropping systems that incorporate irrigation are poorly understood. Given the large, and expanding, agricultural landbase under irrigation across the globe, this is a critical knowledge gap for climate change mitigation. We undertook a systematic literature review and subsequent meta‐analysis of data from studies that examined changes in SOC on irrigated agricultural sites through time. We investigated changes in SOC by climate (aridity), soil texture, and irrigation method with the following objectives: (i) to examine the impact of irrigated agriculture on SOC storage; and (ii) to identify the conditions under which irrigated agriculture is most likely to enhance SOC. Overall, irrigated agriculture increased SOC stocks by 5.9%, with little effect of study length (2–47 years). However, changes in SOC varied by climate and soil depth, with the greatest increase in SOC observed on irrigated semi‐arid sites at the 0–10 cm depth (14.8%). Additionally, SOC increased in irrigated fine‐ and medium‐textured soils but not coarse‐textured soils. Furthermore, while there was no overall change to SOC in flood/furrow irrigated sites, SOC tended to increase in sprinkler irrigated sites, and decrease in drip irrigated sites, especially at depths below 10 cm. This work sheds light on the nuances of SOC change across irrigated agricultural systems, highlights the importance of studying SOC storage in deeper soils, and will help guide future research on the impacts of irrigated agriculture on SOC.</jats:p>",
+   "DOI": "10.1111/gcb.15680",
+   "type": "journal-article",
+   "created": {
+    "date-parts": [
+     [
+      2021,
+      5,
+      16
+     ]
+    ],
+    "date-time": "2021-05-16T06:35:40Z",
+    "timestamp": 1621146940000
+   },
+   "page": "3898-3910",
+   "update-policy": "https://doi.org/10.1002/crossmark_policy",
+   "source": "Crossref",
+   "is-referenced-by-count": 143,
+   "title": [
+    "Soil organic carbon in irrigated agricultural systems: A meta‐analysis"
+   ],
+   "prefix": "10.1111",
+   "volume": "27",
+   "author": [
+    {
+     "ORCID": "https://orcid.org/0000-0002-7311-3159",
+     "authenticated-orcid": false,
+     "given": "David",
+     "family": "Emde",
+     "sequence": "first",
+     "affiliation": [
+      {
+       "name": "Biology Department The University of British Columbia Okanagan Kelowna BC Canada"
+      }
+     ],
+     "role": [
+      {
+       "vocabulary": "crossref",
+       "role": "author"
+      }
+     ]
+    },
+    {
+     "given": "Kirsten D.",
+     "family": "Hannam",
+     "sequence": "additional",
+     "affiliation": [
+      {
+       "name": "Agriculture and Agri‐Food Canada Summerland Research and Development Centre Summerland BC Canada"
+      }
+     ],
+     "role": [
+      {
+       "vocabulary": "crossref",
+       "role": "author"
+      }
+     ]
+    },
+    {
+     "given": "Ilka",
+     "family": "Most",
+     "sequence": "additional",
+     "affiliation": [
+      {
+       "name": "Biology Department The University of British Columbia Okanagan Kelowna BC Canada"
+      }
+     ],
+     "role": [
+      {
+       "vocabulary": "crossref",
+       "role": "author"
+      }
+     ]
+    },
+    {
+     "given": "Louise M.",
+     "family": "Nelson",
+     "sequence": "additional",
+     "affiliation": [
+      {
+       "name": "Biology Department The University of British Columbia Okanagan Kelowna BC Canada"
+      }
+     ],
+     "role": [
+      {
+       "vocabulary": "crossref",
+       "role": "author"
+      }
+     ]
+    },
+    {
+     "given": "Melanie D.",
+     "family": "Jones",
+     "sequence": "additional",
+     "affiliation": [
+      {
+       "name": "Biology Department The University of British Columbia Okanagan Kelowna BC Canada"
+      }
+     ],
+     "role": [
+      {
+       "vocabulary": "crossref",
+       "role": "author"
+      }
+     ]
+    }
+   ],
+   "member": "311",
+   "published-online": {
+    "date-parts": [
+     [
+      2021,
+      6,
+      7
+     ]
+    ]
+   },
+   "container-title": [
+    "Global Change Biology"
+   ],
+   "original-title": [],
+   "language": "en",
+   "link": [
+    {
+     "URL": "https://onlinelibrary.wiley.com/doi/pdf/10.1111/gcb.15680",
+     "content-type": "application/pdf",
+     "content-version": "vor",
+     "intended-application": "text-mining"
+    },
+    {
+     "URL": "https://onlinelibrary.wiley.com/doi/full-xml/10.1111/gcb.15680",
+     "content-type": "application/xml",
+     "content-version": "vor",
+     "intended-application": "text-mining"
+    },
+    {
+     "URL": "https://onlinelibrary.wiley.com/doi/pdf/10.1111/gcb.15680",
+     "content-type": "unspecified",
+     "content-version": "vor",
+     "intended-application": "similarity-checking"
+    }
+   ],
+   "deposited": {
+    "date-parts": [
+     [
+      2023,
+      8,
+      29
+     ]
+    ],
+    "date-time": "2023-08-29T19:45:49Z",
+    "timestamp": 1693338349000
+   },
+   "score": 1,
+   "resource": {
+    "primary": {
+     "URL": "https://onlinelibrary.wiley.com/doi/10.1111/gcb.15680"
+    }
+   },
+   "subtitle": [],
+   "short-title": [],
+   "issued": {
+    "date-parts": [
+     [
+      2021,
+      6,
+      7
+     ]
+    ]
+   },
+   "references-count": 73,
+   "journal-issue": {
+    "issue": "16",
+    "published-print": {
+     "date-parts": [
+      [
+       2021,
+       8
+      ]
+     ]
+    }
+   },
+   "alternative-id": [
+    "10.1111/gcb.15680"
+   ],
+   "URL": "https://doi.org/10.1111/gcb.15680",
+   "archive": [
+    "Portico"
+   ],
+   "relation": {},
+   "ISSN": [
+    "1354-1013",
+    "1365-2486"
+   ],
+   "issn-type": [
+    {
+     "value": "1354-1013",
+     "type": "print"
+    },
+    {
+     "value": "1365-2486",
+     "type": "electronic"
+    }
+   ],
+   "subject": [],
+   "published": {
+    "date-parts": [
+     [
+      2021,
+      6,
+      7
+     ]
+    ]
+   },
+   "assertion": [
+    {
+     "value": "2020-10-28",
+     "order": 0,
+     "name": "received",
+     "label": "Received",
+     "group": {
+      "name": "publication_history",
+      "label": "Publication History"
+     }
+    },
+    {
+     "value": "2021-04-20",
+     "order": 1,
+     "name": "accepted",
+     "label": "Accepted",
+     "group": {
+      "name": "publication_history",
+      "label": "Publication History"
+     }
+    },
+    {
+     "value": "2021-06-07",
+     "order": 2,
+     "name": "published",
+     "label": "Published",
+     "group": {
+      "name": "publication_history",
+      "label": "Publication History"
+     }
+    }
+   ]
+  }
+ }
+}

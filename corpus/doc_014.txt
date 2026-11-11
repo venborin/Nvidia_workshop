@@ -1,0 +1,11 @@
+Title: How County Emergency Managers Interpret and Use Flood Model Output
+Year: 2024
+Field: engineering
+
+Flood modeling groups rarely learn how their output is read once it leaves them. We interviewed county emergency managers who had received street level flood simulations during active events, to understand what they did with the maps and where the maps failed them as decision aids.
+
+We conducted semistructured interviews with 23 emergency managers across 14 counties, each lasting between 45 and 80 minutes, plus 4 follow up interviews after a major event. Transcripts were coded by two analysts, who reached agreement on 86 percent of code assignments before reconciliation. We also collected 31 artifacts, mostly annotated printouts and screenshots of the maps as they were actually shared internally.
+
+Three patterns dominated. First, managers rarely used the depth values at all. Of the 23, 19 described using the maps to decide which roads to close and said they treated any shaded cell as impassable regardless of the depth shown, because the operational threshold is a judgment about vehicles rather than about water. Second, uncertainty display was actively unwelcome. Managers described uncertainty bands as something they could not put in front of a sheriff, and 15 of 23 said they would crop or simplify a map before sharing it. Third, timing mattered more than resolution. Every manager who had received a simulation during an event mentioned the delay between the rainfall observation and the map, and 11 said a coarser map delivered 30 minutes earlier would have been more useful than the one they got.
+
+The sample is drawn from counties that had already chosen to receive model output, so it describes managers predisposed to use it. Managers who ignored or rejected the maps entirely are absent, and their reasons are likely different from the frustrations reported here. The interviews also rely on recall of decisions made under pressure, which the annotated artifacts only partly corroborate.

@@ -1,0 +1,12 @@
+# A TEST BIBLIOGRAPHY for citation_tool.py. Not a reading list.
+# One citation per line. Some lines are correct, some carry a deliberate
+# mistake, and some describe papers that were made up for this file.
+# The checker should tell you which is which; lines starting with # are skipped.
+Watson, J. D., & Crick, F. H. C. (1953). Molecular structure of nucleic acids: A structure for deoxyribose nucleic acid. Nature, 171, 737-738. https://doi.org/10.1038/171737a0
+Jumper, J., Evans, R., Pritzel, A., et al. (2021). Highly accurate protein structure prediction with AlphaFold. Nature, 596, 583-589. https://doi.org/10.1038/s41586-021-03819-2
+Novoselov, K. S., Geim, A. K., Morozov, S. V., et al. (2004). Two-dimensional gas of massless Dirac fermions in graphene. Science, 306, 666-669. https://doi.org/10.1126/science.1102896
+Becke, A. D. (1998). Density-functional thermochemistry. III. The role of exact exchange. The Journal of Chemical Physics, 98, 5648-5652. https://doi.org/10.1063/1.464913
+Laemmli, U. K. (1970). Cleavage of structural proteins during the assembly of the head of bacteriophage T4. Nature, 227, 680-685.
+Vaswani, A., Shazeer, N., Parmar, N., et al. (2017). Attention is all you need. arXiv. https://doi.org/10.48550/arXiv.1706.03762
+Delacroix, M., Sato, K., & Brennan, R. J. (2021). Room-temperature ammonia synthesis over a cobalt-tungsten nitride electrocatalyst in deep eutectic solvents. Journal of Applied Electrochemistry, 51(4), 611-623.
+Hargrove, L. M., & Teague, P. (2020). Ligand-free Suzuki coupling of aryl chlorides in supercritical water. Journal of the American Chemical Society, 142(9), 4410-4418. https://doi.org/10.1021/jacs.9b99871

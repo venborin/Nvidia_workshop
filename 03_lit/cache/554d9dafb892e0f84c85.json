@@ -1,0 +1,377 @@
+{
+ "url": "https://api.crossref.org/works/10.1016/j.jclepro.2020.125736",
+ "fetched_utc": "2026-11-08T20:21:21Z",
+ "status": 200,
+ "body": {
+  "status": "ok",
+  "message-type": "work",
+  "message-version": "1.0.0",
+  "message": {
+   "indexed": {
+    "date-parts": [
+     [
+      2026,
+      10,
+      26
+     ]
+    ],
+    "date-time": "2026-10-26T22:24:49Z",
+    "timestamp": 1793053489156,
+    "version": "4.5.0"
+   },
+   "reference-count": 78,
+   "publisher": "Elsevier BV",
+   "license": [
+    {
+     "start": {
+      "date-parts": [
+       [
+        2021,
+        3,
+        1
+       ]
+      ],
+      "date-time": "2021-03-01T00:00:00Z",
+      "timestamp": 1614556800000
+     },
+     "content-version": "tdm",
+     "delay-in-days": 0,
+     "URL": "https://www.elsevier.com/tdm/userlicense/1.0/"
+    },
+    {
+     "start": {
+      "date-parts": [
+       [
+        2021,
+        3,
+        1
+       ]
+      ],
+      "date-time": "2021-03-01T00:00:00Z",
+      "timestamp": 1614556800000
+     },
+     "content-version": "tdm",
+     "delay-in-days": 0,
+     "URL": "https://www.elsevier.com/legal/tdmrep-license"
+    },
+    {
+     "start": {
+      "date-parts": [
+       [
+        2021,
+        3,
+        1
+       ]
+      ],
+      "date-time": "2021-03-01T00:00:00Z",
+      "timestamp": 1614556800000
+     },
+     "content-version": "stm-asf",
+     "delay-in-days": 0,
+     "URL": "https://doi.org/10.15223/policy-017"
+    },
+    {
+     "start": {
+      "date-parts": [
+       [
+        2021,
+        3,
+        1
+       ]
+      ],
+      "date-time": "2021-03-01T00:00:00Z",
+      "timestamp": 1614556800000
+     },
+     "content-version": "stm-asf",
+     "delay-in-days": 0,
+     "URL": "https://doi.org/10.15223/policy-037"
+    },
+    {
+     "start": {
+      "date-parts": [
+       [
+        2021,
+        3,
+        1
+       ]
+      ],
+      "date-time": "2021-03-01T00:00:00Z",
+      "timestamp": 1614556800000
+     },
+     "content-version": "stm-asf",
+     "delay-in-days": 0,
+     "URL": "https://doi.org/10.15223/policy-012"
+    },
+    {
+     "start": {
+      "date-parts": [
+       [
+        2021,
+        3,
+        1
+       ]
+      ],
+      "date-time": "2021-03-01T00:00:00Z",
+      "timestamp": 1614556800000
+     },
+     "content-version": "stm-asf",
+     "delay-in-days": 0,
+     "URL": "https://doi.org/10.15223/policy-029"
+    },
+    {
+     "start": {
+      "date-parts": [
+       [
+        2021,
+        3,
+        1
+       ]
+      ],
+      "date-time": "2021-03-01T00:00:00Z",
+      "timestamp": 1614556800000
+     },
+     "content-version": "stm-asf",
+     "delay-in-days": 0,
+     "URL": "https://doi.org/10.15223/policy-004"
+    }
+   ],
+   "funder": [
+    {
+     "DOI": "10.13039/501100000270",
+     "name": "Natural Environment Research Council",
+     "doi-asserted-by": "publisher",
+     "id": [
+      {
+       "id": "10.13039/501100000270",
+       "id-type": "DOI",
+       "asserted-by": "publisher"
+      }
+     ]
+    }
+   ],
+   "content-domain": {
+    "domain": [
+     "elsevier.com",
+     "sciencedirect.com"
+    ],
+    "crossmark-restriction": true
+   },
+   "short-container-title": [
+    "Journal of Cleaner Production"
+   ],
+   "published-print": {
+    "date-parts": [
+     [
+      2021,
+      3
+     ]
+    ]
+   },
+   "DOI": "10.1016/j.jclepro.2020.125736",
+   "type": "journal-article",
+   "created": {
+    "date-parts": [
+     [
+      2020,
+      12,
+      29
+     ]
+    ],
+    "date-time": "2020-12-29T17:08:46Z",
+    "timestamp": 1609261726000
+   },
+   "page": "125736",
+   "update-policy": "https://doi.org/10.1016/elsevier_cm_policy",
+   "source": "Crossref",
+   "is-referenced-by-count": 84,
+   "special_numbering": "C",
+   "title": [
+    "Soil organic carbon sequestration rates in vineyard agroecosystems under different soil management practices: A meta-analysis"
+   ],
+   "prefix": "10.1016",
+   "volume": "290",
+   "author": [
+    {
+     "ORCID": "https://orcid.org/0000-0003-0147-7057",
+     "authenticated-orcid": false,
+     "given": "Florian Thomas",
+     "family": "Payen",
+     "sequence": "first",
+     "affiliation": [],
+     "role": [
+      {
+       "vocabulary": "crossref",
+       "role": "author"
+      }
+     ]
+    },
+    {
+     "given": "Alasdair",
+     "family": "Sykes",
+     "sequence": "additional",
+     "affiliation": [],
+     "role": [
+      {
+       "vocabulary": "crossref",
+       "role": "author"
+      }
+     ]
+    },
+    {
+     "ORCID": "https://orcid.org/0000-0002-1572-4015",
+     "authenticated-orcid": false,
+     "given": "Matt",
+     "family": "Aitkenhead",
+     "sequence": "additional",
+     "affiliation": [],
+     "role": [
+      {
+       "vocabulary": "crossref",
+       "role": "author"
+      }
+     ]
+    },
+    {
+     "given": "Peter",
+     "family": "Alexander",
+     "sequence": "additional",
+     "affiliation": [],
+     "role": [
+      {
+       "vocabulary": "crossref",
+       "role": "author"
+      }
+     ]
+    },
+    {
+     "given": "Dominic",
+     "family": "Moran",
+     "sequence": "additional",
+     "affiliation": [],
+     "role": [
+      {
+       "vocabulary": "crossref",
+       "role": "author"
+      }
+     ]
+    },
+    {
+     "given": "Michael",
+     "family": "MacLeod",
+     "sequence": "additional",
+     "affiliation": [],
+     "role": [
+      {
+       "vocabulary": "crossref",
+       "role": "author"
+      }
+     ]
+    }
+   ],
+   "member": "78",
+   "container-title": [
+    "Journal of Cleaner Production"
+   ],
+   "original-title": [],
+   "language": "en",
+   "link": [
+    {
+     "URL": "https://api.elsevier.com/content/article/PII:S0959652620357826?httpAccept=text/xml",
+     "content-type": "text/xml",
+     "content-version": "vor",
+     "intended-application": "text-mining"
+    },
+    {
+     "URL": "https://api.elsevier.com/content/article/PII:S0959652620357826?httpAccept=text/plain",
+     "content-type": "text/plain",
+     "content-version": "vor",
+     "intended-application": "text-mining"
+    }
+   ],
+   "deposited": {
+    "date-parts": [
+     [
+      2025,
+      10,
+      17
+     ]
+    ],
+    "date-time": "2025-10-17T16:45:24Z",
+    "timestamp": 1760719524000
+   },
+   "score": 1,
+   "resource": {
+    "primary": {
+     "URL": "https://linkinghub.elsevier.com/retrieve/pii/S0959652620357826"
+    }
+   },
+   "subtitle": [],
+   "short-title": [],
+   "issued": {
+    "date-parts": [
+     [
+      2021,
+      3
+     ]
+    ]
+   },
+   "references-count": 78,
+   "alternative-id": [
+    "S0959652620357826"
+   ],
+   "URL": "https://doi.org/10.1016/j.jclepro.2020.125736",
+   "relation": {},
+   "ISSN": [
+    "0959-6526"
+   ],
+   "issn-type": [
+    {
+     "value": "0959-6526",
+     "type": "print"
+    }
+   ],
+   "subject": [],
+   "published": {
+    "date-parts": [
+     [
+      2021,
+      3
+     ]
+    ]
+   },
+   "assertion": [
+    {
+     "value": "Elsevier",
+     "name": "publisher",
+     "label": "This article is maintained by"
+    },
+    {
+     "value": "Soil organic carbon sequestration rates in vineyard agroecosystems under different soil management practices: A meta-analysis",
+     "name": "articletitle",
+     "label": "Article Title"
+    },
+    {
+     "value": "Journal of Cleaner Production",
+     "name": "journaltitle",
+     "label": "Journal Title"
+    },
+    {
+     "value": "https://doi.org/10.1016/j.jclepro.2020.125736",
+     "name": "articlelink",
+     "label": "CrossRef DOI link to publisher maintained version"
+    },
+    {
+     "value": "article",
+     "name": "content_type",
+     "label": "Content Type"
+    },
+    {
+     "value": "© 2021 Elsevier Ltd. All rights reserved.",
+     "name": "copyright",
+     "label": "Copyright"
+    }
+   ],
+   "article-number": "125736"
+  }
+ }
+}

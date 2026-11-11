@@ -1,0 +1,16 @@
+Interview 3. Invented for the workshop.
+
+Interviewer: Could you describe your position?
+Participant: I'm a lecturer in education. I teach the research methods course for the master's students and I do program evaluation on the side.
+
+Interviewer: Do you use the cluster?
+Participant: No. I wouldn't know what I'd use it for. My data is surveys and interview transcripts, maybe two hundred responses at a time. Excel and NVivo handle that.
+
+Interviewer: Is there anything that slows your work down?
+Participant: The coding. Reading two hundred open-ended answers and tagging them takes me most of a month each term. I've wondered about using AI for it, but I worry about where the data goes, and I'd need to be able to show a reviewer exactly why each answer got its code.
+
+Interviewer: What would help?
+Participant: Something that suggests codes and shows me the sentence it based each one on, that runs somewhere the university has approved. Then I'd check every one, but I'd be checking, not starting from nothing.
+
+Interviewer: How do you feel about the campus computing resources?
+Participant: I don't have feelings about them, because I've never been told they're for people like me.

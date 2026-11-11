@@ -1,0 +1,47 @@
+{
+  // One thing on screen: the terminal and your files. Recent VS Code
+  // ships its own AI chat panel ("Build with Agent") on the right-hand side of
+  // every Codespace, which invites people to type into the wrong agent. These
+  // two settings remove it (verified in a real Codespace, September 2026).
+  // Delete them if you want that panel back.
+  "chat.disableAIFeatures": true,
+  "workbench.secondarySideBar.defaultVisibility": "hidden",
+  // Every file opens in its own tab, instead of a temporary "preview" tab that
+  // the next single click replaces.
+  "workbench.editor.enablePreview": false,
+  // Markdown opens formatted when clicked, so a page reads like a page; the two
+  // prompt files people fill in (*-mine.md) open as text so they can be edited.
+  // Tested in a Codespace, November 8.
+  "workbench.editorAssociations": {
+    "*.md": "vscode.markdown.preview.editor",
+    "*-mine.md": "default"
+  },
+  // The labs run in the terminal, so the terminal panel opens full-height
+  // whenever it is OPENED. It does not enlarge the terminal a new Codespace
+  // shows on first load: use the square button just left of the X.
+  "workbench.panel.opensMaximized": "always",
+  // Setup starts by itself in the first terminal (.devcontainer/autostart.sh).
+  // Right after "Trust Folder & Continue", VS Code can RELAUNCH that terminal a
+  // second or two after creating it, and the relaunched shell would find setup's
+  // run-once lock still held by the dying one. Turning the relaunch off removes
+  // the race; autostart.sh also waits a few seconds, in case this is not honoured.
+  "terminal.integrated.environmentChangesRelaunch": false,
+
+  // Fewer interruptions for first-time users (October 31). Each of these is a
+  // pop-up, hint or tab that otherwise appears during the first minutes:
+  // no welcome tab, no extension recommendations, no tips, no ghost-text
+  // suggestions in the terminal, no git fetch or sync questions.
+  "workbench.startupEditor": "none",
+  "workbench.tips.enabled": false,
+  "extensions.ignoreRecommendations": true,
+  "terminal.integrated.suggest.enabled": false,
+  "git.autofetch": false,
+  "git.confirmSync": false,
+  "git.openRepositoryInParentFolders": "never",
+  // If someone installs the Python extension anyway, its Python Environments
+  // part shows "An environment file is configured but terminal environment
+  // injection is disabled" whenever python.envFile has a value. The labs read
+  // .env themselves (llm.py), so no env file is configured here.
+  "python.envFile": "",
+  "python.terminal.useEnvFile": false
+}

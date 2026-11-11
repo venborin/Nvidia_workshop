@@ -1,0 +1,11 @@
+Title: Thermal Cycling Durability of Copper Exchanged Zeolite Cu-MZL-8 for Ammonia SCR
+Year: 2019
+Field: chemistry
+
+Copper exchanged small pore zeolites convert nitrogen oxides efficiently with ammonia, but their service life is set by what happens during repeated excursions to high temperature rather than by steady state activity. We measured conversion loss in Cu-MZL-8, a small pore framework with a nominal silicon to aluminum ratio of 14, across an accelerated cycling protocol.
+
+Three batches were prepared by aqueous ion exchange to copper loadings of 1.4, 2.8, and 4.1 weight percent, confirmed by elemental analysis to within 0.1 weight percent. Monolith cores were cycled 600 times between 200 and 750 degrees Celsius in a flowing stream containing 500 parts per million nitric oxide, 500 parts per million ammonia, 10 percent oxygen, and 5 percent water vapor, with a 12 minute dwell at each extreme. Conversion was measured at 250 degrees Celsius before cycling and after every 100 cycles.
+
+Initial conversion was 94 percent at 2.8 weight percent copper and 91 percent at 4.1 weight percent. After 600 cycles the 2.8 weight percent sample retained 87 percent conversion, a relative loss of 7 percent, while the 4.1 weight percent sample fell to 68 percent. The lowest loading started at 79 percent and ended at 76 percent, so it was the most stable in relative terms and the worst in absolute terms. X-ray diffraction showed no loss of framework crystallinity in any sample, but ultraviolet and visible spectra of the highest loading developed a band near 265 nanometers consistent with copper aluminate formation. Surface area fell by 11 percent at the highest loading and by 3 percent at the middle loading.
+
+The protocol compresses years of service into weeks, and the compression is not neutral. Our 12 minute dwell is far shorter than a real high temperature excursion, so the results speak to cycle count rather than to cumulative time at temperature, and the two may not degrade the material by the same route.

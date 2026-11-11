@@ -1,0 +1,11 @@
+Title: A GPU Shallow Water Solver for Urban Flood Simulation at Neighborhood Scale
+Year: 2020
+Field: engineering
+
+Operational flood forecasting at street resolution is limited by compute time rather than by data. A two dimensional shallow water solver that runs faster than real time on a single accelerator would let emergency planners explore several rainfall scenarios inside a decision window. We describe such a solver and measure its throughput and accuracy against standard benchmarks.
+
+The solver integrates the shallow water equations on a uniform grid with a finite volume scheme, a well balanced flux treatment for wet and dry fronts, and explicit time stepping under a Courant limit of 0.9. The implementation is a single kernel per time step with the full state resident in device memory. We ran 5 analytic and laboratory benchmarks, including a circular dam break and a flow over a conical obstacle, on grids from 1 million to 64 million cells, and timed 20 repetitions of each configuration.
+
+On a 16 million cell domain at 3 meter resolution the solver sustained 2.1 billion cell updates per second, which simulates 6 hours of flood evolution in 94 seconds of wall clock time. Throughput scaled close to linearly with cell count above 4 million cells, holding within 8 percent of peak across that range. Water depth agreed with the analytic dam break solution to a root mean square error of 1.4 centimeters at 3 meter resolution, and the conical obstacle benchmark matched published laboratory gauge records to within 2.7 centimeters at all 8 gauge positions. Mass was conserved to 1 part in 10 million over 100000 time steps.
+
+The benchmarks are all smooth or mildly discontinuous flows over simple geometry. Real urban terrain has buildings, culverts, and storm drains, none of which the shallow water equations represent, and none of which these benchmarks exercise. Accuracy on the benchmarks bounds numerical error only and says nothing about the error that terrain and drainage representation will contribute in the field.

@@ -1,0 +1,11 @@
+Title: Density Functional Study of Copper Site Migration in Small Pore Zeolites
+Year: 2021
+Field: chemistry
+
+Loss of low temperature activity in copper exchanged zeolites after high temperature exposure is often attributed to migration of isolated copper ions toward extraframework oxide clusters, but the energetic barrier to that migration has not been computed for the small pore frameworks now in use. We calculated migration pathways to see whether the barrier is consistent with the temperatures at which activity is observed to fall.
+
+Periodic density functional calculations were run on a 96 atom cell of a small pore framework with two aluminum substitutions, using a generalized gradient functional with a dispersion correction and a plane wave cutoff of 500 electron volts. We examined 14 distinct copper siting configurations and computed 9 migration pathways by the nudged elastic band method with 7 images each. Hydration was represented explicitly by up to 4 water molecules per copper center.
+
+The computed barrier for migration of an isolated copper ion out of its six ring site is 1.78 electron volts in the dry cell and 1.12 electron volts with two water molecules present, a reduction of 37 percent. Dimer formation from two migrated ions is exothermic by 0.64 electron volts, which means that once migration occurs the reverse process is not thermally accessible at service temperatures. The hydrated barrier corresponds to appreciable rates above roughly 620 degrees Celsius on a simple transition state estimate, which falls inside the excursion range of practical cycling protocols. Aluminum pairing matters: configurations with two aluminum atoms in the same six ring raised the barrier by 0.21 electron volts relative to isolated siting.
+
+The calculation treats a perfect framework at zero coverage of reactants, which no working catalyst resembles. Ammonia is known to coordinate copper strongly, and omitting it almost certainly biases the barriers upward, so the computed onset temperature should be read as an upper bound rather than a prediction.

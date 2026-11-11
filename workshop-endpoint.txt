@@ -1,0 +1,25 @@
+# The OSU workshop endpoint, read by setup.sh when someone pastes the workshop
+# key or word. The instructor fills in the address (and, if the endpoint serves
+# more than one model, the model name). Copies of this repository made before it
+# was filled in read the current version from github.com/jhassell/osu-llm-workshop.
+# Nothing secret belongs in this file.
+#
+# OSU_BASE_URL is Cimarron. When it is filled in, anyone can move between it and
+# OpenRouter between stops with: bash 00_setup/switch_backend.sh cimarron (or
+# openrouter). OSU_CONTEXT is the context window the NIM was started with
+# (NIM_MAX_MODEL_LEN); OpenClaw is told this number so it compacts in time.
+#
+# OSU_KEY_URL is where the workshop word is looked up: setup fetches
+# OSU_KEY_URL/<word in lower case> and, if the reply is an OpenRouter key, runs
+# the labs on OpenRouter with that key. The address holds nothing without the
+# word, and the key behind the word is cancelled at the end of the workshop.
+OSU_BASE_URL=
+OSU_MODEL=
+OSU_CONTEXT=65536
+OSU_KEY_URL=https://osu-llm-workshop-key.netlify.app
+#
+# OPENALEX_API_KEY is the room's free OpenAlex key, used by 03_lit/lit.py for
+# Stop 3's searches (keyless use allows about 100 searches a day per network
+# address, and Codespaces share addresses). OpenAlex caps a free key at $1 a
+# day, about 1,000 searches, which is the damage cap since this file is public.
+OPENALEX_API_KEY=i8sfLkQL7yfyjbBTf3kwW3

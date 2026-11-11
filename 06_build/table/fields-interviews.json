@@ -1,0 +1,8 @@
+{
+  "_about": "Columns for coding interview transcripts. Each value comes with a quote, so every code can be checked against what the person said. Run: python 06_build/table/build_table.py 06_build/table/interviews 06_build/table/fields-interviews.json",
+  "role": "The participant's role or position, as they describe it, or 'not stated'.",
+  "main_barrier": "The main obstacle the participant describes to using research computing, in their own terms, or 'not stated'.",
+  "workaround": "What the participant does instead, or to get around the obstacle, or 'not stated'.",
+  "support_wanted": "The help or change the participant says would make the most difference, or 'not stated'.",
+  "sentiment": "The participant's overall attitude toward the campus cluster: positive, negative, mixed, or 'not stated'."
+}

@@ -1,0 +1,11 @@
+Title: Pooled Reanalysis of Pizza Incentive Studies in Office Hours Attendance
+Year: 2023
+Field: education research
+
+Reports on food incentives at office hours have not agreed, and the disagreement is usually put down to differences between campuses rather than to anything measurable. We surveyed the published record and obtained session level sign-in sheets from the instructors of four prior studies, then recounted a common endpoint to see whether the conflict survives a uniform analysis.
+
+The survey covered 11 reports published between 2019 and 2022, of which 4 supplied raw sign-in sheets covering 1,184 students in total. Incentives in the pooled set ranged from one slice per visitor to three whole pizzas per session, and measurement windows from week 1 to week 11 of the term. We recomputed a single endpoint for every course, visits per 100 enrolled students per session, discarding each study's own normalization. Where seating charts were available we also checked 38 sessions for students who had signed in for absent friends.
+
+Across the pooled set, pizza raised visits per 100 enrolled students by 64 percent relative to matched comparison sections. The pooled effect is not uniform. Studies measuring in week 5 or later reported a mean increase of 2.6 visits per 100 students, while the single study measuring in weeks 1 and 2 reported 0.2, a difference larger than the spread among campuses. Incentive size explained less of the variation than timing did once the one slice arms were separated out. Two of the four contributing studies counted distinct students rather than visits, and their figures ran about 1.1 lower for both arms, which shifts the baseline without changing the direction of the effect.
+
+The reanalysis cannot correct for what was never recorded. Three of the 11 reports did not state whether the incentive was announced in advance or discovered at the door, and two of those three are among the four studies in the pooled estimate. That difference is plausibly as important as the amount of food. We coded both as announced, which is the most common practice, so the comparison of incentive size against timing rests partly on a guess about how those two courses advertised their pizza.

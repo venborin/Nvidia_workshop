@@ -1,0 +1,158 @@
+{
+ "url": "https://api.crossref.org/works/10.5194/egusphere-egu21-8235",
+ "fetched_utc": "2026-11-08T20:21:09Z",
+ "status": 200,
+ "body": {
+  "status": "ok",
+  "message-type": "work",
+  "message-version": "1.0.0",
+  "message": {
+   "indexed": {
+    "date-parts": [
+     [
+      2025,
+      5,
+      14
+     ]
+    ],
+    "date-time": "2025-05-14T12:57:46Z",
+    "timestamp": 1747227466280,
+    "version": "3.40.5"
+   },
+   "posted": {
+    "date-parts": [
+     [
+      2021,
+      3,
+      4
+     ]
+    ]
+   },
+   "group-title": "pico",
+   "reference-count": 0,
+   "publisher": "Copernicus GmbH",
+   "content-domain": {
+    "domain": [],
+    "crossmark-restriction": false
+   },
+   "short-container-title": [],
+   "abstract": "<jats:p>&amp;lt;p&amp;gt;Cover crops have been suggested to preserve or even increase the soil organic carbon (SOC) stocks in croplands which can contribute to soil fertility and climate change mitigation. Cover crop cultivation increased in most European countries during the last years. However, it remains unquantified how many additional cover crops can be integrated into existing crop rotations. Moreover, there are no realistic quantitative estimates of the SOC sequestration potential of implementing additional cover crops in Germany.&amp;lt;/p&amp;gt;&amp;lt;p&amp;gt;We analyzed recent German crop rotations obtained from the first German Agricultural Soil Inventory for available cultivation windows (winter fallows) for cover crops, and we simulated the SOC sequestration potential of additional cover crops in the topsoil using a SOC model ensemble consisting of RothC and C-TOOL. In order to estimate a reasonable carbon input via the cover crops&amp;amp;#8217; biomass, we developed a new allometric function which takes the effect of the weather and the seeding date on the development of the biomass into account.&amp;lt;/p&amp;gt;&amp;lt;p&amp;gt;Our study shows that only one third of the cultivation windows are currently used for cultivating cover crops. Thus, the cover crops&amp;amp;#8217; cultivation area could be tripled with additional 2 Mio ha each year. With these additional cover crops, the annual C input could be increased by 12% from 3.68 to 4.13 Mg C ha&amp;lt;sup&amp;gt;-1&amp;lt;/sup&amp;gt; a&amp;lt;sup&amp;gt;-1&amp;lt;/sup&amp;gt;. Within 50 years, this would result in 35 Tg more SOC in the top 30cm of German croplands which corresponds to 2.6 Tg CO&amp;lt;sub&amp;gt;2&amp;lt;/sub&amp;gt; equivalents per year. Despite the dry weather conditions, a considerably large increase in SOC can be achieved in the eastern regions of Germany due to a low current cover crop cultivation frequency. However, the limited water availability during the time of cover crop establishment may require undersowing.&amp;lt;/p&amp;gt;&amp;lt;p&amp;gt;We conclude that including cover crops in crop rotations and consequently avoiding bare fallow in winter is a key measure in a climate mitigation strategy for managing cropland soils, and we will discuss the benefits and barriers of growing cover crops in Germany and Europe.&amp;lt;/p&amp;gt;</jats:p>",
+   "DOI": "10.5194/egusphere-egu21-8235",
+   "type": "posted-content",
+   "created": {
+    "date-parts": [
+     [
+      2021,
+      3,
+      4
+     ]
+    ],
+    "date-time": "2021-03-04T04:22:22Z",
+    "timestamp": 1614831742000
+   },
+   "source": "Crossref",
+   "is-referenced-by-count": 0,
+   "title": [
+    "Potential soil organic carbon sequestration with cover crops in German croplands"
+   ],
+   "prefix": "10.5194",
+   "author": [
+    {
+     "given": "Daria",
+     "family": "Seitz",
+     "sequence": "first",
+     "affiliation": [],
+     "role": [
+      {
+       "role": "author",
+       "vocabulary": "crossref"
+      }
+     ]
+    },
+    {
+     "given": "Lisa Mareen",
+     "family": "Fischer",
+     "sequence": "additional",
+     "affiliation": [],
+     "role": [
+      {
+       "role": "author",
+       "vocabulary": "crossref"
+      }
+     ]
+    },
+    {
+     "given": "Rene",
+     "family": "Dechow",
+     "sequence": "additional",
+     "affiliation": [],
+     "role": [
+      {
+       "role": "author",
+       "vocabulary": "crossref"
+      }
+     ]
+    },
+    {
+     "ORCID": "https://orcid.org/0000-0001-7046-3332",
+     "authenticated-orcid": false,
+     "given": "Axel",
+     "family": "Don",
+     "sequence": "additional",
+     "affiliation": [],
+     "role": [
+      {
+       "role": "author",
+       "vocabulary": "crossref"
+      }
+     ]
+    }
+   ],
+   "member": "3145",
+   "container-title": [],
+   "original-title": [],
+   "deposited": {
+    "date-parts": [
+     [
+      2021,
+      3,
+      4
+     ]
+    ],
+    "date-time": "2021-03-04T04:29:15Z",
+    "timestamp": 1614832155000
+   },
+   "score": 1,
+   "resource": {
+    "primary": {
+     "URL": "https://meetingorganizer.copernicus.org/EGU21/EGU21-8235.html"
+    }
+   },
+   "subtitle": [],
+   "short-title": [],
+   "issued": {
+    "date-parts": [
+     [
+      2021,
+      3,
+      4
+     ]
+    ]
+   },
+   "references-count": 0,
+   "URL": "https://doi.org/10.5194/egusphere-egu21-8235",
+   "relation": {},
+   "subject": [],
+   "published": {
+    "date-parts": [
+     [
+      2021,
+      3,
+      4
+     ]
+    ]
+   },
+   "subtype": "other"
+  }
+ }
+}

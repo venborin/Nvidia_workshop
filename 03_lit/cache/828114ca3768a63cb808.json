@@ -1,0 +1,1387 @@
+{
+ "url": "https://api.openalex.org/works?search=cover+crops+soil+organic+carbon&per_page=3&sort=relevance_score:desc&select=id,doi,display_name,publication_year,publication_date,type,authorships,primary_location,biblio,abstract_inverted_index,cited_by_count,open_access,relevance_score",
+ "fetched_utc": "2026-11-06T14:34:37Z",
+ "status": 200,
+ "body": {
+  "meta": {
+   "count": 226936,
+   "db_response_time_ms": 140,
+   "page": 1,
+   "per_page": 3,
+   "groups_count": null,
+   "cost_usd": 0.001
+  },
+  "results": [
+   {
+    "id": "https://openalex.org/W1977850007",
+    "doi": "https://doi.org/10.2136/sssaj1997.03615995006100010022x",
+    "display_name": "Winter Cover Crop Effects on Soil Organic Carbon and Carbohydrate in Soil",
+    "publication_year": 1997,
+    "publication_date": "1997-01-01",
+    "type": "article",
+    "authorships": [
+     {
+      "author": {
+       "display_name": "S. Kuo"
+      }
+     },
+     {
+      "author": {
+       "display_name": "Upendra M. Sainju"
+      }
+     },
+     {
+      "author": {
+       "display_name": "E. J. Jellum"
+      }
+     }
+    ],
+    "primary_location": {
+     "id": "doi:10.2136/sssaj1997.03615995006100010022x",
+     "doi": "https://doi.org/10.2136/sssaj1997.03615995006100010022x",
+     "is_oa": false,
+     "landing_page_url": "https://doi.org/10.2136/sssaj1997.03615995006100010022x",
+     "pdf_url": null,
+     "source": {
+      "id": "https://openalex.org/S59755854",
+      "display_name": "Soil Science Society of America Journal",
+      "issn_l": "0361-5995",
+      "issn": [
+       "0361-5995",
+       "1435-0661"
+      ],
+      "is_oa": false,
+      "is_in_doaj": false,
+      "is_core": true,
+      "listed_in": [
+       "anvur-scientific",
+       "cwts-core",
+       "dongbi-b",
+       "jufo-2",
+       "ki-jl-2",
+       "norway-2",
+       "poland-100",
+       "russia-white-list-2"
+      ],
+      "host_organization": "https://openalex.org/P4310320595",
+      "host_organization_name": "Wiley",
+      "host_organization_lineage": [
+       "https://openalex.org/P4310320595"
+      ],
+      "host_organization_lineage_names": [
+       "Wiley"
+      ],
+      "type": "journal"
+     },
+     "license": null,
+     "license_id": null,
+     "version": "publishedVersion",
+     "is_accepted": true,
+     "is_published": true,
+     "raw_source_name": "Soil Science Society of America Journal",
+     "raw_type": "journal-article"
+    },
+    "biblio": {
+     "volume": "61",
+     "issue": "1",
+     "first_page": "145",
+     "last_page": "152"
+    },
+    "abstract_inverted_index": {
+     "Abstract": [
+      0
+     ],
+     "Winter": [
+      1
+     ],
+     "cover": [
+      2,
+      20,
+      62,
+      74,
+      91,
+      102,
+      128,
+      145,
+      207,
+      225,
+      255
+     ],
+     "crops": [
+      3,
+      21,
+      63,
+      92,
+      103,
+      146,
+      256
+     ],
+     "may": [
+      4
+     ],
+     "increase": [
+      5,
+      23
+     ],
+     "soil": [
+      6,
+      54,
+      111,
+      151,
+      181
+     ],
+     "organic": [
+      7,
+      121
+     ],
+     "carbon": [
+      8
+     ],
+     "(SOC)": [
+      9
+     ],
+     "levels": [
+      10,
+      260
+     ],
+     "or": [
+      11
+     ],
+     "reduce": [
+      12
+     ],
+     "their": [
+      13
+     ],
+     "rate": [
+      14,
+      40
+     ],
+     "of": [
+      15,
+      18,
+      29,
+      34,
+      41,
+      67,
+      143,
+      173,
+      189,
+      219,
+      234
+     ],
+     "depletion.": [
+      16
+     ],
+     "Selection": [
+      17
+     ],
+     "appropriate": [
+      19
+     ],
+     "to": [
+      22,
+      115,
+      216
+     ],
+     "SOC": [
+      24,
+      49,
+      109,
+      211,
+      259
+     ],
+     "requires": [
+      25
+     ],
+     "an": [
+      26,
+      186
+     ],
+     "adequate": [
+      27
+     ],
+     "knowledge": [
+      28
+     ],
+     "the": [
+      30,
+      48,
+      87,
+      127,
+      136,
+      140,
+      144,
+      150,
+      176,
+      180,
+      217,
+      220,
+      224
+     ],
+     "quality": [
+      31
+     ],
+     "and": [
+      32,
+      38,
+      50,
+      60,
+      110,
+      123,
+      163,
+      197,
+      212,
+      243,
+      278
+     ],
+     "quantity": [
+      33
+     ],
+     "plant": [
+      35
+     ],
+     "biomass": [
+      36,
+      137,
+      142,
+      178
+     ],
+     "produced": [
+      37,
+      125
+     ],
+     "its": [
+      39
+     ],
+     "decomposition": [
+      42,
+      172
+     ],
+     "in": [
+      43,
+      53,
+      79,
+      86,
+      119,
+      149,
+      161,
+      169,
+      175,
+      179,
+      195,
+      203,
+      261
+     ],
+     "soil.": [
+      44
+     ],
+     "This": [
+      45
+     ],
+     "study": [
+      46
+     ],
+     "examined": [
+      47
+     ],
+     "carbohydrate": [
+      51,
+      112,
+      124,
+      174,
+      213
+     ],
+     "concentrations": [
+      52,
+      113
+     ],
+     "as": [
+      55,
+      253
+     ],
+     "affected": [
+      56
+     ],
+     "by": [
+      57,
+      126
+     ],
+     "several": [
+      58
+     ],
+     "leguminous": [
+      59
+     ],
+     "nonleguminous": [
+      61
+     ],
+     "after": [
+      64
+     ],
+     "6": [
+      65
+     ],
+     "yr": [
+      66
+     ],
+     "a": [
+      68,
+      80,
+      105,
+      116,
+      153
+     ],
+     "corn": [
+      69
+     ],
+     "(": [
+      70,
+      239,
+      246,
+      268,
+      274,
+      280
+     ],
+     "Zea": [
+      71
+     ],
+     "mays": [
+      72
+     ],
+     "L.)": [
+      73,
+      242
+     ],
+     "crop": [
+      75,
+      208
+     ],
+     "double": [
+      76
+     ],
+     "cropping": [
+      77
+     ],
+     "system": [
+      78
+     ],
+     "temperate,": [
+      81
+     ],
+     "humid": [
+      82
+     ],
+     "region.": [
+      83
+     ],
+     "The": [
+      84,
+      101,
+      130,
+      171,
+      205
+     ],
+     "vegetation": [
+      85
+     ],
+     "control": [
+      88
+     ],
+     "treatment": [
+      89
+     ],
+     "without": [
+      90
+     ],
+     "was": [
+      93,
+      182,
+      214
+     ],
+     "primarily": [
+      94
+     ],
+     "shepherd's‐purse": [
+      95
+     ],
+     "[": [
+      96
+     ],
+     "Capsella": [
+      97
+     ],
+     "bursa‐pastoris": [
+      98
+     ],
+     "(L.)": [
+      99
+     ],
+     "Medikus].": [
+      100
+     ],
+     "had": [
+      104
+     ],
+     "variable": [
+      106
+     ],
+     "effect": [
+      107,
+      209
+     ],
+     "on": [
+      108,
+      210
+     ],
+     "due": [
+      114,
+      215
+     ],
+     "significant": [
+      117
+     ],
+     "difference": [
+      118
+     ],
+     "total": [
+      120
+     ],
+     "C": [
+      122,
+      138,
+      221
+     ],
+     "crops.": [
+      129,
+      226
+     ],
+     "buried": [
+      131
+     ],
+     "bag": [
+      132
+     ],
+     "technique": [
+      133
+     ],
+     "showed": [
+      134
+     ],
+     "that": [
+      135
+     ],
+     "from": [
+      139,
+      223
+     ],
+     "aboveground": [
+      141,
+      177
+     ],
+     "decomposed": [
+      147
+     ],
+     "rapidly": [
+      148
+     ],
+     "with": [
+      152,
+      185
+     ],
+     "half‐life": [
+      154,
+      188
+     ],
+     "averaging": [
+      155
+     ],
+     "30.9": [
+      156
+     ],
+     "±": [
+      157,
+      165,
+      191,
+      199
+     ],
+     "9.4": [
+      158
+     ],
+     "(SD)": [
+      159,
+      167,
+      193,
+      201
+     ],
+     "d": [
+      160,
+      168,
+      194,
+      202
+     ],
+     "1992": [
+      162,
+      196
+     ],
+     "55.2": [
+      164
+     ],
+     "7.8": [
+      166
+     ],
+     "1993.": [
+      170,
+      204
+     ],
+     "also": [
+      183
+     ],
+     "rapid": [
+      184
+     ],
+     "average": [
+      187
+     ],
+     "40.0": [
+      190
+     ],
+     "13.1": [
+      192
+     ],
+     "50.5": [
+      198
+     ],
+     "11.8": [
+      200
+     ],
+     "overriding": [
+      206
+     ],
+     "magnitude": [
+      218
+     ],
+     "inputs": [
+      222
+     ],
+     "With": [
+      227
+     ],
+     "more": [
+      228
+     ],
+     "than": [
+      229,
+      264
+     ],
+     "4": [
+      230
+     ],
+     "Mg": [
+      231
+     ],
+     "ha": [
+      232
+     ],
+     "−1": [
+      233
+     ],
+     "top": [
+      235
+     ],
+     "biomass,": [
+      236
+     ],
+     "cereal": [
+      237
+     ],
+     "rye": [
+      238
+     ],
+     "Secale": [
+      240
+     ],
+     "cereale": [
+      241
+     ],
+     "annual": [
+      244
+     ],
+     "ryegrass": [
+      245
+     ],
+     "Lolium": [
+      247
+     ],
+     "multiflorum": [
+      248
+     ],
+     "Lam.)": [
+      249
+     ],
+     "were": [
+      250
+     ],
+     "better": [
+      251
+     ],
+     "suited": [
+      252
+     ],
+     "winter": [
+      254,
+      266
+     ],
+     "for": [
+      257
+     ],
+     "building": [
+      258
+     ],
+     "this": [
+      262
+     ],
+     "region": [
+      263
+     ],
+     "Austrian": [
+      265
+     ],
+     "pea": [
+      267
+     ],
+     "Lathyrus": [
+      269
+     ],
+     "hirsutus": [
+      270
+     ],
+     "L.),": [
+      271
+     ],
+     "hairy": [
+      272
+     ],
+     "vetch": [
+      273
+     ],
+     "Vicia": [
+      275
+     ],
+     "villosa": [
+      276
+     ],
+     "Roth),": [
+      277
+     ],
+     "canola": [
+      279
+     ],
+     "Brassica": [
+      281
+     ],
+     "napus": [
+      282
+     ],
+     "L.).": [
+      283
+     ]
+    },
+    "cited_by_count": 340,
+    "open_access": {
+     "is_oa": false,
+     "oa_status": "closed",
+     "oa_url": null,
+     "any_repository_has_fulltext": false
+    },
+    "relevance_score": 173.0689
+   },
+   {
+    "id": "https://openalex.org/W2005409185",
+    "doi": "https://doi.org/10.1097/ss.0b013e3181cf7959",
+    "display_name": "Cover Crop Effects on Crop Yields and Soil Organic Carbon Content",
+    "publication_year": 2010,
+    "publication_date": "2010-02-01",
+    "type": "article",
+    "authorships": [
+     {
+      "author": {
+       "display_name": "Kenneth R. Olson"
+      }
+     },
+     {
+      "author": {
+       "display_name": "Stephen A. Ebelhar"
+      }
+     },
+     {
+      "author": {
+       "display_name": "James Lang"
+      }
+     }
+    ],
+    "primary_location": {
+     "id": "doi:10.1097/ss.0b013e3181cf7959",
+     "doi": "https://doi.org/10.1097/ss.0b013e3181cf7959",
+     "is_oa": false,
+     "landing_page_url": "https://doi.org/10.1097/ss.0b013e3181cf7959",
+     "pdf_url": null,
+     "source": {
+      "id": "https://openalex.org/S90259781",
+      "display_name": "Soil Science",
+      "issn_l": "0038-075X",
+      "issn": [
+       "0038-075X",
+       "1538-9243"
+      ],
+      "is_oa": false,
+      "is_in_doaj": false,
+      "is_core": true,
+      "listed_in": [
+       "cwts-core",
+       "jufo-1",
+       "norway-1",
+       "poland-70",
+       "russia-white-list-2"
+      ],
+      "host_organization": "https://openalex.org/P4310315671",
+      "host_organization_name": "Lippincott Williams & Wilkins",
+      "host_organization_lineage": [
+       "https://openalex.org/P4310315671",
+       "https://openalex.org/P4310318547"
+      ],
+      "host_organization_lineage_names": [
+       "Lippincott Williams & Wilkins",
+       "Wolters Kluwer"
+      ],
+      "type": "journal"
+     },
+     "license": null,
+     "license_id": null,
+     "version": "publishedVersion",
+     "is_accepted": true,
+     "is_published": true,
+     "raw_source_name": "Soil Science",
+     "raw_type": "journal-article"
+    },
+    "biblio": {
+     "volume": "175",
+     "issue": "2",
+     "first_page": "89",
+     "last_page": "98"
+    },
+    "abstract_inverted_index": {
+     "An": [
+      0
+     ],
+     "8-year": [
+      1,
+      159
+     ],
+     "cover": [
+      2,
+      67,
+      97,
+      120,
+      131,
+      144,
+      193
+     ],
+     "crop": [
+      3,
+      68,
+      121
+     ],
+     "study": [
+      4
+     ],
+     "was": [
+      5,
+      164,
+      203
+     ],
+     "conducted": [
+      6
+     ],
+     "in": [
+      7,
+      59,
+      152,
+      166,
+      170,
+      199,
+      226
+     ],
+     "southern": [
+      8
+     ],
+     "Illinois": [
+      9
+     ],
+     "to": [
+      10,
+      187,
+      244
+     ],
+     "evaluate": [
+      11
+     ],
+     "the": [
+      12,
+      25,
+      43,
+      101,
+      119,
+      125,
+      135,
+      141,
+      149,
+      153,
+      158,
+      162,
+      171,
+      188,
+      200,
+      206,
+      214,
+      236,
+      245
+     ],
+     "effects": [
+      13
+     ],
+     "of": [
+      14,
+      29,
+      37,
+      108,
+      148,
+      239
+     ],
+     "conservation": [
+      15,
+      176,
+      216
+     ],
+     "tillage": [
+      16,
+      102,
+      127
+     ],
+     "systems": [
+      17,
+      93
+     ],
+     "on": [
+      18,
+      71,
+      114
+     ],
+     "corn": [
+      19,
+      80
+     ],
+     "and": [
+      20,
+      23,
+      27,
+      34,
+      48,
+      69,
+      81,
+      91,
+      95,
+      105,
+      155,
+      168,
+      180,
+      183,
+      191,
+      223,
+      235,
+      241
+     ],
+     "soybean": [
+      21,
+      83
+     ],
+     "yields": [
+      22,
+      84
+     ],
+     "for": [
+      24,
+      87,
+      118,
+      124,
+      205
+     ],
+     "maintenance": [
+      26
+     ],
+     "restoration": [
+      28
+     ],
+     "soil": [
+      30,
+      35,
+      175,
+      215,
+      221
+     ],
+     "organic": [
+      31
+     ],
+     "carbon": [
+      32,
+      196,
+      242
+     ],
+     "(SOC)": [
+      33
+     ],
+     "productivity": [
+      36
+     ],
+     "previously": [
+      38
+     ],
+     "eroded": [
+      39,
+      76
+     ],
+     "soils.": [
+      40
+     ],
+     "In": [
+      41
+     ],
+     "2001,": [
+      42
+     ],
+     "no-till": [
+      44
+     ],
+     "(NT),": [
+      45
+     ],
+     "chisel": [
+      46,
+      89
+     ],
+     "plow,": [
+      47,
+      90
+     ],
+     "moldboard": [
+      49
+     ],
+     "plow": [
+      50
+     ],
+     "(MP)": [
+      51
+     ],
+     "treatment": [
+      52,
+      128
+     ],
+     "plots,": [
+      53,
+      189
+     ],
+     "which": [
+      54,
+      218
+     ],
+     "were": [
+      55,
+      64,
+      85,
+      211
+     ],
+     "replicated": [
+      56
+     ],
+     "six": [
+      57
+     ],
+     "times": [
+      58
+     ],
+     "a": [
+      60,
+      115,
+      130
+     ],
+     "Latin": [
+      61
+     ],
+     "square": [
+      62
+     ],
+     "design,": [
+      63
+     ],
+     "split": [
+      65
+     ],
+     "(with": [
+      66
+     ],
+     "without)": [
+      70
+     ],
+     "sloping,": [
+      72
+     ],
+     "moderately": [
+      73,
+      75
+     ],
+     "well-drained,": [
+      74
+     ],
+     "soil.": [
+      77
+     ],
+     "The": [
+      78
+     ],
+     "average": [
+      79,
+      82
+     ],
+     "similar": [
+      86,
+      112
+     ],
+     "NT,": [
+      88
+     ],
+     "MP": [
+      92,
+      207
+     ],
+     "with": [
+      94,
+      143,
+      190
+     ],
+     "without": [
+      96,
+      129,
+      192
+     ],
+     "crops.": [
+      98,
+      194
+     ],
+     "By": [
+      99
+     ],
+     "2009,": [
+      100
+     ],
+     "zone,": [
+      103
+     ],
+     "subsoil,": [
+      104
+     ],
+     "rooting": [
+      106
+     ],
+     "zone": [
+      107
+     ],
+     "all": [
+      109
+     ],
+     "treatments": [
+      110,
+      122,
+      208
+     ],
+     "had": [
+      111
+     ],
+     "SOC": [
+      113,
+      138,
+      150,
+      167,
+      227
+     ],
+     "volume": [
+      116
+     ],
+     "basis": [
+      117
+     ],
+     "as": [
+      123
+     ],
+     "same": [
+      126
+     ],
+     "crop.": [
+      132
+     ],
+     "However,": [
+      133
+     ],
+     "using": [
+      134
+     ],
+     "baseline": [
+      136
+     ],
+     "2000": [
+      137
+     ],
+     "contents": [
+      139
+     ],
+     "only,": [
+      140
+     ],
+     "NT": [
+      142
+     ],
+     "crops": [
+      145
+     ],
+     "maintained": [
+      146
+     ],
+     "most": [
+      147
+     ],
+     "levels": [
+      151
+     ],
+     "topsoil": [
+      154
+     ],
+     "subsoil": [
+      156
+     ],
+     "during": [
+      157
+     ],
+     "study,": [
+      160
+     ],
+     "when": [
+      161,
+      209
+     ],
+     "sediment": [
+      163,
+      224
+     ],
+     "high": [
+      165
+     ],
+     "retained": [
+      169,
+      212
+     ],
+     "upland": [
+      172,
+      201
+     ],
+     "landscape": [
+      173,
+      202
+     ],
+     "by": [
+      174,
+      213,
+      230
+     ],
+     "practices,": [
+      177,
+      217
+     ],
+     "including": [
+      178
+     ],
+     "border": [
+      179
+     ],
+     "filter": [
+      181
+     ],
+     "strips": [
+      182
+     ],
+     "sod": [
+      184
+     ],
+     "waterways": [
+      185
+     ],
+     "adjacent": [
+      186
+     ],
+     "Soil": [
+      195
+     ],
+     "creation": [
+      197
+     ],
+     "retention": [
+      198
+     ],
+     "greatest": [
+      204
+     ],
+     "sediments": [
+      210
+     ],
+     "should": [
+      219
+     ],
+     "reduce": [
+      220
+     ],
+     "erosion": [
+      222
+     ],
+     "rich": [
+      225
+     ],
+     "being": [
+      228
+     ],
+     "transported": [
+      229
+     ],
+     "overland": [
+      231
+     ],
+     "flow": [
+      232
+     ],
+     "into": [
+      233
+     ],
+     "water": [
+      234
+     ],
+     "eventual": [
+      237
+     ],
+     "release": [
+      238
+     ],
+     "methane": [
+      240
+     ],
+     "dioxide": [
+      243
+     ],
+     "atmosphere.": [
+      246
+     ]
+    },
+    "cited_by_count": 83,
+    "open_access": {
+     "is_oa": false,
+     "oa_status": "closed",
+     "oa_url": null,
+     "any_repository_has_fulltext": false
+    },
+    "relevance_score": 162.02834
+   },
+   {
+    "id": "https://openalex.org/W3133611552",
+    "doi": "https://doi.org/10.1016/j.agee.2021.107356",
+    "display_name": "Soil organic carbon is affected by organic amendments, conservation tillage, and cover cropping in organic farming systems: A meta-analysis",
+    "publication_year": 2021,
+    "publication_date": "2021-03-01",
+    "type": "review",
+    "authorships": [
+     {
+      "author": {
+       "display_name": "Robert Crystal‐Ornelas"
+      }
+     },
+     {
+      "author": {
+       "display_name": "Resham Thapa"
+      }
+     },
+     {
+      "author": {
+       "display_name": "Katherine L. Tully"
+      }
+     }
+    ],
+    "primary_location": {
+     "id": "doi:10.1016/j.agee.2021.107356",
+     "doi": "https://doi.org/10.1016/j.agee.2021.107356",
+     "is_oa": false,
+     "landing_page_url": "https://doi.org/10.1016/j.agee.2021.107356",
+     "pdf_url": null,
+     "source": {
+      "id": "https://openalex.org/S185297315",
+      "display_name": "Agriculture Ecosystems & Environment",
+      "issn_l": "0167-8809",
+      "issn": [
+       "0167-8809",
+       "1873-2305"
+      ],
+      "is_oa": false,
+      "is_in_doaj": false,
+      "is_core": true,
+      "listed_in": [
+       "anvur-scientific",
+       "cwts-core",
+       "dongbi-a",
+       "jufo-3",
+       "norway-1",
+       "poland-200",
+       "russia-white-list-1",
+       "vabb-shw"
+      ],
+      "host_organization": "https://openalex.org/P4310320990",
+      "host_organization_name": "Elsevier BV",
+      "host_organization_lineage": [
+       "https://openalex.org/P4310320990"
+      ],
+      "host_organization_lineage_names": [
+       "Elsevier BV"
+      ],
+      "type": "journal"
+     },
+     "license": null,
+     "license_id": null,
+     "version": "publishedVersion",
+     "is_accepted": true,
+     "is_published": true,
+     "raw_source_name": "Agriculture, Ecosystems &amp; Environment",
+     "raw_type": "journal-article"
+    },
+    "biblio": {
+     "volume": "312",
+     "issue": null,
+     "first_page": "107356",
+     "last_page": "107356"
+    },
+    "abstract_inverted_index": null,
+    "cited_by_count": 225,
+    "open_access": {
+     "is_oa": false,
+     "oa_status": "closed",
+     "oa_url": null,
+     "any_repository_has_fulltext": false
+    },
+    "relevance_score": 154.29689
+   }
+  ],
+  "group_by": []
+ }
+}

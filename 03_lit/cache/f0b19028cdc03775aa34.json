@@ -1,0 +1,255 @@
+{
+ "url": "https://api.crossref.org/works/10.2136/sssaj1997.03615995006100010022x",
+ "fetched_utc": "2026-11-06T14:34:37Z",
+ "status": 200,
+ "body": {
+  "status": "ok",
+  "message-type": "work",
+  "message-version": "1.0.0",
+  "message": {
+   "indexed": {
+    "date-parts": [
+     [
+      2026,
+      10,
+      6
+     ]
+    ],
+    "date-time": "2026-10-06T19:37:21Z",
+    "timestamp": 1791315441471,
+    "version": "4.3.1"
+   },
+   "reference-count": 0,
+   "publisher": "Wiley",
+   "issue": "1",
+   "license": [
+    {
+     "start": {
+      "date-parts": [
+       [
+        1997,
+        1,
+        1
+       ]
+      ],
+      "date-time": "1997-01-01T00:00:00Z",
+      "timestamp": 852076800000
+     },
+     "content-version": "vor",
+     "delay-in-days": 0,
+     "URL": "http://onlinelibrary.wiley.com/termsAndConditions#vor"
+    }
+   ],
+   "content-domain": {
+    "domain": [
+     "acsess.onlinelibrary.wiley.com"
+    ],
+    "crossmark-restriction": true
+   },
+   "short-container-title": [
+    "Soil Science Soc of Amer J"
+   ],
+   "published-print": {
+    "date-parts": [
+     [
+      1997,
+      1
+     ]
+    ]
+   },
+   "abstract": "<jats:title>Abstract</jats:title>\n                  <jats:p>\n                    Winter cover crops may increase soil organic carbon (SOC) levels or reduce their rate of depletion. Selection of appropriate cover crops to increase SOC requires an adequate knowledge of the quality and quantity of plant biomass produced and its rate of decomposition in soil. This study examined the SOC and carbohydrate concentrations in soil as affected by several leguminous and nonleguminous cover crops after 6 yr of a corn (\n                    <jats:italic>Zea mays</jats:italic>\n                    L.) cover crop double cropping system in a temperate, humid region. The vegetation in the control treatment without cover crops was primarily shepherd's‐purse [\n                    <jats:italic>Capsella bursa‐pastoris</jats:italic>\n                    (L.) Medikus]. The cover crops had a variable effect on SOC and soil carbohydrate concentrations due to a significant difference in total organic C and carbohydrate produced by the cover crops. The buried bag technique showed that the biomass C from the aboveground biomass of the cover crops decomposed rapidly in the soil with a half‐life averaging 30.9 ± 9.4 (SD) d in 1992 and 55.2 ± 7.8 (SD) d in 1993. The decomposition of carbohydrate in the aboveground biomass in the soil was also rapid with an average half‐life of 40.0 ± 13.1 (SD) d in 1992 and 50.5 ± 11.8 (SD) d in 1993. The overriding cover crop effect on SOC and carbohydrate was due to the magnitude of the C inputs from the cover crops. With more than 4 Mg ha\n                    <jats:sup>−1</jats:sup>\n                    of top biomass, cereal rye (\n                    <jats:italic>Secale cereale</jats:italic>\n                    L.) and annual ryegrass (\n                    <jats:italic>Lolium multiflorum</jats:italic>\n                    Lam.) were better suited as winter cover crops for building SOC levels in this region than Austrian winter pea (\n                    <jats:italic>Lathyrus hirsutus</jats:italic>\n                    L.), hairy vetch (\n                    <jats:italic>Vicia villosa</jats:italic>\n                    Roth), and canola (\n                    <jats:italic>Brassica napus</jats:italic>\n                    L.).\n                  </jats:p>",
+   "DOI": "10.2136/sssaj1997.03615995006100010022x",
+   "type": "journal-article",
+   "created": {
+    "date-parts": [
+     [
+      2010,
+      7,
+      27
+     ]
+    ],
+    "date-time": "2010-07-27T15:37:51Z",
+    "timestamp": 1280245071000
+   },
+   "page": "145-152",
+   "update-policy": "https://doi.org/10.1002/crossmark_policy",
+   "source": "Crossref",
+   "is-referenced-by-count": 261,
+   "title": [
+    "Winter Cover Crop Effects on Soil Organic Carbon and Carbohydrate in Soil"
+   ],
+   "prefix": "10.1002",
+   "volume": "61",
+   "author": [
+    {
+     "given": "S.",
+     "family": "Kuo",
+     "sequence": "first",
+     "affiliation": [
+      {
+       "name": "Washington State University Puyallup Research and Extension Center 7612 Pioneer Way East Puyallup WA 98371‐4998"
+      }
+     ],
+     "role": [
+      {
+       "vocabulary": "crossref",
+       "role": "author"
+      }
+     ]
+    },
+    {
+     "given": "U. M.",
+     "family": "Sainju",
+     "sequence": "additional",
+     "affiliation": [
+      {
+       "name": "Washington State University Puyallup Research and Extension Center 7612 Pioneer Way East Puyallup WA 98371‐4998"
+      }
+     ],
+     "role": [
+      {
+       "vocabulary": "crossref",
+       "role": "author"
+      }
+     ]
+    },
+    {
+     "given": "E. J.",
+     "family": "Jellum",
+     "sequence": "additional",
+     "affiliation": [
+      {
+       "name": "Washington State University Puyallup Research and Extension Center 7612 Pioneer Way East Puyallup WA 98371‐4998"
+      }
+     ],
+     "role": [
+      {
+       "vocabulary": "crossref",
+       "role": "author"
+      }
+     ]
+    }
+   ],
+   "member": "311",
+   "published-online": {
+    "date-parts": [
+     [
+      1997,
+      1
+     ]
+    ]
+   },
+   "container-title": [
+    "Soil Science Society of America Journal"
+   ],
+   "original-title": [],
+   "language": "en",
+   "link": [
+    {
+     "URL": "https://api.wiley.com/onlinelibrary/tdm/v1/articles/10.2136%2Fsssaj1997.03615995006100010022x",
+     "content-type": "application/pdf",
+     "content-version": "vor",
+     "intended-application": "text-mining"
+    },
+    {
+     "URL": "https://acsess.onlinelibrary.wiley.com/doi/pdf/10.2136/sssaj1997.03615995006100010022x",
+     "content-type": "unspecified",
+     "content-version": "vor",
+     "intended-application": "similarity-checking"
+    }
+   ],
+   "deposited": {
+    "date-parts": [
+     [
+      2025,
+      10,
+      26
+     ]
+    ],
+    "date-time": "2025-10-26T13:28:31Z",
+    "timestamp": 1761485311000
+   },
+   "score": 1,
+   "resource": {
+    "primary": {
+     "URL": "https://acsess.onlinelibrary.wiley.com/doi/10.2136/sssaj1997.03615995006100010022x"
+    }
+   },
+   "subtitle": [],
+   "short-title": [],
+   "issued": {
+    "date-parts": [
+     [
+      1997,
+      1
+     ]
+    ]
+   },
+   "references-count": 0,
+   "journal-issue": {
+    "issue": "1",
+    "published-print": {
+     "date-parts": [
+      [
+       1997,
+       1
+      ]
+     ]
+    }
+   },
+   "alternative-id": [
+    "10.2136/sssaj1997.03615995006100010022x"
+   ],
+   "URL": "https://doi.org/10.2136/sssaj1997.03615995006100010022x",
+   "archive": [
+    "Portico"
+   ],
+   "relation": {},
+   "ISSN": [
+    "0361-5995",
+    "1435-0661"
+   ],
+   "issn-type": [
+    {
+     "value": "0361-5995",
+     "type": "print"
+    },
+    {
+     "value": "1435-0661",
+     "type": "electronic"
+    }
+   ],
+   "subject": [],
+   "published": {
+    "date-parts": [
+     [
+      1997,
+      1
+     ]
+    ]
+   },
+   "assertion": [
+    {
+     "value": "1995-07-24",
+     "order": 0,
+     "name": "received",
+     "label": "Received",
+     "group": {
+      "name": "publication_history",
+      "label": "Publication History"
+     }
+    },
+    {
+     "value": "1997-01-01",
+     "order": 3,
+     "name": "published",
+     "label": "Published",
+     "group": {
+      "name": "publication_history",
+      "label": "Publication History"
+     }
+    }
+   ]
+  }
+ }
+}

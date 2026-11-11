@@ -1,0 +1,8 @@
+Now write results/analysis.py, in the results folder at the top of the repository (not in 02_data/), one script that does the whole analysis from the raw file, 02_data/datasets/hvac-ahu/ahu_trend_2017-09-25_to_2017-10-08.csv.
+
+- It reads the raw file and never changes it. It applies the fixes in results/findings.md and prints what each one changed (rows before and after, values converted). What findings.md says to flag, it flags and leaves in place.
+- For the rows where the supply fan runs, it computes each day's median of SA_TEMP minus SA_TEMPSPT (degrees F) and each day's median outdoor air temperature, and prints them as a table.
+- It creates results/figures/ if it is missing and saves one plot, results/figures/tracking.png: that daily difference across the two weeks, with the outdoor temperature shown too. On mild days the economizer cools with outdoor air, and mechanical cooling is locked out until the outdoor air damper is fully open, so supply air can drift from its setpoint because of the weather alone. Compare days with similar outdoor temperatures before blaming the equipment.
+- It writes results/report.md itself, every number filled in from a value the script computed, never typed in (that includes numbers in the sentences that explain the equipment problems): what was fixed, the table, the plot, and which days point to an equipment problem rather than the weather, with the evidence. It prints every number the report contains, so each one can be traced to a line of output.
+
+Run it, and fix it until it runs cleanly. Then prove it rebuilds from nothing: delete results/report.md and the whole results/figures/ folder, run the script again, and confirm it made both again by itself. Then tell me in a few lines what the report says.

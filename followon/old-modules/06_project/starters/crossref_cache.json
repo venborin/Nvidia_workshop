@@ -1,0 +1,115 @@
+{
+ "_about": "Crossref answers for the lines of sample_citations.txt, fetched live on 2026-10-31 and trimmed to the fields citation_tool.py compares. Keyed by citation_tool.key_and_url. Lets the samples work offline; not a substitute for a live lookup of anything else.",
+ "doi:10.1038/171737a0": {
+  "status": 200,
+  "records": [
+   {
+    "DOI": "10.1038/171737a0",
+    "title": "Molecular Structure of Nucleic Acids: A Structure for Deoxyribose Nucleic Acid",
+    "first_author": "WATSON",
+    "years": [
+     1953
+    ]
+   }
+  ]
+ },
+ "doi:10.1038/s41586-021-03819-2": {
+  "status": 200,
+  "records": [
+   {
+    "DOI": "10.1038/s41586-021-03819-2",
+    "title": "Highly accurate protein structure prediction with AlphaFold",
+    "first_author": "Jumper",
+    "years": [
+     2021
+    ]
+   }
+  ]
+ },
+ "doi:10.1126/science.1102896": {
+  "status": 200,
+  "records": [
+   {
+    "DOI": "10.1126/science.1102896",
+    "title": "Electric Field Effect in Atomically Thin Carbon Films",
+    "first_author": "Novoselov",
+    "years": [
+     2004
+    ]
+   }
+  ]
+ },
+ "doi:10.1063/1.464913": {
+  "status": 200,
+  "records": [
+   {
+    "DOI": "10.1063/1.464913",
+    "title": "Density-functional thermochemistry. III. The role of exact exchange",
+    "first_author": "Becke",
+    "years": [
+     1993
+    ]
+   }
+  ]
+ },
+ "query:laemmli u k 1970 cleavage of structural proteins during the assembly of the head of bacteriophage t4 nature 227 680 685": {
+  "status": 200,
+  "records": [
+   {
+    "DOI": "10.1038/227680a0",
+    "title": "Cleavage of Structural Proteins during the Assembly of the Head of Bacteriophage T4",
+    "first_author": "LAEMMLI",
+    "years": [
+     1970
+    ]
+   },
+   {
+    "DOI": "10.1016/0092-8674(76)90018-0",
+    "title": "Correlation between structural transformation and cleavage of the major head protein of T4 bacteriophage",
+    "first_author": "Laemmli",
+    "years": [
+     1976
+    ]
+   },
+   {
+    "DOI": "10.1016/0022-2836(73)90024-7",
+    "title": "Bacteriophage T4 tail assembly: Structural proteins and their genetic identification",
+    "first_author": "King",
+    "years": [
+     1973
+    ]
+   }
+  ]
+ },
+ "doi:10.48550/arxiv.1706.03762": {
+  "status": 404,
+  "records": []
+ },
+ "query:delacroix m sato k brennan r j 2021 room temperature ammonia synthesis over a cobalt tungsten nitride electrocatalyst in deep eutectic solvents journal of applied electrochemistry 51 4 611 623": {
+  "status": 200,
+  "records": [
+   {
+    "DOI": "10.1021/acsnano.0c10596.s001",
+    "title": "Scalable Production of Cobalt Phthalocyanine Nanotubes: Efficient and Robust Hollow Electrocatalyst for Ammonia Synthesis at Room Temperature",
+    "first_author": "",
+    "years": []
+   },
+   {
+    "DOI": "10.1021/jp075794j.s003",
+    "title": "Electrochemistry in Deep Eutectic Solvents",
+    "first_author": "",
+    "years": []
+   },
+   {
+    "DOI": "10.1021/jp075794j.s004",
+    "title": "Electrochemistry in Deep Eutectic Solvents",
+    "first_author": "",
+    "years": []
+   }
+  ]
+ },
+ "doi:10.1021/jacs.9b99871": {
+  "status": 404,
+  "records": []
+ }
+}

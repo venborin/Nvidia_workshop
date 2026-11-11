@@ -1,0 +1,4 @@
+kind,column,matched to,matched,mean_err,max_err,pct_range,median_rel,extra,duplicates
+x axis,concentration (uM),Concentration (µM),8/8,0.188,1.0,0.4,,0,0
+series,fluorescence (a.u.),Fluorescence (a.u.),8/8,20.9,35.0,0.8,3.6,,
+error bar,fluorescence err (a.u.),Fluorescence err (a.u.),8/8,22.1,43.0,0.9,17.9,,

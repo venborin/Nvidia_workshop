@@ -1,0 +1,16 @@
+# Pinned on purpose. Resolved for Python 3.12; the container installs exactly
+# these. Move them together, and test in a fresh Codespace.
+# 2026-10-17: the first five. 2026-11-06: the data stack for the capabilities
+# tour (Stops 2, 4 and 6), resolved with versions released before 2026-10-24.
+openai==3.35.1
+pydantic==2.14.1
+pypdf==6.21.1
+python-docx==1.2.0
+ipykernel==7.4.0
+numpy==2.5.4
+pandas==3.1.0
+scipy==1.18.1
+matplotlib==3.11.2
+pillow==13.0.0
+statsmodels==0.15.0
+seaborn==0.13.2

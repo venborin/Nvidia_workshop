@@ -1,0 +1,11 @@
+Lab meeting minutes, Tuesday.
+
+Present: the whole group except Sam, who is at the conference.
+
+The minus-80 freezer alarm went off twice last week. Facilities says the compressor is fine and the door seal is worn; a new seal is ordered. Until it arrives, keep the door closed and do not prop it open while sorting boxes.
+
+Journal club moves to Thursdays at 3. Priya picks the next paper.
+
+Reminder that the shared drive is being reorganized. Put raw instrument files under raw/ with the date first in the file name, and never edit a raw file in place.
+
+Next meeting: same time next week. Bring one figure each.

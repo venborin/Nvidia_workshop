@@ -1,0 +1,8 @@
+Title: Bench notes: buffer drift in the plate reader assay
+Field: chemistry
+
+Week of March 3. An invented lab notebook entry, the kind of working document many of you keep.
+
+We ran the absorbance assay on 24 plates over five days with the same lot of phosphate buffer. Readings at 405 nanometers drifted upward by about 0.03 absorbance units per day on the blank wells. Plates read within two hours of buffer preparation showed no drift. We suspect slow uptake of carbon dioxide lowering the pH, but we did not measure pH directly.
+
+Next step: prepare buffer fresh each morning for one week and log pH at preparation and at the last read. If drift disappears, switch the protocol to daily buffer.

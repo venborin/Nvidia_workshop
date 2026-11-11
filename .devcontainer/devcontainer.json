@@ -1,0 +1,52 @@
+{
+  // EVERYTHING HERE IS PINNED ON PURPOSE. A floating version is a live
+  // dependency on someone else's release schedule. Test in a fresh Codespace
+  // before you rely on a change here.
+  "name": "osu-llm-workshop: plain Python against one model endpoint",
+
+  // A finished image, built ahead of time from github.com/jhassell/osu-llm-workshop-image
+  // and pinned by digest. It already holds Python 3.12, the workshop's Python
+  // libraries, Node 22.23.2 and OpenClaw 2026.9.2 (pinned together), an SSH
+  // server (so the instructor can use `gh codespace ssh` and `gh codespace logs`)
+  // and the GitHub CLI, so creating a Codespace installs nothing and there is no
+  // features block. A Codespace's first open is mostly the time it takes to
+  // download the image. To change the libraries, rebuild the image and paste the
+  // new digest here; requirements.txt must match what the image holds.
+  "image": "ghcr.io/jhassell/osu-llm-workshop-devcontainer@sha256:36d33f4b4ebe866800f9ff4e89660355e161e20ea50d86d8776397000daf5def",
+
+  // onCreateCommand, NOT postCreateCommand: GitHub runs onCreateCommand inside
+  // a Codespaces prebuild and never runs postCreateCommand there. Without a
+  // prebuild it runs once, while the Codespace is created. With the libraries
+  // already in the image it only installs the autostart line and checks imports.
+  "onCreateCommand": "bash .devcontainer/postCreate.sh",
+
+  // NO postAttachCommand. It would open a second terminal that takes focus and
+  // hides the first one, where setup.sh runs (see .devcontainer/autostart.sh).
+
+  // Four cores, so the editor, the labs and OpenClaw (a Node program) stay
+  // responsive. The cost: GitHub's free quota is counted in core-hours, so a
+  // 4-core Codespace uses it twice as fast as a 2-core one (120 core-hours a
+  // month is 30 hours of running time at 4 cores). Stop the Codespace when done.
+  "hostRequirements": { "cpus": 4 },
+
+  // The participant's tutorial website: site/ served on port 8000 by
+  // .devcontainer/site-public.sh. Declared here so the port exists before that
+  // script makes it public, and silent so no pop-up appears during setup.
+  "forwardPorts": [8000],
+  "portsAttributes": {
+    "8000": { "label": "Your site (site/ folder)", "onAutoForward": "silent" }
+  },
+
+  "customizations": {
+    "vscode": {
+      // Only a CSV viewer. The Python and Jupyter extensions are left out on
+      // purpose: every lab runs from the terminal, no lab uses notebook cells,
+      // and those extensions raise pop-ups (interpreter choice, environment
+      // files) that interrupt a room of first-time users. Editing .py files
+      // still gets VS Code's built-in syntax colouring.
+      "extensions": [
+        "mechatroner.rainbow-csv"
+      ]
+    }
+  }
+}

@@ -1,0 +1,6 @@
+kind,column,matched to,matched,mean_err,max_err,pct_range,median_rel,extra,duplicates
+x axis,species,Species,3/3,,,,,0,0
+series,female (g),Female (g),3/3,42.0,80.0,0.8,0.8,,
+error bar,female err (g),Female err (g),3/3,17.3,19.0,0.3,6.4,,
+series,male (g),Male (g),3/3,55.7,85.0,1.0,1.1,,
+error bar,male err (g),Male err (g),3/3,48.7,87.0,0.9,13.5,,

@@ -1,0 +1,17 @@
+{
+ "url": "https://api.crossref.org/works/10.5281/zenodo.19505214/agency",
+ "fetched_utc": "2026-11-06T14:34:36Z",
+ "status": 200,
+ "body": {
+  "status": "ok",
+  "message-type": "work-agency",
+  "message-version": "1.0.0",
+  "message": {
+   "DOI": "10.5281/zenodo.19505214",
+   "agency": {
+    "id": "datacite",
+    "label": "DataCite"
+   }
+  }
+ }
+}

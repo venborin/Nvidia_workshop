@@ -1,0 +1,327 @@
+{
+ "url": "https://api.crossref.org/works/10.1016/j.agee.2021.107356",
+ "fetched_utc": "2026-11-06T14:34:38Z",
+ "status": 200,
+ "body": {
+  "status": "ok",
+  "message-type": "work",
+  "message-version": "1.0.0",
+  "message": {
+   "indexed": {
+    "date-parts": [
+     [
+      2026,
+      10,
+      22
+     ]
+    ],
+    "date-time": "2026-10-22T01:12:18Z",
+    "timestamp": 1792631538578,
+    "version": "4.5.0"
+   },
+   "reference-count": 100,
+   "publisher": "Elsevier BV",
+   "license": [
+    {
+     "start": {
+      "date-parts": [
+       [
+        2021,
+        6,
+        1
+       ]
+      ],
+      "date-time": "2021-06-01T00:00:00Z",
+      "timestamp": 1622505600000
+     },
+     "content-version": "tdm",
+     "delay-in-days": 0,
+     "URL": "https://www.elsevier.com/tdm/userlicense/1.0/"
+    },
+    {
+     "start": {
+      "date-parts": [
+       [
+        2021,
+        6,
+        1
+       ]
+      ],
+      "date-time": "2021-06-01T00:00:00Z",
+      "timestamp": 1622505600000
+     },
+     "content-version": "tdm",
+     "delay-in-days": 0,
+     "URL": "https://www.elsevier.com/legal/tdmrep-license"
+    },
+    {
+     "start": {
+      "date-parts": [
+       [
+        2021,
+        6,
+        1
+       ]
+      ],
+      "date-time": "2021-06-01T00:00:00Z",
+      "timestamp": 1622505600000
+     },
+     "content-version": "stm-asf",
+     "delay-in-days": 0,
+     "URL": "https://doi.org/10.15223/policy-017"
+    },
+    {
+     "start": {
+      "date-parts": [
+       [
+        2021,
+        6,
+        1
+       ]
+      ],
+      "date-time": "2021-06-01T00:00:00Z",
+      "timestamp": 1622505600000
+     },
+     "content-version": "stm-asf",
+     "delay-in-days": 0,
+     "URL": "https://doi.org/10.15223/policy-037"
+    },
+    {
+     "start": {
+      "date-parts": [
+       [
+        2021,
+        6,
+        1
+       ]
+      ],
+      "date-time": "2021-06-01T00:00:00Z",
+      "timestamp": 1622505600000
+     },
+     "content-version": "stm-asf",
+     "delay-in-days": 0,
+     "URL": "https://doi.org/10.15223/policy-012"
+    },
+    {
+     "start": {
+      "date-parts": [
+       [
+        2021,
+        6,
+        1
+       ]
+      ],
+      "date-time": "2021-06-01T00:00:00Z",
+      "timestamp": 1622505600000
+     },
+     "content-version": "stm-asf",
+     "delay-in-days": 0,
+     "URL": "https://doi.org/10.15223/policy-029"
+    },
+    {
+     "start": {
+      "date-parts": [
+       [
+        2021,
+        6,
+        1
+       ]
+      ],
+      "date-time": "2021-06-01T00:00:00Z",
+      "timestamp": 1622505600000
+     },
+     "content-version": "stm-asf",
+     "delay-in-days": 0,
+     "URL": "https://doi.org/10.15223/policy-004"
+    }
+   ],
+   "content-domain": {
+    "domain": [
+     "elsevier.com",
+     "sciencedirect.com"
+    ],
+    "crossmark-restriction": true
+   },
+   "short-container-title": [
+    "Agriculture, Ecosystems &amp; Environment"
+   ],
+   "published-print": {
+    "date-parts": [
+     [
+      2021,
+      6
+     ]
+    ]
+   },
+   "DOI": "10.1016/j.agee.2021.107356",
+   "type": "journal-article",
+   "created": {
+    "date-parts": [
+     [
+      2021,
+      3,
+      1
+     ]
+    ],
+    "date-time": "2021-03-01T00:27:34Z",
+    "timestamp": 1614558454000
+   },
+   "page": "107356",
+   "update-policy": "https://doi.org/10.1016/elsevier_cm_policy",
+   "source": "Crossref",
+   "is-referenced-by-count": 206,
+   "special_numbering": "C",
+   "title": [
+    "Soil organic carbon is affected by organic amendments, conservation tillage, and cover cropping in organic farming systems: A meta-analysis"
+   ],
+   "prefix": "10.1016",
+   "volume": "312",
+   "author": [
+    {
+     "ORCID": "https://orcid.org/0000-0002-6339-1139",
+     "authenticated-orcid": false,
+     "given": "Robert",
+     "family": "Crystal-Ornelas",
+     "sequence": "first",
+     "affiliation": [],
+     "role": [
+      {
+       "vocabulary": "crossref",
+       "role": "author"
+      }
+     ]
+    },
+    {
+     "given": "Resham",
+     "family": "Thapa",
+     "sequence": "additional",
+     "affiliation": [],
+     "role": [
+      {
+       "vocabulary": "crossref",
+       "role": "author"
+      }
+     ]
+    },
+    {
+     "ORCID": "https://orcid.org/0000-0002-6190-2679",
+     "authenticated-orcid": false,
+     "given": "Katherine L.",
+     "family": "Tully",
+     "sequence": "additional",
+     "affiliation": [],
+     "role": [
+      {
+       "vocabulary": "crossref",
+       "role": "author"
+      }
+     ]
+    }
+   ],
+   "member": "78",
+   "container-title": [
+    "Agriculture, Ecosystems &amp; Environment"
+   ],
+   "original-title": [],
+   "language": "en",
+   "link": [
+    {
+     "URL": "https://api.elsevier.com/content/article/PII:S0167880921000608?httpAccept=text/xml",
+     "content-type": "text/xml",
+     "content-version": "vor",
+     "intended-application": "text-mining"
+    },
+    {
+     "URL": "https://api.elsevier.com/content/article/PII:S0167880921000608?httpAccept=text/plain",
+     "content-type": "text/plain",
+     "content-version": "vor",
+     "intended-application": "text-mining"
+    }
+   ],
+   "deposited": {
+    "date-parts": [
+     [
+      2025,
+      9,
+      29
+     ]
+    ],
+    "date-time": "2025-09-29T08:23:51Z",
+    "timestamp": 1759134231000
+   },
+   "score": 1,
+   "resource": {
+    "primary": {
+     "URL": "https://linkinghub.elsevier.com/retrieve/pii/S0167880921000608"
+    }
+   },
+   "subtitle": [],
+   "short-title": [],
+   "issued": {
+    "date-parts": [
+     [
+      2021,
+      6
+     ]
+    ]
+   },
+   "references-count": 100,
+   "alternative-id": [
+    "S0167880921000608"
+   ],
+   "URL": "https://doi.org/10.1016/j.agee.2021.107356",
+   "relation": {},
+   "ISSN": [
+    "0167-8809"
+   ],
+   "issn-type": [
+    {
+     "value": "0167-8809",
+     "type": "print"
+    }
+   ],
+   "subject": [],
+   "published": {
+    "date-parts": [
+     [
+      2021,
+      6
+     ]
+    ]
+   },
+   "assertion": [
+    {
+     "value": "Elsevier",
+     "name": "publisher",
+     "label": "This article is maintained by"
+    },
+    {
+     "value": "Soil organic carbon is affected by organic amendments, conservation tillage, and cover cropping in organic farming systems: A meta-analysis",
+     "name": "articletitle",
+     "label": "Article Title"
+    },
+    {
+     "value": "Agriculture, Ecosystems & Environment",
+     "name": "journaltitle",
+     "label": "Journal Title"
+    },
+    {
+     "value": "https://doi.org/10.1016/j.agee.2021.107356",
+     "name": "articlelink",
+     "label": "CrossRef DOI link to publisher maintained version"
+    },
+    {
+     "value": "article",
+     "name": "content_type",
+     "label": "Content Type"
+    },
+    {
+     "value": "© 2021 Elsevier B.V. All rights reserved.",
+     "name": "copyright",
+     "label": "Copyright"
+    }
+   ],
+   "article-number": "107356"
+  }
+ }
+}

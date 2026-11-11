@@ -1,0 +1,22 @@
+{
+  "cases": {
+    "doc_001": "experimental",
+    "doc_002": "review",
+    "doc_003": "experimental",
+    "doc_004": "experimental",
+    "doc_005": "computational",
+    "doc_006": "experimental",
+    "doc_007": "experimental",
+    "doc_008": "computational",
+    "doc_009": "review",
+    "doc_010": "mixed"
+  },
+  "heldout": {
+    "doc_011": "computational",
+    "doc_012": "mixed",
+    "doc_013": "theoretical",
+    "doc_014": "qualitative",
+    "doc_015": "computational",
+    "doc_016": "mixed"
+  }
+}

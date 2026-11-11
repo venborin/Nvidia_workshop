@@ -1,0 +1,206 @@
+{
+ "url": "https://api.crossref.org/works/10.48077/scihor.25%289%29.2022.84-95",
+ "fetched_utc": "2026-11-08T20:21:19Z",
+ "status": 200,
+ "body": {
+  "status": "ok",
+  "message-type": "work",
+  "message-version": "1.0.0",
+  "message": {
+   "indexed": {
+    "date-parts": [
+     [
+      2026,
+      2,
+      24
+     ]
+    ],
+    "date-time": "2026-02-24T11:21:10Z",
+    "timestamp": 1771932070238,
+    "version": "3.50.1"
+   },
+   "reference-count": 29,
+   "publisher": "Academics Open Research",
+   "issue": "9",
+   "content-domain": {
+    "domain": [],
+    "crossmark-restriction": false
+   },
+   "short-container-title": [],
+   "published-print": {
+    "date-parts": [
+     [
+      2022,
+      11,
+      26
+     ]
+    ]
+   },
+   "abstract": "<jats:p>In modern agriculture, it is necessary to identify strategic steps that will reduce greenhouse gas emissions: on the one hand, reducing emissions by cutting down fuel consumption, reducing soil interference, limiting nitrogen losses when using fertilisers, and on the other hand – increasing the efficiency of carbon extraction from the atmosphere through plant photosynthesis and sequestration as organic matter of the soil. The purpose of this study is to figure out the influence on the carbon balance of such elements of the agricultural system as the system of tillage and the use of intermediate cover crops in a model 4-field crop rotation in the Steppe zone of Ukraine. This work was performed using the method of empirical calculations based on the online calculator of greenhouse gas emissions Cool Farm Tool. The influence of intermediate crops in two fields of crop rotation (after the early grain predecessors – wheat and winter barley) and tillage systems (traditional, reduced, and no-till) on the balance of carbon emissions and sequestration in the model 4-field crop rotation was analysed. According to the results, it was found that during the model 4-field crop rotation under the conditions of the classical system of tillage for sunflower and maize without intermediate crops and reduced processing for wheat and barley, the total greenhouse gas emissions amount to 4015 kg/ha of CO2 -eq. in 4 years. Switching to a reduced tillage system has been shown to reduce emissions by 30.1%. The addition of two intermediate crops in two crop rotation fields before spring crops allows obtaining a negative balance of greenhouse gas emissions of -377 kg/ha of CO2 -eq. during this period, and when switching to no-till for all crops -1221 kg/ha of CO2 -eq. for a 4-year rotation period. This study will help identify strategic steps and their potential contribution to the development and implementation of agricultural systems with minimal greenhouse gas emissions</jats:p>",
+   "DOI": "10.48077/scihor.25(9).2022.84-95",
+   "type": "journal-article",
+   "created": {
+    "date-parts": [
+     [
+      2022,
+      12,
+      15
+     ]
+    ],
+    "date-time": "2022-12-15T06:39:11Z",
+    "timestamp": 1671086351000
+   },
+   "source": "Crossref",
+   "is-referenced-by-count": 1,
+   "title": [
+    "Evaluating the Effectiveness of Catch Crops and Tillage Systems for Carbon Farming"
+   ],
+   "prefix": "10.48077",
+   "volume": "25",
+   "author": [
+    {
+     "given": "VALERII",
+     "family": "DUBROVIN",
+     "sequence": "first",
+     "affiliation": [],
+     "role": [
+      {
+       "role": "author",
+       "vocabulary": "crossref"
+      }
+     ]
+    },
+    {
+     "given": "VICTOR",
+     "family": "SCHERBAKOV",
+     "sequence": "additional",
+     "affiliation": [],
+     "role": [
+      {
+       "role": "author",
+       "vocabulary": "crossref"
+      }
+     ]
+    },
+    {
+     "given": "LIUDMYLA",
+     "family": "POPOVA",
+     "sequence": "additional",
+     "affiliation": [],
+     "role": [
+      {
+       "role": "author",
+       "vocabulary": "crossref"
+      }
+     ]
+    },
+    {
+     "given": "OLENA",
+     "family": "OZHOVAN",
+     "sequence": "additional",
+     "affiliation": [],
+     "role": [
+      {
+       "role": "author",
+       "vocabulary": "crossref"
+      }
+     ]
+    }
+   ],
+   "member": "53727",
+   "published-online": {
+    "date-parts": [
+     [
+      2022,
+      12,
+      7
+     ]
+    ]
+   },
+   "container-title": [
+    "Scientific Horizons"
+   ],
+   "original-title": [],
+   "language": "uk",
+   "link": [
+    {
+     "URL": "https://sciencehorizon.com.ua/web/uploads/pdf/Scientific%20Horizons_2022_Vol.%2025%2C%20No.%209-84-95.pdf",
+     "content-type": "unspecified",
+     "content-version": "vor",
+     "intended-application": "similarity-checking"
+    }
+   ],
+   "deposited": {
+    "date-parts": [
+     [
+      2026,
+      2,
+      24
+     ]
+    ],
+    "date-time": "2026-02-24T10:35:04Z",
+    "timestamp": 1771929304000
+   },
+   "score": 1,
+   "resource": {
+    "primary": {
+     "URL": "https://sciencehorizon.com.ua/en/journals/tom-25-9-2022/otsinka-efektivnosti-promizhnikh-kultur-i-sistem-obrobitku-gruntu-dlya-vugletsevogo-zemlerobstva"
+    }
+   },
+   "subtitle": [],
+   "short-title": [],
+   "issued": {
+    "date-parts": [
+     [
+      2022,
+      11,
+      26
+     ]
+    ]
+   },
+   "references-count": 29,
+   "journal-issue": {
+    "issue": "9",
+    "published-online": {
+     "date-parts": [
+      [
+       2022
+      ]
+     ]
+    },
+    "published-print": {
+     "date-parts": [
+      [
+       2022
+      ]
+     ]
+    }
+   },
+   "URL": "https://doi.org/10.48077/scihor.25(9).2022.84-95",
+   "archive": [
+    "Internet Archive",
+    "Internet Archive"
+   ],
+   "relation": {},
+   "ISSN": [
+    "2709-8877"
+   ],
+   "issn-type": [
+    {
+     "value": "2709-8877",
+     "type": "electronic"
+    }
+   ],
+   "subject": [],
+   "published": {
+    "date-parts": [
+     [
+      2022,
+      11,
+      26
+     ]
+    ]
+   }
+  }
+ }
+}

@@ -1,0 +1,195 @@
+{
+ "url": "https://api.crossref.org/works/10.5772/intechopen.113033",
+ "fetched_utc": "2026-11-08T20:21:06Z",
+ "status": 200,
+ "body": {
+  "status": "ok",
+  "message-type": "work",
+  "message-version": "1.0.0",
+  "message": {
+   "indexed": {
+    "date-parts": [
+     [
+      2025,
+      9,
+      30
+     ]
+    ],
+    "date-time": "2025-09-30T00:10:46Z",
+    "timestamp": 1759191046259,
+    "version": "3.44.0"
+   },
+   "reference-count": 31,
+   "publisher": "IntechOpen",
+   "isbn-type": [
+    {
+     "type": "print",
+     "value": "9781836357735"
+    },
+    {
+     "type": "electronic",
+     "value": "9781836357728"
+    }
+   ],
+   "license": [
+    {
+     "start": {
+      "date-parts": [
+       [
+        2023,
+        10,
+        19
+       ]
+      ],
+      "date-time": "2023-10-19T00:00:00Z",
+      "timestamp": 1697673600000
+     },
+     "content-version": "unspecified",
+     "delay-in-days": 0,
+     "URL": "https://creativecommons.org/licenses/by/3.0/legalcode"
+    }
+   ],
+   "content-domain": {
+    "domain": [],
+    "crossmark-restriction": false
+   },
+   "short-container-title": [],
+   "abstract": "<jats:p>With the aim of optimizing productivity and reducing soil salinity and production costs in cucumber cultivation, we developed a leaf-count technique based on the positive correlation between leaf increments and nitrogen uptake for spring and summer greenhouse cultivation. In this technique, the amount of nitrogen uptake was determined from leaf increments, and the determined amount of nitrogen was applied in real-time. In the producers’ field test, it was not only possible to significantly reduce the amount of nitrogen fertilization compared to conventional cultivation, but it was also verified that salt accumulation was eliminated. In addition, in the unimproved outdoor farmland that was reconstructed from the tsunami disaster after the Great East Japan Earthquake in 2011, a remarkable increase in yield was observed compared to conventional cultivation using the leaf-count technique developed for spring greenhouse cultivation. Producers can practice this by simply counting leaves and applying nitrogen from a quick reference table.</jats:p>",
+   "DOI": "10.5772/intechopen.113033",
+   "type": "book-chapter",
+   "created": {
+    "date-parts": [
+     [
+      2023,
+      11,
+      3
+     ]
+    ],
+    "date-time": "2023-11-03T11:01:19Z",
+    "timestamp": 1699009279000
+   },
+   "source": "Crossref",
+   "is-referenced-by-count": 0,
+   "title": [
+    "Nitrogen Fertilization Using Drip Fertigation for Cucumber Cultivation Based on Leaf-Count Technique"
+   ],
+   "prefix": "10.5772",
+   "author": [
+    {
+     "given": "Tatsuo",
+     "family": "Sato",
+     "sequence": "first",
+     "affiliation": [],
+     "role": [
+      {
+       "role": "author",
+       "vocabulary": "crossref"
+      }
+     ]
+    },
+    {
+     "given": "Yuki",
+     "family": "Tashiro",
+     "sequence": "additional",
+     "affiliation": [],
+     "role": [
+      {
+       "role": "author",
+       "vocabulary": "crossref"
+      }
+     ]
+    },
+    {
+     "given": "Sayuri",
+     "family": "Tanabata",
+     "sequence": "additional",
+     "affiliation": [],
+     "role": [
+      {
+       "role": "author",
+       "vocabulary": "crossref"
+      }
+     ]
+    }
+   ],
+   "member": "3774",
+   "published-online": {
+    "date-parts": [
+     [
+      2023,
+      10,
+      19
+     ]
+    ]
+   },
+   "container-title": [
+    "Agricultural Sciences",
+    "Agronomy and Horticulture Annual Volume 2025"
+   ],
+   "original-title": [],
+   "language": "en",
+   "link": [
+    {
+     "URL": "https://intech-files.s3.amazonaws.com/a04Tc00000HCRQ1IAP/a093Y00001fto3aQAA/Final-Nitrogen%20Fertilization%20Using%20Drip%20Fertigation%20for%20%20%282025-08-12%2016%3A31%3A59%29.pdf",
+     "content-type": "unspecified",
+     "content-version": "vor",
+     "intended-application": "similarity-checking"
+    }
+   ],
+   "deposited": {
+    "date-parts": [
+     [
+      2025,
+      9,
+      29
+     ]
+    ],
+    "date-time": "2025-09-29T13:18:50Z",
+    "timestamp": 1759151930000
+   },
+   "score": 1,
+   "resource": {
+    "primary": {
+     "URL": "https://www.intechopen.com/chapters/88419"
+    }
+   },
+   "subtitle": [],
+   "short-title": [],
+   "issued": {
+    "date-parts": [
+     [
+      2023,
+      10,
+      19
+     ]
+    ]
+   },
+   "ISBN": [
+    "9781836357735",
+    "9781836357728"
+   ],
+   "references-count": 31,
+   "URL": "https://doi.org/10.5772/intechopen.113033",
+   "relation": {},
+   "ISSN": [
+    "3029-052X"
+   ],
+   "issn-type": [
+    {
+     "type": "print",
+     "value": "3029-052X"
+    }
+   ],
+   "subject": [],
+   "published": {
+    "date-parts": [
+     [
+      2023,
+      10,
+      19
+     ]
+    ]
+   }
+  }
+ }
+}

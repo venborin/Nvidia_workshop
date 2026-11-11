@@ -1,0 +1,11 @@
+Title: A Compartment Model of Office Hours Attendance Under Food Incentives
+Year: 2020
+Field: education research
+
+Studies of attendance at office hours count visitors at one or two points in a term, which is a thin observation of a process that builds and fades over weeks. We built a compartment model of the students in an introductory course to ask what attendance counts a given change in student behavior would produce, and in which weeks that change would be visible.
+
+The model tracks four compartments, unaware, aware but not yet visiting, visiting, and lapsed, with transition rates fit to attendance records from courses that offered no incentive. Every student was assumed to become aware of office hours in week 1, since the records show visits but not awareness. Parameters were estimated from 3 courses covering weeks 1 to 15 by least squares, with uncertainty taken from bootstrap resampling of the sessions, giving a mean time from awareness to first visit of 5.1 weeks and a mean of 2.4 visits per visiting student. We then simulated a food incentive as a 35 percent reduction in the time to first visit and a 20 percent rise in repeat visits, values taken from reported effects of other incentives, and ran 2000 parameter draws from the bootstrap distribution.
+
+The simulations predict a clear effect on visits per session, rising from 4.3 to 7.1 in week 7 in the median draw. They also predict that the effect is nearly undetectable before week 4, with a median separation of 0.3 visits per session in week 2, because few students in either group have begun visiting by then. A third prediction is that counts of distinct students underreport the change by roughly a factor of two relative to counts of visits, since the simulated incentive raises repeat visits more than it draws new students. Peak separation between the groups occurs in week 9 in the median draw.
+
+The model is only as good as the attendance records it was fit to, and all 3 came from hand counts at two universities. It also treats every student as equally likely to visit, which the sign-in sheets plainly contradict, so the predicted magnitudes should be read as ordering rather than as calibrated values.

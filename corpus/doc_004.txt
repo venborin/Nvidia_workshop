@@ -1,0 +1,11 @@
+Title: Dose Response of Pizza in Office Hours Attendance
+Year: 2024
+Field: education research
+
+Published tests of pizza at office hours have used incentives from a single slice per visitor to several whole pizzas per session, and have reached opposite conclusions. Because none of those studies varied the amount of food within a single course, incentive size remains confounded with campus. We ran a four arm dose response within one large course, with a common sign-in system and two measurement windows.
+
+Sixteen lab sections of an introductory biology course, 480 students, were assigned to four arms of four sections, 120 students each: no food, granola bars, one pizza per session, and three pizzas per session, announced in each section in week 2. Each arm had its own office hours with the same instructor. Visits were counted in weeks 3 to 5 and again in weeks 9 to 11 by a card reader at the door, with a hand count of 10 percent of sessions to audit it.
+
+In weeks 3 to 5, visits per session were 5.0 with no food, 5.2 with granola bars, 5.9 with one pizza, and 9.4 with three pizzas. Only the highest arm separated clearly from no food. The same ordering held in weeks 9 to 11, when the three pizza arm reached 11.1 visits per session against 6.2 with no food. Scores on the week 8 midterm, averaged over every student assigned to each arm, tracked the attendance result, with a mean of 74 percent in the three pizza arm against 69 percent with no food. The dose response is therefore steep rather than gradual, with only the largest incentive separating from no food in either window, which is consistent with reports of an effect for large incentives and with null reports for a single slice.
+
+Crowding is the limitation. The room for the three pizza arm seated 12, and in 9 of its 18 sessions in weeks 9 to 11 students were turned away at the door and never counted, which happened in no other arm. The true count for that arm is higher than reported, and we cannot say who was turned away. The midterm means do not depend on the count, but they cannot say whether visits, the food itself, or something else about the arm made the difference.

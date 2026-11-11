@@ -1,0 +1,327 @@
+{
+ "url": "https://api.crossref.org/works/10.1111/gcb.14762",
+ "fetched_utc": "2026-11-09T00:08:29Z",
+ "status": 200,
+ "body": {
+  "status": "ok",
+  "message-type": "work",
+  "message-version": "1.0.0",
+  "message": {
+   "indexed": {
+    "date-parts": [
+     [
+      2026,
+      11,
+      8
+     ]
+    ],
+    "date-time": "2026-11-08T04:17:19Z",
+    "timestamp": 1794111439527,
+    "version": "4.8.0"
+   },
+   "reference-count": 71,
+   "publisher": "Wiley",
+   "issue": "11",
+   "license": [
+    {
+     "start": {
+      "date-parts": [
+       [
+        2019,
+        8,
+        10
+       ]
+      ],
+      "date-time": "2019-08-10T00:00:00Z",
+      "timestamp": 1565395200000
+     },
+     "content-version": "vor",
+     "delay-in-days": 0,
+     "URL": "http://onlinelibrary.wiley.com/termsAndConditions#vor"
+    }
+   ],
+   "content-domain": {
+    "domain": [
+     "onlinelibrary.wiley.com"
+    ],
+    "crossmark-restriction": true
+   },
+   "short-container-title": [
+    "Global Change Biology"
+   ],
+   "published-print": {
+    "date-parts": [
+     [
+      2019,
+      11
+     ]
+    ]
+   },
+   "abstract": "<jats:title>Abstract</jats:title><jats:p>Increasing soil organic carbon (SOC) via organic inputs is a key strategy for increasing long‐term soil C storage and improving the climate change mitigation and adaptation potential of agricultural systems. A long‐term trial in California's Mediterranean climate revealed impacts of management on SOC in maize‐tomato and wheat–fallow cropping systems. SOC was measured at the initiation of the experiment and at year 19, at five depth increments down to 2 m, taking into account changes in bulk density. Across the entire 2 m profile, SOC in the wheat–fallow systems did not change with the addition of N fertilizer, winter cover crops (WCC), or irrigation alone and decreased by 5.6% with no inputs. There was some evidence of soil C gains at depth with both N fertilizer and irrigation, though high variation precluded detection of significant changes. In maize‒tomato rotations, SOC increased by 12.6% (21.8 Mg C/ha) with both WCC and composted poultry manure inputs, across the 2 m profile. The addition of WCC to a conventionally managed system increased SOC stocks by 3.5% (1.44 Mg C/ha) in the 0–30 cm layer, but decreased by 10.8% (14.86 Mg C/ha) in the 30–200 cm layer, resulting in overall losses of 13.4 Mg C/ha. If we only measured soil C in the top 30 cm, we would have assumed an increase in total soil C increased with WCC alone, whereas in reality significant losses in SOC occurred when considering the 2 m soil profile. Ignoring the subsoil carbon dynamics in deeper layers of soil fails to recognize potential opportunities for soil C sequestration, and may lead to false conclusions about the impact of management practices on C sequestration.</jats:p>",
+   "DOI": "10.1111/gcb.14762",
+   "type": "journal-article",
+   "created": {
+    "date-parts": [
+     [
+      2019,
+      7,
+      14
+     ]
+    ],
+    "date-time": "2019-07-14T01:07:23Z",
+    "timestamp": 1563066443000
+   },
+   "page": "3753-3766",
+   "update-policy": "https://doi.org/10.1002/crossmark_policy",
+   "source": "Crossref",
+   "is-referenced-by-count": 233,
+   "title": [
+    "Deep soil inventories reveal that impacts of cover crops and compost on soil carbon sequestration differ in surface and subsurface soils"
+   ],
+   "prefix": "10.1111",
+   "volume": "25",
+   "author": [
+    {
+     "ORCID": "https://orcid.org/0000-0003-1708-6966",
+     "authenticated-orcid": false,
+     "given": "Nicole E.",
+     "family": "Tautges",
+     "sequence": "first",
+     "affiliation": [
+      {
+       "name": "Agricultural Sustainability Institute University of California Davis Davis California"
+      }
+     ],
+     "role": [
+      {
+       "vocabulary": "crossref",
+       "role": "author"
+      }
+     ]
+    },
+    {
+     "given": "Jessica L.",
+     "family": "Chiartas",
+     "sequence": "additional",
+     "affiliation": [
+      {
+       "name": "Department of Land, Air and Water Resources University of California Davis Davis California"
+      }
+     ],
+     "role": [
+      {
+       "vocabulary": "crossref",
+       "role": "author"
+      }
+     ]
+    },
+    {
+     "given": "Amélie C. M.",
+     "family": "Gaudin",
+     "sequence": "additional",
+     "affiliation": [
+      {
+       "name": "Department of Plant Sciences University of California Davis Davis California"
+      }
+     ],
+     "role": [
+      {
+       "vocabulary": "crossref",
+       "role": "author"
+      }
+     ]
+    },
+    {
+     "given": "Anthony T.",
+     "family": "O'Geen",
+     "sequence": "additional",
+     "affiliation": [
+      {
+       "name": "Department of Land, Air and Water Resources University of California Davis Davis California"
+      }
+     ],
+     "role": [
+      {
+       "vocabulary": "crossref",
+       "role": "author"
+      }
+     ]
+    },
+    {
+     "given": "Israel",
+     "family": "Herrera",
+     "sequence": "additional",
+     "affiliation": [
+      {
+       "name": "Agricultural Sustainability Institute University of California Davis Davis California"
+      }
+     ],
+     "role": [
+      {
+       "vocabulary": "crossref",
+       "role": "author"
+      }
+     ]
+    },
+    {
+     "given": "Kate M.",
+     "family": "Scow",
+     "sequence": "additional",
+     "affiliation": [
+      {
+       "name": "Agricultural Sustainability Institute University of California Davis Davis California"
+      },
+      {
+       "name": "Department of Land, Air and Water Resources University of California Davis Davis California"
+      }
+     ],
+     "role": [
+      {
+       "vocabulary": "crossref",
+       "role": "author"
+      }
+     ]
+    }
+   ],
+   "member": "311",
+   "published-online": {
+    "date-parts": [
+     [
+      2019,
+      8,
+      10
+     ]
+    ]
+   },
+   "container-title": [
+    "Global Change Biology"
+   ],
+   "original-title": [],
+   "language": "en",
+   "link": [
+    {
+     "URL": "https://onlinelibrary.wiley.com/doi/pdf/10.1111/gcb.14762",
+     "content-type": "application/pdf",
+     "content-version": "vor",
+     "intended-application": "text-mining"
+    },
+    {
+     "URL": "https://onlinelibrary.wiley.com/doi/full-xml/10.1111/gcb.14762",
+     "content-type": "application/xml",
+     "content-version": "vor",
+     "intended-application": "text-mining"
+    },
+    {
+     "URL": "https://onlinelibrary.wiley.com/doi/pdf/10.1111/gcb.14762",
+     "content-type": "unspecified",
+     "content-version": "vor",
+     "intended-application": "similarity-checking"
+    }
+   ],
+   "deposited": {
+    "date-parts": [
+     [
+      2024,
+      7,
+      20
+     ]
+    ],
+    "date-time": "2024-07-20T23:15:46Z",
+    "timestamp": 1721517346000
+   },
+   "score": 1,
+   "resource": {
+    "primary": {
+     "URL": "https://onlinelibrary.wiley.com/doi/10.1111/gcb.14762"
+    }
+   },
+   "subtitle": [],
+   "short-title": [],
+   "issued": {
+    "date-parts": [
+     [
+      2019,
+      8,
+      10
+     ]
+    ]
+   },
+   "references-count": 71,
+   "journal-issue": {
+    "issue": "11",
+    "published-print": {
+     "date-parts": [
+      [
+       2019,
+       11
+      ]
+     ]
+    }
+   },
+   "alternative-id": [
+    "10.1111/gcb.14762"
+   ],
+   "URL": "https://doi.org/10.1111/gcb.14762",
+   "archive": [
+    "Portico"
+   ],
+   "relation": {},
+   "ISSN": [
+    "1354-1013",
+    "1365-2486"
+   ],
+   "issn-type": [
+    {
+     "value": "1354-1013",
+     "type": "print"
+    },
+    {
+     "value": "1365-2486",
+     "type": "electronic"
+    }
+   ],
+   "subject": [],
+   "published": {
+    "date-parts": [
+     [
+      2019,
+      8,
+      10
+     ]
+    ]
+   },
+   "assertion": [
+    {
+     "value": "2019-02-11",
+     "order": 0,
+     "name": "received",
+     "label": "Received",
+     "group": {
+      "name": "publication_history",
+      "label": "Publication History"
+     }
+    },
+    {
+     "value": "2019-06-24",
+     "order": 1,
+     "name": "accepted",
+     "label": "Accepted",
+     "group": {
+      "name": "publication_history",
+      "label": "Publication History"
+     }
+    },
+    {
+     "value": "2019-08-10",
+     "order": 2,
+     "name": "published",
+     "label": "Published",
+     "group": {
+      "name": "publication_history",
+      "label": "Publication History"
+     }
+    }
+   ]
+  }
+ }
+}

@@ -1,0 +1,2 @@
+rows=344 used=342
+mean body mass 4201.754 g

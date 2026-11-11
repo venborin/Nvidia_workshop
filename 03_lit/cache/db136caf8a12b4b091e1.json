@@ -1,0 +1,365 @@
+{
+ "url": "https://api.crossref.org/works/10.1016/j.agee.2023.108497",
+ "fetched_utc": "2026-11-08T20:20:40Z",
+ "status": 200,
+ "body": {
+  "status": "ok",
+  "message-type": "work",
+  "message-version": "1.0.0",
+  "message": {
+   "indexed": {
+    "date-parts": [
+     [
+      2026,
+      10,
+      26
+     ]
+    ],
+    "date-time": "2026-10-26T21:47:17Z",
+    "timestamp": 1793051237954,
+    "version": "4.5.0"
+   },
+   "reference-count": 85,
+   "publisher": "Elsevier BV",
+   "license": [
+    {
+     "start": {
+      "date-parts": [
+       [
+        2023,
+        8,
+        1
+       ]
+      ],
+      "date-time": "2023-08-01T00:00:00Z",
+      "timestamp": 1690848000000
+     },
+     "content-version": "tdm",
+     "delay-in-days": 0,
+     "URL": "https://www.elsevier.com/tdm/userlicense/1.0/"
+    },
+    {
+     "start": {
+      "date-parts": [
+       [
+        2023,
+        8,
+        1
+       ]
+      ],
+      "date-time": "2023-08-01T00:00:00Z",
+      "timestamp": 1690848000000
+     },
+     "content-version": "tdm",
+     "delay-in-days": 0,
+     "URL": "https://www.elsevier.com/legal/tdmrep-license"
+    },
+    {
+     "start": {
+      "date-parts": [
+       [
+        2024,
+        3,
+        27
+       ]
+      ],
+      "date-time": "2024-03-27T00:00:00Z",
+      "timestamp": 1711497600000
+     },
+     "content-version": "am",
+     "delay-in-days": 239,
+     "URL": "http://www.elsevier.com/open-access/userlicense/1.0/"
+    },
+    {
+     "start": {
+      "date-parts": [
+       [
+        2023,
+        8,
+        1
+       ]
+      ],
+      "date-time": "2023-08-01T00:00:00Z",
+      "timestamp": 1690848000000
+     },
+     "content-version": "stm-asf",
+     "delay-in-days": 0,
+     "URL": "https://doi.org/10.15223/policy-017"
+    },
+    {
+     "start": {
+      "date-parts": [
+       [
+        2023,
+        8,
+        1
+       ]
+      ],
+      "date-time": "2023-08-01T00:00:00Z",
+      "timestamp": 1690848000000
+     },
+     "content-version": "stm-asf",
+     "delay-in-days": 0,
+     "URL": "https://doi.org/10.15223/policy-037"
+    },
+    {
+     "start": {
+      "date-parts": [
+       [
+        2023,
+        8,
+        1
+       ]
+      ],
+      "date-time": "2023-08-01T00:00:00Z",
+      "timestamp": 1690848000000
+     },
+     "content-version": "stm-asf",
+     "delay-in-days": 0,
+     "URL": "https://doi.org/10.15223/policy-012"
+    },
+    {
+     "start": {
+      "date-parts": [
+       [
+        2023,
+        8,
+        1
+       ]
+      ],
+      "date-time": "2023-08-01T00:00:00Z",
+      "timestamp": 1690848000000
+     },
+     "content-version": "stm-asf",
+     "delay-in-days": 0,
+     "URL": "https://doi.org/10.15223/policy-029"
+    },
+    {
+     "start": {
+      "date-parts": [
+       [
+        2023,
+        8,
+        1
+       ]
+      ],
+      "date-time": "2023-08-01T00:00:00Z",
+      "timestamp": 1690848000000
+     },
+     "content-version": "stm-asf",
+     "delay-in-days": 0,
+     "URL": "https://doi.org/10.15223/policy-004"
+    }
+   ],
+   "funder": [
+    {
+     "DOI": "10.13039/100000199",
+     "name": "U.S. Department of Agriculture",
+     "doi-asserted-by": "publisher",
+     "id": [
+      {
+       "id": "10.13039/100000199",
+       "id-type": "DOI",
+       "asserted-by": "publisher"
+      }
+     ]
+    },
+    {
+     "DOI": "10.13039/100005825",
+     "name": "National Institute of Food and Agriculture",
+     "doi-asserted-by": "publisher",
+     "award": [
+      "2020-68013-30862"
+     ],
+     "award-info": [
+      {
+       "award-number": [
+        "2020-68013-30862"
+       ]
+      }
+     ],
+     "id": [
+      {
+       "id": "10.13039/100005825",
+       "id-type": "DOI",
+       "asserted-by": "publisher"
+      }
+     ]
+    }
+   ],
+   "content-domain": {
+    "domain": [
+     "elsevier.com",
+     "sciencedirect.com"
+    ],
+    "crossmark-restriction": true
+   },
+   "short-container-title": [
+    "Agriculture, Ecosystems &amp; Environment"
+   ],
+   "published-print": {
+    "date-parts": [
+     [
+      2023,
+      8
+     ]
+    ]
+   },
+   "DOI": "10.1016/j.agee.2023.108497",
+   "type": "journal-article",
+   "created": {
+    "date-parts": [
+     [
+      2023,
+      3,
+      27
+     ]
+    ],
+    "date-time": "2023-03-27T18:52:35Z",
+    "timestamp": 1679943155000
+   },
+   "page": "108497",
+   "update-policy": "https://doi.org/10.1016/elsevier_cm_policy",
+   "source": "Crossref",
+   "is-referenced-by-count": 68,
+   "special_numbering": "C",
+   "title": [
+    "Response of soil organic carbon fractions to cover cropping: A meta-analysis of agroecosystems"
+   ],
+   "prefix": "10.1016",
+   "volume": "351",
+   "author": [
+    {
+     "ORCID": "https://orcid.org/0000-0002-7723-437X",
+     "authenticated-orcid": false,
+     "given": "Rachel",
+     "family": "Wooliver",
+     "sequence": "first",
+     "affiliation": [],
+     "role": [
+      {
+       "vocabulary": "crossref",
+       "role": "author"
+      }
+     ]
+    },
+    {
+     "given": "Sindhu",
+     "family": "Jagadamma",
+     "sequence": "additional",
+     "affiliation": [],
+     "role": [
+      {
+       "vocabulary": "crossref",
+       "role": "author"
+      }
+     ]
+    }
+   ],
+   "member": "78",
+   "container-title": [
+    "Agriculture, Ecosystems &amp; Environment"
+   ],
+   "original-title": [],
+   "language": "en",
+   "link": [
+    {
+     "URL": "https://api.elsevier.com/content/article/PII:S0167880923001561?httpAccept=text/xml",
+     "content-type": "text/xml",
+     "content-version": "vor",
+     "intended-application": "text-mining"
+    },
+    {
+     "URL": "https://api.elsevier.com/content/article/PII:S0167880923001561?httpAccept=text/plain",
+     "content-type": "text/plain",
+     "content-version": "vor",
+     "intended-application": "text-mining"
+    }
+   ],
+   "deposited": {
+    "date-parts": [
+     [
+      2026,
+      5,
+      13
+     ]
+    ],
+    "date-time": "2026-05-13T11:57:04Z",
+    "timestamp": 1778673424000
+   },
+   "score": 1,
+   "resource": {
+    "primary": {
+     "URL": "https://linkinghub.elsevier.com/retrieve/pii/S0167880923001561"
+    }
+   },
+   "subtitle": [],
+   "short-title": [],
+   "issued": {
+    "date-parts": [
+     [
+      2023,
+      8
+     ]
+    ]
+   },
+   "references-count": 85,
+   "alternative-id": [
+    "S0167880923001561"
+   ],
+   "URL": "https://doi.org/10.1016/j.agee.2023.108497",
+   "relation": {},
+   "ISSN": [
+    "0167-8809"
+   ],
+   "issn-type": [
+    {
+     "value": "0167-8809",
+     "type": "print"
+    }
+   ],
+   "subject": [],
+   "published": {
+    "date-parts": [
+     [
+      2023,
+      8
+     ]
+    ]
+   },
+   "assertion": [
+    {
+     "value": "Elsevier",
+     "name": "publisher",
+     "label": "This article is maintained by"
+    },
+    {
+     "value": "Response of soil organic carbon fractions to cover cropping: A meta-analysis of agroecosystems",
+     "name": "articletitle",
+     "label": "Article Title"
+    },
+    {
+     "value": "Agriculture, Ecosystems & Environment",
+     "name": "journaltitle",
+     "label": "Journal Title"
+    },
+    {
+     "value": "https://doi.org/10.1016/j.agee.2023.108497",
+     "name": "articlelink",
+     "label": "CrossRef DOI link to publisher maintained version"
+    },
+    {
+     "value": "article",
+     "name": "content_type",
+     "label": "Content Type"
+    },
+    {
+     "value": "© 2023 Elsevier B.V. All rights reserved.",
+     "name": "copyright",
+     "label": "Copyright"
+    }
+   ],
+   "article-number": "108497"
+  }
+ }
+}

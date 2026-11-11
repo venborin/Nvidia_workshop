@@ -1,0 +1,283 @@
+{
+ "url": "https://api.crossref.org/works/10.1002/eap.2278",
+ "fetched_utc": "2026-11-08T20:20:40Z",
+ "status": 200,
+ "body": {
+  "status": "ok",
+  "message-type": "work",
+  "message-version": "1.0.0",
+  "message": {
+   "indexed": {
+    "date-parts": [
+     [
+      2026,
+      10,
+      29
+     ]
+    ],
+    "date-time": "2026-10-29T23:54:03Z",
+    "timestamp": 1793318043444,
+    "version": "4.5.0"
+   },
+   "reference-count": 95,
+   "publisher": "Wiley",
+   "issue": "3",
+   "license": [
+    {
+     "start": {
+      "date-parts": [
+       [
+        2021,
+        3,
+        3
+       ]
+      ],
+      "date-time": "2021-03-03T00:00:00Z",
+      "timestamp": 1614729600000
+     },
+     "content-version": "vor",
+     "delay-in-days": 0,
+     "URL": "http://onlinelibrary.wiley.com/termsAndConditions#vor"
+    }
+   ],
+   "content-domain": {
+    "domain": [
+     "esajournals.onlinelibrary.wiley.com"
+    ],
+    "crossmark-restriction": true
+   },
+   "short-container-title": [
+    "Ecological Applications"
+   ],
+   "published-print": {
+    "date-parts": [
+     [
+      2021,
+      4
+     ]
+    ]
+   },
+   "abstract": "<jats:title>Abstract</jats:title>\n                  <jats:p>\n                    Increasing the quantity and quality of plant biomass production in space and time can improve the capacity of agroecosystems to capture and store atmospheric carbon (C) in the soil. Cover cropping is a key practice to increase system net primary productivity (NPP) and increase the quantity of high‐quality plant residues available for integration into soil organic matter (SOM). Cover crop management and local environmental conditions, however, influence the magnitude of soil C stock change. Here, we used a comprehensive meta‐analysis approach to quantify the effect of cover crops on soil C stocks from the 0–30 cm soil depth in temperate climates and to identify key management and ecological factors that impact variation in this response. A total of 40 publications with 181 observations were included in the meta‐analysis representing six countries across three different continents. Overall, cover crops had a strong positive effect on soil C stocks (\n                    <jats:italic>P</jats:italic>\n                     &lt; 0.0001) leading to a 12% increase, averaging 1.11 Mg C/ha more soil C relative to a no cover crop control. The strongest predictors of SOC response to cover cropping were planting and termination date (i.e., growing window), annual cover crop biomass production, and soil clay content. Cover crops planted as continuous cover or autumn planted and terminated led to 20–30% greater total soil C stocks relative to other cover crop growing windows. Likewise, high annual cover crop biomass production (&gt;7 Mg·ha\n                    <jats:sup>−1</jats:sup>\n                    ·yr\n                    <jats:sup>−1</jats:sup>\n                    ) resulted in 30% higher total soil C stocks than lower levels of biomass production. Managing for greater NPP by improving synchronization in cover crop growing windows and climate will enhance the capacity of this practice to drawdown carbon dioxide (CO\n                    <jats:sub>2</jats:sub>\n                    ) from the atmosphere across agroecosystems. The integration of growing window (potentially as a proxy for biomass growth), climate, and soil factors in decision‐support tools are relevant for improving the quantification of soil C stock change under cover crops, particularly with the expansion of terrestrial soil C markets.\n                  </jats:p>",
+   "DOI": "10.1002/eap.2278",
+   "type": "journal-article",
+   "created": {
+    "date-parts": [
+     [
+      2020,
+      12,
+      20
+     ]
+    ],
+    "date-time": "2020-12-20T02:48:33Z",
+    "timestamp": 1608432513000
+   },
+   "update-policy": "https://doi.org/10.1002/crossmark_policy",
+   "source": "Crossref",
+   "is-referenced-by-count": 259,
+   "title": [
+    "Management of cover crops in temperate climates influences soil organic carbon stocks: a meta‐analysis"
+   ],
+   "prefix": "10.1002",
+   "volume": "31",
+   "author": [
+    {
+     "ORCID": "https://orcid.org/0000-0002-1827-3029",
+     "authenticated-orcid": false,
+     "given": "Shelby C.",
+     "family": "McClelland",
+     "sequence": "first",
+     "affiliation": [
+      {
+       "name": "Department of Soil and Crop Sciences Colorado State University Fort Collins Colorado 80523 USA"
+      },
+      {
+       "name": "Graduate Degree Program in Ecology Colorado State University Fort Collins Colorado 80523 USA"
+      }
+     ],
+     "role": [
+      {
+       "vocabulary": "crossref",
+       "role": "author"
+      }
+     ]
+    },
+    {
+     "ORCID": "https://orcid.org/0000-0001-5262-5596",
+     "authenticated-orcid": false,
+     "given": "Keith",
+     "family": "Paustian",
+     "sequence": "additional",
+     "affiliation": [
+      {
+       "name": "Graduate Degree Program in Ecology Colorado State University Fort Collins Colorado 80523 USA"
+      }
+     ],
+     "role": [
+      {
+       "vocabulary": "crossref",
+       "role": "author"
+      }
+     ]
+    },
+    {
+     "ORCID": "https://orcid.org/0000-0002-1661-9858",
+     "authenticated-orcid": false,
+     "given": "Meagan E.",
+     "family": "Schipanski",
+     "sequence": "additional",
+     "affiliation": [
+      {
+       "name": "Graduate Degree Program in Ecology Colorado State University Fort Collins Colorado 80523 USA"
+      }
+     ],
+     "role": [
+      {
+       "vocabulary": "crossref",
+       "role": "author"
+      }
+     ]
+    }
+   ],
+   "member": "311",
+   "published-online": {
+    "date-parts": [
+     [
+      2021,
+      3,
+      3
+     ]
+    ]
+   },
+   "container-title": [
+    "Ecological Applications"
+   ],
+   "original-title": [],
+   "language": "en",
+   "link": [
+    {
+     "URL": "https://onlinelibrary.wiley.com/doi/pdf/10.1002/eap.2278",
+     "content-type": "application/pdf",
+     "content-version": "vor",
+     "intended-application": "text-mining"
+    },
+    {
+     "URL": "https://onlinelibrary.wiley.com/doi/full-xml/10.1002/eap.2278",
+     "content-type": "application/xml",
+     "content-version": "vor",
+     "intended-application": "text-mining"
+    },
+    {
+     "URL": "https://esajournals.onlinelibrary.wiley.com/doi/pdf/10.1002/eap.2278",
+     "content-type": "unspecified",
+     "content-version": "vor",
+     "intended-application": "similarity-checking"
+    }
+   ],
+   "deposited": {
+    "date-parts": [
+     [
+      2023,
+      9,
+      1
+     ]
+    ],
+    "date-time": "2023-09-01T06:03:08Z",
+    "timestamp": 1693548188000
+   },
+   "score": 1,
+   "resource": {
+    "primary": {
+     "URL": "https://esajournals.onlinelibrary.wiley.com/doi/10.1002/eap.2278"
+    }
+   },
+   "subtitle": [],
+   "short-title": [],
+   "issued": {
+    "date-parts": [
+     [
+      2021,
+      3,
+      3
+     ]
+    ]
+   },
+   "references-count": 95,
+   "journal-issue": {
+    "issue": "3",
+    "published-print": {
+     "date-parts": [
+      [
+       2021,
+       4
+      ]
+     ]
+    }
+   },
+   "alternative-id": [
+    "10.1002/eap.2278"
+   ],
+   "URL": "https://doi.org/10.1002/eap.2278",
+   "archive": [
+    "Portico"
+   ],
+   "relation": {},
+   "ISSN": [
+    "1051-0761",
+    "1939-5582"
+   ],
+   "issn-type": [
+    {
+     "value": "1051-0761",
+     "type": "print"
+    },
+    {
+     "value": "1939-5582",
+     "type": "electronic"
+    }
+   ],
+   "subject": [],
+   "published": {
+    "date-parts": [
+     [
+      2021,
+      3,
+      3
+     ]
+    ]
+   },
+   "assertion": [
+    {
+     "value": "2020-03-09",
+     "order": 0,
+     "name": "received",
+     "label": "Received",
+     "group": {
+      "name": "publication_history",
+      "label": "Publication History"
+     }
+    },
+    {
+     "value": "2020-10-05",
+     "order": 1,
+     "name": "accepted",
+     "label": "Accepted",
+     "group": {
+      "name": "publication_history",
+      "label": "Publication History"
+     }
+    },
+    {
+     "value": "2021-03-03",
+     "order": 2,
+     "name": "published",
+     "label": "Published",
+     "group": {
+      "name": "publication_history",
+      "label": "Publication History"
+     }
+    }
+   ],
+   "article-number": "e02278"
+  }
+ }
+}

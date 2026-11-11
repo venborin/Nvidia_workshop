@@ -1,0 +1,279 @@
+{
+ "url": "https://api.crossref.org/works/10.1187/cbe.16-07-0212",
+ "fetched_utc": "2026-11-06T14:32:20Z",
+ "status": 200,
+ "body": {
+  "status": "ok",
+  "message-type": "work",
+  "message-version": "1.0.0",
+  "message": {
+   "indexed": {
+    "date-parts": [
+     [
+      2026,
+      10,
+      8
+     ]
+    ],
+    "date-time": "2026-10-08T11:58:46Z",
+    "timestamp": 1791460726102,
+    "version": "4.3.4"
+   },
+   "reference-count": 70,
+   "publisher": "American Society for Cell Biology (ASCB)",
+   "issue": "4",
+   "content-domain": {
+    "domain": [],
+    "crossmark-restriction": false
+   },
+   "short-container-title": [
+    "LSE"
+   ],
+   "published-print": {
+    "date-parts": [
+     [
+      2016,
+      12
+     ]
+    ]
+   },
+   "abstract": "<jats:p>The benefits of introducing active learning in college science courses are well established, yet more needs to be understood about student buy-in to active learning and how that process of buy-in might relate to student outcomes. We test the exposure–persuasion–identification–commitment (EPIC) process model of buy-in, here applied to student (n = 245) engagement in an undergraduate science course featuring active learning. Student buy-in to active learning was positively associated with engagement in self-regulated learning and students’ course performance. The positive associations among buy-in, self-regulated learning, and course performance suggest buy-in as a potentially important factor leading to student engagement and other student outcomes. These findings are particularly salient in course contexts featuring active learning, which encourage active student participation in the learning process.</jats:p>",
+   "DOI": "10.1187/cbe.16-07-0212",
+   "type": "journal-article",
+   "created": {
+    "date-parts": [
+     [
+      2016,
+      12,
+      1
+     ]
+    ],
+    "date-time": "2016-12-01T22:20:33Z",
+    "timestamp": 1480630833000
+   },
+   "page": "ar76",
+   "source": "Crossref",
+   "is-referenced-by-count": 121,
+   "title": [
+    "Student Buy-In to Active Learning in a College Science Course"
+   ],
+   "prefix": "10.1187",
+   "volume": "15",
+   "author": [
+    {
+     "given": "Andrew J.",
+     "family": "Cavanagh",
+     "sequence": "first",
+     "affiliation": [
+      {
+       "name": "Center for Teaching and Learning, Yale University, New Haven, CT 06511"
+      }
+     ],
+     "role": [
+      {
+       "vocabulary": "crossref",
+       "role": "author"
+      }
+     ]
+    },
+    {
+     "given": "Oriana R.",
+     "family": "Aragón",
+     "sequence": "additional",
+     "affiliation": [
+      {
+       "name": "Department of Psychology, Yale University, New Haven, CT 06511"
+      },
+      {
+       "name": "Marketing Department, College of Business, Clemson University, Clemson, SC 29634"
+      }
+     ],
+     "role": [
+      {
+       "vocabulary": "crossref",
+       "role": "author"
+      }
+     ]
+    },
+    {
+     "given": "Xinnian",
+     "family": "Chen",
+     "sequence": "additional",
+     "affiliation": [
+      {
+       "name": "Department of Physiology and Neurobiology, University of Connecticut, Storrs, CT 06269-2247"
+      }
+     ],
+     "role": [
+      {
+       "vocabulary": "crossref",
+       "role": "author"
+      }
+     ]
+    },
+    {
+     "given": "Brian A.",
+     "family": "Couch",
+     "sequence": "additional",
+     "affiliation": [
+      {
+       "name": "School of Biological Sciences, University of Nebraska, Lincoln, NE 68588"
+      }
+     ],
+     "role": [
+      {
+       "vocabulary": "crossref",
+       "role": "author"
+      }
+     ]
+    },
+    {
+     "given": "Mary F.",
+     "family": "Durham",
+     "sequence": "additional",
+     "affiliation": [
+      {
+       "name": "School of Biological Sciences, University of Nebraska, Lincoln, NE 68588"
+      }
+     ],
+     "role": [
+      {
+       "vocabulary": "crossref",
+       "role": "author"
+      }
+     ]
+    },
+    {
+     "given": "Aiyana",
+     "family": "Bobrownicki",
+     "sequence": "additional",
+     "affiliation": [
+      {
+       "name": "Center for Teaching and Learning, Yale University, New Haven, CT 06511"
+      }
+     ],
+     "role": [
+      {
+       "vocabulary": "crossref",
+       "role": "author"
+      }
+     ]
+    },
+    {
+     "given": "David I.",
+     "family": "Hanauer",
+     "sequence": "additional",
+     "affiliation": [
+      {
+       "name": "Department of English, Indiana University of Pennsylvania, Indiana, PA 15705-1094"
+      }
+     ],
+     "role": [
+      {
+       "vocabulary": "crossref",
+       "role": "author"
+      }
+     ]
+    },
+    {
+     "given": "Mark J.",
+     "family": "Graham",
+     "sequence": "additional",
+     "affiliation": [
+      {
+       "name": "Center for Teaching and Learning, Yale University, New Haven, CT 06511"
+      }
+     ],
+     "role": [
+      {
+       "vocabulary": "crossref",
+       "role": "author"
+      }
+     ]
+    }
+   ],
+   "member": "1076",
+   "container-title": [
+    "CBE—Life Sciences Education"
+   ],
+   "original-title": [],
+   "language": "en",
+   "deposited": {
+    "date-parts": [
+     [
+      2022,
+      7,
+      15
+     ]
+    ],
+    "date-time": "2022-07-15T20:35:36Z",
+    "timestamp": 1657917336000
+   },
+   "score": 1,
+   "resource": {
+    "primary": {
+     "URL": "https://www.lifescied.org/doi/10.1187/cbe.16-07-0212"
+    }
+   },
+   "subtitle": [],
+   "editor": [
+    {
+     "given": "Mary Lee",
+     "family": "Ledbetter",
+     "sequence": "additional",
+     "affiliation": [],
+     "role": [
+      {
+       "vocabulary": "crossref",
+       "role": "editor"
+      }
+     ]
+    }
+   ],
+   "short-title": [],
+   "issued": {
+    "date-parts": [
+     [
+      2016,
+      12
+     ]
+    ]
+   },
+   "references-count": 70,
+   "journal-issue": {
+    "issue": "4",
+    "published-print": {
+     "date-parts": [
+      [
+       2016,
+       12
+      ]
+     ]
+    }
+   },
+   "alternative-id": [
+    "10.1187/cbe.16-07-0212"
+   ],
+   "URL": "https://doi.org/10.1187/cbe.16-07-0212",
+   "relation": {},
+   "ISSN": [
+    "1931-7913"
+   ],
+   "issn-type": [
+    {
+     "value": "1931-7913",
+     "type": "electronic"
+    }
+   ],
+   "subject": [],
+   "published": {
+    "date-parts": [
+     [
+      2016,
+      12
+     ]
+    ]
+   }
+  }
+ }
+}

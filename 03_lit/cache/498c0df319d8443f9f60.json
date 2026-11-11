@@ -1,0 +1,252 @@
+{
+ "url": "https://api.crossref.org/works/10.1187/cbe.17-06-0107",
+ "fetched_utc": "2026-11-06T14:32:20Z",
+ "status": 200,
+ "body": {
+  "status": "ok",
+  "message-type": "work",
+  "message-version": "1.0.0",
+  "message": {
+   "indexed": {
+    "date-parts": [
+     [
+      2026,
+      10,
+      29
+     ]
+    ],
+    "date-time": "2026-10-29T17:10:38Z",
+    "timestamp": 1793293838920,
+    "version": "4.5.0"
+   },
+   "reference-count": 42,
+   "publisher": "American Society for Cell Biology (ASCB)",
+   "issue": "1",
+   "content-domain": {
+    "domain": [],
+    "crossmark-restriction": false
+   },
+   "short-container-title": [
+    "LSE"
+   ],
+   "published-print": {
+    "date-parts": [
+     [
+      2018,
+      3
+     ]
+    ]
+   },
+   "abstract": "<jats:p>There is growing consensus regarding the effectiveness of active-learning pedagogies in college science courses. Less is known about ways that student-level factors contribute to positive outcomes in these contexts. The present study examines students’ (N = 245) trust in the instructor—defined as perceptions of their instructor’s understanding, acceptance, and care—and students’ attitudes toward learning within an anatomy and physiology course featuring active learning. Analyses indicate that student trust of instructor and students’ views of their own intelligence are both associated with student commitment to, and engagement in, active learning. Student-reported trust of the instructor corresponded to final grade, while students’ views of their own intelligence did not. In an active-learning context in which students are more fully engaged in the learning process, student trust of the instructor was an important contributor to desired student outcomes.</jats:p>",
+   "DOI": "10.1187/cbe.17-06-0107",
+   "type": "journal-article",
+   "created": {
+    "date-parts": [
+     [
+      2018,
+      1,
+      29
+     ]
+    ],
+    "date-time": "2018-01-29T20:45:20Z",
+    "timestamp": 1517258720000
+   },
+   "page": "ar10",
+   "source": "Crossref",
+   "is-referenced-by-count": 124,
+   "title": [
+    "Trust, Growth Mindset, and Student Commitment to Active Learning in a College Science Course"
+   ],
+   "prefix": "10.1187",
+   "volume": "17",
+   "author": [
+    {
+     "given": "Andrew J.",
+     "family": "Cavanagh",
+     "sequence": "first",
+     "affiliation": [
+      {
+       "name": "Center for Teaching and Learning, Yale University, New Haven, CT 06511"
+      }
+     ],
+     "role": [
+      {
+       "vocabulary": "crossref",
+       "role": "author"
+      }
+     ]
+    },
+    {
+     "given": "Xinnian",
+     "family": "Chen",
+     "sequence": "additional",
+     "affiliation": [
+      {
+       "name": "Department of Physiology and Neurobiology, University of Connecticut, Storrs, CT 06269-2247"
+      }
+     ],
+     "role": [
+      {
+       "vocabulary": "crossref",
+       "role": "author"
+      }
+     ]
+    },
+    {
+     "given": "Meghan",
+     "family": "Bathgate",
+     "sequence": "additional",
+     "affiliation": [
+      {
+       "name": "Center for Teaching and Learning, Yale University, New Haven, CT 06511"
+      }
+     ],
+     "role": [
+      {
+       "vocabulary": "crossref",
+       "role": "author"
+      }
+     ]
+    },
+    {
+     "given": "Jennifer",
+     "family": "Frederick",
+     "sequence": "additional",
+     "affiliation": [
+      {
+       "name": "Center for Teaching and Learning, Yale University, New Haven, CT 06511"
+      }
+     ],
+     "role": [
+      {
+       "vocabulary": "crossref",
+       "role": "author"
+      }
+     ]
+    },
+    {
+     "given": "David I.",
+     "family": "Hanauer",
+     "sequence": "additional",
+     "affiliation": [
+      {
+       "name": "Department of English, Indiana University of Pennsylvania, Indiana, PA 15705-1094"
+      }
+     ],
+     "role": [
+      {
+       "vocabulary": "crossref",
+       "role": "author"
+      }
+     ]
+    },
+    {
+     "given": "Mark J.",
+     "family": "Graham",
+     "sequence": "additional",
+     "affiliation": [
+      {
+       "name": "Center for Teaching and Learning, Yale University, New Haven, CT 06511"
+      }
+     ],
+     "role": [
+      {
+       "vocabulary": "crossref",
+       "role": "author"
+      }
+     ]
+    }
+   ],
+   "member": "1076",
+   "container-title": [
+    "CBE—Life Sciences Education"
+   ],
+   "original-title": [],
+   "language": "en",
+   "link": [
+    {
+     "URL": "https://syndication.highwire.org/content/doi/10.1187/cbe.17-06-0107",
+     "content-type": "unspecified",
+     "content-version": "vor",
+     "intended-application": "similarity-checking"
+    }
+   ],
+   "deposited": {
+    "date-parts": [
+     [
+      2022,
+      8,
+      13
+     ]
+    ],
+    "date-time": "2022-08-13T08:42:39Z",
+    "timestamp": 1660380159000
+   },
+   "score": 1,
+   "resource": {
+    "primary": {
+     "URL": "https://www.lifescied.org/doi/10.1187/cbe.17-06-0107"
+    }
+   },
+   "subtitle": [],
+   "editor": [
+    {
+     "given": "Mary Lee",
+     "family": "Ledbetter",
+     "sequence": "additional",
+     "affiliation": [],
+     "role": [
+      {
+       "vocabulary": "crossref",
+       "role": "editor"
+      }
+     ]
+    }
+   ],
+   "short-title": [],
+   "issued": {
+    "date-parts": [
+     [
+      2018,
+      3
+     ]
+    ]
+   },
+   "references-count": 42,
+   "journal-issue": {
+    "issue": "1",
+    "published-print": {
+     "date-parts": [
+      [
+       2018,
+       3
+      ]
+     ]
+    }
+   },
+   "alternative-id": [
+    "10.1187/cbe.17-06-0107"
+   ],
+   "URL": "https://doi.org/10.1187/cbe.17-06-0107",
+   "relation": {},
+   "ISSN": [
+    "1931-7913"
+   ],
+   "issn-type": [
+    {
+     "value": "1931-7913",
+     "type": "electronic"
+    }
+   ],
+   "subject": [],
+   "published": {
+    "date-parts": [
+     [
+      2018,
+      3
+     ]
+    ]
+   }
+  }
+ }
+}

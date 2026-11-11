@@ -1,0 +1,4 @@
+kind,column,matched to,matched,mean_err,max_err,pct_range,median_rel,extra,duplicates
+x axis,year,Year (years),26/26,0.0,0.0,0.0,,0,0
+series,Mauna Loa (ppm),Mauna Loa Hawaii (ppm),26/26,1.44,4.61,2.5,0.3,,
+series,global (ppm),Global marine surface (ppm),26/26,0.968,3.79,1.7,0.2,,

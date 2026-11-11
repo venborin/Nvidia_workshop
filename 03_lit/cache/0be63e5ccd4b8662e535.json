@@ -1,0 +1,425 @@
+{
+ "url": "https://api.crossref.org/works/10.1111/gcb.14658",
+ "fetched_utc": "2026-11-08T20:21:21Z",
+ "status": 200,
+ "body": {
+  "status": "ok",
+  "message-type": "work",
+  "message-version": "1.0.0",
+  "message": {
+   "indexed": {
+    "date-parts": [
+     [
+      2026,
+      11,
+      2
+     ]
+    ],
+    "date-time": "2026-11-02T01:03:57Z",
+    "timestamp": 1793581437655,
+    "version": "4.5.0"
+   },
+   "reference-count": 126,
+   "publisher": "Wiley",
+   "issue": "8",
+   "license": [
+    {
+     "start": {
+      "date-parts": [
+       [
+        2020,
+        4,
+        19
+       ]
+      ],
+      "date-time": "2020-04-19T00:00:00Z",
+      "timestamp": 1587254400000
+     },
+     "content-version": "am",
+     "delay-in-days": 339,
+     "URL": "http://onlinelibrary.wiley.com/termsAndConditions#am"
+    },
+    {
+     "start": {
+      "date-parts": [
+       [
+        2019,
+        5,
+        16
+       ]
+      ],
+      "date-time": "2019-05-16T00:00:00Z",
+      "timestamp": 1557964800000
+     },
+     "content-version": "vor",
+     "delay-in-days": 0,
+     "URL": "http://onlinelibrary.wiley.com/termsAndConditions#vor"
+    }
+   ],
+   "funder": [
+    {
+     "DOI": "10.13039/100000199",
+     "name": "U.S. Department of Agriculture",
+     "doi-asserted-by": "publisher",
+     "id": [
+      {
+       "id": "10.13039/100000199",
+       "id-type": "DOI",
+       "asserted-by": "publisher"
+      }
+     ]
+    }
+   ],
+   "content-domain": {
+    "domain": [
+     "onlinelibrary.wiley.com"
+    ],
+    "crossmark-restriction": true
+   },
+   "short-container-title": [
+    "Global Change Biology"
+   ],
+   "published-print": {
+    "date-parts": [
+     [
+      2019,
+      8
+     ]
+    ]
+   },
+   "abstract": "<jats:title>Abstract</jats:title><jats:p>Climate‐smart agriculture (CSA) management practices (e.g., conservation tillage, cover crops, and biochar applications) have been widely adopted to enhance soil organic carbon (SOC) sequestration and to reduce greenhouse gas emissions while ensuring crop productivity. However, current measurements regarding the influences of CSA management practices on SOC sequestration diverge widely, making it difficult to derive conclusions about individual and combined CSA management effects and bringing large uncertainties in quantifying the potential of the agricultural sector to mitigate climate change. We conducted a meta‐analysis of 3,049 paired measurements from 417 peer‐reviewed articles to examine the effects of three common CSA management practices on SOC sequestration as well as the environmental controlling factors. We found that, on average, biochar applications represented the most effective approach for increasing SOC content (39%), followed by cover crops (6%) and conservation tillage (5%). Further analysis suggested that the effects of CSA management practices were more pronounced in areas with relatively warmer climates or lower nitrogen fertilizer inputs. Our meta‐analysis demonstrated that, through adopting CSA practices, cropland could be an improved carbon sink. We also highlight the importance of considering local environmental factors (e.g., climate and soil conditions and their combination with other management practices) in identifying appropriate CSA practices for mitigating greenhouse gas emissions while ensuring crop productivity.</jats:p>",
+   "DOI": "10.1111/gcb.14658",
+   "type": "journal-article",
+   "created": {
+    "date-parts": [
+     [
+      2019,
+      4,
+      19
+     ]
+    ],
+    "date-time": "2019-04-19T15:21:15Z",
+    "timestamp": 1555687275000
+   },
+   "page": "2591-2606",
+   "update-policy": "https://doi.org/10.1002/crossmark_policy",
+   "source": "Crossref",
+   "is-referenced-by-count": 446,
+   "title": [
+    "Responses of soil carbon sequestration to climate‐smart agriculture practices: A meta‐analysis"
+   ],
+   "prefix": "10.1111",
+   "volume": "25",
+   "author": [
+    {
+     "ORCID": "https://orcid.org/0000-0001-5104-2946",
+     "authenticated-orcid": false,
+     "given": "Xiongxiong",
+     "family": "Bai",
+     "sequence": "first",
+     "affiliation": [
+      {
+       "name": "Department of Plant and Soil Sciences University of Kentucky Lexington Kentucky"
+      },
+      {
+       "name": "College of Life Sciences Henan Normal University Xinxiang China"
+      }
+     ],
+     "role": [
+      {
+       "vocabulary": "crossref",
+       "role": "author"
+      }
+     ]
+    },
+    {
+     "ORCID": "https://orcid.org/0000-0001-8854-6005",
+     "authenticated-orcid": false,
+     "given": "Yawen",
+     "family": "Huang",
+     "sequence": "additional",
+     "affiliation": [
+      {
+       "name": "Department of Plant and Soil Sciences University of Kentucky Lexington Kentucky"
+      }
+     ],
+     "role": [
+      {
+       "vocabulary": "crossref",
+       "role": "author"
+      }
+     ]
+    },
+    {
+     "ORCID": "https://orcid.org/0000-0003-0271-486X",
+     "authenticated-orcid": false,
+     "given": "Wei",
+     "family": "Ren",
+     "sequence": "additional",
+     "affiliation": [
+      {
+       "name": "Department of Plant and Soil Sciences University of Kentucky Lexington Kentucky"
+      }
+     ],
+     "role": [
+      {
+       "vocabulary": "crossref",
+       "role": "author"
+      }
+     ]
+    },
+    {
+     "given": "Mark",
+     "family": "Coyne",
+     "sequence": "additional",
+     "affiliation": [
+      {
+       "name": "Department of Plant and Soil Sciences University of Kentucky Lexington Kentucky"
+      }
+     ],
+     "role": [
+      {
+       "vocabulary": "crossref",
+       "role": "author"
+      }
+     ]
+    },
+    {
+     "given": "Pierre‐Andre",
+     "family": "Jacinthe",
+     "sequence": "additional",
+     "affiliation": [
+      {
+       "name": "Indiana University Purdue University Indianapolis Indianapolis Indiana"
+      }
+     ],
+     "role": [
+      {
+       "vocabulary": "crossref",
+       "role": "author"
+      }
+     ]
+    },
+    {
+     "given": "Bo",
+     "family": "Tao",
+     "sequence": "additional",
+     "affiliation": [
+      {
+       "name": "Department of Plant and Soil Sciences University of Kentucky Lexington Kentucky"
+      }
+     ],
+     "role": [
+      {
+       "vocabulary": "crossref",
+       "role": "author"
+      }
+     ]
+    },
+    {
+     "ORCID": "https://orcid.org/0000-0002-5284-2897",
+     "authenticated-orcid": false,
+     "given": "Dafeng",
+     "family": "Hui",
+     "sequence": "additional",
+     "affiliation": [
+      {
+       "name": "Department of Biological Sciences Tennessee State University Nashville Tennessee"
+      }
+     ],
+     "role": [
+      {
+       "vocabulary": "crossref",
+       "role": "author"
+      }
+     ]
+    },
+    {
+     "ORCID": "https://orcid.org/0000-0002-2170-589X",
+     "authenticated-orcid": false,
+     "given": "Jian",
+     "family": "Yang",
+     "sequence": "additional",
+     "affiliation": [
+      {
+       "name": "Department of Forestry and Natural Resources University of Kentucky Lexington Kentucky"
+      }
+     ],
+     "role": [
+      {
+       "vocabulary": "crossref",
+       "role": "author"
+      }
+     ]
+    },
+    {
+     "given": "Chris",
+     "family": "Matocha",
+     "sequence": "additional",
+     "affiliation": [
+      {
+       "name": "Department of Plant and Soil Sciences University of Kentucky Lexington Kentucky"
+      }
+     ],
+     "role": [
+      {
+       "vocabulary": "crossref",
+       "role": "author"
+      }
+     ]
+    }
+   ],
+   "member": "311",
+   "published-online": {
+    "date-parts": [
+     [
+      2019,
+      5,
+      16
+     ]
+    ]
+   },
+   "container-title": [
+    "Global Change Biology"
+   ],
+   "original-title": [],
+   "language": "en",
+   "link": [
+    {
+     "URL": "https://api.wiley.com/onlinelibrary/tdm/v1/articles/10.1111%2Fgcb.14658",
+     "content-type": "application/pdf",
+     "content-version": "vor",
+     "intended-application": "text-mining"
+    },
+    {
+     "URL": "https://onlinelibrary.wiley.com/doi/pdf/10.1111/gcb.14658",
+     "content-type": "application/pdf",
+     "content-version": "vor",
+     "intended-application": "text-mining"
+    },
+    {
+     "URL": "https://onlinelibrary.wiley.com/doi/full-xml/10.1111/gcb.14658",
+     "content-type": "application/xml",
+     "content-version": "vor",
+     "intended-application": "text-mining"
+    },
+    {
+     "URL": "https://onlinelibrary.wiley.com/doi/am-pdf/10.1111/gcb.14658",
+     "content-type": "application/pdf",
+     "content-version": "am",
+     "intended-application": "syndication"
+    },
+    {
+     "URL": "https://onlinelibrary.wiley.com/doi/pdf/10.1111/gcb.14658",
+     "content-type": "unspecified",
+     "content-version": "vor",
+     "intended-application": "similarity-checking"
+    }
+   ],
+   "deposited": {
+    "date-parts": [
+     [
+      2023,
+      8,
+      27
+     ]
+    ],
+    "date-time": "2023-08-27T05:43:39Z",
+    "timestamp": 1693115019000
+   },
+   "score": 1,
+   "resource": {
+    "primary": {
+     "URL": "https://onlinelibrary.wiley.com/doi/10.1111/gcb.14658"
+    }
+   },
+   "subtitle": [],
+   "short-title": [],
+   "issued": {
+    "date-parts": [
+     [
+      2019,
+      5,
+      16
+     ]
+    ]
+   },
+   "references-count": 126,
+   "journal-issue": {
+    "issue": "8",
+    "published-print": {
+     "date-parts": [
+      [
+       2019,
+       8
+      ]
+     ]
+    }
+   },
+   "alternative-id": [
+    "10.1111/gcb.14658"
+   ],
+   "URL": "https://doi.org/10.1111/gcb.14658",
+   "archive": [
+    "Portico"
+   ],
+   "relation": {},
+   "ISSN": [
+    "1354-1013",
+    "1365-2486"
+   ],
+   "issn-type": [
+    {
+     "value": "1354-1013",
+     "type": "print"
+    },
+    {
+     "value": "1365-2486",
+     "type": "electronic"
+    }
+   ],
+   "subject": [],
+   "published": {
+    "date-parts": [
+     [
+      2019,
+      5,
+      16
+     ]
+    ]
+   },
+   "assertion": [
+    {
+     "value": "2018-11-10",
+     "order": 0,
+     "name": "received",
+     "label": "Received",
+     "group": {
+      "name": "publication_history",
+      "label": "Publication History"
+     }
+    },
+    {
+     "value": "2019-03-29",
+     "order": 1,
+     "name": "accepted",
+     "label": "Accepted",
+     "group": {
+      "name": "publication_history",
+      "label": "Publication History"
+     }
+    },
+    {
+     "value": "2019-05-16",
+     "order": 2,
+     "name": "published",
+     "label": "Published",
+     "group": {
+      "name": "publication_history",
+      "label": "Publication History"
+     }
+    }
+   ]
+  }
+ }
+}

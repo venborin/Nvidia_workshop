@@ -1,0 +1,286 @@
+{
+ "url": "https://api.crossref.org/works/10.3389/fsufs.2026.1743073",
+ "fetched_utc": "2026-11-08T20:21:07Z",
+ "status": 200,
+ "body": {
+  "status": "ok",
+  "message-type": "work",
+  "message-version": "1.0.0",
+  "message": {
+   "indexed": {
+    "date-parts": [
+     [
+      2026,
+      4,
+      16
+     ]
+    ],
+    "date-time": "2026-04-16T16:17:42Z",
+    "timestamp": 1776356262926,
+    "version": "3.51.2"
+   },
+   "reference-count": 44,
+   "publisher": "Frontiers Media SA",
+   "license": [
+    {
+     "start": {
+      "date-parts": [
+       [
+        2026,
+        1,
+        21
+       ]
+      ],
+      "date-time": "2026-01-21T00:00:00Z",
+      "timestamp": 1768953600000
+     },
+     "content-version": "vor",
+     "delay-in-days": 0,
+     "URL": "https://creativecommons.org/licenses/by/4.0/"
+    }
+   ],
+   "content-domain": {
+    "domain": [
+     "frontiersin.org"
+    ],
+    "crossmark-restriction": true
+   },
+   "short-container-title": [
+    "Front. Sustain. Food Syst."
+   ],
+   "abstract": "<jats:p>\n                    This research investigates the socio-economic profile, land resources, cropping patterns, livelihood strategies, and technology adoption of farming households in two contrasting agro-ecological settings: saline and lowsaline areas of the Sundarbans delta in West Bengal. The two blocks under study were Hasnabad (North 24 Parganas) and Basanti (South 24 Parganas). A baseline survey of 400 farmers, equally divided between the two blocks, was conducted using stratified random sampling to capture differences in salinity, water availability, and agricultural intensity. Data was gathered over an entire agricultural year through a structured questionnaire covering demographics, landholding, crop management, allied enterprises, institutional access, and production constraints. Results indicate clear contrasts between the two blocks. Farmers in Hasnabad are relatively older, have larger households, and maintain higher cropping intensity (243.4%) through rotations such as rice–mustard–jute, achieving greater\n                    <jats:italic>kharif</jats:italic>\n                    rice yields (4110.9 kg per hectare) than Basanti (138.9%, 3484.6 kg per hectare). Basanti shows more rice monocropping, lower fertilizer application, higher migration rates, and greater female participation in farming, albeit with lower individual labor intensity. Both regions face\n                    <jats:italic>rabi</jats:italic>\n                    season irrigation shortages, while Hasnabad additionally struggles with high soil salinity and Basanti with inadequate market infrastructure. Recommended measures include the introduction of salt-tolerant and hybrid high-yielding varieties, diversification in monocropping and saline areas, land shaping for water harvesting, improved vegetable seed delivery, targeted fisheries training, and site-specific integrated nutrient management with essential micronutrients. Policy priorities should differ by location: Hasnabad requires salinity control, expanded irrigation, and adoption of climate-resilient practices, whereas Basanti needs better irrigation, stronger market linkages, and a shift toward high-value diversified crops.\n                  </jats:p>",
+   "DOI": "10.3389/fsufs.2026.1743073",
+   "type": "journal-article",
+   "created": {
+    "date-parts": [
+     [
+      2026,
+      1,
+      21
+     ]
+    ],
+    "date-time": "2026-01-21T06:42:17Z",
+    "timestamp": 1768977737000
+   },
+   "update-policy": "https://doi.org/10.3389/crossmark-policy",
+   "source": "Crossref",
+   "is-referenced-by-count": 1,
+   "title": [
+    "Agro ecological variability, technology adoption, and livelihoods in the Sundarbans delta: evidence from a baseline study"
+   ],
+   "prefix": "10.3389",
+   "volume": "10",
+   "author": [
+    {
+     "given": "Preeti",
+     "family": "Bharti",
+     "sequence": "first",
+     "affiliation": [
+      {
+       "name": "International Rice Research Institute",
+       "place": [
+        "New Delhi, India"
+       ]
+      }
+     ],
+     "role": [
+      {
+       "role": "author",
+       "vocabulary": "crossref"
+      }
+     ]
+    },
+    {
+     "given": "Shalini",
+     "family": "Gakhar",
+     "sequence": "additional",
+     "affiliation": [
+      {
+       "name": "International Rice Research Institute",
+       "place": [
+        "New Delhi, India"
+       ]
+      }
+     ],
+     "role": [
+      {
+       "role": "author",
+       "vocabulary": "crossref"
+      }
+     ]
+    },
+    {
+     "given": "Girija Prasad",
+     "family": "Patnaik",
+     "sequence": "additional",
+     "affiliation": [
+      {
+       "name": "International Rice Research Institute",
+       "place": [
+        "New Delhi, India"
+       ]
+      }
+     ],
+     "role": [
+      {
+       "role": "author",
+       "vocabulary": "crossref"
+      }
+     ]
+    },
+    {
+     "given": "Dhiman",
+     "family": "Burman",
+     "sequence": "additional",
+     "affiliation": [
+      {
+       "name": "ICAR-Central Soil Salinity Research Institute (CSSRI)",
+       "place": [
+        "Canning Town, West Bengal, India"
+       ]
+      }
+     ],
+     "role": [
+      {
+       "role": "author",
+       "vocabulary": "crossref"
+      }
+     ]
+    },
+    {
+     "given": "Robert",
+     "family": "Caudwell",
+     "sequence": "additional",
+     "affiliation": [
+      {
+       "name": "International Rice Research Institute",
+       "place": [
+        "Hanoi, Vietnam"
+       ]
+      }
+     ],
+     "role": [
+      {
+       "role": "author",
+       "vocabulary": "crossref"
+      }
+     ]
+    },
+    {
+     "given": "Tashi Dorjee",
+     "family": "Lama",
+     "sequence": "additional",
+     "affiliation": [
+      {
+       "name": "ICAR-Central Soil Salinity Research Institute (CSSRI)",
+       "place": [
+        "Canning Town, West Bengal, India"
+       ]
+      }
+     ],
+     "role": [
+      {
+       "role": "author",
+       "vocabulary": "crossref"
+      }
+     ]
+    },
+    {
+     "given": "Uttam Kumar",
+     "family": "Mandal",
+     "sequence": "additional",
+     "affiliation": [
+      {
+       "name": "ICAR-Central Soil Salinity Research Institute (CSSRI)",
+       "place": [
+        "Canning Town, West Bengal, India"
+       ]
+      }
+     ],
+     "role": [
+      {
+       "role": "author",
+       "vocabulary": "crossref"
+      }
+     ]
+    }
+   ],
+   "member": "1965",
+   "published-online": {
+    "date-parts": [
+     [
+      2026,
+      1,
+      21
+     ]
+    ]
+   },
+   "container-title": [
+    "Frontiers in Sustainable Food Systems"
+   ],
+   "original-title": [],
+   "link": [
+    {
+     "URL": "https://www.frontiersin.org/articles/10.3389/fsufs.2026.1743073/full",
+     "content-type": "unspecified",
+     "content-version": "vor",
+     "intended-application": "similarity-checking"
+    }
+   ],
+   "deposited": {
+    "date-parts": [
+     [
+      2026,
+      2,
+      24
+     ]
+    ],
+    "date-time": "2026-02-24T07:40:21Z",
+    "timestamp": 1771918821000
+   },
+   "score": 1,
+   "resource": {
+    "primary": {
+     "URL": "https://www.frontiersin.org/articles/10.3389/fsufs.2026.1743073/full"
+    }
+   },
+   "subtitle": [],
+   "short-title": [],
+   "issued": {
+    "date-parts": [
+     [
+      2026,
+      1,
+      21
+     ]
+    ]
+   },
+   "references-count": 44,
+   "alternative-id": [
+    "10.3389/fsufs.2026.1743073"
+   ],
+   "URL": "https://doi.org/10.3389/fsufs.2026.1743073",
+   "relation": {},
+   "ISSN": [
+    "2571-581X"
+   ],
+   "issn-type": [
+    {
+     "value": "2571-581X",
+     "type": "electronic"
+    }
+   ],
+   "subject": [],
+   "published": {
+    "date-parts": [
+     [
+      2026,
+      1,
+      21
+     ]
+    ]
+   },
+   "article-number": "1743073"
+  }
+ }
+}

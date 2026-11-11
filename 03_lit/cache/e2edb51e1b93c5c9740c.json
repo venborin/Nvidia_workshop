@@ -1,0 +1,206 @@
+{
+ "url": "https://api.crossref.org/works/10.24815/jipi.v5i4.23246",
+ "fetched_utc": "2026-11-08T20:21:06Z",
+ "status": 200,
+ "body": {
+  "status": "ok",
+  "message-type": "work",
+  "message-version": "1.0.0",
+  "message": {
+   "indexed": {
+    "date-parts": [
+     [
+      2023,
+      9,
+      23
+     ]
+    ],
+    "date-time": "2023-09-23T10:42:27Z",
+    "timestamp": 1695465747983
+   },
+   "reference-count": 0,
+   "publisher": "LPPM Unsyiah",
+   "issue": "4",
+   "license": [
+    {
+     "start": {
+      "date-parts": [
+       [
+        2021,
+        12,
+        6
+       ]
+      ],
+      "date-time": "2021-12-06T00:00:00Z",
+      "timestamp": 1638748800000
+     },
+     "content-version": "unspecified",
+     "delay-in-days": 0,
+     "URL": "https://creativecommons.org/licenses/by-sa/4.0"
+    }
+   ],
+   "content-domain": {
+    "domain": [],
+    "crossmark-restriction": false
+   },
+   "short-container-title": [
+    "JIPI"
+   ],
+   "abstract": "<jats:p>Salinity is the amount of salt contained or dissolved in water or soil. Salinity can cause the change of physical characteristics of soil, especially in coastal area, that affects human daily activities, including agriculture. Baitussalam District (Kecamatan Baitussalam) is one of the districts that was hit most devastatingly by the Indian Ocean Tsunami 2004 as well as has large population with potential agricultural prospect in Aceh Besar Region (Kabupaten Aceh Besar). This research aims to identify the soil salinity level in the Baitussalam District. The sampling technique uses descriptive methodology with scalable quantitative approach in the chosen sampling areas. 26 sampling spots have been chosen according to mathematical calculation. Quantitative method is used to analyze the result in this research. Furthermore, conductivity measurement is done through induction electromagnetic method, using Geonics EM38 and to identify the soil salinity level, analysis of soil texture is conducted in the laboratory. As the result, the electrical conductivity measurement shows varying values. The minimum conductivity value is 0,004 dS/m, taken at spot T 004 in Lam Ujong Village (Desa Lam Ujong). Whereas the maximum conductivity value reaches 10,31 dS/m, taken at spot T 003 in Labuy Village. The soil salinity in the 26 sampling spots in Baitussalam District demonstrates an average level, with a value of ECa 2-4 dS/m. The result of this research is expected to be a parameter to control and develop the activities, especially for agricultural activities, in the coastal area in Aceh Besar Region, and in Baitussalam district in particular.</jats:p>",
+   "DOI": "10.24815/jipi.v5i4.23246",
+   "type": "journal-article",
+   "created": {
+    "date-parts": [
+     [
+      2021,
+      12,
+      22
+     ]
+    ],
+    "date-time": "2021-12-22T16:57:11Z",
+    "timestamp": 1640192231000
+   },
+   "page": "293-304",
+   "source": "Crossref",
+   "is-referenced-by-count": 0,
+   "title": [
+    "Identifikasi Salinitas Tanah Menggunakan Instrumen Induksi Elektromagentik EM38 di Kecamatan Baitussalam Kabupaten Aceh Besar"
+   ],
+   "prefix": "10.24815",
+   "volume": "5",
+   "author": [
+    {
+     "given": "Rini",
+     "family": "Ermiana*",
+     "sequence": "first",
+     "affiliation": [],
+     "role": [
+      {
+       "role": "author",
+       "vocabulary": "crossref"
+      }
+     ]
+    },
+    {
+     "given": "Suhendrayatna",
+     "family": "Suhendrayatna",
+     "sequence": "additional",
+     "affiliation": [],
+     "role": [
+      {
+       "role": "author",
+       "vocabulary": "crossref"
+      }
+     ]
+    },
+    {
+     "given": "Sugianto",
+     "family": "Sugianto",
+     "sequence": "additional",
+     "affiliation": [],
+     "role": [
+      {
+       "role": "author",
+       "vocabulary": "crossref"
+      }
+     ]
+    }
+   ],
+   "member": "10439",
+   "published-online": {
+    "date-parts": [
+     [
+      2021,
+      12,
+      6
+     ]
+    ]
+   },
+   "container-title": [
+    "Jurnal IPA &amp; Pembelajaran IPA"
+   ],
+   "original-title": [],
+   "link": [
+    {
+     "URL": "https://jurnal.usk.ac.id/JIPI/article/viewFile/23246/14952",
+     "content-type": "application/pdf",
+     "content-version": "vor",
+     "intended-application": "text-mining"
+    },
+    {
+     "URL": "https://jurnal.usk.ac.id/JIPI/article/viewFile/23246/14952",
+     "content-type": "unspecified",
+     "content-version": "vor",
+     "intended-application": "similarity-checking"
+    }
+   ],
+   "deposited": {
+    "date-parts": [
+     [
+      2023,
+      9,
+      22
+     ]
+    ],
+    "date-time": "2023-09-22T19:06:35Z",
+    "timestamp": 1695409595000
+   },
+   "score": 1,
+   "resource": {
+    "primary": {
+     "URL": "https://jurnal.usk.ac.id/JIPI/article/view/23246"
+    }
+   },
+   "subtitle": [],
+   "short-title": [],
+   "issued": {
+    "date-parts": [
+     [
+      2021,
+      12,
+      6
+     ]
+    ]
+   },
+   "references-count": 0,
+   "journal-issue": {
+    "issue": "4",
+    "published-online": {
+     "date-parts": [
+      [
+       2021,
+       12,
+       1
+      ]
+     ]
+    }
+   },
+   "URL": "https://doi.org/10.24815/jipi.v5i4.23246",
+   "relation": {},
+   "ISSN": [
+    "2620-553X",
+    "2614-0500"
+   ],
+   "issn-type": [
+    {
+     "value": "2620-553X",
+     "type": "electronic"
+    },
+    {
+     "value": "2614-0500",
+     "type": "print"
+    }
+   ],
+   "subject": [],
+   "published": {
+    "date-parts": [
+     [
+      2021,
+      12,
+      6
+     ]
+    ]
+   }
+  }
+ }
+}

@@ -1,0 +1,11 @@
+Title: Hydrothermal Aging Versus Dry Cycling in Copper Zeolite NOx Catalysts
+Year: 2022
+Field: chemistry
+
+Copper zeolite catalysts for nitrogen oxide reduction are usually qualified by a single hydrothermal aging soak, on the assumption that a long soak bounds whatever cycling will do. That assumption has not been tested side by side on the same material. We aged one catalyst two ways and compared the damage.
+
+Cu-MZL-8 at 2.9 weight percent copper was divided into two sets of 6 monolith cores each. One set was soaked for 1200 hours at 700 degrees Celsius in 10 percent water vapor. The other was cycled 900 times between 180 and 720 degrees Celsius in the same wet stream, which amounts to 410 hours above 600 degrees Celsius. Nitrogen oxide conversion was measured at 200, 250, and 400 degrees Celsius, and copper coordination was followed by diffuse reflectance spectroscopy on all 12 cores.
+
+The soaked set lost conversion mainly at low temperature, falling from 72 percent to 51 percent at 200 degrees Celsius while holding 89 percent at 400 degrees Celsius. The cycled set showed the opposite pattern, holding 68 percent at 200 degrees Celsius but dropping from 93 percent to 74 percent at 400 degrees Celsius. Framework aluminum loss measured by nuclear magnetic resonance was 18 percent in the soaked set and 6 percent in the cycled set. The two aging routes therefore do not produce the same catalyst, and a soak only protocol would have passed a material that fails in the regime cycling exposes. Total integrated conversion across the three temperatures differed by less than 4 percent between sets, which is why single number screens miss the distinction.
+
+The limitation is matching severity. We chose cycle count and soak duration to give comparable total conversion loss, not comparable thermal exposure, so the comparison speaks to the character of the damage and not to which protocol is harsher.

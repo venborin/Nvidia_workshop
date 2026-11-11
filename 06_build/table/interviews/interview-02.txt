@@ -1,0 +1,16 @@
+Interview 2. Invented for the workshop.
+
+Interviewer: What's your role?
+Participant: Associate professor in chemistry. I run a group of six, mostly computational, some synthesis.
+
+Interviewer: How does your group use research computing?
+Participant: Heavily. We run electronic structure calculations every week. The cluster is essential. The problem isn't using it, it's the wait. Before a deadline the GPU queue can be three or four days, and a student loses a week of momentum.
+
+Interviewer: How do you handle that?
+Participant: We buy cloud time out of my startup when it's urgent, which I can't keep doing. And we've gotten good at running small test jobs first so the big ones don't fail after two days.
+
+Interviewer: What would make the most difference?
+Participant: A priority lane for short jobs, or a way to reserve nodes a week ahead for a deadline. And honestly, a clear policy on whether we can put our own GPUs into the cluster.
+
+Interviewer: Overall?
+Participant: It's a good system and the staff are responsive. I'd call myself a happy customer who wants more of it.

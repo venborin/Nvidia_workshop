@@ -1,0 +1,13 @@
+# Invented potentiostat log. Fixed-width: time  channel  potential(V)  current(uA)  flag
+00:00:00  CH1   -0.200    12.41   ok
+00:00:30  CH1   -0.150    15.02   ok
+00:01:00  CH1   -0.100    18.77   ok
+00:01:30  CH1   -0.050    24.10   ok
+00:02:00  CH1    0.000    31.55   ok
+00:02:30  CH1    0.050    40.98   sat
+00:00:00  CH2   -0.200     9.80   ok
+00:00:30  CH2   -0.150    11.14   ok
+00:01:00  CH2   -0.100    13.92   ok
+00:01:30  CH2   -0.050    17.60   drift
+00:02:00  CH2    0.000    22.31   ok
+00:02:30  CH2    0.050    28.05   ok

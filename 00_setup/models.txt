@@ -1,0 +1,18 @@
+# The OpenRouter models offered by  bash 00_setup/choose_model.sh  and by
+# bash setup.sh --choose-model. One per line: OpenRouter id|what the person sees.
+# The first line is the workshop's model, the one Enter picks; it must match
+# OPENROUTER_MODEL in setup.sh.
+#
+# Chosen 2026-11-07 as the most capable agentic models on OpenRouter, ranked by
+# Terminal-Bench 4.0 (vals.ai, November 5, 2026: Sonnet 5.5 64.1%, Kimi K3.1 Pro
+# 63.6%, Gemini 4 Argon 57.6%, GPT-6.1 Sol 55.1%), with Nemotron first.
+# Left out: Claude Opus 5.5 (first on the board), GPT-6 Astra and Claude Fable
+# 5.1, unless a full replay of the day shows them under $3 a person; Gemini 4
+# Carbon is not on OpenRouter. Prices per million input/output tokens that day:
+# Nemotron 3 Ultra 0.60/2.40, the other four 2.00/10.00.
+# PROVISIONAL until solutions/measure-models.sh has replayed the day on each.
+nvidia/nemotron-3-ultra-550b-a55b|NVIDIA Nemotron 3 Ultra: open model, the workshop's model
+anthropic/claude-sonnet-5.5|Anthropic Claude Sonnet 5.5: among the strongest agents
+moonshotai/kimi-k3.1-pro|Moonshot Kimi K3.1 Pro: open model, among the strongest agents
+google/gemini-4-argon|Google Gemini 4 Argon: strong agent
+openai/gpt-6.1-sol|OpenAI GPT-6.1 Sol: strong agent, economical with tokens

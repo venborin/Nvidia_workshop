@@ -1,0 +1,6 @@
+2026-11-08 14:19:49  23 rows: 0 pass, 0 flagged, 23 fail. Fix each failing row, or set its status to flagged and say why in note. Do not delete rows to make this pass.
+2026-11-08 14:20:06  23 rows: 0 pass, 0 flagged, 23 fail. Fix each failing row, or set its status to flagged and say why in note. Do not delete rows to make this pass.
+2026-11-08 14:20:38  23 rows: 12 pass, 11 flagged, 0 fail. Every row passes or is flagged with a reason.
+2026-11-08 14:21:42  29 rows: 17 pass, 11 flagged, 1 fail. Fix each failing row, or set its status to flagged and say why in note. Do not delete rows to make this pass.
+2026-11-08 14:21:48  29 rows: 18 pass, 11 flagged, 0 fail. Every row passes or is flagged with a reason.
+2026-11-08 14:22:00  29 rows: 18 pass, 11 flagged, 0 fail. Every row passes or is flagged with a reason.

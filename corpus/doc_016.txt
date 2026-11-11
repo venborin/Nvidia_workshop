@@ -1,0 +1,11 @@
+Title: Teaching Computational Reproducibility in a Graduate Engineering Course
+Year: 2019
+Field: engineering
+
+Graduate engineering students write code for their research with little instruction in making that code reproducible, and faculty report receiving work they cannot rerun. We added a reproducibility module to a graduate course and evaluated it with both performance measures and interviews.
+
+The module ran over 4 weeks in a course of 61 students across two offerings, covering version control, environment specification, and a reproducible analysis report. Assessment combined a rubric scored artifact, a pre and post concept inventory of 18 items, and semistructured interviews with 14 volunteers after the course ended. An independent rater rescored 20 artifacts to check rubric reliability, agreeing within 1 rubric point on 17 of 20.
+
+Artifact scores improved substantially. The share of submissions that a second person could rerun from the repository alone rose from 21 percent at the start of the module to 79 percent at the end. Concept inventory scores rose from a mean of 9.4 to 13.8 of 18 items. The interviews complicate that picture. Students described adopting version control readily, with 12 of 14 reporting continued use three months later, but described environment specification as something done once for the assignment and abandoned, and 9 of 14 said they had not pinned dependencies in their own research code since. Several attributed this to advisors who did not ask for it, which suggests the binding constraint is laboratory practice rather than student skill.
+
+The limitation is the gap between the measures. Artifact scores capture what students did when graded on it, and the interviews capture what they report doing when not. Neither observes the research code itself, and the 14 interviewees volunteered, so they are plausibly the students most engaged with the module. A durable claim about research practice would need to inspect repositories a year later.

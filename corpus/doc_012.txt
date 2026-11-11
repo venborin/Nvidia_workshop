@@ -1,0 +1,11 @@
+Title: Validating a GPU Flood Solver Against Stream Gauge and Depth Sensor Records
+Year: 2023
+Field: engineering
+
+Flood model validation usually relies on peak stage at a handful of stream gauges, which tests the model where water is deepest and longest lived rather than where it matters for evacuation. We validated a GPU shallow water solver against a denser record that combines stream gauges with low cost depth sensors placed on roads, and we paired the comparison with a modeling study of what the residuals imply.
+
+We instrumented 3 urban catchments with 42 ultrasonic depth sensors mounted on sign posts, logging at 5 minute intervals, alongside 7 existing stream gauges. Over 19 months the network captured 6 rainfall events exceeding 50 millimeters in 24 hours. For each event we ran the solver at 2 meter resolution driven by radar rainfall, producing 18 simulations in total, and then ran a further 54 simulations varying surface roughness and drain capacity to see which parameter the residuals were sensitive to.
+
+Simulated peak depth matched sensor records with a mean absolute error of 7.3 centimeters and a bias of negative 2.1 centimeters, meaning the solver slightly underpredicted depth on roads. Timing of peak arrival was accurate to a median of 11 minutes. Agreement was markedly better at stream gauges, where mean absolute error was 4.1 centimeters, which suggests that gauge only validation would have overstated the model's accuracy on streets by roughly 40 percent. The parameter sweep showed that road residuals were four times more sensitive to assumed drain capacity than to surface roughness, which points to drainage representation rather than friction as the next modeling priority.
+
+The sensor network is the limitation as well as the contribution. Sensors on sign posts measure depth at the curb, and 9 of the 42 recorded nothing in the largest event because water never reached their mounting height, so the validation is weighted toward moderate flooding.

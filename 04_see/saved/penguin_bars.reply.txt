@@ -1,0 +1,4 @@
+Species,Female (g),Female err (g),Male (g),Male err (g)
+Adelie,3350,250,4000,300
+Chinstrap,3500,300,3900,350
+Gentoo,4600,300,5400,400

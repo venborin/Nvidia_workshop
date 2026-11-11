@@ -1,0 +1,4 @@
+kind,column,matched to,matched,mean_err,max_err,pct_range,median_rel,extra,duplicates
+x axis,time (h),Time (h),9/9,0.0,0.0,0.0,,0,0
+series,wild type (CFU/mL),Wild type (CFU/mL),9/9,124000000.0,519000000.0,3.6,7.6,,
+series,mutant (CFU/mL),Mutant (CFU/mL),9/9,899000.0,3280000.0,0.0,8.9,,

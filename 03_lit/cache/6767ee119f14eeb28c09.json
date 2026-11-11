@@ -1,0 +1,892 @@
+{
+ "url": "https://api.openalex.org/works?search=active+learning+college+science+courses&per_page=3&sort=relevance_score:desc&select=id,doi,display_name,publication_year,publication_date,type,authorships,primary_location,biblio,abstract_inverted_index,cited_by_count,open_access,relevance_score",
+ "fetched_utc": "2026-11-06T14:32:19Z",
+ "status": 200,
+ "body": {
+  "meta": {
+   "count": 768304,
+   "db_response_time_ms": 425,
+   "page": 1,
+   "per_page": 3,
+   "groups_count": null,
+   "cost_usd": 0.001
+  },
+  "results": [
+   {
+    "id": "https://openalex.org/W3205553647",
+    "doi": null,
+    "display_name": "Implementing Active Learning: A Critical Examination of Sources of Variation in Active Learning College Science Courses.",
+    "publication_year": 2021,
+    "publication_date": "2021-01-01",
+    "type": "article",
+    "authorships": [
+     {
+      "author": {
+       "display_name": "Amédee Marchand Martella"
+      }
+     },
+     {
+      "author": {
+       "display_name": "Marsha C. Lovett"
+      }
+     },
+     {
+      "author": {
+       "display_name": "Lynnette Ramsay"
+      }
+     }
+    ],
+    "primary_location": {
+     "id": "mag:3205553647",
+     "doi": null,
+     "is_oa": false,
+     "landing_page_url": "https://eric.ed.gov/?q=source%3a%22Journal+on+Excellence+in+College+Teaching&id=EJ1310521",
+     "pdf_url": null,
+     "source": {
+      "id": "https://openalex.org/S2764574418",
+      "display_name": "Journal on excellence in college teaching",
+      "issn_l": "1052-4800",
+      "issn": [
+       "1052-4800",
+       "1945-2993"
+      ],
+      "is_oa": false,
+      "is_in_doaj": false,
+      "is_core": true,
+      "listed_in": [
+       "cwts-core"
+      ],
+      "host_organization": null,
+      "host_organization_name": null,
+      "host_organization_lineage": [],
+      "host_organization_lineage_names": [],
+      "type": "journal"
+     },
+     "license": null,
+     "license_id": null,
+     "version": null,
+     "is_accepted": false,
+     "is_published": false,
+     "raw_source_name": "Journal on excellence in college teaching",
+     "raw_type": null
+    },
+    "biblio": {
+     "volume": "32",
+     "issue": "1",
+     "first_page": "67",
+     "last_page": "96"
+    },
+    "abstract_inverted_index": null,
+    "cited_by_count": 2,
+    "open_access": {
+     "is_oa": false,
+     "oa_status": "closed",
+     "oa_url": null,
+     "any_repository_has_fulltext": false
+    },
+    "relevance_score": 181.5136
+   },
+   {
+    "id": "https://openalex.org/W2558739822",
+    "doi": "https://doi.org/10.1187/cbe.16-07-0212",
+    "display_name": "Student Buy-In to Active Learning in a College Science Course",
+    "publication_year": 2016,
+    "publication_date": "2016-12-01",
+    "type": "article",
+    "authorships": [
+     {
+      "author": {
+       "display_name": "Andrew J. Cavanagh"
+      }
+     },
+     {
+      "author": {
+       "display_name": "Oriana R. Aragón"
+      }
+     },
+     {
+      "author": {
+       "display_name": "Xinnian Chen"
+      }
+     },
+     {
+      "author": {
+       "display_name": "Brian A. Couch"
+      }
+     },
+     {
+      "author": {
+       "display_name": "Mary F. Durham"
+      }
+     },
+     {
+      "author": {
+       "display_name": "Aiyana Bobrownicki"
+      }
+     },
+     {
+      "author": {
+       "display_name": "David I. Hanauer"
+      }
+     },
+     {
+      "author": {
+       "display_name": "Mark J. Graham"
+      }
+     }
+    ],
+    "primary_location": {
+     "id": "doi:10.1187/cbe.16-07-0212",
+     "doi": "https://doi.org/10.1187/cbe.16-07-0212",
+     "is_oa": true,
+     "landing_page_url": "https://doi.org/10.1187/cbe.16-07-0212",
+     "pdf_url": "https://www.lifescied.org/doi/pdf/10.1187/cbe.16-07-0212",
+     "source": {
+      "id": "https://openalex.org/S94345546",
+      "display_name": "CBE—Life Sciences Education",
+      "issn_l": "1931-7913",
+      "issn": [
+       "1931-7913"
+      ],
+      "is_oa": false,
+      "is_in_doaj": false,
+      "is_core": true,
+      "listed_in": [
+       "cwts-core",
+       "jufo-1",
+       "medline",
+       "norway-1",
+       "poland-140",
+       "russia-white-list-1"
+      ],
+      "host_organization": "https://openalex.org/P4310319721",
+      "host_organization_name": "American Society for Cell Biology",
+      "host_organization_lineage": [
+       "https://openalex.org/P4310319721"
+      ],
+      "host_organization_lineage_names": [
+       "American Society for Cell Biology"
+      ],
+      "type": "journal"
+     },
+     "license": "cc-by-nc-sa",
+     "license_id": "https://openalex.org/licenses/cc-by-nc-sa",
+     "version": "publishedVersion",
+     "is_accepted": true,
+     "is_published": true,
+     "raw_source_name": "CBE—Life Sciences Education",
+     "raw_type": "journal-article"
+    },
+    "biblio": {
+     "volume": "15",
+     "issue": "4",
+     "first_page": "ar76",
+     "last_page": "ar76"
+    },
+    "abstract_inverted_index": {
+     "The": [
+      0,
+      78
+     ],
+     "benefits": [
+      1
+     ],
+     "of": [
+      2,
+      29,
+      43
+     ],
+     "introducing": [
+      3
+     ],
+     "active": [
+      4,
+      23,
+      59,
+      64,
+      112,
+      116
+     ],
+     "learning": [
+      5,
+      24,
+      65,
+      73,
+      121
+     ],
+     "in": [
+      6,
+      53,
+      71,
+      108,
+      119
+     ],
+     "college": [
+      7
+     ],
+     "science": [
+      8,
+      56
+     ],
+     "courses": [
+      9
+     ],
+     "are": [
+      10,
+      105
+     ],
+     "well": [
+      11
+     ],
+     "established,": [
+      12
+     ],
+     "yet": [
+      13
+     ],
+     "more": [
+      14
+     ],
+     "needs": [
+      15
+     ],
+     "to": [
+      16,
+      22,
+      33,
+      47,
+      63,
+      96
+     ],
+     "be": [
+      17
+     ],
+     "understood": [
+      18
+     ],
+     "about": [
+      19
+     ],
+     "student": [
+      20,
+      34,
+      48,
+      97,
+      101,
+      117
+     ],
+     "buy-in": [
+      21,
+      30,
+      62,
+      89
+     ],
+     "and": [
+      25,
+      74,
+      85,
+      99
+     ],
+     "how": [
+      26
+     ],
+     "that": [
+      27
+     ],
+     "process": [
+      28,
+      41
+     ],
+     "might": [
+      31
+     ],
+     "relate": [
+      32
+     ],
+     "outcomes.": [
+      35,
+      102
+     ],
+     "We": [
+      36
+     ],
+     "test": [
+      37
+     ],
+     "the": [
+      38,
+      120
+     ],
+     "exposure-persuasion-identification-commitment": [
+      39
+     ],
+     "(EPIC)": [
+      40
+     ],
+     "model": [
+      42
+     ],
+     "buy-in,": [
+      44,
+      82
+     ],
+     "here": [
+      45
+     ],
+     "applied": [
+      46
+     ],
+     "(n": [
+      49
+     ],
+     "=": [
+      50
+     ],
+     "245)": [
+      51
+     ],
+     "engagement": [
+      52,
+      70,
+      98
+     ],
+     "an": [
+      54
+     ],
+     "undergraduate": [
+      55
+     ],
+     "course": [
+      57,
+      76,
+      86,
+      109
+     ],
+     "featuring": [
+      58,
+      111
+     ],
+     "learning.": [
+      60
+     ],
+     "Student": [
+      61
+     ],
+     "was": [
+      66
+     ],
+     "positively": [
+      67
+     ],
+     "associated": [
+      68
+     ],
+     "with": [
+      69
+     ],
+     "self-regulated": [
+      72,
+      83
+     ],
+     "students'": [
+      75
+     ],
+     "performance.": [
+      77
+     ],
+     "positive": [
+      79
+     ],
+     "associations": [
+      80
+     ],
+     "among": [
+      81
+     ],
+     "learning,": [
+      84,
+      113
+     ],
+     "performance": [
+      87
+     ],
+     "suggest": [
+      88
+     ],
+     "as": [
+      90
+     ],
+     "a": [
+      91
+     ],
+     "potentially": [
+      92
+     ],
+     "important": [
+      93
+     ],
+     "factor": [
+      94
+     ],
+     "leading": [
+      95
+     ],
+     "other": [
+      100
+     ],
+     "These": [
+      103
+     ],
+     "findings": [
+      104
+     ],
+     "particularly": [
+      106
+     ],
+     "salient": [
+      107
+     ],
+     "contexts": [
+      110
+     ],
+     "which": [
+      114
+     ],
+     "encourage": [
+      115
+     ],
+     "participation": [
+      118
+     ],
+     "process.": [
+      122
+     ]
+    },
+    "cited_by_count": 166,
+    "open_access": {
+     "is_oa": true,
+     "oa_status": "hybrid",
+     "oa_url": "https://www.lifescied.org/doi/pdf/10.1187/cbe.16-07-0212",
+     "any_repository_has_fulltext": true
+    },
+    "relevance_score": 145.90063
+   },
+   {
+    "id": "https://openalex.org/W2787785610",
+    "doi": "https://doi.org/10.1187/cbe.17-06-0107",
+    "display_name": "Trust, Growth Mindset, and Student Commitment to Active Learning in a College Science Course",
+    "publication_year": 2018,
+    "publication_date": "2018-01-29",
+    "type": "article",
+    "authorships": [
+     {
+      "author": {
+       "display_name": "Andrew J. Cavanagh"
+      }
+     },
+     {
+      "author": {
+       "display_name": "Xinnian Chen"
+      }
+     },
+     {
+      "author": {
+       "display_name": "Meghan Bathgate"
+      }
+     },
+     {
+      "author": {
+       "display_name": "Jennifer Frederick"
+      }
+     },
+     {
+      "author": {
+       "display_name": "David I. Hanauer"
+      }
+     },
+     {
+      "author": {
+       "display_name": "Mark J. Graham"
+      }
+     }
+    ],
+    "primary_location": {
+     "id": "doi:10.1187/cbe.17-06-0107",
+     "doi": "https://doi.org/10.1187/cbe.17-06-0107",
+     "is_oa": true,
+     "landing_page_url": "https://doi.org/10.1187/cbe.17-06-0107",
+     "pdf_url": "https://www.lifescied.org/doi/pdf/10.1187/cbe.17-06-0107",
+     "source": {
+      "id": "https://openalex.org/S94345546",
+      "display_name": "CBE—Life Sciences Education",
+      "issn_l": "1931-7913",
+      "issn": [
+       "1931-7913"
+      ],
+      "is_oa": false,
+      "is_in_doaj": false,
+      "is_core": true,
+      "listed_in": [
+       "cwts-core",
+       "jufo-1",
+       "medline",
+       "norway-1",
+       "poland-140",
+       "russia-white-list-1"
+      ],
+      "host_organization": "https://openalex.org/P4310319721",
+      "host_organization_name": "American Society for Cell Biology",
+      "host_organization_lineage": [
+       "https://openalex.org/P4310319721"
+      ],
+      "host_organization_lineage_names": [
+       "American Society for Cell Biology"
+      ],
+      "type": "journal"
+     },
+     "license": "cc-by-nc-sa",
+     "license_id": "https://openalex.org/licenses/cc-by-nc-sa",
+     "version": "publishedVersion",
+     "is_accepted": true,
+     "is_published": true,
+     "raw_source_name": "CBE—Life Sciences Education",
+     "raw_type": "journal-article"
+    },
+    "biblio": {
+     "volume": "17",
+     "issue": "1",
+     "first_page": "ar10",
+     "last_page": "ar10"
+    },
+    "abstract_inverted_index": {
+     "There": [
+      0
+     ],
+     "is": [
+      1,
+      15
+     ],
+     "growing": [
+      2
+     ],
+     "consensus": [
+      3
+     ],
+     "regarding": [
+      4
+     ],
+     "the": [
+      5,
+      39,
+      92,
+      119,
+      125
+     ],
+     "effectiveness": [
+      6
+     ],
+     "of": [
+      7,
+      43,
+      68,
+      73,
+      91,
+      101,
+      124
+     ],
+     "active-learning": [
+      8,
+      109
+     ],
+     "pedagogies": [
+      9
+     ],
+     "in": [
+      10,
+      26,
+      38,
+      111,
+      118
+     ],
+     "college": [
+      11
+     ],
+     "science": [
+      12
+     ],
+     "courses.": [
+      13
+     ],
+     "Less": [
+      14
+     ],
+     "known": [
+      16
+     ],
+     "about": [
+      17
+     ],
+     "ways": [
+      18
+     ],
+     "that": [
+      19,
+      65
+     ],
+     "student-level": [
+      20
+     ],
+     "factors": [
+      21
+     ],
+     "contribute": [
+      22
+     ],
+     "to": [
+      23,
+      95,
+      131
+     ],
+     "positive": [
+      24
+     ],
+     "outcomes": [
+      25
+     ],
+     "these": [
+      27
+     ],
+     "contexts.": [
+      28
+     ],
+     "The": [
+      29
+     ],
+     "present": [
+      30
+     ],
+     "study": [
+      31
+     ],
+     "examines": [
+      32
+     ],
+     "students’": [
+      33,
+      50,
+      71,
+      99
+     ],
+     "(N": [
+      34
+     ],
+     "=": [
+      35
+     ],
+     "245)": [
+      36
+     ],
+     "trust": [
+      37,
+      67,
+      90,
+      123
+     ],
+     "instructor—defined": [
+      40
+     ],
+     "as": [
+      41
+     ],
+     "perceptions": [
+      42
+     ],
+     "their": [
+      44,
+      74,
+      102
+     ],
+     "instructor’s": [
+      45
+     ],
+     "understanding,": [
+      46
+     ],
+     "acceptance,": [
+      47
+     ],
+     "and": [
+      48,
+      57,
+      70,
+      84
+     ],
+     "care—and": [
+      49
+     ],
+     "attitudes": [
+      51
+     ],
+     "toward": [
+      52
+     ],
+     "learning": [
+      53,
+      120
+     ],
+     "within": [
+      54
+     ],
+     "an": [
+      55,
+      108,
+      128
+     ],
+     "anatomy": [
+      56
+     ],
+     "physiology": [
+      58
+     ],
+     "course": [
+      59
+     ],
+     "featuring": [
+      60
+     ],
+     "active": [
+      61,
+      87
+     ],
+     "learning.": [
+      62,
+      88
+     ],
+     "Analyses": [
+      63
+     ],
+     "indicate": [
+      64
+     ],
+     "student": [
+      66,
+      81,
+      122,
+      133
+     ],
+     "instructor": [
+      69,
+      93,
+      126
+     ],
+     "views": [
+      72,
+      100
+     ],
+     "own": [
+      75,
+      103
+     ],
+     "intelligence": [
+      76,
+      104
+     ],
+     "are": [
+      77,
+      114
+     ],
+     "both": [
+      78
+     ],
+     "associated": [
+      79
+     ],
+     "with": [
+      80
+     ],
+     "commitment": [
+      82
+     ],
+     "to,": [
+      83
+     ],
+     "engagement": [
+      85
+     ],
+     "in,": [
+      86
+     ],
+     "Student-reported": [
+      89
+     ],
+     "corresponded": [
+      94
+     ],
+     "final": [
+      96
+     ],
+     "grade,": [
+      97
+     ],
+     "while": [
+      98
+     ],
+     "did": [
+      105
+     ],
+     "not.": [
+      106
+     ],
+     "In": [
+      107
+     ],
+     "context": [
+      110
+     ],
+     "which": [
+      112
+     ],
+     "students": [
+      113
+     ],
+     "more": [
+      115
+     ],
+     "fully": [
+      116
+     ],
+     "engaged": [
+      117
+     ],
+     "process,": [
+      121
+     ],
+     "was": [
+      127
+     ],
+     "important": [
+      129
+     ],
+     "contributor": [
+      130
+     ],
+     "desired": [
+      132
+     ],
+     "outcomes.": [
+      134
+     ]
+    },
+    "cited_by_count": 188,
+    "open_access": {
+     "is_oa": true,
+     "oa_status": "hybrid",
+     "oa_url": "https://www.lifescied.org/doi/pdf/10.1187/cbe.17-06-0107",
+     "any_repository_has_fulltext": true
+    },
+    "relevance_score": 137.54858
+   }
+  ],
+  "group_by": []
+ }
+}

@@ -1,0 +1,438 @@
+{
+ "url": "https://api.crossref.org/works/10.1002/adfm.201808843",
+ "fetched_utc": "2026-11-06T14:32:18Z",
+ "status": 200,
+ "body": {
+  "status": "ok",
+  "message-type": "work",
+  "message-version": "1.0.0",
+  "message": {
+   "indexed": {
+    "date-parts": [
+     [
+      2026,
+      10,
+      30
+     ]
+    ],
+    "date-time": "2026-10-30T20:52:42Z",
+    "timestamp": 1793393562651,
+    "version": "4.5.0"
+   },
+   "reference-count": 398,
+   "publisher": "Wiley",
+   "issue": "47",
+   "license": [
+    {
+     "start": {
+      "date-parts": [
+       [
+        2020,
+        2,
+        12
+       ]
+      ],
+      "date-time": "2020-02-12T00:00:00Z",
+      "timestamp": 1581465600000
+     },
+     "content-version": "am",
+     "delay-in-days": 365,
+     "URL": "http://onlinelibrary.wiley.com/termsAndConditions#am"
+    },
+    {
+     "start": {
+      "date-parts": [
+       [
+        2019,
+        2,
+        12
+       ]
+      ],
+      "date-time": "2019-02-12T00:00:00Z",
+      "timestamp": 1549929600000
+     },
+     "content-version": "vor",
+     "delay-in-days": 0,
+     "URL": "http://onlinelibrary.wiley.com/termsAndConditions#vor"
+    }
+   ],
+   "funder": [
+    {
+     "DOI": "10.13039/100000181",
+     "name": "Air Force Office of Scientific Research",
+     "doi-asserted-by": "publisher",
+     "award": [
+      "FA2386‐18‐1‐4094"
+     ],
+     "award-info": [
+      {
+       "award-number": [
+        "FA2386‐18‐1‐4094"
+       ]
+      }
+     ],
+     "id": [
+      {
+       "id": "10.13039/100000181",
+       "id-type": "DOI",
+       "asserted-by": "publisher"
+      }
+     ]
+    },
+    {
+     "DOI": "10.13039/100000006",
+     "name": "Office of Naval Research",
+     "doi-asserted-by": "publisher",
+     "award": [
+      "N00014‐17‐1‐2,484"
+     ],
+     "award-info": [
+      {
+       "award-number": [
+        "N00014‐17‐1‐2,484"
+       ]
+      }
+     ],
+     "id": [
+      {
+       "id": "10.13039/100000006",
+       "id-type": "DOI",
+       "asserted-by": "publisher"
+      }
+     ]
+    },
+    {
+     "DOI": "10.13039/100000006",
+     "name": "Office of Naval Research",
+     "doi-asserted-by": "publisher",
+     "award": [
+      "MRPI 328368"
+     ],
+     "award-info": [
+      {
+       "award-number": [
+        "MRPI 328368"
+       ]
+      }
+     ],
+     "id": [
+      {
+       "id": "10.13039/100000006",
+       "id-type": "DOI",
+       "asserted-by": "publisher"
+      }
+     ]
+    },
+    {
+     "DOI": "10.13039/501100001809",
+     "name": "National Natural Science Foundation of China",
+     "doi-asserted-by": "publisher",
+     "award": [
+      "61675088"
+     ],
+     "award-info": [
+      {
+       "award-number": [
+        "61675088"
+       ]
+      }
+     ],
+     "id": [
+      {
+       "id": "10.13039/501100001809",
+       "id-type": "DOI",
+       "asserted-by": "publisher"
+      }
+     ]
+    }
+   ],
+   "content-domain": {
+    "domain": [
+     "advanced.onlinelibrary.wiley.com"
+    ],
+    "crossmark-restriction": true
+   },
+   "short-container-title": [
+    "Adv Funct Materials"
+   ],
+   "published-print": {
+    "date-parts": [
+     [
+      2019,
+      11
+     ]
+    ]
+   },
+   "abstract": "<jats:title>Abstract</jats:title>\n                  <jats:p>In this review, the factors influencing the power conversion efficiency (PCE) of perovskite solar cells (PSCs) is emphasized. The PCE of PSCs has remarkably increased from 3.8% to 23.7%, but on the other hand, poor stability is one of the main facets that creates a huge barrier in the commercialization of PSCs. Herein, a concise overview of the current efforts to enhance the stability of PSCs is provided; moreover, the degradation causes and mechanisms are summarized. The strategies to improve device stability are portrayed in terms of structural effects, a photoactive layer, hole‐ and electron‐transporting layers, electrode materials, and device encapsulation. Last but not least, the economic feasibility of PSCs is also vividly discussed.</jats:p>",
+   "DOI": "10.1002/adfm.201808843",
+   "type": "journal-article",
+   "created": {
+    "date-parts": [
+     [
+      2019,
+      2,
+      13
+     ]
+    ],
+    "date-time": "2019-02-13T04:45:23Z",
+    "timestamp": 1550033123000
+   },
+   "update-policy": "https://doi.org/10.1002/crossmark_policy",
+   "source": "Crossref",
+   "is-referenced-by-count": 1168,
+   "title": [
+    "A Review of Perovskites Solar Cell Stability"
+   ],
+   "prefix": "10.1002",
+   "volume": "29",
+   "author": [
+    {
+     "given": "Rui",
+     "family": "Wang",
+     "sequence": "first",
+     "affiliation": [
+      {
+       "name": "Department of Materials Science and Engineering University of California at Los Angeles  Los Angeles CA 90095 USA"
+      }
+     ],
+     "role": [
+      {
+       "vocabulary": "crossref",
+       "role": "author"
+      }
+     ]
+    },
+    {
+     "given": "Muhammad",
+     "family": "Mujahid",
+     "sequence": "additional",
+     "affiliation": [
+      {
+       "name": "State Key Laboratory on Integrated Optoelectronics College of Electronic Science and Engineering Jilin University  Changchun 130012 China"
+      }
+     ],
+     "role": [
+      {
+       "vocabulary": "crossref",
+       "role": "author"
+      }
+     ]
+    },
+    {
+     "given": "Yu",
+     "family": "Duan",
+     "sequence": "additional",
+     "affiliation": [
+      {
+       "name": "Department of Materials Science and Engineering University of California at Los Angeles  Los Angeles CA 90095 USA"
+      },
+      {
+       "name": "State Key Laboratory on Integrated Optoelectronics College of Electronic Science and Engineering Jilin University  Changchun 130012 China"
+      }
+     ],
+     "role": [
+      {
+       "vocabulary": "crossref",
+       "role": "author"
+      }
+     ]
+    },
+    {
+     "given": "Zhao‐Kui",
+     "family": "Wang",
+     "sequence": "additional",
+     "affiliation": [
+      {
+       "name": "Department of Materials Science and Engineering University of California at Los Angeles  Los Angeles CA 90095 USA"
+      },
+      {
+       "name": "Jiangsu Key Laboratory for Carbon‐Based Functional Materials &amp; Devices Institute of Functional Nano &amp; Soft Materials (FUNSOM) Soochow University  Suzhou 215123 China"
+      }
+     ],
+     "role": [
+      {
+       "vocabulary": "crossref",
+       "role": "author"
+      }
+     ]
+    },
+    {
+     "given": "Jingjing",
+     "family": "Xue",
+     "sequence": "additional",
+     "affiliation": [
+      {
+       "name": "Department of Materials Science and Engineering University of California at Los Angeles  Los Angeles CA 90095 USA"
+      }
+     ],
+     "role": [
+      {
+       "vocabulary": "crossref",
+       "role": "author"
+      }
+     ]
+    },
+    {
+     "ORCID": "https://orcid.org/0000-0001-8833-7641",
+     "authenticated-orcid": false,
+     "given": "Yang",
+     "family": "Yang",
+     "sequence": "additional",
+     "affiliation": [
+      {
+       "name": "Department of Materials Science and Engineering University of California at Los Angeles  Los Angeles CA 90095 USA"
+      }
+     ],
+     "role": [
+      {
+       "vocabulary": "crossref",
+       "role": "author"
+      }
+     ]
+    }
+   ],
+   "member": "311",
+   "published-online": {
+    "date-parts": [
+     [
+      2019,
+      2,
+      12
+     ]
+    ]
+   },
+   "container-title": [
+    "Advanced Functional Materials"
+   ],
+   "original-title": [],
+   "language": "en",
+   "link": [
+    {
+     "URL": "https://api.wiley.com/onlinelibrary/tdm/v1/articles/10.1002%2Fadfm.201808843",
+     "content-type": "application/pdf",
+     "content-version": "vor",
+     "intended-application": "text-mining"
+    },
+    {
+     "URL": "https://onlinelibrary.wiley.com/doi/pdf/10.1002/adfm.201808843",
+     "content-type": "application/pdf",
+     "content-version": "vor",
+     "intended-application": "text-mining"
+    },
+    {
+     "URL": "https://onlinelibrary.wiley.com/doi/full-xml/10.1002/adfm.201808843",
+     "content-type": "application/xml",
+     "content-version": "vor",
+     "intended-application": "text-mining"
+    },
+    {
+     "URL": "https://advanced.onlinelibrary.wiley.com/doi/am-pdf/10.1002/adfm.201808843",
+     "content-type": "application/pdf",
+     "content-version": "am",
+     "intended-application": "syndication"
+    },
+    {
+     "URL": "https://advanced.onlinelibrary.wiley.com/doi/pdf/10.1002/adfm.201808843",
+     "content-type": "unspecified",
+     "content-version": "vor",
+     "intended-application": "similarity-checking"
+    }
+   ],
+   "deposited": {
+    "date-parts": [
+     [
+      2025,
+      10,
+      6
+     ]
+    ],
+    "date-time": "2025-10-06T22:40:22Z",
+    "timestamp": 1759790422000
+   },
+   "score": 1,
+   "resource": {
+    "primary": {
+     "URL": "https://advanced.onlinelibrary.wiley.com/doi/10.1002/adfm.201808843"
+    }
+   },
+   "subtitle": [],
+   "short-title": [],
+   "issued": {
+    "date-parts": [
+     [
+      2019,
+      2,
+      12
+     ]
+    ]
+   },
+   "references-count": 398,
+   "journal-issue": {
+    "issue": "47",
+    "published-print": {
+     "date-parts": [
+      [
+       2019,
+       11
+      ]
+     ]
+    }
+   },
+   "alternative-id": [
+    "10.1002/adfm.201808843"
+   ],
+   "URL": "https://doi.org/10.1002/adfm.201808843",
+   "archive": [
+    "Portico"
+   ],
+   "relation": {},
+   "ISSN": [
+    "1616-301X",
+    "1616-3028"
+   ],
+   "issn-type": [
+    {
+     "value": "1616-301X",
+     "type": "print"
+    },
+    {
+     "value": "1616-3028",
+     "type": "electronic"
+    }
+   ],
+   "subject": [],
+   "published": {
+    "date-parts": [
+     [
+      2019,
+      2,
+      12
+     ]
+    ]
+   },
+   "assertion": [
+    {
+     "value": "2018-12-12",
+     "order": 0,
+     "name": "received",
+     "label": "Received",
+     "group": {
+      "name": "publication_history",
+      "label": "Publication History"
+     }
+    },
+    {
+     "value": "2019-02-12",
+     "order": 3,
+     "name": "published",
+     "label": "Published",
+     "group": {
+      "name": "publication_history",
+      "label": "Publication History"
+     }
+    }
+   ],
+   "article-number": "1808843"
+  }
+ }
+}

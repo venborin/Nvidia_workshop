@@ -1,0 +1,11 @@
+Title: Stability and Error Behavior of a Well Balanced Scheme for Wetting and Drying Fronts
+Year: not stated
+Field: engineering
+
+Explicit shallow water schemes applied to flood problems must handle cells that alternate between wet and dry, and naive flux treatments at those cells generate spurious momentum that grows without bound. This note analyzes the stability and truncation error of a well balanced reconstruction designed for wetting and drying, and derives the time step restriction it imposes.
+
+The analysis begins from the conservative form of the shallow water equations with a bed slope source term. Reconstruction is piecewise linear with a slope limiter, and the bed is reconstructed so that the discrete source term balances the pressure flux exactly in a lake at rest. A von Neumann analysis of the linearized system in a wet region gives the familiar restriction that the Courant number based on the sum of the flow speed and the gravity wave speed must not exceed unity, and the limiter reduces the usable value to about 0.9 in practice.
+
+The novel part concerns partially wet cells. For a cell whose water depth falls below a threshold of 1 millimeter, the scheme reverts to a first order flux and sets the velocity to zero, and we show that this reversion keeps the discrete energy nonincreasing provided the time step additionally satisfies a condition proportional to the depth threshold divided by the bed slope. For a bed slope of 0.02 and a grid spacing of 2 meters that condition is less restrictive than the Courant limit by a factor of about 30, so it never binds in practice. Truncation error in smooth wet regions is second order in grid spacing and reduces to first order within a band of roughly one cell width around the front, which yields an observed convergence rate of about 1.7 for problems containing a moving shoreline.
+
+The analysis assumes a continuous bed. Urban terrain has vertical walls at building faces, where the reconstruction is not well defined and the derived bound does not apply.

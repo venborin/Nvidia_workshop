@@ -1,0 +1,16 @@
+Interview 1. Invented for the workshop.
+
+Interviewer: Tell me about your work.
+Participant: I'm a fourth-year PhD student in plant and soil sciences. Most of my data is from field trials, a few thousand plots a season, plus drone imagery.
+
+Interviewer: Have you used the campus cluster?
+Participant: Once, for a class. Honestly, the hardest part was the job scheduler. I wrote a script that worked on my laptop, submitted it, and it sat in the queue and then failed with an error about modules I didn't understand. Nobody in my lab uses it, so there was no one to ask.
+
+Interviewer: What do you do instead?
+Participant: I run things overnight on my laptop, or I split the imagery into smaller batches. It takes about a week to process one season. It works, it's just slow.
+
+Interviewer: What would help?
+Participant: A person. Like, office hours where I could bring my actual script and someone would sit with me for twenty minutes. The documentation assumes you already know what a module is.
+
+Interviewer: Overall, how do you feel about the cluster?
+Participant: I think it would change my work if I could get over the first hump. Right now it feels like it's for the computer science people.
