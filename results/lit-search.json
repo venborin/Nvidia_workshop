@@ -1,0 +1,198 @@
+{
+ "query": "EOM-CCSD accuracy improvements perturbative triples active space",
+ "sort": "relevance",
+ "sort_field": "relevance_score:desc",
+ "n": 3,
+ "date_utc": "2026-11-11T17:27:06Z",
+ "url": "https://api.openalex.org/works?search=EOM-CCSD+accuracy+improvements+perturbative+triples+active+space&per_page=3&sort=relevance_score:desc&select=id,doi,display_name,publication_year,publication_date,type,authorships,primary_location,biblio,abstract_inverted_index,cited_by_count,open_access,relevance_score",
+ "service": "OpenAlex",
+ "source": "live",
+ "fetched_utc": "2026-11-11T17:27:06Z",
+ "note": "Live answer, 2026-11-11T17:27:06Z.",
+ "total_found": 395,
+ "cost_usd": 0.001,
+ "budget_remaining": "$0.874 of today's OpenAlex budget left",
+ "records": [
+  {
+   "title": "Pushing the Limits of EOM-CCSD with Projector-Based Embedding for Excitation Energies",
+   "year": 2017,
+   "doi": "10.1021/acs.jpclett.7b02500",
+   "authors": [
+    {
+     "name": "Simon J. Bennie",
+     "family": "Bennie"
+    },
+    {
+     "name": "Basile F. E. Curchod",
+     "family": "Curchod"
+    },
+    {
+     "name": "Frederick R. Manby",
+     "family": "Manby"
+    },
+    {
+     "name": "David R. Glowacki",
+     "family": "Glowacki"
+    }
+   ],
+   "venue": "The Journal of Physical Chemistry Letters",
+   "volume": "8",
+   "issue": "22",
+   "pages": "5559--5565",
+   "type": "article",
+   "abstract": "The calculation of accurate excitation energies using ab initio electronic structure methods such as standard equation of motion coupled cluster singles and doubles (EOM-CCSD) has been cost prohibitive for large systems. In this work, we use a simple projector-based embedding scheme to calculate the EOM-CCSD excitation energies of acrolein solvated in water molecules modeled using density functional theory (DFT). We demonstrate the accuracy of this approach gives excitation energies within 0.01 eV of full EOM-CCSD, but with significantly reduced computational cost. This approach is also shown to be relatively invariant to the choice of functional used in the environment and allows for the description of systems with large numbers of basis functions (>1000) to be treated using state-of-the-art wave function methods. The flexibility of embedding to select orbitals to add to the excited-state method provides insights into the origins of the excitations and can reduce artifacts that could arise in traditional linear response time-dependent DFT (LR-TDDFT).",
+   "openalex_id": "https://openalex.org/W2767085976",
+   "oa_url": "https://pubs.acs.org/doi/pdf/10.1021/acs.jpclett.7b02500",
+   "cited_by_count": 58,
+   "verification": {
+    "doi": "10.1021/acs.jpclett.7b02500",
+    "state": "verified",
+    "reason": "The DOI is in Crossref and its title and first author match.",
+    "crossref": {
+     "title": "Pushing the Limits of EOM-CCSD with Projector-Based\nEmbedding for Excitation Energies",
+     "first_author": "Bennie",
+     "year": 2017,
+     "venue": "The Journal of Physical Chemistry Letters",
+     "type": "journal-article"
+    },
+    "compared": {
+     "title": [
+      true,
+      "the title differs (Crossref has \"Pushing the Limits of EOM-CCSD with Projector-Based\nEmbedding for Excitation Energies\", similarity 1.00)"
+     ],
+     "first author": [
+      true,
+      "the first author differs (Crossref has \"Bennie\", you gave \"Bennie\")"
+     ]
+    },
+    "retraction": {
+     "retracted": false,
+     "line": "no retraction found in Crossref as of 2026-11-11",
+     "notices": [],
+     "checked_utc": "2026-11-11"
+    },
+    "source": "live",
+    "fetched_utc": "2026-11-11T17:27:06Z",
+    "note": "Live answer, 2026-11-11T17:27:06Z.",
+    "url": "https://api.crossref.org/works/10.1021/acs.jpclett.7b02500"
+   }
+  },
+  {
+   "title": "Performance of periodic EOM-CCSD for bandgaps of inorganic semiconductors and insulators",
+   "year": 2024,
+   "doi": "10.1063/5.0187856",
+   "authors": [
+    {
+     "name": "Ethan Vo",
+     "family": "Vo"
+    },
+    {
+     "name": "Xiao Wang",
+     "family": "Wang"
+    },
+    {
+     "name": "Timothy C. Berkelbach",
+     "family": "Berkelbach"
+    }
+   ],
+   "venue": "The Journal of Chemical Physics",
+   "volume": "160",
+   "issue": "4",
+   "pages": null,
+   "type": "article",
+   "abstract": "We calculate bandgaps of 12 inorganic semiconductors and insulators composed of atoms from the first three rows of the Periodic Table using periodic equation-of-motion coupled-cluster theory with single and double excitations (EOM-CCSD). Our calculations are performed with atom-centered triple-zeta basis sets and up to 64 k-points in the Brillouin zone. We analyze the convergence behavior with respect to the number of orbitals and number of k-points sampled using composite corrections and extrapolations to produce our final values. When accounting for electron-phonon corrections to experimental bandgaps, we find that EOM-CCSD has a mean signed error of -0.12 eV and a mean absolute error of 0.42 eV; the largest outliers are C (error of -0.93 eV), BP (-1.00 eV), and LiH (+0.78 eV). Surprisingly, we find that the more affordable partitioned EOM-MP2 theory performs as well as EOM-CCSD.",
+   "openalex_id": "https://openalex.org/W4391169654",
+   "oa_url": "https://arxiv.org/pdf/2310.03887",
+   "cited_by_count": 24,
+   "verification": {
+    "doi": "10.1063/5.0187856",
+    "state": "verified",
+    "reason": "The DOI is in Crossref and its title and first author match.",
+    "crossref": {
+     "title": "Performance of periodic EOM-CCSD for bandgaps of inorganic semiconductors and insulators",
+     "first_author": "Vo",
+     "year": 2024,
+     "venue": "The Journal of Chemical Physics",
+     "type": "journal-article"
+    },
+    "compared": {
+     "title": [
+      true,
+      "the title differs (Crossref has \"Performance of periodic EOM-CCSD for bandgaps of inorganic semiconductors and insulators\", similarity 1.00)"
+     ],
+     "first author": [
+      true,
+      "the first author differs (Crossref has \"Vo\", you gave \"Vo\")"
+     ]
+    },
+    "retraction": {
+     "retracted": false,
+     "line": "no retraction found in Crossref as of 2026-11-11",
+     "notices": [],
+     "checked_utc": "2026-11-11"
+    },
+    "source": "live",
+    "fetched_utc": "2026-11-11T17:27:06Z",
+    "note": "Live answer, 2026-11-11T17:27:06Z.",
+    "url": "https://api.crossref.org/works/10.1063/5.0187856"
+   }
+  },
+  {
+   "title": "Low-Scaling Equation-of-Motion Coupled Cluster Method for Open-Shell Systems: I. IP-EOM-DLPNO-CCSD",
+   "year": 2026,
+   "doi": "10.1021/acs.jctc.6c01848",
+   "authors": [
+    {
+     "name": "Marcos Casanova‐Páez",
+     "family": "Casanova‐Páez"
+    },
+    {
+     "name": "Frank Neese",
+     "family": "Neese"
+    }
+   ],
+   "venue": "Journal of Chemical Theory and Computation",
+   "volume": null,
+   "issue": null,
+   "pages": null,
+   "type": "article",
+   "abstract": "Abstract We present the formulation and implementation of an unrestricted/open-shell domain-based local pair natural orbital equation-of-motion coupled-cluster method with single and double excitations for vertical ionization potentials (UHF IP-EOM-DLPNO-CCSD). The method extends the open-shell DLPNO–CCSD reference calculation to the (N – 1)-electron sector by reusing the localized occupied orbitals, pair domains, pair lists, and pair natural orbital spaces generated for the correlated ground state. Removal of an α or β electron is treated in separate spin sectors. The one-hole sector is retained in the fully localized occupied space, whereas the two-hole–one-particle sector is represented in compact, spin-resolved PNO spaces. The accuracy is controlled by the standard LoosePNO, NormalPNO, and TightPNO hierarchy. For ionized states dominated by one-hole character, canonical and local calculations performed with the same quasi-restricted-orbital (QRO) reference give typical RMSD differences of a few hundredths of an eV for the main-group radical and transition-metal benchmark sets. A representative TightPNO comparison for naphthalene further indicates that the additional local IP-EOM approximation contributes less than 0.10 eV for the ten matched states examined. Larger delocalized systems show less regular threshold dependence, and even predominantly one-hole states can exhibit changes greater than 0.1 eV between NormalPNO and TightPNO. Timing calculations for anionic acenes up to heptacene, with 1038 basis functions, show low-order effective scaling for the IP-EOM step. Applications to C70– and to the Pheophytin radical anion, the latter containing 3020 basis functions, demonstrate that the method can treat large open-shell molecular systems beyond the size range routinely accessible to canonical IP-EOM-CCSD. Finally, comparisons with available experimental data for the N-carbazolyl radical and the ovalene radical cation provide additional context for the calculated vertical ionization energies.",
+   "openalex_id": "https://openalex.org/W7225614333",
+   "oa_url": "https://pubs.acs.org/jctcce/article-pdf/doi/10.1021/acs.jctc.6c01848/69126902/acs.jctc.6c01848.pdf",
+   "cited_by_count": 0,
+   "verification": {
+    "doi": "10.1021/acs.jctc.6c01848",
+    "state": "verified",
+    "reason": "The DOI is in Crossref and its title and first author match.",
+    "crossref": {
+     "title": "Low-Scaling Equation-of-Motion Coupled Cluster Method\nfor Open-Shell Systems: I. IP-EOM-DLPNO-CCSD",
+     "first_author": "Casanova-Páez",
+     "year": 2026,
+     "venue": "Journal of Chemical Theory and Computation",
+     "type": "journal-article"
+    },
+    "compared": {
+     "title": [
+      true,
+      "the title differs (Crossref has \"Low-Scaling Equation-of-Motion Coupled Cluster Method\nfor Open-Shell Systems: I. IP-EOM-DLPNO-CCSD\", similarity 1.00)"
+     ],
+     "first author": [
+      true,
+      "the first author differs (Crossref has \"Casanova-Páez\", you gave \"Casanova‐Páez\")"
+     ]
+    },
+    "retraction": {
+     "retracted": false,
+     "line": "no retraction found in Crossref as of 2026-11-11",
+     "notices": [],
+     "checked_utc": "2026-11-11"
+    },
+    "source": "live",
+    "fetched_utc": "2026-11-11T17:27:06Z",
+    "note": "Live answer, 2026-11-11T17:27:06Z.",
+    "url": "https://api.crossref.org/works/10.1021/acs.jctc.6c01848"
+   }
+  }
+ ],
+ "error": null
+}

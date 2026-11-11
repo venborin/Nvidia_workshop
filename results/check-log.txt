@@ -1,0 +1,731 @@
+2026-11-11 15:45:46  results/values.csv  17 rows: 0 pass, 0 flagged, 17 fail. Fix each failing row, or set its status to flagged and say why in note. Do not delete rows to make this pass.
+  line 2 FAIL: no file Elfiky_2021; 651, 652 from the value is not in the quote
+  line 3 FAIL: no file Elfiky_2021
+  line 4 FAIL: no file Elfiky_2021
+  line 5 FAIL: no file Elfiky_2021
+  line 6 FAIL: no file Elfiky_2021
+  line 7 FAIL: no file Elfiky_2021
+  line 8 FAIL: no file Elfiky_2021
+  line 9 FAIL: no file pachetti2020emerging; 323 from the value is not in the quote
+  line 10 FAIL: no file kim2023sarscov2
+  line 11 FAIL: no file sahin2021genomic; 97, 323, 671 from the value is not in the quote
+  line 12 FAIL: no file ferrerorta2024point
+  line 13 FAIL: no file mohammad2021remdesivir
+  line 14 FAIL: no file Elfiky_2021
+  line 15 FAIL: no file Elfiky_2021
+  line 16 FAIL: no file Elfiky_2021
+  line 17 FAIL: no file Elfiky_2021
+  line 18 FAIL: no file Elfiky_2021
+2026-11-11 15:46:14  results/values.csv  17 rows: 7 pass, 0 flagged, 10 fail. Fix each failing row, or set its status to flagged and say why in note. Do not delete rows to make this pass.
+  line 2 FAIL: 651, 652 from the value is not in the quote
+  line 3 PASS
+  line 4 PASS
+  line 5 PASS
+  line 6 PASS
+  line 7 PASS
+  line 8 FAIL: quote is on page 4, not page 8
+  line 9 FAIL: quote is not in the abstract word for word; 323 from the value is not in the quote
+  line 10 FAIL: quote is not in the abstract word for word
+  line 11 FAIL: quote is not in the abstract word for word; 97, 323, 671 from the value is not in the quote
+  line 12 FAIL: quote is not in the abstract word for word
+  line 13 FAIL: quote is not in the abstract word for word
+  line 14 FAIL: quote not found in the paper word for word (copy it from 03_lit/pages.py output; for a table, copy the table's line as printed)
+  line 15 FAIL: quote not found in the paper word for word (copy it from 03_lit/pages.py output; for a table, copy the table's line as printed)
+  line 16 PASS
+  line 17 FAIL: quote is on page 6, not page 8
+  line 18 PASS
+2026-11-11 15:46:57  results/values.csv  16 rows: 13 pass, 0 flagged, 3 fail. Fix each failing row, or set its status to flagged and say why in note. Do not delete rows to make this pass.
+  line 2 PASS
+  line 3 PASS
+  line 4 PASS
+  line 5 PASS
+  line 6 PASS
+  line 7 PASS
+  line 8 FAIL: 323 from the value is not in the quote
+  line 9 PASS
+  line 10 PASS
+  line 11 PASS
+  line 12 PASS
+  line 13 FAIL: quote not found in the paper word for word (copy it from 03_lit/pages.py output; for a table, copy the table's line as printed)
+  line 14 FAIL: quote not found in the paper word for word (copy it from 03_lit/pages.py output; for a table, copy the table's line as printed)
+  line 15 PASS
+  line 16 PASS
+  line 17 PASS
+2026-11-11 15:47:50  results/values.csv  16 rows: 13 pass, 0 flagged, 3 fail. Fix each failing row, or set its status to flagged and say why in note. Do not delete rows to make this pass.
+  line 2 PASS
+  line 3 PASS
+  line 4 PASS
+  line 5 PASS
+  line 6 PASS
+  line 7 PASS
+  line 8 FAIL: 323 from the value is not in the quote
+  line 9 PASS
+  line 10 PASS
+  line 11 PASS
+  line 12 PASS
+  line 13 FAIL: quote not found in the paper word for word (copy it from 03_lit/pages.py output; for a table, copy the table's line as printed)
+  line 14 FAIL: quote not found in the paper word for word (copy it from 03_lit/pages.py output; for a table, copy the table's line as printed)
+  line 15 PASS
+  line 16 PASS
+  line 17 PASS
+2026-11-11 15:48:22  results/values.csv  16 rows: 14 pass, 0 flagged, 2 fail. Fix each failing row, or set its status to flagged and say why in note. Do not delete rows to make this pass.
+  line 2 PASS
+  line 3 PASS
+  line 4 PASS
+  line 5 PASS
+  line 6 PASS
+  line 7 PASS
+  line 8 PASS
+  line 9 PASS
+  line 10 PASS
+  line 11 PASS
+  line 12 PASS
+  line 13 FAIL: quote not found in the paper word for word (copy it from 03_lit/pages.py output; for a table, copy the table's line as printed)
+  line 14 FAIL: quote not found in the paper word for word (copy it from 03_lit/pages.py output; for a table, copy the table's line as printed)
+  line 15 PASS
+  line 16 PASS
+  line 17 PASS
+2026-11-11 15:48:59  results/values.csv  16 rows: 14 pass, 0 flagged, 2 fail. Fix each failing row, or set its status to flagged and say why in note. Do not delete rows to make this pass.
+  line 2 PASS
+  line 3 PASS
+  line 4 PASS
+  line 5 PASS
+  line 6 PASS
+  line 7 PASS
+  line 8 PASS
+  line 9 PASS
+  line 10 PASS
+  line 11 PASS
+  line 12 PASS
+  line 13 FAIL: quote not found in the paper word for word (copy it from 03_lit/pages.py output; for a table, copy the table's line as printed)
+  line 14 FAIL: quote not found in the paper word for word (copy it from 03_lit/pages.py output; for a table, copy the table's line as printed)
+  line 15 PASS
+  line 16 PASS
+  line 17 PASS
+2026-11-11 15:49:33  results/values.csv  16 rows: 14 pass, 0 flagged, 2 fail. Fix each failing row, or set its status to flagged and say why in note. Do not delete rows to make this pass.
+  line 2 PASS
+  line 3 PASS
+  line 4 PASS
+  line 5 PASS
+  line 6 PASS
+  line 7 PASS
+  line 8 PASS
+  line 9 PASS
+  line 10 PASS
+  line 11 PASS
+  line 12 PASS
+  line 13 FAIL: quote not found in the paper word for word (copy it from 03_lit/pages.py output; for a table, copy the table's line as printed)
+  line 14 FAIL: quote not found in the paper word for word (copy it from 03_lit/pages.py output; for a table, copy the table's line as printed)
+  line 15 PASS
+  line 16 PASS
+  line 17 PASS
+2026-11-11 15:50:11  results/values.csv  16 rows: 16 pass, 0 flagged, 0 fail. Every row passes or is flagged with a reason.
+  line 2 PASS
+  line 3 PASS
+  line 4 PASS
+  line 5 PASS
+  line 6 PASS
+  line 7 PASS
+  line 8 PASS
+  line 9 PASS
+  line 10 PASS
+  line 11 PASS
+  line 12 PASS
+  line 13 PASS
+  line 14 PASS
+  line 15 PASS
+  line 16 PASS
+  line 17 PASS
+2026-11-11 16:58:22  results/values.csv  45 rows: 13 pass, 0 flagged, 32 fail. Fix each failing row, or set its status to flagged and say why in note. Do not delete rows to make this pass.
+  line 2 PASS
+  line 3 FAIL: quote is on page 11, not page 10
+  line 4 FAIL: quote not found in the paper word for word (copy it from 03_lit/pages.py output; for a table, copy the table's line as printed)
+  line 5 FAIL: quote not found in the paper word for word (copy it from 03_lit/pages.py output; for a table, copy the table's line as printed)
+  line 6 FAIL: quote not found in the paper word for word (copy it from 03_lit/pages.py output; for a table, copy the table's line as printed)
+  line 7 PASS
+  line 8 FAIL: the row has 12 fields, not 11: a comma in a field that is not inside double quotes; quote not found in the paper word for word (copy it from 03_lit/pages.py output; for a table, copy the table's line as printed); no value; value_std is filled in but unit_std is empty
+  line 9 FAIL: the row has 12 fields, not 11: a comma in a field that is not inside double quotes; no value; value_std is filled in but unit_std is empty
+  line 10 FAIL: the row has 12 fields, not 11: a comma in a field that is not inside double quotes; no value; value_std is filled in but unit_std is empty
+  line 11 FAIL: the row has 12 fields, not 11: a comma in a field that is not inside double quotes; no value; value_std is filled in but unit_std is empty
+  line 12 FAIL: the row has 12 fields, not 11: a comma in a field that is not inside double quotes; no value; value_std is filled in but unit_std is empty
+  line 13 FAIL: quote not found in the paper word for word (copy it from 03_lit/pages.py output; for a table, copy the table's line as printed); no value
+  line 14 FAIL: quote not found in the paper word for word (copy it from 03_lit/pages.py output; for a table, copy the table's line as printed)
+  line 15 FAIL: quote is on page 7, not page 6
+  line 16 FAIL: quote not found in the paper word for word (copy it from 03_lit/pages.py output; for a table, copy the table's line as printed)
+  line 17 FAIL: quote is on page 7, not page 6
+  line 18 FAIL: quote not found in the paper word for word (copy it from 03_lit/pages.py output; for a table, copy the table's line as printed)
+  line 19 FAIL: quote is on page 8, not page 6
+  line 20 PASS
+  line 21 PASS
+  line 22 PASS
+  line 23 FAIL: the row has 12 fields, not 11: a comma in a field that is not inside double quotes; no value; value_std is filled in but unit_std is empty; value has 0 number(s) but value_std has 1
+  line 24 FAIL: quote not found in the paper word for word (copy it from 03_lit/pages.py output; for a table, copy the table's line as printed)
+  line 25 FAIL: quote not found in the paper word for word (copy it from 03_lit/pages.py output; for a table, copy the table's line as printed)
+  line 26 PASS
+  line 27 PASS
+  line 28 FAIL: 15 from the value is not in the quote
+  line 29 PASS
+  line 30 PASS
+  line 31 FAIL: quote not found in the paper word for word (copy it from 03_lit/pages.py output; for a table, copy the table's line as printed)
+  line 32 FAIL: quote not found in the paper word for word (copy it from 03_lit/pages.py output; for a table, copy the table's line as printed)
+  line 33 FAIL: quote not found in the paper word for word (copy it from 03_lit/pages.py output; for a table, copy the table's line as printed)
+  line 34 PASS
+  line 35 PASS
+  line 36 PASS
+  line 37 PASS
+  line 38 FAIL: the row has 12 fields, not 11: a comma in a field that is not inside double quotes; quote not found in the paper word for word (copy it from 03_lit/pages.py output; for a table, copy the table's line as printed); no value; value_std is filled in but unit_std is empty
+  line 39 FAIL: the row has 12 fields, not 11: a comma in a field that is not inside double quotes; quote not found in the paper word for word (copy it from 03_lit/pages.py output; for a table, copy the table's line as printed); no value; value_std is filled in but unit_std is empty
+  line 40 FAIL: the row has 19 fields, not 11: a comma in a field that is not inside double quotes; quote not found in the paper word for word (copy it from 03_lit/pages.py output; for a table, copy the table's line as printed); value_std is filled in but unit_std is empty; conversion: 'v,ok,
+mine/fchem-08-590184.pdf,5,Furthermore' is not arithmetic in v (allowed: numbers, v, + - * / and brackets). If the value cannot be converted without inventing something, leave value_std and conversion empty: that is not a failure
+  line 41 FAIL: the row has 12 fields, not 11: a comma in a field that is not inside double quotes; quote not found in the paper word for word (copy it from 03_lit/pages.py output; for a table, copy the table's line as printed); no value; value_std is filled in but unit_std is empty
+  line 42 FAIL: the row has 12 fields, not 11: a comma in a field that is not inside double quotes; quote not found in the paper word for word (copy it from 03_lit/pages.py output; for a table, copy the table's line as printed); no value; value_std is filled in but unit_std is empty
+  line 43 FAIL: the row has 12 fields, not 11: a comma in a field that is not inside double quotes; quote not found in the paper word for word (copy it from 03_lit/pages.py output; for a table, copy the table's line as printed); no value; value_std is filled in but unit_std is empty
+  line 44 FAIL: the row has 12 fields, not 11: a comma in a field that is not inside double quotes; no value; value_std is filled in but unit_std is empty
+  line 45 FAIL: the row has 12 fields, not 11: a comma in a field that is not inside double quotes; quote not found in the paper word for word (copy it from 03_lit/pages.py output; for a table, copy the table's line as printed); no value; value_std is filled in but unit_std is empty
+  line 46 FAIL: the row has 12 fields, not 11: a comma in a field that is not inside double quotes; quote not found in the paper word for word (copy it from 03_lit/pages.py output; for a table, copy the table's line as printed); no value; value_std is filled in but unit_std is empty
+2026-11-11 16:59:28  results/values.csv  29 rows: 17 pass, 0 flagged, 12 fail. Fix each failing row, or set its status to flagged and say why in note. Do not delete rows to make this pass.
+  line 2 PASS
+  line 3 PASS
+  line 4 PASS
+  line 5 FAIL: quote not found in the paper word for word (copy it from 03_lit/pages.py output; for a table, copy the table's line as printed)
+  line 6 FAIL: quote not found in the paper word for word (copy it from 03_lit/pages.py output; for a table, copy the table's line as printed)
+  line 7 PASS
+  line 8 FAIL: quote not found in the paper word for word (copy it from 03_lit/pages.py output; for a table, copy the table's line as printed)
+  line 9 PASS
+  line 10 FAIL: quote not found in the paper word for word (copy it from 03_lit/pages.py output; for a table, copy the table's line as printed)
+  line 11 PASS
+  line 12 FAIL: quote not found in the paper word for word (copy it from 03_lit/pages.py output; for a table, copy the table's line as printed)
+  line 13 PASS
+  line 14 PASS
+  line 15 PASS
+  line 16 PASS
+  line 17 FAIL: quote not found in the paper word for word (copy it from 03_lit/pages.py output; for a table, copy the table's line as printed)
+  line 18 FAIL: quote not found in the paper word for word (copy it from 03_lit/pages.py output; for a table, copy the table's line as printed)
+  line 19 PASS
+  line 20 PASS
+  line 21 FAIL: 16 from the value is not in the quote
+  line 22 PASS
+  line 23 PASS
+  line 24 FAIL: quote not found in the paper word for word (copy it from 03_lit/pages.py output; for a table, copy the table's line as printed)
+  line 25 FAIL: quote not found in the paper word for word (copy it from 03_lit/pages.py output; for a table, copy the table's line as printed)
+  line 26 FAIL: quote not found in the paper word for word (copy it from 03_lit/pages.py output; for a table, copy the table's line as printed)
+  line 27 PASS
+  line 28 PASS
+  line 29 PASS
+  line 30 FAIL: the row has only 10 of 11 fields (missing: note), so every field after the gap is in the wrong column
+2026-11-11 17:00:32  results/values.csv  29 rows: 17 pass, 0 flagged, 12 fail. Fix each failing row, or set its status to flagged and say why in note. Do not delete rows to make this pass.
+  line 2 PASS
+  line 3 PASS
+  line 4 PASS
+  line 5 FAIL: quote not found in the paper word for word (copy it from 03_lit/pages.py output; for a table, copy the table's line as printed)
+  line 6 FAIL: quote not found in the paper word for word (copy it from 03_lit/pages.py output; for a table, copy the table's line as printed)
+  line 7 PASS
+  line 8 FAIL: quote not found in the paper word for word (copy it from 03_lit/pages.py output; for a table, copy the table's line as printed)
+  line 9 PASS
+  line 10 FAIL: quote not found in the paper word for word (copy it from 03_lit/pages.py output; for a table, copy the table's line as printed)
+  line 11 PASS
+  line 12 FAIL: quote not found in the paper word for word (copy it from 03_lit/pages.py output; for a table, copy the table's line as printed)
+  line 13 PASS
+  line 14 PASS
+  line 15 PASS
+  line 16 PASS
+  line 17 FAIL: quote not found in the paper word for word (copy it from 03_lit/pages.py output; for a table, copy the table's line as printed)
+  line 18 FAIL: quote not found in the paper word for word (copy it from 03_lit/pages.py output; for a table, copy the table's line as printed)
+  line 19 PASS
+  line 20 PASS
+  line 21 FAIL: 16 from the value is not in the quote
+  line 22 PASS
+  line 23 PASS
+  line 24 FAIL: quote not found in the paper word for word (copy it from 03_lit/pages.py output; for a table, copy the table's line as printed)
+  line 25 FAIL: quote not found in the paper word for word (copy it from 03_lit/pages.py output; for a table, copy the table's line as printed)
+  line 26 FAIL: quote not found in the paper word for word (copy it from 03_lit/pages.py output; for a table, copy the table's line as printed)
+  line 27 PASS
+  line 28 PASS
+  line 29 PASS
+  line 30 FAIL: the row has only 10 of 11 fields (missing: note), so every field after the gap is in the wrong column
+2026-11-11 17:02:22  results/values.csv  29 rows: 17 pass, 0 flagged, 12 fail. Fix each failing row, or set its status to flagged and say why in note. Do not delete rows to make this pass.
+  line 2 PASS
+  line 3 PASS
+  line 4 PASS
+  line 5 FAIL: quote not found in the paper word for word (copy it from 03_lit/pages.py output; for a table, copy the table's line as printed)
+  line 6 FAIL: quote not found in the paper word for word (copy it from 03_lit/pages.py output; for a table, copy the table's line as printed)
+  line 7 PASS
+  line 8 FAIL: quote not found in the paper word for word (copy it from 03_lit/pages.py output; for a table, copy the table's line as printed)
+  line 9 PASS
+  line 10 FAIL: quote not found in the paper word for word (copy it from 03_lit/pages.py output; for a table, copy the table's line as printed)
+  line 11 PASS
+  line 12 FAIL: quote not found in the paper word for word (copy it from 03_lit/pages.py output; for a table, copy the table's line as printed)
+  line 13 PASS
+  line 14 PASS
+  line 15 PASS
+  line 16 PASS
+  line 17 FAIL: quote not found in the paper word for word (copy it from 03_lit/pages.py output; for a table, copy the table's line as printed)
+  line 18 FAIL: quote not found in the paper word for word (copy it from 03_lit/pages.py output; for a table, copy the table's line as printed)
+  line 19 PASS
+  line 20 PASS
+  line 21 FAIL: 16 from the value is not in the quote
+  line 22 PASS
+  line 23 PASS
+  line 24 FAIL: quote not found in the paper word for word (copy it from 03_lit/pages.py output; for a table, copy the table's line as printed)
+  line 25 FAIL: quote not found in the paper word for word (copy it from 03_lit/pages.py output; for a table, copy the table's line as printed)
+  line 26 FAIL: quote not found in the paper word for word (copy it from 03_lit/pages.py output; for a table, copy the table's line as printed)
+  line 27 PASS
+  line 28 PASS
+  line 29 PASS
+  line 30 FAIL: the row has only 10 of 11 fields (missing: note), so every field after the gap is in the wrong column
+2026-11-11 17:03:16  results/values.csv  29 rows: 19 pass, 0 flagged, 10 fail. Fix each failing row, or set its status to flagged and say why in note. Do not delete rows to make this pass.
+  line 2 PASS
+  line 3 PASS
+  line 4 PASS
+  line 5 PASS
+  line 6 PASS
+  line 7 PASS
+  line 8 FAIL: quote not found in the paper word for word (copy it from 03_lit/pages.py output; for a table, copy the table's line as printed)
+  line 9 PASS
+  line 10 FAIL: quote not found in the paper word for word (copy it from 03_lit/pages.py output; for a table, copy the table's line as printed)
+  line 11 PASS
+  line 12 FAIL: quote not found in the paper word for word (copy it from 03_lit/pages.py output; for a table, copy the table's line as printed)
+  line 13 PASS
+  line 14 PASS
+  line 15 PASS
+  line 16 PASS
+  line 17 FAIL: quote not found in the paper word for word (copy it from 03_lit/pages.py output; for a table, copy the table's line as printed)
+  line 18 FAIL: quote not found in the paper word for word (copy it from 03_lit/pages.py output; for a table, copy the table's line as printed)
+  line 19 PASS
+  line 20 PASS
+  line 21 FAIL: 16 from the value is not in the quote
+  line 22 PASS
+  line 23 PASS
+  line 24 FAIL: quote not found in the paper word for word (copy it from 03_lit/pages.py output; for a table, copy the table's line as printed)
+  line 25 FAIL: quote not found in the paper word for word (copy it from 03_lit/pages.py output; for a table, copy the table's line as printed)
+  line 26 FAIL: quote not found in the paper word for word (copy it from 03_lit/pages.py output; for a table, copy the table's line as printed)
+  line 27 PASS
+  line 28 PASS
+  line 29 PASS
+  line 30 FAIL: the row has only 10 of 11 fields (missing: note), so every field after the gap is in the wrong column
+2026-11-11 17:04:41  results/values.csv  29 rows: 25 pass, 0 flagged, 4 fail. Fix each failing row, or set its status to flagged and say why in note. Do not delete rows to make this pass.
+  line 2 PASS
+  line 3 PASS
+  line 4 PASS
+  line 5 PASS
+  line 6 PASS
+  line 7 PASS
+  line 8 PASS
+  line 9 PASS
+  line 10 PASS
+  line 11 PASS
+  line 12 FAIL: quote not found in the paper word for word (copy it from 03_lit/pages.py output; for a table, copy the table's line as printed)
+  line 13 PASS
+  line 14 PASS
+  line 15 PASS
+  line 16 PASS
+  line 17 PASS
+  line 18 PASS
+  line 19 PASS
+  line 20 PASS
+  line 21 FAIL: 16 from the value is not in the quote
+  line 22 PASS
+  line 23 PASS
+  line 24 FAIL: quote not found in the paper word for word (copy it from 03_lit/pages.py output; for a table, copy the table's line as printed)
+  line 25 PASS
+  line 26 PASS
+  line 27 PASS
+  line 28 PASS
+  line 29 PASS
+  line 30 FAIL: the row has only 10 of 11 fields (missing: note), so every field after the gap is in the wrong column
+2026-11-11 17:07:33  results/values.csv  29 rows: 26 pass, 0 flagged, 3 fail. Fix each failing row, or set its status to flagged and say why in note. Do not delete rows to make this pass.
+  line 2 PASS
+  line 3 PASS
+  line 4 PASS
+  line 5 PASS
+  line 6 PASS
+  line 7 PASS
+  line 8 PASS
+  line 9 PASS
+  line 10 PASS
+  line 11 PASS
+  line 12 FAIL: quote not found in the paper word for word (copy it from 03_lit/pages.py output; for a table, copy the table's line as printed)
+  line 13 PASS
+  line 14 PASS
+  line 15 PASS
+  line 16 PASS
+  line 17 PASS
+  line 18 PASS
+  line 19 PASS
+  line 20 PASS
+  line 21 PASS
+  line 22 PASS
+  line 23 PASS
+  line 24 FAIL: quote not found in the paper word for word (copy it from 03_lit/pages.py output; for a table, copy the table's line as printed)
+  line 25 PASS
+  line 26 PASS
+  line 27 PASS
+  line 28 PASS
+  line 29 PASS
+  line 30 FAIL: the row has only 10 of 11 fields (missing: note), so every field after the gap is in the wrong column
+2026-11-11 17:09:54  results/values.csv  29 rows: 26 pass, 0 flagged, 3 fail. Fix each failing row, or set its status to flagged and say why in note. Do not delete rows to make this pass.
+  line 2 PASS
+  line 3 PASS
+  line 4 PASS
+  line 5 PASS
+  line 6 PASS
+  line 7 PASS
+  line 8 PASS
+  line 9 PASS
+  line 10 PASS
+  line 11 PASS
+  line 12 FAIL: quote not found in the paper word for word (copy it from 03_lit/pages.py output; for a table, copy the table's line as printed)
+  line 13 PASS
+  line 14 PASS
+  line 15 PASS
+  line 16 PASS
+  line 17 PASS
+  line 18 PASS
+  line 19 PASS
+  line 20 PASS
+  line 21 PASS
+  line 22 PASS
+  line 23 PASS
+  line 24 FAIL: quote not found in the paper word for word (copy it from 03_lit/pages.py output; for a table, copy the table's line as printed)
+  line 25 PASS
+  line 26 PASS
+  line 27 PASS
+  line 28 PASS
+  line 29 PASS
+  line 30 FAIL: the row has only 10 of 11 fields (missing: note), so every field after the gap is in the wrong column
+2026-11-11 17:11:16  results/values.csv  29 rows: 28 pass, 0 flagged, 1 fail. Fix each failing row, or set its status to flagged and say why in note. Do not delete rows to make this pass.
+  line 2 PASS
+  line 3 PASS
+  line 4 PASS
+  line 5 PASS
+  line 6 PASS
+  line 7 PASS
+  line 8 PASS
+  line 9 PASS
+  line 10 PASS
+  line 11 PASS
+  line 12 FAIL: quote not found in the paper word for word (copy it from 03_lit/pages.py output; for a table, copy the table's line as printed)
+  line 13 PASS
+  line 14 PASS
+  line 15 PASS
+  line 16 PASS
+  line 17 PASS
+  line 18 PASS
+  line 19 PASS
+  line 20 PASS
+  line 21 PASS
+  line 22 PASS
+  line 23 PASS
+  line 24 PASS
+  line 25 PASS
+  line 26 PASS
+  line 27 PASS
+  line 28 PASS
+  line 29 PASS
+  line 30 PASS
+2026-11-11 17:11:51  results/values.csv  29 rows: 28 pass, 0 flagged, 1 fail. Fix each failing row, or set its status to flagged and say why in note. Do not delete rows to make this pass.
+  line 2 PASS
+  line 3 PASS
+  line 4 PASS
+  line 5 PASS
+  line 6 PASS
+  line 7 PASS
+  line 8 PASS
+  line 9 PASS
+  line 10 PASS
+  line 11 PASS
+  line 12 PASS
+  line 13 PASS
+  line 14 PASS
+  line 15 PASS
+  line 16 PASS
+  line 17 PASS
+  line 18 PASS
+  line 19 PASS
+  line 20 PASS
+  line 21 PASS
+  line 22 PASS
+  line 23 PASS
+  line 24 PASS
+  line 25 PASS
+  line 26 PASS
+  line 27 PASS
+  line 28 PASS
+  line 29 PASS
+  line 30 FAIL: the row has only 10 of 11 fields (missing: note), so every field after the gap is in the wrong column
+2026-11-11 17:13:15  results/values.csv  29 rows: 29 pass, 0 flagged, 0 fail. Every row passes or is flagged with a reason.
+  line 2 PASS
+  line 3 PASS
+  line 4 PASS
+  line 5 PASS
+  line 6 PASS
+  line 7 PASS
+  line 8 PASS
+  line 9 PASS
+  line 10 PASS
+  line 11 PASS
+  line 12 PASS
+  line 13 PASS
+  line 14 PASS
+  line 15 PASS
+  line 16 PASS
+  line 17 PASS
+  line 18 PASS
+  line 19 PASS
+  line 20 PASS
+  line 21 PASS
+  line 22 PASS
+  line 23 PASS
+  line 24 PASS
+  line 25 PASS
+  line 26 PASS
+  line 27 PASS
+  line 28 PASS
+  line 29 PASS
+  line 30 PASS
+2026-11-11 17:27:21  results/values.csv  24 rows: 6 pass, 0 flagged, 18 fail. Fix each failing row, or set its status to flagged and say why in note. Do not delete rows to make this pass.
+  line 2 PASS
+  line 3 FAIL: quote not found in the paper word for word (copy it from 03_lit/pages.py output; for a table, copy the table's line as printed)
+  line 4 FAIL: quote not found in the paper word for word (copy it from 03_lit/pages.py output; for a table, copy the table's line as printed)
+  line 5 PASS
+  line 6 PASS
+  line 7 FAIL: 7 from the value is not in the quote
+  line 8 PASS
+  line 9 PASS
+  line 10 FAIL: the row has only 10 of 11 fields (missing: note), so every field after the gap is in the wrong column; no value
+  line 11 FAIL: the row has only 10 of 11 fields (missing: note), so every field after the gap is in the wrong column; quote not found in the paper word for word (copy it from 03_lit/pages.py output; for a table, copy the table's line as printed); no value
+  line 12 PASS
+  line 13 FAIL: the row has only 10 of 11 fields (missing: note), so every field after the gap is in the wrong column; no value
+  line 14 FAIL: the row has only 10 of 11 fields (missing: note), so every field after the gap is in the wrong column; quote not found in the paper word for word (copy it from 03_lit/pages.py output; for a table, copy the table's line as printed); no value
+  line 15 FAIL: the row has only 10 of 11 fields (missing: note), so every field after the gap is in the wrong column; no value
+  line 16 FAIL: the row has only 10 of 11 fields (missing: note), so every field after the gap is in the wrong column; no value
+  line 17 FAIL: the row has only 10 of 11 fields (missing: note), so every field after the gap is in the wrong column; no value
+  line 18 FAIL: the row has only 10 of 11 fields (missing: note), so every field after the gap is in the wrong column; no value
+  line 19 FAIL: quote not found in the paper word for word (copy it from 03_lit/pages.py output; for a table, copy the table's line as printed)
+  line 20 FAIL: the row has only 10 of 11 fields (missing: note), so every field after the gap is in the wrong column; quote is on page 13, not page 12; no value
+  line 21 FAIL: quote not found in the paper word for word (copy it from 03_lit/pages.py output; for a table, copy the table's line as printed)
+  line 22 FAIL: the row has only 10 of 11 fields (missing: note), so every field after the gap is in the wrong column; quote not found in the paper word for word (copy it from 03_lit/pages.py output; for a table, copy the table's line as printed); no value
+  line 23 FAIL: the row has only 10 of 11 fields (missing: note), so every field after the gap is in the wrong column; quote is on page 15, not page 13; no value
+  line 24 FAIL: the row has only 10 of 11 fields (missing: note), so every field after the gap is in the wrong column; no value
+  line 25 FAIL: the row has only 10 of 11 fields (missing: note), so every field after the gap is in the wrong column; no value
+2026-11-11 17:27:42  results/values.csv  24 rows: 10 pass, 0 flagged, 14 fail. Fix each failing row, or set its status to flagged and say why in note. Do not delete rows to make this pass.
+  line 2 PASS
+  line 3 PASS
+  line 4 PASS
+  line 5 PASS
+  line 6 PASS
+  line 7 FAIL: 7 from the value is not in the quote
+  line 8 PASS
+  line 9 PASS
+  line 10 FAIL: the row has only 10 of 11 fields (missing: note), so every field after the gap is in the wrong column; no value
+  line 11 FAIL: the row has only 10 of 11 fields (missing: note), so every field after the gap is in the wrong column; quote not found in the paper word for word (copy it from 03_lit/pages.py output; for a table, copy the table's line as printed); no value
+  line 12 PASS
+  line 13 FAIL: the row has only 10 of 11 fields (missing: note), so every field after the gap is in the wrong column; no value
+  line 14 FAIL: the row has only 10 of 11 fields (missing: note), so every field after the gap is in the wrong column; quote not found in the paper word for word (copy it from 03_lit/pages.py output; for a table, copy the table's line as printed); no value
+  line 15 FAIL: the row has only 10 of 11 fields (missing: note), so every field after the gap is in the wrong column; no value
+  line 16 FAIL: the row has only 10 of 11 fields (missing: note), so every field after the gap is in the wrong column; no value
+  line 17 FAIL: the row has only 10 of 11 fields (missing: note), so every field after the gap is in the wrong column; no value
+  line 18 FAIL: the row has only 10 of 11 fields (missing: note), so every field after the gap is in the wrong column; no value
+  line 19 PASS
+  line 20 FAIL: the row has only 10 of 11 fields (missing: note), so every field after the gap is in the wrong column; no value
+  line 21 PASS
+  line 22 FAIL: the row has only 10 of 11 fields (missing: note), so every field after the gap is in the wrong column; no value
+  line 23 FAIL: the row has only 10 of 11 fields (missing: note), so every field after the gap is in the wrong column; no value
+  line 24 FAIL: the row has only 10 of 11 fields (missing: note), so every field after the gap is in the wrong column; no value
+  line 25 FAIL: the row has only 10 of 11 fields (missing: note), so every field after the gap is in the wrong column; no value
+2026-11-11 17:27:55  results/values.csv  24 rows: 10 pass, 0 flagged, 14 fail. Fix each failing row, or set its status to flagged and say why in note. Do not delete rows to make this pass.
+  line 2 PASS
+  line 3 PASS
+  line 4 PASS
+  line 5 PASS
+  line 6 PASS
+  line 7 FAIL: 7 from the value is not in the quote
+  line 8 PASS
+  line 9 PASS
+  line 10 FAIL: no value
+  line 11 FAIL: quote not found in the paper word for word (copy it from 03_lit/pages.py output; for a table, copy the table's line as printed); no value
+  line 12 PASS
+  line 13 FAIL: no value
+  line 14 FAIL: quote not found in the paper word for word (copy it from 03_lit/pages.py output; for a table, copy the table's line as printed); no value
+  line 15 FAIL: no value
+  line 16 FAIL: no value
+  line 17 FAIL: no value
+  line 18 FAIL: no value
+  line 19 PASS
+  line 20 FAIL: no value
+  line 21 PASS
+  line 22 FAIL: no value
+  line 23 FAIL: no value
+  line 24 FAIL: no value
+  line 25 FAIL: no value
+2026-11-11 17:28:05  results/values.csv  24 rows: 10 pass, 0 flagged, 14 fail. Fix each failing row, or set its status to flagged and say why in note. Do not delete rows to make this pass.
+  line 2 PASS
+  line 3 PASS
+  line 4 PASS
+  line 5 PASS
+  line 6 PASS
+  line 7 FAIL: 7 from the value is not in the quote
+  line 8 PASS
+  line 9 PASS
+  line 10 FAIL: no value
+  line 11 FAIL: quote not found in the paper word for word (copy it from 03_lit/pages.py output; for a table, copy the table's line as printed); no value
+  line 12 PASS
+  line 13 FAIL: no value
+  line 14 FAIL: quote not found in the paper word for word (copy it from 03_lit/pages.py output; for a table, copy the table's line as printed); no value
+  line 15 FAIL: no value
+  line 16 FAIL: no value
+  line 17 FAIL: no value
+  line 18 FAIL: no value
+  line 19 PASS
+  line 20 FAIL: no value
+  line 21 PASS
+  line 22 FAIL: no value
+  line 23 FAIL: no value
+  line 24 FAIL: no value
+  line 25 FAIL: no value
+2026-11-11 17:28:17  results/values.csv  24 rows: 10 pass, 13 flagged, 1 fail. Fix each failing row, or set its status to flagged and say why in note. Do not delete rows to make this pass.
+  line 2 PASS
+  line 3 PASS
+  line 4 PASS
+  line 5 PASS
+  line 6 PASS
+  line 7 FAIL: 7 from the value is not in the quote
+  line 8 PASS
+  line 9 PASS
+  line 10 FLAGGED: no value | note: qualitative statement; no numeric value to extract
+  line 11 FLAGGED: quote not found in the paper word for word (copy it from 03_lit/pages.py output; for a table, copy the table's line as printed); no value | note: qualitative comparison; no numeric value to extract
+  line 12 PASS
+  line 13 FLAGGED: no value | note: qualitative improvement approach; no numeric value
+  line 14 FLAGGED: quote not found in the paper word for word (copy it from 03_lit/pages.py output; for a table, copy the table's line as printed); no value | note: improvement direction; no numeric value
+  line 15 FLAGGED: no value | note: improvement direction; no numeric value
+  line 16 FLAGGED: no value | note: improvement direction; no numeric value
+  line 17 FLAGGED: no value | note: improvement direction; no numeric value
+  line 18 FLAGGED: no value | note: computational cost improvements; no numeric value
+  line 19 PASS
+  line 20 FLAGGED: no value | note: new application; no numeric value
+  line 21 PASS
+  line 22 FLAGGED: no value | note: new method/application; no numeric value
+  line 23 FLAGGED: no value | note: limitation; no numeric value
+  line 24 FLAGGED: no value | note: limitation; no numeric value
+  line 25 FLAGGED: no value | note: limitation; no numeric value
+2026-11-11 17:28:33  results/values.csv  24 rows: 9 pass, 13 flagged, 2 fail. Fix each failing row, or set its status to flagged and say why in note. Do not delete rows to make this pass.
+  line 2 PASS
+  line 3 PASS
+  line 4 PASS
+  line 5 PASS
+  line 6 PASS
+  line 7 FAIL: value 'seven' has no number in it
+  line 8 PASS
+  line 9 PASS
+  line 10 FLAGGED: no value | note: qualitative statement; no numeric value to extract
+  line 11 FLAGGED: quote not found in the paper word for word (copy it from 03_lit/pages.py output; for a table, copy the table's line as printed); no value | note: qualitative comparison; no numeric value to extract
+  line 12 FAIL: quote not found in the paper word for word (copy it from 03_lit/pages.py output; for a table, copy the table's line as printed)
+  line 13 FLAGGED: quote not found in the paper word for word (copy it from 03_lit/pages.py output; for a table, copy the table's line as printed); no value | note: qualitative improvement approach; no numeric value
+  line 14 FLAGGED: quote not found in the paper word for word (copy it from 03_lit/pages.py output; for a table, copy the table's line as printed); no value | note: improvement direction; no numeric value
+  line 15 FLAGGED: no value | note: improvement direction; no numeric value
+  line 16 FLAGGED: no value | note: improvement direction; no numeric value
+  line 17 FLAGGED: no value | note: improvement direction; no numeric value
+  line 18 FLAGGED: quote not found in the paper word for word (copy it from 03_lit/pages.py output; for a table, copy the table's line as printed); no value | note: computational cost improvements; no numeric value
+  line 19 PASS
+  line 20 FLAGGED: no value | note: new application; no numeric value
+  line 21 PASS
+  line 22 FLAGGED: no value | note: new method/application; no numeric value
+  line 23 FLAGGED: no value | note: limitation; no numeric value
+  line 24 FLAGGED: no value | note: limitation; no numeric value
+  line 25 FLAGGED: no value | note: limitation; no numeric value
+2026-11-11 17:29:31  results/values.csv  23 rows: 9 pass, 12 flagged, 2 fail. Fix each failing row, or set its status to flagged and say why in note. Do not delete rows to make this pass.
+  line 2 PASS
+  line 3 PASS
+  line 4 PASS
+  line 5 PASS
+  line 6 PASS
+  line 7 FAIL: value 'seven' has no number in it
+  line 8 PASS
+  line 9 PASS
+  line 10 FLAGGED: no value | note: qualitative statement; no numeric value to extract
+  line 11 FLAGGED: quote not found in the paper word for word (copy it from 03_lit/pages.py output; for a table, copy the table's line as printed); no value | note: qualitative comparison; no numeric value to extract
+  line 12 FAIL: quote not found in the paper word for word (copy it from 03_lit/pages.py output; for a table, copy the table's line as printed)
+  line 13 FLAGGED: quote not found in the paper word for word (copy it from 03_lit/pages.py output; for a table, copy the table's line as printed); no value | note: qualitative improvement approach; no numeric value
+  line 14 FLAGGED: quote not found in the paper word for word (copy it from 03_lit/pages.py output; for a table, copy the table's line as printed); no value | note: improvement direction; no numeric value
+  line 15 FLAGGED: no value | note: improvement direction; no numeric value
+  line 16 FLAGGED: no value | note: improvement direction; no numeric value
+  line 17 FLAGGED: quote not found in the paper word for word (copy it from 03_lit/pages.py output; for a table, copy the table's line as printed); no value | note: computational cost improvements; no numeric value
+  line 18 PASS
+  line 19 FLAGGED: quote not found in the paper word for word (copy it from 03_lit/pages.py output; for a table, copy the table's line as printed); no value | note: new application; no numeric value
+  line 20 PASS
+  line 21 FLAGGED: no value | note: new method/application; no numeric value
+  line 22 FLAGGED: quote not found in the paper word for word (copy it from 03_lit/pages.py output; for a table, copy the table's line as printed); no value | note: limitation; no numeric value
+  line 23 FLAGGED: no value | note: limitation; no numeric value
+  line 24 FLAGGED: no value | note: limitation; no numeric value
+2026-11-11 17:29:45  results/values.csv  23 rows: 9 pass, 13 flagged, 1 fail. Fix each failing row, or set its status to flagged and say why in note. Do not delete rows to make this pass.
+  line 2 PASS
+  line 3 PASS
+  line 4 PASS
+  line 5 PASS
+  line 6 PASS
+  line 7 FLAGGED: value 'seven' has no number in it | note: quote uses word 'seven', not numeric 7
+  line 8 PASS
+  line 9 PASS
+  line 10 FLAGGED: no value | note: qualitative statement; no numeric value to extract
+  line 11 FLAGGED: quote not found in the paper word for word (copy it from 03_lit/pages.py output; for a table, copy the table's line as printed); no value | note: qualitative comparison; no numeric value to extract
+  line 12 FAIL: quote not found in the paper word for word (copy it from 03_lit/pages.py output; for a table, copy the table's line as printed)
+  line 13 FLAGGED: quote not found in the paper word for word (copy it from 03_lit/pages.py output; for a table, copy the table's line as printed); no value | note: qualitative improvement approach; no numeric value
+  line 14 FLAGGED: quote not found in the paper word for word (copy it from 03_lit/pages.py output; for a table, copy the table's line as printed); no value | note: improvement direction; no numeric value
+  line 15 FLAGGED: no value | note: improvement direction; no numeric value
+  line 16 FLAGGED: no value | note: improvement direction; no numeric value
+  line 17 FLAGGED: quote not found in the paper word for word (copy it from 03_lit/pages.py output; for a table, copy the table's line as printed); no value | note: computational cost improvements; no numeric value
+  line 18 PASS
+  line 19 FLAGGED: quote not found in the paper word for word (copy it from 03_lit/pages.py output; for a table, copy the table's line as printed); no value | note: new application; no numeric value
+  line 20 PASS
+  line 21 FLAGGED: no value | note: new method/application; no numeric value
+  line 22 FLAGGED: quote not found in the paper word for word (copy it from 03_lit/pages.py output; for a table, copy the table's line as printed); no value | note: limitation; no numeric value
+  line 23 FLAGGED: no value | note: limitation; no numeric value
+  line 24 FLAGGED: no value | note: limitation; no numeric value
+2026-11-11 17:30:04  results/values.csv  23 rows: 10 pass, 13 flagged, 0 fail. Every row passes or is flagged with a reason.
+  line 2 PASS
+  line 3 PASS
+  line 4 PASS
+  line 5 PASS
+  line 6 PASS
+  line 7 FLAGGED: value 'seven' has no number in it | note: quote uses word 'seven', not numeric 7
+  line 8 PASS
+  line 9 PASS
+  line 10 FLAGGED: no value | note: qualitative statement; no numeric value to extract
+  line 11 FLAGGED: quote not found in the paper word for word (copy it from 03_lit/pages.py output; for a table, copy the table's line as printed); no value | note: qualitative comparison; no numeric value to extract
+  line 12 PASS
+  line 13 FLAGGED: quote not found in the paper word for word (copy it from 03_lit/pages.py output; for a table, copy the table's line as printed); no value | note: qualitative improvement approach; no numeric value
+  line 14 FLAGGED: quote not found in the paper word for word (copy it from 03_lit/pages.py output; for a table, copy the table's line as printed); no value | note: improvement direction; no numeric value
+  line 15 FLAGGED: no value | note: improvement direction; no numeric value
+  line 16 FLAGGED: no value | note: improvement direction; no numeric value
+  line 17 FLAGGED: quote not found in the paper word for word (copy it from 03_lit/pages.py output; for a table, copy the table's line as printed); no value | note: computational cost improvements; no numeric value
+  line 18 PASS
+  line 19 FLAGGED: quote not found in the paper word for word (copy it from 03_lit/pages.py output; for a table, copy the table's line as printed); no value | note: new application; no numeric value
+  line 20 PASS
+  line 21 FLAGGED: no value | note: new method/application; no numeric value
+  line 22 FLAGGED: quote not found in the paper word for word (copy it from 03_lit/pages.py output; for a table, copy the table's line as printed); no value | note: limitation; no numeric value
+  line 23 FLAGGED: no value | note: limitation; no numeric value
+  line 24 FLAGGED: no value | note: limitation; no numeric value
+2026-11-11 17:30:24  results/values.csv  23 rows: 10 pass, 13 flagged, 0 fail. Every row passes or is flagged with a reason.
+  line 2 PASS
+  line 3 PASS
+  line 4 PASS
+  line 5 PASS
+  line 6 PASS
+  line 7 FLAGGED: value 'seven' has no number in it | note: quote uses word 'seven', not numeric 7
+  line 8 PASS
+  line 9 PASS
+  line 10 FLAGGED: no value | note: qualitative statement; no numeric value to extract
+  line 11 FLAGGED: quote not found in the paper word for word (copy it from 03_lit/pages.py output; for a table, copy the table's line as printed); no value | note: qualitative comparison; no numeric value to extract
+  line 12 PASS
+  line 13 FLAGGED: quote not found in the paper word for word (copy it from 03_lit/pages.py output; for a table, copy the table's line as printed); no value | note: qualitative improvement approach; no numeric value
+  line 14 FLAGGED: quote not found in the paper word for word (copy it from 03_lit/pages.py output; for a table, copy the table's line as printed); no value | note: improvement direction; no numeric value
+  line 15 FLAGGED: no value | note: improvement direction; no numeric value
+  line 16 FLAGGED: no value | note: improvement direction; no numeric value
+  line 17 FLAGGED: quote not found in the paper word for word (copy it from 03_lit/pages.py output; for a table, copy the table's line as printed); no value | note: computational cost improvements; no numeric value
+  line 18 PASS
+  line 19 FLAGGED: quote not found in the paper word for word (copy it from 03_lit/pages.py output; for a table, copy the table's line as printed); no value | note: new application; no numeric value
+  line 20 PASS
+  line 21 FLAGGED: no value | note: new method/application; no numeric value
+  line 22 FLAGGED: quote not found in the paper word for word (copy it from 03_lit/pages.py output; for a table, copy the table's line as printed); no value | note: limitation; no numeric value
+  line 23 FLAGGED: no value | note: limitation; no numeric value
+  line 24 FLAGGED: no value | note: limitation; no numeric value

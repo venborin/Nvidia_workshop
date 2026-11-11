@@ -12,7 +12,7 @@ mine/*
 # Everything the stops write, built from your own files: never committed.
 # To show something, copy it into site/share/ (public on your site); or download
 # it all with: bash export.sh
-results/*
+!results/*
 !results/README.md
 results-*.zip
 

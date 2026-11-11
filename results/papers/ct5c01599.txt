@@ -1,0 +1,1606 @@
+
+=== page 1 ===
+QuantumElectrodynamicsCoupled-ClusteratScale:High-
+PerformanceImplementationforComplexSystems
+Nicholas P. Bauman,⊥ Himadri Pathak,⊥ Marcus D. Liebenthal,⊥ Ajay Panyala, Daniel Mejia-Rodriguez,
+Niranjan Govind, and Karol Kowalski*
+CiteThis: J. Chem. Theory Comput. 2026, 22, 294−304
+ ReadOnline
+ACCESS
+ Metrics & More
+ Article Recommendations
+ABSTRACT: Coupled-cluster theory (CC) is a highly accurate and versatile
+method for simulating complex interactions within quantum systems. The
+extension of CC theory to model mixed electron-photon processes with quantum
+electrodynamics (QED) has improved our capability to predict cavity-modified
+chemistry, a field where photons are used as cost-effective and eco-friendly
+alternatives to catalyze/inhibit chemical reactions. However, calculations with CC
+methods, even without incorporating QED effects, are often prohibitively
+expensive. Simulations of larger systems require scalable infrastructures that exist
+for traditional CC methods but not for QED-CC methods. As such, we present a
+GPU-enabled, high-performance, open-source implementation of the quantum
+electrodynamics coupled-cluster method with single and double excitations (QED-CCSD) within the ExaChem quantum chemistry
+software package. ExaChem relies on the Tensor Algebra for Many-body Methods (TAMM) infrastructure: a parallel heterogeneous
+tensorlibrarydesigned to achieve scalable performanceon modern heterogeneous supercomputingplatforms. We discuss theoretical
+foundations, algorithmic details, and numerical benchmarks to showcase the larger systems that ExaChem can simulate and how the
+integration of photonic degrees-of-freedom alters their ground-state properties.
+■INTRODUCTION
+The growing need for accurate quantum mechanical
+descriptions of quantum-driven technologies, such as quantum
+computing and quantum sensing, has advanced methodologies
+within computational chemistry and quantum physics.1−4
+Advancements in high-performance computing now enable
+large-scale applications of these highly accurate techniques
+beyond model chemical systems.5,6
+Recent interest in applying computational chemistry
+techniques to polariton chemistry has gained traction as its
+ability to modify chemical structures, properties, and reactivity
+solelythroughphotonicinteractionswithmolecular,electronic,
+vibrational, and rovibrational states is explored.7−14 Although
+several research groups within the quantum optics community
+have developed model Hamiltonians to infer qualitative
+features of polaritonic physics,15−20 a holistic quantitative
+theoretical understanding of molecular polaritons demands the
+equal treatment of electronic and photonic degrees-of-
+freedom; this is achieved with ab initio quantum electro-
+dynamics (QED) methodologies. QED methodologies for-
+mulate electron-photon interactions within molecules from
+first-principles such that photon coupling is characterized for
+the entire electronic structure rather than for only a select few
+states.
+Available quantum electrodynamics extensions of various
+electronic structure methods include: density functional theory
+(QED-DFT21−30) with real-time22,23,31−34 and linear-response
+formulations28,35,36 of QED time-dependent density functional
+theory (QED-TDDFT); the mean-field QED Hartree−Fock
+(QED-HF) method37 and strong-coupling QED-HF (SC-
+QED-HF) method;38 the configuration interaction (QED-CI),
+full configuration interaction,39,40 and the more recently
+complete active space configuration interaction (QED-
+CASCI)41 methods;second-orderMøller−Plessetperturbation
+theory (QED-MP2) and the fully origin-independent strong-
+coupling QED-MP242,43 for charged systems. Other cavity
+QED extensions include algebraic diagrammatic construction
+(QED-ADC44), variational QED-2-RDM methods,45 diffusion
+Monte Carlo,46 density matrix renormalization group (QED-
+DMRG),47 and QED-complete active space self-consistent
+field (QED-CASSCF).48,49
+Alongside the aforementioned approaches, the time-
+independent coupled-cluster (CC) method, with its numerous
+extensions,50−59 serves as a benchmark for many electronic
+structure methods. The broad appeal and success of CC
+Received: September 23, 2025
+Revised: November 18, 2025
+Accepted: November 20, 2025
+Published: December 15, 2025
+Articlepubs.acs.org/JCTC
+© 2025 American Chemical Society
+294
+https://doi.org/10.1021/acs.jctc.5c01599
+J. Chem. Theory Comput. 2026, 22, 294−304
+Downloaded from pubs.​acs.​org/​jctcce/​article-pdf/​22/​1/​294/​63142798/​ct5c01599.​pdf by OKLAHOMA STATE UNIV STILLWATER user on 11 November 2026
+
+=== page 2 ===
+methods stem from their use of an exponential parametrization
+for the correlated ground-state wave function |Ψ⟩: |Ψ⟩ = eT
+|Φ⟩, where T denotes the cluster operator and |Φ⟩ is a
+reference wave function, typically�but not exclusively�a
+Hartree−Fock wave function. This exponential ansatz is
+remarkably efficient at capturing contributions from many
+higher-order excitations at lower levels of cluster operator
+truncation, yielding faster convergence to the full CI limit.
+Two generalizations of coupled-cluster (CC) theory for
+incorporating quantum electrodynamics (QED) effects
+emerged around the same time. Mordovina et al.60 introduced
+the polaritonic coupled-cluster theory, which used an
+exponential parametrization of the ground-state polaritonic
+wave function. This parametrization included single and
+double electronic transition operators, photon creation
+operators, and combined electron transition and photon
+creation operators. They applied this method, along with
+QED full configuration interaction, to study strong coupling
+between a single photon mode and a four-site Hubbard model.
+Notably, they used nilpotent operators instead of conventional
+boson creation operators, resulting in a linear parametrization
+of the photon space. In contrast, the QED-CCSD-1 model by
+Haugland et al.37 adopted a similarly complex exponential
+parametrization but used conventional (non-nilpotent) boson
+creation operators. They applied this model to address strong
+coupling in an ab initio molecular Hamiltonian.
+Several research teams have developed and applied similar
+QED-CC approaches to study the impact of cavity effects on
+various ground-state properties. DePrince61 used QED-CCSD-
+1 to show how strong coupling alters electron affinities in
+sodiumhalidecompounds significantly.However, cavityeffects
+had less influence on ionization potentials in these systems.
+Pavošević and Flick62 further investigated the effects of
+cavity interactions on electron affinities by employing a unitary
+formulation of QED-CCSD-1. They used the variational
+quantum eigensolver (VQE) algorithm63 on a quantum
+computer for this purpose. Additionally, they expanded the
+framework to include up to two-photon creation operators,
+alongside single and double electronic excitations, which they
+called QED-CCSD-2.
+These foundational studies paved the way for further
+exploration of ionization characteristics in QED environments
+byRisoetal.64 underliningthecriticalimportanceofaccurately
+treating the ionized electron.
+Recent studies utilizing QED-CC methodologies have
+explored the influence of vacuum fluctuations in chemical
+systems, focusing on ground-state modifications in cavity-
+embedded systems rather than transitions or polariton
+generationvia introduced photons. Pavoševićet al.65 employed
+the nonunitary QED-CCSD-2 approach, showing that strong
+coupling can significantly alter proton transfer reaction barrier
+heights. They also proposed an approximation, QED-CCSD-
+21, which pairs single-electron transitions with up to two-
+photon creation operators, and double-electron transitions
+with single-photon creation operators, akin to the electron−
+phonon interaction model of White et al.66 Other studies on
+quantum vacuum effects include catalytic control of Diels−
+Alder reactions,67 cavity-catalyzed azide−alkyne cycloaddi-
+tion,68 and the impact on intermolecular forces like van der
+Waals interactions.69,70
+Pavošević and Rubio29 incorporated QED-CCSD-1 into an
+embedding protocol. This approach focuses on a portion of a
+cavity-embedded molecular system using QED-CC, while the
+remaining part of the system is analyzed using either QED-
+DFT or QED-HF, termed as “QED-CC-in-QED-SCF”.
+Assuming that electron-photon correlations are localized
+within the embedded region, this novel protocol could
+potentially alleviate the computational complexities inherent
+in the many-body ab initio cavity QED framework. For
+broader discussions on ab initio methods for polariton
+chemistry, we refer the reader to comprehensive reviews (see
+refs 71−74).
+This work focuses on the implementation of the QED-CC
+method using the Pauli−Fierz Hamiltonian, employing a
+coherent state basis to account for single, double, and mixed
+excitations within both electronic and bosonic degrees of
+freedom. The method is developed within ExaChem,75 a
+parallel heterogeneous computing platform built atop the
+Tensor Algebra for Many-body Methods (TAMM),76 a
+distributed tensor library optimized for parallel execution on
+modern heterogeneous architectures. This implementation of
+QED-CCSD within ExaChem enables simulations of larger
+and more complex systems than before, while accurately
+capturing the intricate interplay between electronic and
+bosonic degrees of freedom. In the sections that follow, we
+describe the theoretical foundations of the QED-CC method-
+ology, outline its implementation within the open-source
+ExaChem platform, present the computational performance
+and simulation results, and conclude with a discussion of key
+findings and future directions.
+■METHODANDIMPLEMENTATION
+Coupled-Cluster Theory for Electrons. The canonical/
+non-QED single-reference CC theory50−54 is based on the
+exponential ansatz for the ground-state wave function
+e 0 T e| = |
+(1)
+where |0e⟩ is the reference determinant, which is typically, but
+not always, the Hartree−Fock reference determinant for a
+system with Ne electrons, and T is a particle-hole excitation
+operator referred to as the cluster operator. In the exact CC
+theory, T is the sum of all many-body cluster components
+T T
+ n
+N
+n
+ 1
+e
+=
+ =
+(2)
+where the n-body component of the cluster operator is defined
+as
+T
+ n t E 1 n a a i i i i a a 2 n n n n 1 1 1 1 = ! ··· ··· ··· ··· i k j j j y { z z z
+(3)
+with tad
+1···adn
+i1···in
+representing the corresponding cluster amplitudes,
+and the indices i1···in (a1···an) denoting the occupied
+(unoccupied) spin orbitals in the reference determinant, |0e⟩.
+Theexcitationoperatorsaregivenby Eid
+1···idn
+a1···an
+,whichgeneratethe
+n-tuply excited configurations, |(0e)id
+1···idn
+a1···an
+⟩, when acting on the
+reference. We utilize Einstein notation where repeated upper
+and lower indices are summed over.
+The amplitudes tad
+1···adn
+i1···in
+are determined by solving a set of
+nonlinear equations
+H n N(0 ) e e 0 0, 1, ..., e i i a a T e T e e n n 1 1 = = ··· ···
+(4)
+JournalofChemicalTheoryandComputation pubs.acs.org/JCTC Article
+https://doi.org/10.1021/acs.jctc.5c01599
+J. Chem. Theory Comput. 2026, 22, 294−304
+295
+Downloaded from pubs.​acs.​org/​jctcce/​article-pdf/​22/​1/​294/​63142798/​ct5c01599.​pdf by OKLAHOMA STATE UNIV STILLWATER user on 11 November 2026
+
+=== page 3 ===
+where He represents the standard electronic Hamiltonian.
+Oncetheamplitudesare iterativelyconvergedtowithinagiven
+threshold, the energy of the system can be determined as
+E H0 e e 0 e T e T eCC =
+(5)
+In standard coupled-cluster theory, a hierarchy of approx-
+imations can be made by truncating the cluster operator Tn at
+some excitation level me < Ne. For example, the standard CC
+singles and doubles (CCSD) method is obtained by setting me
+= 2 and the cluster operator therefore becomes
+T T T t E t E
+1
+ 4 a
+i
+i
+a
+a a
+i i
+i i
+a aCCSD
+1 2
+1 2
+1 2
+1 2
+1 2
+= + = +
+(6)
+The amplitudes are solved using the projection equations for
+singly and doubly excited determinants
+H(0 ) e e 0 0
+ i
+a T e T ee
+CCSD CCSD
+ =
+(7)
+and
+H(0 ) e e 0 0
+e
+ i i
+a a T e T e
+ 1 2
+1 2
+CCSD CCSD
+ =
+(8)
+and the CCSD energy is determined as
+E H0 e e 0
+e T e T eCCSD
+CCSD CCSD
+ =
+(9)
+These equations form the foundation upon which the QED-
+CC methodology is developed.
+Modeling Electron-Photon Interactions with the
+Pauli−Fierz Hamiltonian. The interactions between mole-
+cules and photons within an optical cavity are typically
+modeled using the Pauli−Fierz Hamiltonian. 7,77−79 To
+incorporate the optical cavity, we couple the electronic system
+to a single photon mode. We express the Pauli−Fierz within
+the length gauge representation of the dipole approximation,
+which is justified by the significant disparity between the
+wavelength of the photon mode and the dimensions of our
+molecular system. Additionally, we transform the Pauli−Fierz
+Hamiltonian into the coherent state basis to impose origin
+independence. Given these assumptions, and following the
+prescription of Haugland et al.,37 the single-mode Pauli−Fierz
+Hamiltonian HPF takes the following form
+H H b b b bd d
+d d
+2
+( ( ))( )
+1
+ 2 ( ( ))
+ePF
+cav
+cav
+2
+= +
+·
++
++ ·
+† †
+(10)
+The second term in the Hamiltonian represents the purely
+photonic part, modeled by a harmonic oscillator with ωcav as
+the fundamental frequency, and b† and b are bosonic creation
+and annihilation operators, respectively.
+The third term is the bilinear coupling that couples
+Fermionic and bosonic degrees of freedom with a coupling
+strength vector λ. The value of λ is related to the field strength
+of the photon mode, which can be defined by the effective
+volume of the cavity, Veff. Specifically, λ is given by
+e
+ V
+4
+ eff =
+15,80 in atomic units, where ê is the cavity-mode polarization
+axis.
+The last term in the Hamiltonian is the dipole self-energy,
+which arises from the length gauge transformation and ensures
+that the Hamiltonian is bounded from below and origin-
+independent.79,81−83 d is the molecular dipole operator given
+by d = dqpEpq with
+d p qd
+ q
+p
+ e N
+d
+ e
+nuc
+ = | + | , where de is electronic
+dipole-moment and
+Zd R
+ A
+A Anuc
+=
+(11)
+is the nuclear component. Here, ZA is the nuclear charge, and
+RA is the nuclear displacement vector of atomic nucleus A.
+Labels p, q, r, s, denote general spin−orbital indices. The
+nuclear dipole moment does not contribute to the Hamil-
+tonian in the coherent-state basis. However, it appears in the
+wave function through the coherent-state transformation. For
+details, see ref 37.
+The way the dipole self-energy term is applied varies across
+different studies due to different treatments of the squared
+electric dipole operator. To understand these discrepancies, let
+us begin by expanding the dipole self-energy operator as
+follows
+d d d d d
+d
+1
+2
+( )
+1
+2
+( ) ( )( )
+1
+ 2 ( )
+2 2
+2
+[ ·
+] = ·
+· ·
++ ·
+(12)
+The square of the electric dipole operator, which is the first
+term on the right-hand side of eq 12, can be expanded into
+contributions from one-electron and two-electron terms as
+follows
+i j i
+E Q E
+d d d d
+d d
+( ) ( ) ( ) ( ) (
+13)
+(14)
+i j i
+2 2
+2 2
+· = [ · ][ · ] +
+[ · ]
+= +
+(14)
+Here, μ, ν, λ, σ represent atomic basis functions and the
+symbols dμν and Qμν represent electric dipole and electric
+quadrupole integrals, which have the form
+d dr r r r( ) ( ) e | | = *
+(15)
+Q r r r r r( )( ) ( )d | | = *
+(16)
+On the other hand, numerous studies interpret the second-
+quantized form of the square of the electric dipole operator as
+the product of second-quantized electric dipole operators,37
+which leads to
+E Ed d d d d( )
+2 2 2
+· = +
+(17)
+The two expressions, eqs 13 and 17, are only equivalent in the
+complete basis set limit. We decided to use the former. Our
+implementation folds the one- and two-electron terms into the
+standard one- and two-electron integrals, where we rewrite the
+Pauli−Fierz Hamiltonian as
+H H b b b bd d
+d
+2
+( ( )( )
+1
+ 2 ( )
+e
+cav
+cav
+2
+= +
+·
++
++ ·
+† †
+Here, He′ is
+JournalofChemicalTheoryandComputation pubs.acs.org/JCTC Article
+https://doi.org/10.1021/acs.jctc.5c01599
+J. Chem. Theory Comput. 2026, 22, 294−304
+296
+Downloaded from pubs.​acs.​org/​jctcce/​article-pdf/​22/​1/​294/​63142798/​ct5c01599.​pdf by OKLAHOMA STATE UNIV STILLWATER user on 11 November 2026
+
+=== page 4 ===
+H h E Q E E
+u E E
+d d
+d d
+2
+1
+ 2
+e
+pq
+q
+p
+p
+q
+pq
+q
+p
+p
+q
+pq
+q
+p
+p
+q
+ pqrs
+qs
+pr
+pr
+qs
+ pqrs
+q
+p
+s
+r
+pr
+qs
+2
+2
+2
+= +
++ +
+(18)
+where hqp and uqspr are the standard one- and two-electron
+integrals.
+When averaging over the photon vacuum state |0ph⟩, the PF
+Hamiltonian of eq 18 takes the form for the QED-HF
+procedure as follows37
+H H d
+1
+ 2 ( ) e 0 2 ph = + ·
+(19)
+This procedure allows one to avoid optimizing photonic
+orbitals at the QED-HF level. With minor modifications to the
+existing electronic HF code, one can solve for the QED-HF
+reference wave function. The purely photonic part of the
+Hamiltonian and the bilinear coupling term should be taken
+into account at the post-Hartree−Fock level.
+Coupled-Cluster Framework for Electron-Photon
+Interactions. The QED-CC framework and hierarchy of
+approximations are naturally derived by replacing the bare
+electronic Hamiltonian by the Pauli−Fierz Hamiltonian in the
+CC equations. The starting point for the QED-CC method is a
+QED-HF reference wave function. The QED reference wave
+function is defined as37,84
+0 0 0 0 e p e p| = | |
+(20)
+This is a direct product of the electronic (|0e⟩) and photonic (|
+0p⟩) reference wave functions.
+The wave function in the QED-CC method is defined as37
+e 0 0 T e p e pQED C C ( , )| = |
+(21)
+The notation e and p within the parentheses of the T operator
+correspondtothecombinedelectronic andphotonic excitation
+manifolds from the reference wave function. The cluster
+operator takes the form
+T e p
+ m t E b( , ) 1 ( ) m
+N
+ n
+N
+a a n
+i i
+i i
+a a n
+2
+,
+e
+p
+m
+m
+m
+m
+1
+1
+1
+1
+=
+ ! ···
+···
+···
+··· †
+i
+ k
+j
+j
+j
+y
+ {
+z
+z
+z
+(22)
+and is determined by solving a set of nonlinear equations
+corresponding to the cluster operators being solved37,85
+E b H0 0 ( ) e e 0 0 0 e p a a i i n T e p T e p e p( , ) ( , ) m m 1 1 | | = ··· ···
+(23)
+Here, Ead
+1···adm
+i1···im
+= (Eid
+1···idm
+a1···am
+)†, the index n denotes the number of
+photons and m indicates the electronic excitation rank.
+The truncation of the cluster operator at a certain excitation
+rank m and number of photons n establishes the QED-CC
+hierarchy. Throughout this paper, we adopt the QED-
+CCSD(m, n) notation, which represents the highest degree
+of interactions involving m electrons with n photons. In this
+study, we implemented three approximate QED-CC schemes
+to understand how photon-electron interactions influence the
+electronic ground state. We denote these approximate schemes
+as CCSD(2, 0), CCSD(2, 1), and CCSD(2, 2) whose cluster
+operators are given as
+m n
+T T
+T T T
+T T
+T T T
+T T T
+ T T
+CCSD( , )
+CCSD(2, 0)
+: (1, 0) (2,
+0)
+CCSD(2, 1)
+: (1, 0) (2,
+0) (1, 1)
+(2, 1) (0, 1
+)
+CCSD(2, 2)
+: (1, 0) (2,
+0) (1, 1)
+(2, 1) (0, 1
+) (1, 2)
+ (2, 2) (0, 2 )
+=
++
++ +
++ +
++ +
++ + +
+ + +
+l
+m
+o
+o
+o
+o
+o
+o
+o
+o
+o
+o
+o
+o
+o
+o
+ n
+o
+o
+o
+o
+o
+o
+o
+o
+o
+o
+o
+o
+o
+ o
+(24)
+where their many-body representations are
+m n
+t E t E
+t E t E t E b
+t E b t b
+t E t E t E b
+t E b t b t E b b
+ t E b b t b b
+CCSD( , )
+CCSD(2, 0)
+:
+CCSD(2, 1)
+:
+CCSD(2, 2)
+:
+a
+i
+i
+a
+a a
+i i
+i i
+a a
+a
+i
+i
+a
+a a
+i i
+i i
+a a
+a
+i
+i
+a
+a a
+i i
+i i
+a a
+a
+i
+i
+a
+a a
+i i
+i i
+a a
+a
+i
+i
+a
+a a
+i i
+i i
+a a
+a
+i
+i
+a
+ a a
+i i
+ i i
+a a
+,0 ,0
+,0 ,0 ,1
+,1 0,1
+,0 ,0 ,1
+,1 0,1 ,2
+ ,2 0,2
+1 2
+1 2
+1 2
+1 2
+1 2
+1 2
+1 2
+1 2
+1 2
+1 2
+1 2
+1 2
+1 2
+1 2
+1 2
+1 2
+1 2
+1 2
+1 2
+1 2
+ 1 2
+1 2
+ 1 2
+1 2
+=
++
++ +
++ +
++ +
++ + +
+ + +
+†
+† †
+†
+† † † †
+† † † †
+l
+m
+o
+o
+o
+o
+o
+o
+o
+o
+o
+o
+o
+o
+o
+o
+o
+o
+ n
+o
+o
+o
+o
+o
+o
+o
+o
+o
+o
+o
+o
+o
+o
+o
+ o
+(25)
+The CCSD(2, 0) involves performing electronic CCSD
+calculations with the QED Fock matrix elements and two-
+electron integrals that are transformed using the coefficient
+matrix elements obtained from the QED-HF procedure. We
+can also obtain the same results as CCSD(2, 0) by setting ωcav
+= 0 in either CCSD(2, 1) or CCSD(2, 2) calculations. The
+parameter ωcav is inversely proportional to the length of the
+cavity, L (ωcav ∝ 1/L), meaning it is essentially performing
+QED-CCSD(m, n) simulations with a cavity of infinite length.
+The CCSD(2, 0) approach does not require any new
+amplitude tensor definitions compared to the canonical CCSD
+method; the electronic T1 and T2 tensors, also denoted as T(1,
+0) and T(2, 0), are sufficient. In contrast, the CCSD(2, 1)
+scheme requires a total of five kinds of amplitude tensors,
+namely T(1, 0), T(2, 0), T(0, 1), T(1, 1), and T(2, 1). The
+CCSD(2, 2) requires an additional three new tensors T(0, 2),
+T(1, 2), and T(2, 2). Out of these, T(0, 1) and T(0, 2) are
+rank-zero tensors or scalars. Since the bosonic part is a scalar,
+the mixedtensors T(1,1), T(2,1), T(1,2), and T(2,2)do not
+increase any dimensionality in the tensor definition. Therefore,
+the computational complexity for all the schemes remains the
+same as the electronic CCSD method of
+6 , where
+ is a
+measure of the system size. However, these schemes increase
+the prefactors in the computational complexity.
+As pointed out earlier, the nuclear dipole moment does not
+contribute to the Hamiltonian in the coherent-state basis.
+However, we observed that the inclusion of the
+N
+d
+ e
+nuc term in the
+Hamiltonian results in more stable convergence at both the
+SCF and CC levels.
+Implementation within ExaChem. We have imple-
+mented theQED-CCmethods withintheExaChem75 package,
+which is an open-source suite of scalable electronic structure
+methods for performing ground and excited-state calculations
+on molecular systems. ExaChem is built upon the Tensor
+Algebra for Many-body Methods infrastructure.76 The TAMM
+library is a distributed tensor algebra framework for productive
+and performance-portable development of scalable computa-
+tional chemistry methods on modern heterogeneous super-
+JournalofChemicalTheoryandComputation pubs.acs.org/JCTC Article
+https://doi.org/10.1021/acs.jctc.5c01599
+J. Chem. Theory Comput. 2026, 22, 294−304
+297
+Downloaded from pubs.​acs.​org/​jctcce/​article-pdf/​22/​1/​294/​63142798/​ct5c01599.​pdf by OKLAHOMA STATE UNIV STILLWATER user on 11 November 2026
+
+=== page 5 ===
+computing platforms. TAMM provides a structured approach
+that decouples the specification of the computation from the
+execution of tensor operations on available high-performance
+computing systems. With this design choice, the scientific
+application developers (domain scientists) can focus on the
+algorithmic requirements using the tensor algebra interface
+provided by TAMM, whereas high-performance computing
+developers can direct their attention to various optimizations
+ontheunderlyingconstructs,suchasefficientdatadistribution,
+optimized scheduling algorithms, and efficient use of intranode
+resources (e.g., GPUs).
+TAMM provides a high-level tensor algebra interface that
+allows users to define distributed block-sparse tensors and
+express tensor operations over them in familiar mathematical
+notation. Examples of tensor expressions used in the
+implementation of QED-CC methods can be seen in Figure
+1. The framework provides a flexible infrastructure for
+describing tensor objects using index spaces and tiling
+capabilities, allowing users to define tiling over index spaces
+to construct tiled index spaces that represent blocked tensors.
+This enables efficient data distribution and tensor operations
+that better leverage the underlying hardware. Tensor
+operations are managed by a scheduler backend that employs
+data flow analysis over queued operations to find dependencies
+and construct load-balanced, communication-efficient sched-
+ules for execution. TAMM achieves scalability through the use
+of Global Arrays86 and MPI for distributed memory
+parallelism, while leveraging optimized vendor libraries to
+ensure high-performance execution on CPUs and accelerators.
+The second major component in the ExaChem implemen-
+tation is the p†q symbolic algebra library.87 This library
+automates the derivation ofmany-body expressions with mixed
+Fermionic and bosonic second-quantized operators. The initial
+QED-CCSD(2,2) expressions are fed into p†q and sub-
+sequently brought to normal order, while identifying and
+merging permutations into a fully contracted programmable
+representation. An example python script to generate the
+doubles + two-photon spin−orbital residuals, with generated
+output, is given in Figure 1. After generation of the residual
+equations, the QED-CCSD expressions are further expanded
+into spin-explicit tensors that have smaller dimensionality and
+thus a smaller memory footprint.
+The spin-explicit expressions are translated into executable
+codevia thePQ-Graphengine. The expressionsareinterpreted
+as a directed acyclic graph, where the tensors are the vertices
+and the edges determine the contraction. The graph
+representation enables symbolic optimization techniques such
+as contraction reordering and the identification, substitution,
+and fusion of common subexpressions. The expressions from
+PQ-GraphcanbedirectlyprintedasexecutablecodeinPython
+using NumPy, in Psi488 using TiledArray,89 and now in
+ExaChem using TAMM. The generated code from PQ-Graph
+minimizes the number of floating-point operations and the
+memory footprint within ExaChem to make its QED-
+CCSD(2,2) implementation competitive on modern HPC
+Figure 1. Automated workflow to implement doubles + two-photon residuals: Python with p†q (left) derives the expressions and translates them
+into TAMM syntax (right).
+JournalofChemicalTheoryandComputation pubs.acs.org/JCTC Article
+https://doi.org/10.1021/acs.jctc.5c01599
+J. Chem. Theory Comput. 2026, 22, 294−304
+298
+Downloaded from pubs.​acs.​org/​jctcce/​article-pdf/​22/​1/​294/​63142798/​ct5c01599.​pdf by OKLAHOMA STATE UNIV STILLWATER user on 11 November 2026
+
+=== page 6 ===
+architectures.To date,a generalspin-explicit QED-CCSD(2,2)
+open-source implementation for both closed- and open-shell
+systems is available in ExaChem at https://github.com/
+ExaChem/exachem.
+■RESULTSANDDISCUSSION
+The high-performance implementation of QED-CC methods
+in ExaChem enables us to explore QED effects on systems that
+were previously computationally prohibitively expensive,
+including those with larger numbers of atoms and simulations
+with larger basis sets. To demonstrate these new capabilities,
+we carried out calculations for three intramolecular proton
+transfer reactions in malonaldehyde, aminopropenal, and
+porphyrin. A previous study65 examined the proton transfer
+reactions in malonaldehyde and aminopropenal using the cc-
+pVDZ basis set. In contrast, this work investigates the role of
+the larger aug-cc-pVDZ basis set utilizing the new
+implementation of QED-CC methods. As a paramount
+demonstration of the performance of the newly implemented
+QED-CC methods in ExaChem, we examined proton transfer
+between the cis and trans configurations of the porphyrin
+molecule (162 electrons) with the cc-pVDZ (406 functions)
+and cc-pVTZ (916 functions) basis sets. We conclude this
+section with a brief discussion of the performance of the QED-
+CC implementation based on calculations of the porphyrin
+system.
+In allcalculations, allelectrons andall orbitalsare correlated.
+For the malonaldehyde and aminopropenal calculations, the
+QEDparametersaresetto ωcav =3eVand λ=0.10au.Forthe
+porphyrincalculations, theparameters are set to ωcav = 2.15 eV
+and λ = 0.05 au. Please note that the coupling strengths used
+here are larger than those typically realized in experiment.
+These values are deliberately chosen to magnify QED-induced
+effects and to maintain consistency with values used in prior
+literature.65 Results for QED-HF and QED-CCSD are
+reported as differences compared to their non-QED HF and
+CCSD counterparts, whose values are also reported. We use
+atomic units unless otherwise specified.
+Lastly, the comparison of different basis sets for the three
+proton transfer reactions serves to (1) demonstrate the
+capabilities of the QED-CC methods in ExaChem and (2)
+examine how large basis sets can change QED effects on
+reactionbarriersandenergies.Protontransferreactionsarejust
+one category of cavity-modified chemistry reactions that have
+been studied. Further investigation beyond this work will be
+needed to convincingly determine the role of larger basis sets
+for other reactions and properties.
+Malonaldehyde. The smallest system investigated in this
+study was malonaldehyde, shown in Figure 2, which consists of
+38 electrons. The reactant and product states in this proton
+transfer reaction are identical; therefore, we report on the
+changes in the reaction energy barrier (i.e., the energy
+difference between the transition state and the reactant)
+resulting from QED effects. Calculations were performed using
+the cc-pVDZ basis set (90 functions) as well as the larger aug-
+cc-pVDZ basis set (151 functions).
+As summarized in Table 1, the non-QED HF method
+overestimates the proton transfer reaction energy barrier by
+approximately 4 kcal/mol for both basis sets when compared
+to the canonical CCSD approach. For CCSD, we see that the
+effect of the aug-cc-pVDZ basis set increases the reaction
+barrier by 0.57 kcal/mol compared to the cc-pVDZ results.
+Incorporating QED effects further modifies the reaction
+energy barrier, with changes of −0.07 to 1.23 kcal/mol at the
+QED-HF level and −0.24 to 1.14 kcal/mol at the QED-CC
+level, depending on the basis set and the different photon
+excitation levels. The largest QED effects are observed when
+the polarization is aligned along the X direction, which
+increases the reaction energy barrier by ∼1.1 kcal/mol for the
+QED-CCSD(2,0) calculations. However, this effect is reduced
+to ∼0.8 kcal/mol under QED-CCSD(2,2). Conversely,
+polarization along the Z-axis decreases the reaction barrier
+by 0.24 kcal/mol, which is reduced to 0.07 kcal/mol upon
+switching to the aug-cc-pVDZ basis set. Notably, the impact of
+basis set size on QED effects is minimal for the X and Y
+polarizations, with changes of less than 0.02 kcal/mol when
+transitioning from cc-pVDZ to aug-cc-pVDZ. The results
+confirm that the cavity orientation significantly impacts the
+reaction energy barrier. Under the ultrastrong coupling regime
+used in these calculations, the influence of the QED effects is
+similar in magnitude to the changes seen from expanding the
+basis set size.
+Aminopropenal. The second system studied was amino-
+propenal, shown in Figure 3. Aminopropenal is another
+molecule consisting of 38 electrons but with slightly larger
+basis set sizes of 95 functions (cc-pVDZ) and 160 functions
+(aug-cc-pVDZ). Unlike malonaldehyde, the reactant and
+product structures in aminopropenal are different. QED effects
+Figure 2. Reactant/product and transition state structures involved in
+the hydrogen transfer reaction in Malonaldehyde. Molecules are
+oriented in the XY-plane.
+Table 1. Changes in the Reaction Energy Barriera for
+Proton Transfer in Malonaldehyde Inside an Optical Cavity
+with Polarization along the X, Y, and Z Directionsb,c
+Method X Y Z canonical
+cc-pVDZ
+QED-HF 1.17 0.15 −0.07 9.27
+QED-CCSD(2,0) 1.14 0.16 −0.23 5.19
+QED-CCSD(2,1) 0.90 0.06 −0.24
+QED-CCSD(2,2) 0.85 0.04 −0.24
+aug-cc-pVTZ
+QED-HF 1.23 0.13 0.00 9.64
+QED-CCSD(2,0) 1.12 0.15 −0.07 5.76
+QED-CCSD(2,1) 0.89 0.07 −0.07
+QED-CCSD(2,2) 0.84 0.05 −0.07
+aTotal barrier heights (energy differences between the transition state
+and the reactant) are given for the canonical HF and CCSD methods.
+At the same time, QED results for the polarization along the three
+directions are reported as changes in the barrier height compared to
+thecorrespondingcanonicalmethod.. bGeometryistakenfromref65.
+cEnergies are given in kcal/mol.
+JournalofChemicalTheoryandComputation pubs.acs.org/JCTC Article
+https://doi.org/10.1021/acs.jctc.5c01599
+J. Chem. Theory Comput. 2026, 22, 294−304
+299
+Downloaded from pubs.​acs.​org/​jctcce/​article-pdf/​22/​1/​294/​63142798/​ct5c01599.​pdf by OKLAHOMA STATE UNIV STILLWATER user on 11 November 2026
+
+=== page 7 ===
+on the reaction energy barrier (TS) and reaction energy (δE)
+are presented in Table 2.
+Once again, the canonical HF method overestimates the
+reaction energy barrier by 6.5−7.0 kcal/mol and the reaction
+energy by 3.3−4.1 kcal/mol, depending on the basis set,
+compared to canonical CCSD. Using the aug-cc-pVDZ basis
+for CCSD calculations increases the reaction energy barrier
+and reaction energy by 1.1 and 1.3 kcal/mol, respectively,
+relative to the cc-pVDZ basis.
+Compared to malonaldehyde, aminopropenal exhibits more
+pronounced QED effects and changes across QED-HF and the
+QED-CC approximations, as well as when going from the cc-
+pVDZ to aug-cc-pVDZ basis. At the highest QED-CCSD-
+(2,2)/aug-cc-pVDZ level, polarization along the X-axis
+increases the reaction barrier by 1.18 kcal/mol and the
+reaction energy by 0.35 kcal/mol. In contrast, polarization
+along the Y- or Z-axis either slightly decreases these reaction
+profile values or results in near-zero changes. Compared to
+QED-HF, the inclusion of electronic correlations in QED-CC
+calculations modifies preliminary QED effects by as much as
+∼1 kcal/mol. Moreover, expanding the basis from cc-pVDZ to
+aug-cc-pVDZ introduces QED effects that alter the reaction
+energy by up to 0.23 kcal/mol and the reaction energy barrier
+by up to 0.18 kcal/mol.
+Porphyrin. The efficient parallel implementation of QED-
+CC methods in ExaChem enables calculations on both small
+systems with larger basis sets and on significantly larger
+molecular systems that were previously computationally
+prohibitive. To demonstrate this, we investigated proton
+transferinporphyrin (162 electrons)from the cisconfiguration
+to trans configuration (see Figure 4). Calculations were
+performed with the cc-pVDZ (406 functions) and cc-pVTZ
+(916 functions) basis sets. Further details on how these
+calculations were carried out are described in the following
+section. QED simulations were conducted for an optical cavity
+with polarizationsalong four directions: X, Z, and two diagonal
+orientations (
+1
+ 2 ,
+1
+ 2 , 0) and (−
+1
+ 2 ,
+1
+ 2 , 0).
+Using canonical CCSD and the larger cc-pVTZ basis, the
+reaction energy was determined to be 8.77 kcal/mol. The most
+striking QED effect appears when cavity polarization is aligned
+along the diagonal directions. For one diagonal orientation,
+polarization increases the reaction energy, whereas for the
+other, it decreases it. The change in reaction energy with these
+two polarizations is approximately 5.3 kcal/mol at the QED-
+CCSD(2,2)/aug-cc-pVTZ level. Unlike the smaller systems,
+which exhibited relatively minor QED effects (less than 15% of
+their reaction energy profiles), the QED effects in porphyrin
+are substantial, reaching approximately 60% of the non-QED
+CCSD reaction energy of 8.77 kcal/mol. This also means that
+one can see a swing of 10.6 kcal/mol in the reaction energy by
+Figure 3. Reactant, transition state, and product structures involved in the hydrogen transfer reaction in Aminopropenal. Molecules are oriented in
+the XY-plane.
+Table 2. Reaction Energy Barrier (TS)a and Reaction Energy (ΔE)b Values for the Proton Transfer in Aminopropenal Inside
+an Optical Cavity with Polarization along the X, Y, and Z Directionsc,d
+X Y Z canonical
+Method TS ΔE TS ΔE TS ΔE TS ΔE
+cc-pVDZ
+QED-HF 2.00 0.94 0.58 0.37 −0.01 0.06 16.65 8.63
+QED-CCSD(2,0) 1.23 −0.12 0.12 −0.40 −0.32 −0.19 9.65 4.54
+QED-CCSD(2,1) 1.10 0.08 0.07 −0.25 −0.33 −0.20
+QED-CCSD(2,2) 1.08 0.12 0.07 −0.22 −0.33 −0.20
+aug-cc-pVDZ
+QED-HF 2.04 0.93 0.44 0.12 0.01 −0.03 17.24 9.16
+QED-CCSD(2,0) 1.29 0.04 0.01 −0.52 −0.20 −0.21 10.76 5.84
+QED-CCSD(2,1) 1.19 0.29 −0.01 −0.36 −0.16 −0.15
+QED-CCSD(2,2) 1.18 0.35 0.00 −0.32 −0.15 −0.14
+aTotal barrier heights (energy differences between the transition state and the reactant) are given for the canonical HF and CCSD methods. At the
+same time, QED results for the polarization along the three directions are reported as changes in the barrier height compared to the corresponding
+canonical method. bTotal reaction energies (energy differences between the product and the reactant) are given for the canonical HF and CCSD
+methods. At the same time, QED results for the polarization along the three directions are reported as changes in the reaction energy compared to
+the corresponding canonical method.. cGeometry is taken from ref 65. dEnergies are given in kcal/mol.
+Figure 4. cis and trans configurations for the hydrogen transfer
+reaction in porphyrin. These views are of the XY-plane.
+JournalofChemicalTheoryandComputation pubs.acs.org/JCTC Article
+https://doi.org/10.1021/acs.jctc.5c01599
+J. Chem. Theory Comput. 2026, 22, 294−304
+300
+Downloaded from pubs.​acs.​org/​jctcce/​article-pdf/​22/​1/​294/​63142798/​ct5c01599.​pdf by OKLAHOMA STATE UNIV STILLWATER user on 11 November 2026
+
+=== page 8 ===
+changing the polarization angle, which is notably larger than
+the reaction energy predicted by the canonical CCSD method.
+This is even more remarkable when you consider that the
+swing occurs almost exclusively on the cis conformation. That
+is because there is almost no difference between the two
+polarizations for the trans conformation, as they are equivalent
+due to the symmetry of the molecule. In contrast to the
+substantial QED-induced changes, the influence of basis set
+size on the reaction energy is small for porphyrin. Increasing
+basis size changes the reaction energy by only 0.27 kcal/mol
+for the canonical CCSD method, which is in line with the
+observed QED basis set effects of up to 0.29 kcal/mol (Table
+3).
+Performance. Having established in the previous section
+that QED-CCSD(2,2) on porphyrin with cc-pVTZ is feasible
+in ExaChem, the next question is scale: how large can we go
+withcurrentresources?Toanswer,webenchmarksingleQED-
+CCSD(2,2) iterations on porphyrin across node counts for cc-
+pVDZ and cc-pVTZ.
+All Porphyrin calculations presented in this paper were
+performed on the Aurora supercomputer at the Argonne
+Leadership Computing Facility (ALCF).90 Aurora is Intel’s
+exascale system based on a heterogeneous architecture where
+each compute node consists of two Intel Xeon Max Series
+CPUs, code-named Sapphire Rapids, with integrated 128 GB
+high-bandwidth memory (HBM2e) and 1024 GB DDR5
+system memory. Each compute node also comprises six Intel
+Data Center Max GPUs, codenamed Ponte Vecchio (PVC)
+with 128 GB of HBM2e memory per GPU. Each PVC GPU is
+further architecturally split into two Xe-stacks, often also
+referred to as GPU tiles, with communication between them
+handled via Intel’s Xe Link. System-wide communication is
+facilitated by the Cray Slingshot-11 interconnect, which
+employs a dragonfly topology to enable efficient and scalable
+data transfer. All calculations on Aurora were performed using
+12 MPI ranks per compute node, where each MPI rank was
+bound to an Xe-Stack (GPU tile).
+Table 4 details the per-iteration timings (as the average of
+the first three iterations) for QED-CCSD(2,2) calculations at
+various node counts. The timings reflect the computational
+scaling behavior where the machine gives a healthy speed-up
+before the gains flatten out. The cc-pVDZ and cc-pVTZ basis
+sets exhibit favorable scaling trends up to 50 and 300 nodes,
+respectively. These findings indicated that the calculations
+could scale even further. As such, we compute the per-iteration
+timings of the porphyrin systems with cc-pVQZ (1740 basis
+functions) and def2-qzvpd (1974 basis functions). These
+systems are roughly twice the size of cc-pVTZ at 917 basis
+functions. Using 500 nodes, we can evaluate the residual
+equations for cc-pVQZ and def2-qzvpd in 912 and 1186 s,
+respectively. These results represent the largest QED-CCSD
+calculations performed to date. The scaling analysis reinforces
+the feasibility of tackling larger systems with this latest
+implementation of the QED-CC methods in ExaChem.
+■CONCLUSION
+We have presented a high-performance, GPU-enabled
+implementation of the QED-CCSD method within the
+ExaChem program package. While the QED-CCSD formalism
+itself is well established, its practical application to large-scale
+systems has been limited by computational cost. By leveraging
+the Tensor Algebra for Many-body Methods (TAMM)
+infrastructure, automated equation generation with p†q, and
+symbolic optimization via PQ-Graph, our implementation
+delivers scalable performance across heterogeneous architec-
+tures.
+Benchmark calculations were performed on proton-transfer
+reactions of the small molecules malonaldehyde and amino-
+propenalaswellasthe162-electronporphyrinmolecule,where
+QED effects altered the reaction energy by as much as 60%
+relative to canonical CCSD. The magnitude of the energy
+changes for the porphyrin system in comparison to the smaller
+systems in this study indicates the necessity of accurate and
+performant QED methods as system sizes grow. Timings of
+calculations with up to 1974 basis functions demonstrate that
+this new implementation can efficiently handle thousands of
+basis functions and exploit hundreds of compute nodes on
+leadership-class HPC systems.
+Table 3. Reaction Energya Values for the Proton Transfer in
+Porphyrin Inside an Optical Cavity with Polarization along
+Four Directionsb,c
+Method (1,0,0) (0,0,1)
+(
+1
+ 2 ,
+1
+ 2 ,
+0)
+(−
+1
+ 2 ,
+1
+ 2 ,
+0) canonical
+cc-pVDZ
+QED-HF 0.90 0.02 1.30 −1.54 10.76
+QED-
+CCSD(2,0)
+0.70 0.00 5.36 −5.12 8.50
+QED-
+CCSD(2,1)
+0.64 −0.01 5.21 −5.08
+QED-
+CCSD(2,2)
+0.61 −0.01 5.09 −5.02
+cc-pVTZ
+QED-HF 0.76 0.00 1.29 −1.72 10.95
+QED-
+CCSD(2,0)
+0.78 −0.01 5.58 −5.39 8.77
+QED-
+CCSD(2,1)
+0.72 −0.01 5.43 −5.36
+QED-
+CCSD(2,2)
+0.69 −0.01 5.29 −5.31
+aTotal reaction energies (energy differences between the cis and trans
+conformations) are given for the canonical HF and CCSD methods.
+At the same time, QED results for the polarization along the four
+directions are reported as changes in the reaction energy compared to
+the corresponding canonical method. bGeometry was optimized with
+DFT using the PBE0 functional and cc-pVTZ basis. cEnergies are
+given in kcal/mol.
+Table 4. QED-CCSD(2,2) Per-Iteration Timings (in
+Seconds) by Node Count and Basis Set
+basis functions nodes time
+cc-pVDZ 406 10 198
+20 118
+30 103
+40 96
+50 92
+cc-pVTZ 916 100 414
+150 380
+200 365
+250 326
+300 314
+cc-pVQZ 1740 500 912
+def2-qzvpd 1975 500 1186
+JournalofChemicalTheoryandComputation pubs.acs.org/JCTC Article
+https://doi.org/10.1021/acs.jctc.5c01599
+J. Chem. Theory Comput. 2026, 22, 294−304
+301
+Downloaded from pubs.​acs.​org/​jctcce/​article-pdf/​22/​1/​294/​63142798/​ct5c01599.​pdf by OKLAHOMA STATE UNIV STILLWATER user on 11 November 2026
+
+=== page 9 ===
+Altogether, this work establishes QED-CCSD as a practical
+tool for cavity-modified chemistry at scales previously out of
+reach. By combining automation, symbolic optimization, and
+massively parallel execution, the present implementation in
+ExaChem enables what was once a prohibitively expensive
+calculation into one that can be routinely performed on
+modern supercomputers.
+■AUTHORINFORMATION
+CorrespondingAuthor
+Karol Kowalski − Physical Sciences Division, Pacific Northwest
+National Laboratory, Richland, Washington 99354, United
+States; Department of Physics, University of Washington,
+Seattle, Washington 98195, United States;
+ orcid.org/
+0000-0001-6357-785X; Email: karol.kowalski@pnnl.gov
+Authors
+Nicholas P. Bauman − Physical Sciences Division, Pacific
+Northwest National Laboratory, Richland, Washington
+99354, United States;
+ orcid.org/0000-0003-3962-6265
+Himadri Pathak − Advanced Computing, Mathematics, and
+Data Division, Pacific Northwest National Laboratory,
+Richland, Washington 99354, United States
+Marcus D. Liebenthal − Physical Sciences Division, Pacific
+Northwest National Laboratory, Richland, Washington
+99354, United States
+Ajay Panyala − Advanced Computing, Mathematics, and Data
+Division, Pacific Northwest National Laboratory, Richland,
+Washington 99354, United States
+Daniel Mejia-Rodriguez − Physical Sciences Division, Pacific
+Northwest National Laboratory, Richland, Washington
+99354, United States;
+ orcid.org/0000-0002-0350-2941
+Niranjan Govind − Physical Sciences Division, Pacific
+Northwest National Laboratory, Richland, Washington
+99354, United States; Department of Chemistry, University
+of Washington, Seattle, Washington 98195, United States;
+orcid.org/0000-0003-3625-366X
+Complete contact information is available at:
+https://pubs.acs.org/10.1021/acs.jctc.5c01599
+AuthorContributions
+⊥N.P.B., H.P., and M.D.L. contributed equally to this work.
+Notes
+The authors declare no competing financial interest.
+■ACKNOWLEDGMENTS
+The authors acknowledge support from the Center for Many-
+Body Methods, Spectroscopies, and Dynamics for Molecular
+Polaritonic Systems (MAPOL) under FWP 79715. This
+support is part of the Computational Chemical Sciences
+(CCS) program funded by the U.S. Department of Energy,
+Office of Science, Office of Basic Energy Sciences, Division of
+Chemical Sciences, Geosciences, and Biosciences at Pacific
+Northwest National Laboratory (PNNL). PNNL is a multi-
+program national laboratory operated by Battelle Memorial
+Institute for the United States Department of Energy under
+DOE contract number DE-AC05-76RL01830. This research
+acknowledges the resources of the Argonne Leadership
+Computing Facility at Argonne National Laboratory, which
+issupportedbytheOfficeofScienceoftheU.S.Departmentof
+Energy, Office of Science, under contract number DE-AC02-
+06CH11357. This work also benefited from computational
+resources provided by the National Energy Research Scientific
+Computing Center (NERSC), a U.S. Department of Energy
+Office of Science User Facility operated under Contract No.
+DE-AC02-05CH11231.
+■REFERENCES
+(1) Helgaker, T.; Jorgensen, P.; Olsen, J. Molecular Electronic-
+Structure Theory; John Wiley & Sons, 2013.
+(2) Meyer, H.-D.; Gatti, F.; Worth, G. A. Multidimensional Quantum
+Dynamics: MCTDH Theory and Applications; John Wiley & Sons,
+2009.
+(3) Grant, I. P. Relativistic Quantum Theory of Atoms and Molecules:
+Theory and Computation; Springer, 2007.
+(4) Dyall, K. G.; Fægri, K., Jr Introduction to Relativistic Quantum
+Chemistry; Oxford University Press, 2007.
+(5) Chang, C.; Deringer, V. L.; Katti, K. S.; Van Speybroeck, V.;
+Wolverton, C. M. Simulations in the era of exascale computing. Nat.
+Rev. Mater. 2023, 8, 309−313.
+(6) Kowalski, K.; Bair, R.; Bauman, N. P.; Boschen, J. S.; Bylaska, E.
+J.; Daily, J.; de Jong, W. A.; Dunning, T., Jr; Govind, N.; Harrison, R.
+J.; et al. From NWChem to NWChemEx: Evolving with the
+computational chemistry landscape. Chem. Rev. 2021, 121, 4962−
+4998.
+(7) Ruggenthaler, M.; Tancogne-Dejean, N.; Flick, J.; Appel, H.;
+Rubio, A. From a quantum-electrodynamical light−matter description
+to novel spectroscopies. Nat. Rev. Chem. 2018, 2, No. 0118.
+(8) Hübener, H.; Sentef, M. A.; De Giovannini, U.; Kemper, A. F.;
+Rubio, A. Creating stable Floquet−Weyl semimetals by laser-driving
+of 3D Dirac materials. Nat. Commun. 2017, 8, No. 13940.
+(9) Byrnes, T.; Kim, N. Y.; Yamamoto, Y. Exciton−polariton
+condensates. Nat. Phys. 2014, 10, 803−813.
+(10) Basov, D. N.; Fogler, M.; de Abajo, F. J. G. Polaritons in van
+der Waals materials. Science 2016, 354, No. aag1992.
+(11) Latini, S.; Ronca, E.; De Giovannini, U.; Hübener, H.; Rubio,
+A. Cavity control of excitons in two-dimensional materials. Nano Lett.
+2019, 19, 3473−3479.
+(12) Thomas, A.; George, J.; Shalabney, A.; Dryzhakov, M.; Varma,
+S. J.; Moran, J.; Chervy, T.; Zhong, X.; Devaux, E.; Genet, C.;
+Hutchison, J. A.; Ebbesen, T. W. Ground-State Chemical Reactivity
+under Vibrational Coupling to the Vacuum Electromagnetic Field.
+Angew. Chem., Int. Ed. 2016, 55, 11462−11466.
+(13) Thomas, A.; Lethuillier-Karl, L.; Nagarajan, K.; Vergauwe, R.
+M.; George, J.; Chervy, T.; Shalabney, A.; Devaux, E.; Genet, C.;
+Moran, J.; Ebbesen, T. W. Tilting a ground-state reactivity landscape
+by vibrational strong coupling. Science 2019, 363, 615−619.
+(14) Sidler, D.; Ruggenthaler, M.; Schäfer, C.; Ronca, E.; Rubio, A.
+A perspectiveon ab initio modeling of polaritonicchemistry: The role
+of non-equilibrium effects and quantum collectivity. J. Chem. Phys.
+2022, 156, No. 230901.
+(15) Galego, J.; Climent, C.; Garcia-Vidal, F. J.; Feist, J. Cavity
+Casimir-Polder Forces and Their Effects in Ground-State Chemical
+Reactivity. Phys. Rev. X 2019, 9, No. 021057.
+(16) Galego, J.; Garcia-Vidal, F. J.; Feist, J. Cavity-Induced
+Modifications of Molecular Structure in the Strong-Coupling Regime.
+Phys. Rev. X 2015, 5, No. 041022.
+(17) Walther, H.; Varcoe, B. T. H.; Englert, B.-G.; Becker, T. Cavity
+quantum electrodynamics. Rep. Prog. Phys. 2006, 69, No. 1325.
+(18) Ribeiro, R. F.; Martínez-Martínez, L. A.; Du, M.; Campos-
+Gonzalez-Angulo, J.; Yuen-Zhou, J. Polariton chemistry: controlling
+molecular dynamics with optical cavities. Chem. Sci. 2018, 9, 6325−
+6339.
+(19) Campos-Gonzalez-Angulo, J. A.; Ribeiro, R. F.; Yuen-Zhou, J.
+Resonant catalysis of thermally activated chemical reactions with
+vibrational polaritons. Nat. Commun. 2019, 10, No. 4685.
+(20) Gallego-Valencia, D.; Mewes, L.; Feist, J.; Sanz-Vicario, J. L.
+Coherent Multidimensional Spectroscopy in Polariton Systems. 2024,
+arXiv:2403.04734. arXiv.org e-Printarchive. https://arxiv.org/abs/
+2403.04734.
+JournalofChemicalTheoryandComputation pubs.acs.org/JCTC Article
+https://doi.org/10.1021/acs.jctc.5c01599
+J. Chem. Theory Comput. 2026, 22, 294−304
+302
+Downloaded from pubs.​acs.​org/​jctcce/​article-pdf/​22/​1/​294/​63142798/​ct5c01599.​pdf by OKLAHOMA STATE UNIV STILLWATER user on 11 November 2026
+
+=== page 10 ===
+(21) Ruggenthaler, M.; Sidler, D.; Rubio, A. Understanding
+Polaritonic Chemistry from Ab Initio Quantum Electrodynamics.
+Chem. Rev. 2023, 123, 11191−11229.
+(22) Ruggenthaler, M.; Mackenroth, F.; Bauer, D. Time-dependent
+Kohn-Sham approach to quantum electrodynamics. Phys. Rev. A
+2011, 84, No. 042107.
+(23) Ruggenthaler, M.; Flick, J.; Pellegrini, C.; Appel, H.; Tokatly, I.
+V.; Rubio, A. Quantum-electrodynamical density-functional theory:
+Bridging quantum optics and electronic-structure theory. Phys. Rev. A
+2014, 90, No. 012508.
+(24) Pellegrini, C.; Flick, J.; Tokatly, I. V.; Appel, H.; Rubio, A.
+Optimized Effective Potential for Quantum Electrodynamical Time-
+Dependent Density Functional Theory. Phys. Rev. Lett. 2015, 115,
+No. 093001.
+(25) Flick, J.; Schäfer, C.; Ruggenthaler, M.; Appel, H.; Rubio, A. Ab
+Initio Optimized Effective Potentials for Real Molecules in Optical
+Cavities: Photon Contributions to the Molecular Ground State. ACS
+Photonics 2018, 5, 992−1005.
+(26) Jestädt, R.; Ruggenthaler, M.; Oliveira, M. J. T.; Rubio, A.;
+Appel, H. Light-matter interactions within the Ehrenfest−Maxwell−
+Pauli−Kohn−Sham framework: fundamentals, implementation, and
+nano-optical applications. Adv. Phys. 2019, 68, 225−333.
+(27) Flick, J.; Narang, P. Ab initio polaritonic potential-energy
+surfaces for excited-state nanophotonics and polaritonic chemistry. J.
+Chem. Phys. 2020, 153, No. 094116.
+(28) Vu, N.; McLeod, G. M.; Hanson, K.; DePrince, A. E. I.
+Enhanced Diastereocontrol via Strong Light−Matter Interactions in
+an Optical Cavity. J. Phys. Chem. A 2022, 126, 9303−9312.
+(29) Pavos ̌ević, F.; Rubio, A. Wavefunction embedding for
+molecular polaritons. J. Chem. Phys. 2022, 157, No. 094101.
+(30) Liebenthal, M. D.; Vu, N.; DePrince, A. E. I. Assessing the
+Effects of Orbital Relaxation and the Coherent-State Transformation
+in Quantum Electrodynamics Density Functional and Coupled-
+Cluster Theories. J. Phys. Chem. A 2023, 127, 5264−5275.
+(31) Tokatly, I. V. Time-Dependent Density Functional Theory for
+Many-Electron Systems Interacting with Cavity Photons. Phys. Rev.
+Lett. 2013, 110, No. 233001.
+(32) Flick, J.; Ruggenthaler, M.; Appel, H.; Rubio, A. Atoms and
+molecules in cavities, from weak to strong coupling in quantum-
+electrodynamics (QED) chemistry. Proc. Natl. Acad. Sci. U.S.A. 2017,
+114, 3026−3034.
+(33) Tokatly, I. V. Conserving approximations in cavity quantum
+electrodynamics: Implications for density functional theory of
+electron-photon systems. Phys. Rev. B 2018, 98, No. 235123.
+(34) Malave, J.; Ahrens, A.; Pitagora, D.; Covington, C.; Varga, K.
+Real-space, real-time approach to quantum-electrodynamical time-
+dependent density functional theory. J. Chem. Phys. 2022, 157,
+No. 194106.
+(35) Yang, J.; Ou, Q.; Pei, Z.; Wang, H.; Weng, B.; Shuai, Z.;
+Mullen, K.; Shao, Y. Quantum-electrodynamical time-dependent
+density functional theory within Gaussian atomic basis. J. Chem.
+Phys. 2021, 155, No. 064107.
+(36) Yang, J.; Pei, Z.; Leon, E. C.; Wickizer, C.; Weng, B.; Mao, Y.;
+Ou, Q.; Shao, Y. Cavity quantum-electrodynamical time-dependent
+density functional theory within Gaussian atomic basis. II. Analytic
+energy gradient. J. Chem. Phys. 2022, 156, No. 124104.
+(37)Haugland, T.S.;Ronca, E.;Kjønstad,E.F.;Rubio,A.;Koch,H.
+Coupled Cluster Theory for Molecular Polaritons: Changing Ground
+and Excited States. Phys. Rev. X 2020, 10, No. 041043.
+(38) Riso, R. R.; Haugland, T. S.; Ronca, E.; Koch, H. Molecular
+orbital theory in cavity QED environments. Nat. Commun. 2022, 13,
+No. 1368.
+(39) Haugland, T. S.; Schäfer, C.; Ronca, E.; Rubio, A.; Koch, H.
+Intermolecular interactions in optical cavities: An ab initio QED
+study. J. Chem. Phys. 2021, 154, No. 094113.
+(40) McTague, J.; Foley, J. J. Non-Hermitian cavity quantum
+electrodynamics−configuration interaction singles approach for
+polaritonic structure with ab initio molecular Hamiltonians. J. Chem.
+Phys. 2022, 156, No. 154103.
+(41) Vu, N.; Mejia-Rodriguez, D.; Bauman, N. P.; Panyala, A.;
+Mutlu, E.; Govind, N.; Foley, J. J. Cavity Quantum Electrodynamics
+Complete Active Space Configuration Interaction Theory. J. Chem.
+Theory Comput. 2024, 20, 1214−1227, DOI: 10.1021/
+acs.jctc.3c01207.
+(42) El Moutaoukal, Y.; Riso, R. R.; Castagnola, M.; Ronca, E.;
+Koch, H. Strong Coupling Møller−Plesset Perturbation Theory. J.
+Chem. Theory Comput. 2025, 21, 3981−3992.
+(43) Cui, Z.-H.; Mandal, A.; Reichman, D. R. Variational Lang−
+Firsov Approach Plus Møller−Plesset Perturbation Theory with
+Applications to Ab Initio Polariton Chemistry. J. Chem. Theory
+Comput. 2024, 20, 1143−1156.
+(44) Bauer, M.; Dreuw, A. Perturbation theoretical approaches to
+strong light−matter coupling in ground and excited electronic states
+for the description of molecular polaritons. J. Chem. Phys. 2023, 158,
+No. 124128.
+(45) Mallory, J. D.; DePrince, A. E. Reduced-density-matrix-based
+ab initio cavity quantum electrodynamics. Phys. Rev. A 2022, 106,
+No. 053710.
+(46) Weight, B. M.; Tretiak, S.; Zhang, Y. Diffusion quantum Monte
+Carlo approach to the polaritonic ground state. Phys. Rev. A 2024,
+109, No. 032804.
+(47) Matoušek, M.; Vu, N.; Govind, N.; Foley, J. J., IV; Veis, L.
+Polaritonic chemistry using the density matrix renormalization group
+method. J. Chem. Theory Comput. 2024, 20, 9424−9434.
+(48) Vu, N.; Ampoh, K.; Matoušek, M.; Veis, L.; Govind, N.; Foley,
+J. J. Modeling strong light-matter coupling in correlated systems:
+state-averaged cavity quantum electrodynamics complete active space
+self-consistent field theory. J. Chem. Theory Comput. 2025, 21, 8812−
+8822, DOI: 10.1021/acs.jctc.5c00927.
+(49) Alessandro, R.; Castagnola, M.; Koch, H.; Ronca, E. A
+Complete Active Space Self-Consistent Field Approach for Molecules
+in QED Environments. J. Chem. Theory Comput. 2025, 21, 6862−
+6873.
+(50) Coester, F. Bound states of a many-particle system. Nucl. Phys.
+1958, 7, 421−424.
+(51) Coester, F.; Kümmel, H. Short-range correlations in nuclear
+wave functions. Nucl. Phys. 1960, 17, 477−485.
+(52) Čížek, J. On the Correlation Problem in Atomic and Molecular
+Systems. Calculation of Wavefunction Components in Ursell-Type
+Expansion Using Quantum-Field Theoretical Methods. J. Chem. Phys.
+1966, 45, 4256−4266.
+(53) Paldus, J.; Čížek, J.; Shavitt, I. Correlation Problems in Atomic
+and Molecular Systems. IV. Extended Coupled-Pair Many-Electron
+TheoryandItsApplicationtotheBH3 Molecule. Phys. Rev. A 1972, 5,
+50−67.
+(54) KÜMMEL, H. G. A biography of the coupled cluster method.
+Int. J. Mod. Phys. B 2003, 17, 5311−5325.
+(55) Bartlett, R. J.; Musiał, M. Coupled-cluster theory in quantum
+chemistry. Rev. Mod. Phys. 2007, 79, 291−352.
+(56) Mukherjee, D.; Pal, S. Use of cluster expansion methods in the
+open-shell correlation problem. Adv. Quantum Chem. 1989, 20, 291−
+373.
+(57) Krylov, A. I. Equation-of-motion coupled-cluster methods for
+open-shell and electronicallyexcited species: the Hitchhiker’s guide to
+Fock space. Annu. Rev. Phys. Chem. 2008, 59, 433−462.
+(58) Piecuch, P.; Kowalski, K.; Pimienta, I. S.; Mcguire, M. J. Recent
+advances in electronic structure theory: Method of moments of
+coupled-cluster equations and renormalized coupled-cluster ap-
+proaches. Int. Rev. Phys. Chem. 2002, 21, 527−655.
+(59) Crawford, T. D.; Schaefer, H. F. An introduction to coupled
+cluster theory for computational chemists. Rev. Comput. Chem. 2000,
+14, 33−136.
+(60) Mordovina, U.; Bungey, C.; Appel, H.; Knowles, P. J.; Rubio,
+A.; Manby, F. R. Polaritonic coupled-cluster theory. Phys. Rev. Res.
+2020, 2, No. 023262.
+(61) DePrince, A. E.; Eugene, A. Cavity-modulated ionization
+potentials and electron affinities from quantum electrodynamics
+coupled-cluster theory. J. Chem. Phys. 2021, 154, No. 094112.
+JournalofChemicalTheoryandComputation pubs.acs.org/JCTC Article
+https://doi.org/10.1021/acs.jctc.5c01599
+J. Chem. Theory Comput. 2026, 22, 294−304
+303
+Downloaded from pubs.​acs.​org/​jctcce/​article-pdf/​22/​1/​294/​63142798/​ct5c01599.​pdf by OKLAHOMA STATE UNIV STILLWATER user on 11 November 2026
+
+=== page 11 ===
+(62) Pavošević, F.; Flick, J. Polaritonic Unitary Coupled Cluster for
+Quantum Computations. J. Phys. Chem. Lett. 2021, 12, 9100−9107.
+(63) Tilly, J.; Chen, H.; Cao, S.; Picozzi, D.; Setia, K.; Li, Y.; Grant,
+E.; Wossnig, L.; Rungger, I.; Booth, G. H.; Tennyson, J. The
+variational quantum eigensolver: a review of methods and best
+practices. Phys. Rep. 2022, 986, 1−128.
+(64) Riso, R. R.; Haugland, T. S.; Ronca, E.; Koch, H. On the
+characteristic features of ionization in QED environments. J. Chem.
+Phys. 2022, 156, No. 234103.
+(65) Pavošević, F.; Hammes-Schiffer, S.; Rubio, A.; Flick, J. Cavity-
+Modulated Proton Transfer Reactions. J. Am. Chem. Soc. 2022, 144,
+4995−5002.
+(66) White, A. F.; Gao, Y.; Minnich, A. J.; Chan, G. K.-L. A coupled
+cluster framework for electrons and phonons. J. Chem. Phys. 2020,
+153, No. 224112.
+(67) Pavošević, F.; Smith, R. L.; Rubio, A. Computational study on
+the catalytic control of endo/exo Diels-Alder reactions by cavity
+quantum vacuum fluctuations. Nat. Commun. 2023, 14, No. 2766.
+(68) Pavošević, F.; Smith, R. L.; Rubio, A. Cavity Click Chemistry:
+Cavity-Catalyzed Azide−Alkyne Cycloaddition. J. Phys. Chem. A
+2023, 127, 10184−10188.
+(69) Haugland, T. S.; Schäfer, C.; Ronca, E.; Rubio, A.; Koch, H.
+Intermolecular interactions in optical cavities: An ab initio QED
+study. J. Chem. Phys. 2021, 154, No. 094113.
+(70) Philbin, J. P.; Haugland, T. S.; Ghosh, T. K.; Ronca, E.; Chen,
+M.; Narang, P.; Koch, H. Molecular van der Waals Fluids in Cavity
+Quantum Electrodynamics. J. Phys. Chem. Lett. 2023, 14, 8988−8993.
+(71) Mandal, A.; Taylor, M. A.; Weight, B. M.; Koessler, E. R.; Li,
+X.; Huo, P. Theoretical Advances in Polariton Chemistry and
+Molecular Cavity Quantum Electrodynamics. Chem. Rev. 2023, 123,
+9786−9879.
+(72) Ruggenthaler, M.; Sidler, D.; Rubio, A. Understanding
+Polaritonic Chemistry from Ab Initio Quantum Electrodynamics.
+Chem. Rev. 2023, 123, 11191−11229.
+(73) Foley, J. J.; McTague, J. F.; DePrince, A. E. Ab initio methods
+for polariton chemistry. Chem. Phys. Rev. 2023, 4, No. 041301.
+(74) Bauman, N. e. a. A Perspective on Many-Body Methods for
+Molecular Polaritonic Systems. J. Chem. Theory Comput. 2025, 21,
+10035−10067, DOI: 10.1021/acs.jctc.5c00801.
+(75) Panyala, A.; Govind, N.; Kowalski, K.; Bauman, N.; Peng, B.;
+Pathak, H.; Mutlu, E.; Mejia Rodriguez, D.; Xantheas, S.;
+Krishnamoorthy, S. ExaChem/exachem. https://github.com/
+ExaChem/exachem.
+(76) Mutlu, E.; Panyala, A.; Gawande, N.; Bagusetty, A.; Glabe, J.;
+Kim, J.; Kowalski, K.; Bauman, N. P.; Peng, B.; Pathak, H.; Brabec, J.;
+Krishnamoorthy, S. TAMM: Tensor algebra for many-body methods.
+J. Chem. Phys. 2023, 159, No. 024801.
+(77) Cohen-Tannoudji, C.; Dupont-Roc, J.; Grynberg, G. Photons
+and Atoms-Introduction to Quantum Electrodynamics; Wiley, 1997.
+(78) Spohn, H. Dynamics of Charged Particles and Their Radiation
+Field; Cambridge University Press, 2004.
+(79) Rokaj, V.; Welakuh, D. M.; Ruggenthaler, M.; Rubio, A. Light-
+matter interaction in the long-wavelength limit: no ground-state
+without dipole self-energy. J. Phys. B: At., Mol. Opt. Phys. 2018, 51,
+No. 034005.
+(80) Climent, C.; Galego, J.; Garcia-Vidal, F. J.; Feist, J. Plasmonic
+Nanocavities Enable Self-Induced Electrostatic Catalysis. Angew.
+Chem., Int. Ed. 2019, 58, 8698−8702.
+(81) Schäfer, C.; Ruggenthaler, M.; Rokaj, V.; Rubio, A. Relevance
+of the Quadratic Diamagnetic and Self-Polarization Terms in Cavity
+Quantum Electrodynamics. ACS Photonics 2020, 7, 975−990.
+(82) De Bernardis, D.; Jaako, T.; Rabl, P. Cavity quantum
+electrodynamics in the nonperturbative regime. Phys. Rev. A 2018,
+97, No. 043820.
+(83) Taylor, M. A. D.; Mandal, A.; Zhou, W.; Huo, P. Resolution of
+Gauge Ambiguities in Molecular Cavity Quantum Electrodynamics.
+Phys. Rev. Lett. 2020, 125, No. 123602.
+(84) Rivera, N.; Flick, J.; Narang, P. Variational theory of
+nonrelativistic quantum electrodynamics. Phys. Rev. Lett. 2019, 122,
+No. 193603.
+(85) Bartlett, R. J.; Musiał, M. Coupled-cluster theory in quantum
+chemistry. Rev. Mod. Phys. 2007, 79, No. 291.
+(86) Nieplocha, J.; Palmer, B.; Tipparaju, V.; Krishnan, M.; Trease,
+H.; Aprà, E. Advances, Applications and Performance of the Global
+Arrays Shared Memory Programming Toolkit. In. J. High Perform.
+Comput. Appl. 2006, 20, 203−231.
+(87) Liebenthal, M. D.; Yuwono, S. H.; Koulias, L. N.; Li, R. R.;
+Rubin, N. C.; DePrince, A. E. I. Automated Quantum Chemistry
+Code Generation with the p†q Package. J. Phys. Chem. A 2025, 129,
+6679−6693.
+(88) Smith, D. G. A.; Burns, L. A.; Simmonett, A. C.; et al. PSI4 1.4:
+Open-source software for high-throughput quantum chemistry. J.
+Chem. Phys. 2020, 152, No. 184108.
+(89) Calvin, J. A.; Valeev, E. F. TiledArray: A general-purpose
+scalable block-sparse tensor framework 2025 https://github.com/
+ValeevGroup/tiledarray. original-date: 2013-08-14T19:44:57Z.
+(90) A. L. C. F.. 2025 https://docs.alcf.anl.gov/aurora/.
+JournalofChemicalTheoryandComputation pubs.acs.org/JCTC Article
+https://doi.org/10.1021/acs.jctc.5c01599
+J. Chem. Theory Comput. 2026, 22, 294−304
+304
+Downloaded from pubs.​acs.​org/​jctcce/​article-pdf/​22/​1/​294/​63142798/​ct5c01599.​pdf by OKLAHOMA STATE UNIV STILLWATER user on 11 November 2026

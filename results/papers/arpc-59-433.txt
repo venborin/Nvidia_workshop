@@ -1,0 +1,1667 @@
+
+=== page 1 ===
+ANRV340-PC59-18 ARI 26 February 2008 21:10
+Equation-of-Motion
+Coupled-Cluster Methods
+for Open-Shell and
+Electronically Excited
+Species: The Hitchhiker’s
+Guide to Fock Space
+Anna I. Krylov
+Department of Chemistry, University of Southern California, Los Angeles, California
+90089-0482; email: krylov@usc.edu
+Annu. Rev. Phys. Chem. 2008. 59:433–62
+First published online as a Review in Advance on
+January 3, 2008
+The Annual Review of Physical Chemistry is online at
+http://physchem.annualreviews.org
+This article’s doi:
+10.1146/annurev.physchem.59.032607.093602
+Copyright c© 2008 by Annual Reviews.
+All rights reserved
+0066-426X/08/0505-0433$20.00
+Key Words
+electronic structure, diradicals, triradicals, spin-ﬂip
+Abstract
+The equation-of-motion coupled-cluster (EOM-CC) approach is a
+versatile electronic-structure tool that allows one to describe a va-
+riety of multiconﬁgurational wave functions within single-reference
+formalism. This review provides a guide to established EOM meth-
+ods illustrated by examples that demonstrate the types of target states
+currently accessible by EOM. It focuses on applications of EOM-CC
+to electronically excited and open-shell species. The examples em-
+phasize EOM’s advantages for selected situations often perceived as
+multireference cases [e.g., interacting states of different nature, Jahn-
+T eller ( JT) and pseudo-JT states, dense manifolds of ionized states,
+diradicals, and triradicals]. I also discuss limitations and caveats and
+offer practical solutions to some problematic situations. The review
+also touches on some formal aspects of the theory and important
+current developments.
+433
+Annu. Rev. Phys. Chem. 2008.59:433-462. Downloaded from www.annualreviews.org
+ Access provided by University of Southern California (USC) on 05/19/17. For personal use only.
+
+=== page 2 ===
+ANRV340-PC59-18 ARI 26 February 2008 21:10
+MR: multireference
+CI: conﬁguration
+interaction
+CC: coupled cluster
+EOM: equation of motion
+JT: Jahn-T eller
+1. INTRODUCTION
+The Inﬁnite Improbability Drive is a wonderful new method of crossing vast interstellar
+distances in a mere nothingth of a second, without all that tedious mucking about in
+hyperspace.
+The Hitchhiker’s Guide to the Galaxy, Douglas Adams
+When a covalent bond breaks, a pair of radicals is formed. That is why the mecha-
+nisms of many chemical reactions involve open-shell species as transient intermedi-
+ates or transition states. Photosynthesis and vision, the interaction of anticancer drugs
+with tumor cells, enzyme catalysis, combustion, and the atmospheric ozone produc-
+tion/decomposition cycles are just a few examples. Unraveling the mechanisms of
+such reactions requires understanding the electronic structure of open-shell species
+and, therefore, relies heavily on ab initio calculations.
+Despite their important role in chemistry, the theoretical modeling of open-shell
+and electronically excited (EE) species remains a major challenge because of electronic
+(near) degeneracies, which are prevalent in open-shell species. Orbital degeneracy
+results in multiconﬁgurational wave functions and closely lying interacting electronic
+states. Thus, the well-developed hierarchy of ground-state methods (1, 2) based on
+the assumption that the wave function is dominated by a single Slater determinant
+breaks down, as the Hartree-Fock method fails to provide a qualitatively correct
+zero-order description.
+T raditionally, these chemically important situations were treated by multireference
+(MR) methods (3), which are generally formulated in Hilbert space and always begin
+by constructing an appropriate zero-order wave function including all the important
+(as deemed by the user) conﬁgurations. This is usually achieved using the multicon-
+ﬁgurational self-consistent-ﬁeld method (4, 5). These wave functions are constructed
+and optimized for each state of interest and are subsequently improved by including
+dynamical correlation through perturbation theory, conﬁguration interaction (CI),
+or coupled-cluster (CC) formalisms.
+Equation-of motion (EOM) methods (6–14) employ a radically different approach
+exploiting Fock space. Instead of, as one might say, mucking about in the Hilbert
+space, they describe the entire manifold of multiconﬁgurational target states within a
+single-reference formalism. This requires ﬁnding a path in Fock space that connects
+the reference state and the target state through the general excitation operators.
+This review provides a guide to established EOM methods illustrated by examples
+demonstrating the types of target states currently accessible by EOM (see Sections
+2 and 3). The examples emphasize EOM’s advantages for selected situations [e.g.,
+interacting states of different natures, Jahn-T eller ( JT) and pseudo-JT states, dense
+manifolds of ionized states, diradicals, and triradicals]. Section 4 presents a more
+rigorous formal discussion, which may be skipped by those not inclined to dwell on
+the meaning of equations. Finally, Sections 5 and 6 discuss the limitations of existing
+EOM methods, as well as important developments.
+This article by no means provides a comprehensive overview of the history of
+EOM-CC methodology or the current state of the ﬁeld. I refer interested readers
+to several more detailed reviews (15–20). Moreover, I do not discuss EOM-CC’s
+434 Krylov
+Annu. Rev. Phys. Chem. 2008.59:433-462. Downloaded from www.annualreviews.org
+ Access provided by University of Southern California (USC) on 05/19/17. For personal use only.
+
+=== page 3 ===
+ANRV340-PC59-18 ARI 26 February 2008 21:10
+CCSD: coupled cluster
+with single and double
+substitutions
+relationship to the closely related linear-response CC formalism (21–24), or
+symmetry-adapted cluster CI methods (25, 26), as well as propagator approaches
+exploring similar ideas. Genuinely MR-CC methods (15, 17, 27–29) are also outside
+the scope of the review.
+2. EOM IN A NUTSHELL: “DON’T PANIC!”
+Conceptually, EOM is similar to CI: One ﬁnds the target EOM states by diagonalizing
+the so-called similarity transformed Hamiltonian ¯H ≡ e−T He T:
+¯HR = ER , (1)
+L ¯H = EL , (2)
+LI RJ = δIJ, (3)
+where T, R, andL+ are general excitation operators with respect to the reference|/Phi10⟩.
+This review is concerned strictly with the single-reference formulation of EOM, that
+is, when the reference |/Phi10⟩ is a single Slater determinant. The choice of|/Phi10⟩ deﬁnes
+the Hartree-Fock vacuum (i.e., the separation of the orbital space into occupied and
+virtual subspaces), and T, R, and L+ are excitation operators with respect to this
+vacuum. We adhere to the following convention: Indexes i, j, ... are reserved for
+the orbitals occupied in the reference determinant |/Phi10⟩; indexes a, b, ... are used for
+unoccupied orbitals; andp, q, ... are used in the general case (i.e., when an orbital can
+be either occupied or virtual).
+Regardless of the choice of T, the spectrum of ¯H is exactly the same as that of
+the original Hamiltonian H—thus, in the limit of the complete many-electron basis
+set, EOM is identical to full CI. Because ¯H is no longer Hermitian, its left and
+right eigenstates are not Hermitian conjugates (rather, they can be chosen to form
+a biorthogonal set) even when ¯H is diagonalized in the complete basis yielding the
+exact energies and states. One can obtain eigenstates /Psi1 of the bare Hamiltonian H
+from the eigenstates of ¯H as follows:
+|/Psi1⟩= eT R|/Phi10⟩= Re T|/Phi10⟩. (4)
+In a more practical case of a truncated basis (e.g., when T and R are truncated at
+single and double excitations), the EOM models are numerically superior to the cor-
+responding CI models (30) because correlation effects are folded in the transformed
+Hamiltonian. Moreover, the truncated EOM models are rigorously size consistent
+(or, more precisely, size intensive; see Section 3.1.3) (23, 31–34), provided that the
+amplitudes T satisfy the CC equations (35, 36) for the reference state |/Phi10⟩ and are
+truncated at a sufﬁciently high level of excitation, consistent with that of R:
+⟨/Phi1μ| ¯H|/Phi10⟩= 0, (5)
+where /Phi1μ denotes μ-tuply excited determinants [e.g.,{/Phi1ai ,/Phi1 abij } in the case of coupled
+cluster with single and double substitutions (CCSD)].
+Once the occupied and virtual subspaces are deﬁned, EOM is invariant with re-
+spect to unitary transformations of the occupied or virtual orbitals, unless active-space
+models are employed. This invariance and partial transferability of the reference-state
+www.annualreviews.org • Equation-of-Motion Methods for Open Shells 435
+Annu. Rev. Phys. Chem. 2008.59:433-462. Downloaded from www.annualreviews.org
+ Access provided by University of Southern California (USC) on 05/19/17. For personal use only.
+
+=== page 4 ===
+ANRV340-PC59-18 ARI 26 February 2008 21:10
+relaxation described by exp(T1) explain why target states of different character are well
+described by EOM-CCSD using the same set of (uncorrelated) orbitals without ex-
+plicit orbital optimization, R2 taking care of the differential orbital-relaxation effects.
+Usually (9, 37) but not necessarily (38, 39), the cluster operator T is truncated
+at the same level as the EOM operators R and L+. When this is the case, or when
+T is truncated at a higher excitation level than R, the reference determinant |/Phi10⟩
+is an eigenstate of ¯H in the subspace of up to n-tuple excited determinants, the
+corresponding eigenvalue being E0 =⟨ /Phi10| ¯H|/Phi10⟩.
+The computational scalings of EOM-CC and CI methods are identical (e.g., both
+EOM-CCSD and CI with single and double substitutions scale asN6). By combining
+different types of excitation operators and references |/Phi10⟩, one can access different
+groups of target states as explained below. For example, EE states can be described
+when the reference |/Phi10⟩ corresponds to the ground-state wave function, and the
+operators R conserve the number of electrons and a total spin (9, 22, 23). In the
+ionized/electron attached EOM models (11–14, 40, 41), the operators R are not
+electron conserving (i.e., they include a different number of creation and annihilation
+operators)—these models can accurately treat ground and excited states of doublet
+radicals, charge-transfer, and other open-shell systems. Finally, the EOM spin-ﬂip
+(SF) method (10, 42), in which the excitation operators include SF , allows one to access
+diradicals, triradicals, and bond breaking without using spin- and symmetry-broken
+unrestricted Hartree-Fock references or MR treatment.
+3. HOW TO HITCH A RIDE IN FOCK SPACE: THE CHOICE
+OF REFERENCE AND EXCITATION OPERATOR
+Here is what to do if you want to get a lift from a Vogon: forget it.
+The Hitchhiker’s Guide to the Galaxy, Douglas Adams
+The crux of setting up a successful EOM calculation is ﬁnding a shortcut in Fock
+space, that is, identifying a well-behaved reference state /Phi10 from which the target
+states can be accessed by a general excitation operator, preferably, of low excitation
+level. The excitation operator thus connects the initial and target sectors of the Fock
+space. Below we describe several choices of references and excitation operators and
+illustrate the capabilities of the resulting EOM models.
+3.1. EOM for Electronically Excited States: EOM-EE
+Describing EE states is, perhaps, the most obvious (and conceptually similar to CI)
+application of EOM. In this case, the EOM operators are ofhp, 2h2p, ... type (where
+hp stands for the hole-particle) and conserve the number of α and β electrons:
+REE = ∑
+ia
+rai a+i + 14 ∑ijab rabij a+b+ ji + ..., (6)
+where only Ms = 0 strings of creation and annihilation operators are retained, yield-
+ing, for example, α → α and β → β excitations. Moreover, in the case of restricted
+436 Krylov
+Annu. Rev. Phys. Chem. 2008.59:433-462. Downloaded from www.annualreviews.org
+ Access provided by University of Southern California (USC) on 05/19/17. For personal use only.
+
+=== page 5 ===
+ANRV340-PC59-18 ARI 26 February 2008 21:10
+MO: molecular orbital
+references, one can trivially spin adapt the operatorsR to form either singlet or triplet
+excitations:
+Rs = ∑
+ia
+rai (a+α iα + a+β iβ ) + ...,
+Rt = ∑
+ia
+rai (a+α iα − a+β iβ ) + .... (7)
+When applied to a closed-shell reference, Rs and Rt generate properly spin-adapted
+singlet and M s = 0 triplet states, respectively; however, in the case of open-shell
+references (e.g., doublets), the resulting states are not spin adapted (18).
+The CI-like form of the EOM-EE excitation operator enables access to multi-
+conﬁgurational open-shell wave functions, exactly and nearly degenerate states (e.g.,
+JT pairs), as well as interacting states of different character (i.e., Rydberg and va-
+lence states). The examples below illustrate some of these features. The conservative
+estimate of EOM-EE-CCSD error bars for excitation energies is 0.1–0.3-eV accu-
+racy (43), whereas relative spacing of the excited states is usually reproduced more
+accurately.
+3.1.1. EOM for excited states of mixed character: Rydberg-valence interactions
+in diazomethane. Figure 1 shows relevant molecular orbitals (MOs) and electronic
+conﬁgurations of several excited states of diazomethane (44). The states are derived by
+excitations from the highest occupied molecular orbital (HOMO), which is of bond-
+ing πCN character, to the corresponding π∗ and the three 3p Rydberg-type orbitals.
+Note that the open-shell character of the singlet excited states is easily described
+by the EOM-EE ansatz. Moreover, pairs of open-shell determinants appear with
+equal weights (see Equation 7), thus ensuring proper spin symmetry. This naturally
+follows from the EOM eigenproblem, without enforcing Equation 7 on the EOM
+amplitudes.
+Whereas the 21A2 and 21B1 states are predominantly Rydberg, as found from the
+EOM amplitudes and spatial extents of their wave functions, the two A1 states are of a
+mixed Rydberg-valence character. The lower state is predominantly valence, whereas
+the upper one is dominated byπ → 3px excitation. This strong interaction between
+the two states, which are more than 1 eV apart, has important consequences. For
+example, the 31A1 (3px) state borrows intensity from the valence state. Moreover, its
+equilibrium geometry and frequencies strongly deviate from those of the cation (and
+the other two Rydberg states), contrary to considerations based on the character of
+the 3px orbital (see Figure 1), which is perpendicular to the molecular plane and,
+therefore, should be the least perturbed by the cation core.
+Despite the mixed character of the interacting states (which would ordinarily be
+thought of as representing an MR situation), their wave functions are of singly ex-
+cited character; that is, all the leading conﬁgurations appear at single excitations from
+the reference /Phi10. Thus, EOM-CC describes these states with the same accuracy as
+pure Rydberg or valence states and is capable of correctly reproducing the degree of
+the mixing, provided, of course, an appropriate one-electron basis set is employed.
+Reproducing this type of interaction within MR formalism would require careful
+crafting of the active space at the multiconﬁgurational self-consistent-ﬁeld level
+and subsequent inclusion of dynamical correlation. The popular B3LYP variant of
+www.annualreviews.org • Equation-of-Motion Methods for Open Shells 437
+Annu. Rev. Phys. Chem. 2008.59:433-462. Downloaded from www.annualreviews.org
+ Access provided by University of Southern California (USC) on 05/19/17. For personal use only.
+
+=== page 6 ===
+ANRV340-PC59-18 ARI 26 February 2008 21:10
+π*
+π
+[Core]
++…
++…
++…
+π*
+π
+λ ––
+–
+–
+– –
++…–
++ λ
+3p(Ry)
+31A1(π → 3px)
+7.15 eV
+21B1(ϖ → 3pz)
+6.39 eV
+21A2(π → 3py)
+6.35 eV
+21A1(π → π*)
+5.85 eV
+X1A1
+0 eV
+3px 3py 3pz
+3p (Ry)
+[Core]
+π
+π*
+Figure 1
+The molecular orbitals and electronic conﬁgurations of the low-lying singlet valence and
+Rydberg excited states of diazomethane.
+time-dependent density-functional theory would fail, owing to a self-interaction error
+that spoils the description of Rydberg (and charge-transfer) states.
+Rydberg-valence interactions are ubiquitous in both closed-shell molecules and
+radicals (44–49) and have an important effect on potential-energy-surface (PES)
+shapes (46, 48), spectroscopy, and dynamics (44, 46–48). They exemplify a more
+general effect—mixing between states of different character (e.g., mixing of n → π∗
+and π → π∗ conﬁgurations in nuclear bases at deformed geometries and interplay
+between covalent and zwitterionic states).
+Finally, although point-group symmetry may be exploited in EOM calculations
+(e.g., by diagonalizing ¯H in different symmetry blocks), the EOM description of the
+excited states is uniform for the states of the same or different symmetry. Thus, the
+“excited states of the same symmetry as the ground state” problem does not exist in
+EOM.
+438 Krylov
+Annu. Rev. Phys. Chem. 2008.59:433-462. Downloaded from www.annualreviews.org
+ Access provided by University of Southern California (USC) on 05/19/17. For personal use only.
+
+=== page 7 ===
+ANRV340-PC59-18 ARI 26 February 2008 21:10
+3.1.2. EOM for exactly and nearly degenerate states: complicated Jahn-Teller
+intersection in cyclic N+3 . Cyclic N+3 is a closed-shell molecule with doubly degen-
+erate HOMO and doubly degenerate lowest unoccupied molecular orbital (LUMO)
+(50–52). Thus, HOMO → LUMO excitations give rise to a manifold of four singlet
+and four triplet states (50). Symmetry analysis reveals that two of the states (in each
+manifold) are exactly degenerate at D3h and thus should form a JT pair. However,
+the presence of two other nearly degenerate states makes the intersection complex.
+A similar excited-state pattern is present in other molecules when both HOMO and
+LUMO are doubly degenerate (e.g., benzene or 1,3,5-triazine).
+Figure 2 shows EOM-EE PES scans along the bending coordinate and electronic
+conﬁgurations of the four lowest singlet excited states. Note that all four states get
+scrambled as one passes the intersection. The intersection appears glancing rather
+than conical (see Figure 2b,c); however, as shown by Dillon & Yarkony (52), this re-
+sults from the close proximity of three additional conical intersections, which become
+obvious as one further zooms in (see Figure 2d ). EOM-EE accurately reproduces
+exact and near degeneracies, as well as changes in electronic wave functions around
+the intersection, in this challenging system regardless of how many EOM states are
+computed.
+The ﬂexibility of the EOM wave functions and its ability to describe the mix-
+ing of states of different character are responsible for the proper formal struc-
+ture of EOM-EE response functions necessary to describe vibronic interactions or
+pseudo-JT effects (18, 53). Thus, EOM is attractive for studying JT systems, vibronic
+(δ)1A2
+(α)1A2= (β)1B1= (γ)1B1= (δ)1A2=
+(β)1B1
+(γ)1B1
+(α)1A2
+(δ)1A2
+(β)1B1
+(γ)1B1
+(α)1A2
+eV
+7.0
+6.0
+5.0
+4.0
+–0.2 –0.1 0 0.1 0.2
+~10x
+~10x
+C2ν D3h C2ν Qbnd (Å)
+Qbnd (Å)
+(α – δ)1A2 and (β + γ)1B1
+(β – γ)1B1
+(α + δ)1A2
+(α – δ)1A2
+and
+(β + γ)1B1 (γ)1B1
+(δ)1A2
+0 0.002 0.004
+b
+a
+cd
+Figure 2
+Electronic conﬁgurations (a) and potential-energy-surface scans of increased resolution (b–d )
+of the four singlet HOMO → LUMO excited states of cyclic N+3 .
+www.annualreviews.org • Equation-of-Motion Methods for Open Shells 439
+Annu. Rev. Phys. Chem. 2008.59:433-462. Downloaded from www.annualreviews.org
+ Access provided by University of Southern California (USC) on 05/19/17. For personal use only.
+
+=== page 8 ===
+ANRV340-PC59-18 ARI 26 February 2008 21:10
+interactions, and conical intersections (54–58), although special care (59) should be
+taken for the conical intersections between states of the same symmetry owing to its
+non-Hermitian nature, which results in complex eigenvalues in the vicinity of the
+intersection and, therefore, violates its topology (59, 60).
+3.1.3. EOM-EE for excited states of doublet radicals: vinyl and beyond.EOM-
+EE can employ open-shell (e.g., doublet) references.Figure 3shows the MOs of vinyl
+radical and the set of singly excited determinants generated by REE from this refer-
+ence. Note that the transitions unique to radicals (that is, those involving half-ﬁlled
+orbitals) form a spin-complete set. Thus, EOM-EE describes these states with an
+accuracy similar to that of closed-shell applications, provided there is no strong spin
+contamination in the reference. The set of determinants that involves other transi-
+tions (e.g.,π → π∗ and π → Ry) is not spin complete, and the missing conﬁgurations
+appear as double excitations (61). Because doubles are present in EOM-EE-CCSD,
+the EOM description of these states is not as disastrous as by CI with single substitu-
+tions (62); however, it is still lacking (61). Fortunately, these states are often higher in
+energy than the ﬁrst group. In the vinyl and related family of unsaturated hydrocarbon
+radicals (49), however, such states are important, and we have employed EOM-SF to
+improve their description.
+Chemists are often interested in understanding systematic trends in homologous
+series, for example, how excited states localized on a chromophore would be af-
+fected by different substitutions. We addressed this question for the family of unsat-
+urated hydrocarbon radicals derived from vinyl (49). Although all low-lying states in
+these radicals retain their vinyl-like character (seeFigure 3), their excitation energies
+R1EE(Ms = 0)
+n
+π*
+π
+3s
+Figure 3
+The molecular orbitals and the electronic conﬁguration of the ground state of vinyl and the
+determinants generated by spin-conserving single excitations. The set of determinants
+involving transitions between half-ﬁlled orbitals (n → π∗, n → Ry,π → n) is spin complete.
+The second set that involves ethylene-like transitions is not spin complete.
+440 Krylov
+Annu. Rev. Phys. Chem. 2008.59:433-462. Downloaded from www.annualreviews.org
+ Access provided by University of Southern California (USC) on 05/19/17. For personal use only.
+
+=== page 9 ===
+ANRV340-PC59-18 ARI 26 February 2008 21:10
+exhibit an interesting behavior—the valence states remain essentially unaffected by
+the hydrocarbon chains, whereas the excitation energies of the Rydberg states de-
+crease systematically with radical size following the decrease in ionization energies.
+The code for properties calculations (transition dipoles and second moments) was
+crucial in assigning the states’ characters.
+This type of study requires a method whose accuracy is not affected by the
+molecule’s size. In the context of our example, the excitation energies of the chro-
+mophore (i.e., vinyl) should not be affected by the presence of any number of other
+closed-shell molecules at inﬁnite distance. This property (size intensivity) is closely
+related to size consistency and is rigorously satisﬁed for EOM-EE energies (23, 31, 32;
+see also footnote 32 in Reference 19). It ensures a uniform quality for the results for
+different size molecules. However, not all EOM properties are size intensive, which
+is a primary motivation for employing alternative linear-response formalism (33, 34).
+3.2. EOM for Diradicals, Triradicals,
+and Bond Breaking: The Spin-Flip Route
+When target states are multiconﬁgurational owing to orbital degeneracies, one can
+choose a high-spin reference. T o obtain target low-spin states, the EOM operators
+should include SF , giving rise to the EOM-SF family (10, 19, 42). So far, mod-
+els based on a high-spin triplet and quartet references have been implemented and
+benchmarked (10, 19, 39, 42, 63–67); however, extensions of the SF approach to
+higher spin references are also promising.
+An attractive feature of the triplet and quartet reference-based EOM-SF models
+is that only a single SF is required to obtain target M s = 0o rM s = 12 states. That
+is why the corresponding EOM-SF equations in a spin-orbital form are identical to
+the EOM-EE equations, which greatly simpliﬁes the implementation.
+The target low-spin states are described as spin-ﬂipping excitations:
+/Psi1s,tMs =0 = RMs =−1/Psi1tMs =+1, (8)
+/Psi1
+d,q
+Ms =1/2 = RMs =−1/Psi1qMs =+3/2, (9)
+where /Psi1tMs =+1 and /Psi1qMs =+3/2 are the high-spin components of the triplet and quar-
+tet states, respectively. /Psi1s,tMs =0 denotes the target open- and closed-shell singlet and
+triplet states, and/Psi1
+d,q
+Ms =1/2 represents the low-spin doublets and quartets. The operator
+RMs =−1 is an excitation operator that ﬂips the spin of an electron:
+RMs =−1 ≡ RSF = ∑
+ia
+rai a+β iα + .... (10)
+As demonstrated below, all the conﬁgurations needed to describe diradical- or
+triradical-type wave functions are formally single excitations with respect to the cor-
+responding high-spin references. The ability of SF to tackle diradical states can be
+exploited to describe bond breaking (42, 68). For example, the PES along σ -bond
+breaking can be accurately described by EOM-SF using a 3σσ ∗ reference. Similarly,
+the torsional potential around a double bond (e.g., twisted ethylene) can be described
+by EOM-SF using a 3ππ ∗ reference.
+www.annualreviews.org • Equation-of-Motion Methods for Open Shells 441
+Annu. Rev. Phys. Chem. 2008.59:433-462. Downloaded from www.annualreviews.org
+ Access provided by University of Southern California (USC) on 05/19/17. For personal use only.
+
+=== page 10 ===
+ANRV340-PC59-18 ARI 26 February 2008 21:10
+3.2.1. Substituted meta-xylylene diradicals: EOM-SF for two electrons in two
+orbital systems. Figure 4 shows frontier MOs and electronic conﬁgurations of
+the four M s = 0 diradical states of meta-xylylene (MX). The high-spin 3B2 state,
+which is well described by a single determinant, is used as the reference, /Psi1tMs =+1 of
+Equation 9, for SF calculations. The spin-ﬂipping EOM operator, RSF , generates all
+four Ms = 0 determinants necessary to describe two closed-shell diradical singlet
+states, 11A1 and 21A1, as well as the open-shell singlet 1 1B2 state and the M s = 0
+component of the triplet. In SF calculations, we calculate energy spacings between
+the states with respect to the latter, whereas the high-spin state (which has slightly
+different energy because it is parameterized somewhat differently than its high-spin
+partner in this approach) just serves as the reference. All four states are treated by
+SF on an equal footing, and their varied two-conﬁgurational character is easily de-
+scribed by EOM-SF . This balanced description is responsible for error cancellation
+that results in accurate energy separations (e.g., singlet-triplet gaps) at a relatively
+λ
+0.0
+0.49 eV
+1.19 eV
+21A1
+11B2
+11A1
+X3B2
+RSF(MS = –1)
+ψs,t (Ms = 0)
+ψt (Ms = 1)
++
+–
+– λ
++
+b1a2
+Figure 4
+Frontier molecular orbitals
+of meta-xylylene and the
+electronic conﬁgurations of
+the four Ms = 0 diradical
+states. Spin-ﬂip calculations
+are using αα triplet
+reference, /Psi1t (Ms = 1).
+Adiabatic energy
+separations are shown.
+442 Krylov
+Annu. Rev. Phys. Chem. 2008.59:433-462. Downloaded from www.annualreviews.org
+ Access provided by University of Southern California (USC) on 05/19/17. For personal use only.
+
+=== page 11 ===
+ANRV340-PC59-18 ARI 26 February 2008 21:10
+IP: ionization potential
+EA: electron afﬁnity
+low level of correlation (67). Note that dynamical correlation is included simulta-
+neously with the nondynamical one, which results in a single-step computational
+scheme and, therefore, avoids the intruder-state problem. Thus, the multiconﬁgu-
+rational character of the wave function, the optimized geometries, frequencies, and
+other properties calculated with EOM-SF-CCSD are more accurate than the bare
+multiconﬁgurational self-consistent-ﬁeld values (69).
+The ground state of MX is triplet, which is why this molecule attracted consider-
+able interest as a model system for molecular magnets. The closed-shell singlet is ap-
+proximately 0.5 eV higher in energy (adiabatically). One important practical question
+is how this energy gap depends on substituents. The SF methodology is particularly
+appropriate to address this question computationally because of its multistate nature
+and size consistency (see Section 3.1.3), which enable uniform applications to series
+of molecules and dense manifolds of states. This is demonstrated inFigure 5, which
+shows a series of substituted MX diradicals and their vertical state orderings (70).
+3.2.2. EOM-SF for dense manifolds of electronic states in triradicals.Although
+triradicals (molecules with three unpaired electrons) feature even more extensive
+degeneracies than diradicals, their SF description is just as simple and straightforward
+(57, 71–77). Using high-spin quartet reference (see Equation 9), one can access all
+the multiconﬁgurational triradical states through single SF excitations, as evident
+from Figure 6, which shows vertical state ordering in three related triradicals: 5-
+dehydrometaxylylene (5-DMX), 2-DMX, and 1,3,5 trimethylenebenzene. In these
+systems with such large density of states (e.g., 5-DMX has seven states under 3.5 eV),
+the multistate nature of EOM-SF as well as the simultaneous inclusion of dynamical
+and nondynamical correlation were crucial in the studies of relative state ordering
+and the nature of the ground state in triradicals.
+3.3. EOM for Ionized or Electron Attached States, Doublet Radicals,
+and Charge-Transfer Systems: EOM-IP and EOM-EA
+EOM excitations can also change the number of electrons in the system, which is
+the essence of the EOM–ionization potential (IP) or EOM–electron afﬁnity (EA)
+methods (11–14). The reference states for EOM-IP/EA are determinants forN + 1/
+N − 1 electron states, whereas the ﬁnal states are N electron ones.
+One can employ these methods to calculate ionization energies or electron afﬁni-
+ties. Another class of less obvious but successful applications of the EOM-IP/EA
+methods is not concerned with electron ionization or attachment processes, but
+rather targets ground and excited states of problematic open-shell systems. These
+applications use an N − 1o r N + 1 electron reference state to generate a bal-
+anced set of conﬁgurations needed for a target N electron system. For example, to
+avoid the troublesome symmetry breaking in doublet radicals (or to obtain spin-pure
+wave functions), EOM-IP/EA methods have been successfully applied (13, 55, 58,
+78). In these models, the reference determinant is judiciously chosen to represent a
+closed-shell cation or anion, and the EOM operators do not conserve the number
+www.annualreviews.org • Equation-of-Motion Methods for Open Shells 443
+Annu. Rev. Phys. Chem. 2008.59:433-462. Downloaded from www.annualreviews.org
+ Access provided by University of Southern California (USC) on 05/19/17. For personal use only.
+
+=== page 12 ===
+ANRV340-PC59-18 ARI 26 February 2008 21:10
+HH
+H
+H
+HH
+H
+H
+N
+HH
+H
+HH
+H
+H
+N
+HH
+O
+H
+HH
+H
+H
+N
+HH
+H+
+H
+HH
+H
+H
+HH
+O–
+H
+HH
+H
+H
+HH
+O
+H
+HH
+H
+H
+H
+HH
+N
+H
+HH
+H
+H
+HH
+HH
+F
+H
+HH
+H
+H
+HH
+B
+H
+HH
+H
+H
+HH
+HH
+H
+HH
+H
+H
+SiH3
+I II III IV V
+VI VII VIII IX X
+–0.5
+0
+0.5
+1.0
+1.5
+2.0
+–
+∆E (eV)
++ λ
+Molecules
+I II V XIII IV VI VII VIII IX
++
+1A1
+3B2
+1B2
+Figure 5
+Substituted meta-xylylene diradicals (upper panel ) and their vertical state ordering (lower
+panel ). The singlet-triplet gaps are surprisingly insensitive to the substituent
+electronegativities, as well as their σ or π donor-acceptor properties, while introducing the
+charge results in the reversal of states ordering (the adiabatic gaps are of course even larger).
+Note an interesting effect resulting from NO substitution—the dramatic stabilization of the
+open-shell singlet state.
+of electrons (11–14):
+RIP = ∑
+i
+ri i + ..., (11)
+REA = ∑
+a
+ra a+ ..., (12)
+which, in other words, are of h,2 hp, ... and p, h2p, ... type.
+EOM-IP/EA is the method of choice for charge-transfer systems (79, 80) in which
+charge localization patterns are determined by the interaction between two electronic
+444 Krylov
+Annu. Rev. Phys. Chem. 2008.59:433-462. Downloaded from www.annualreviews.org
+ Access provided by University of Southern California (USC) on 05/19/17. For personal use only.
+
+=== page 13 ===
+ANRV340-PC59-18 ARI 26 February 2008 21:10
+-1
+0
+1
+2
+3
+4
+1,3,5 TMB
+Excitation energy (eV)
+5-DMX 2-DMX
+22A1
+22B1
+12A2
+12A2
+12A112A1
+12B2
+12A2
+12B1
+12B2
+12B2
+14B2
+14A214B2
+22B222B2
+22B1
+32B1
+22A2
+22A1
+22B1
+12B1
+2 – –
+–
+–
+–
+– λ
+– λ
+2 – –
++λ
++λ
++
++
++
+–
+Figure 6
+Vertical state ordering in 5-dehydrometaxylylene (5-DMX), 2-DMX, and 1,3,5
+trimethylenebenzene (TMB) at the corresponding equilibrium geometries. 2-DMX and 1,3,5
+TMB have a quartet ground state (in accordance with Hund’s rule); however, 5-DMX features
+an open-shell doublet electronic conﬁguration, an unusual pattern for an organic molecule.
+states. Recent benchmarks on small ionized noncovalent dimers (80) demonstrated
+that EOM-IP yields accurate PESs and diabatic couplings for charge-transfer pro-
+cesses and, more importantly, properly describes charge localization. The latter was
+found to be surprisingly difﬁcult to describe by single-reference methods using open-
+shell doublet references, even at a highly correlated level. For example, CCSD calcu-
+lations of three-electron systems such as (He)+2 and (H2)+2 yield incorrect asymptotic
+behavior and overlocalize the charge. The advantages of the EOM-IP method become
+even more important when the ionized states of the monomers feature electronic de-
+generacies, as in benzene dimer cation (81) discussed below.
+3.3.1. EOM for charge-transfer and extreme degeneracies: bonding and
+charge localization patterns in 10 electronic states of the benzene dimer
+cation. Figure 7 shows the MOs and electronic states of the ionized benzene dimer
+(81), a model system for ionized π-stacked aromatic molecules. Because of pairs of
+www.annualreviews.org • Equation-of-Motion Methods for Open Shells 445
+Annu. Rev. Phys. Chem. 2008.59:433-462. Downloaded from www.annualreviews.org
+ Access provided by University of Southern California (USC) on 05/19/17. For personal use only.
+
+=== page 14 ===
+ANRV340-PC59-18 ARI 26 February 2008 21:10
+2.5 3.0 3.5 4.0 4.5 5.0 5.5
+–1.0
+0
+1.0
+2.0
+3.0
+4.0
+5.0
+R1 (Å)
+Orbital
+energy
+State energy (eV)
+0 1.0 2.0 3.0 4.0 5.0
+0
+0.05
+0.10
+0.15
+0.20
+E2g
+φ(σ)
+E2u
+φ*(σ)
+× 104
+B1u
+σ*(πu)
+Ag
+σ(πu)
+E1u
+π(πg)
+Oscillator strength
+Energy (eV)
+σ(πu)
+π(πg)
+π*(πg)
+σ*(πu)
+φ(σ)φ*(σ)
+Figure 7
+Molecular orbitals, potential energy curves, and the electronic stick spectrum for the benzene
+dimer cation. Note the intense charge-resonance transition at approximately 1.3 eV .
+degenerate MOs that give rise to pairs of JT states in the cation, even the ionized ben-
+zene monomer is a challenging system. Calculations employing open-shell doublet
+reference fail to reproduce the JT degeneracy and are spoiled by spin contamination.
+Moreover, this also complicates the description of the excited states of the cation (i.e.,
+those derived by ionizations form HOMO-1 and HOMO-2 orbitals). In the dimer,
+which features 10 low-lying electronic states, the situation is even more complex.
+EOM-IP elegantly and effortlessly overcomes all the above challenges. The calcu-
+lations employ a well-behaved closed-shell neutral reference, and the target states are
+accessed through Koopmans-like excitation operators (see Equation 11). The result-
+ing doublet wave functions are naturally spin adapted. All leading conﬁgurations for
+the 10 states appear at the same excitation level, which allows the accurate description
+of state interactions at lower-symmetry geometries, as well as charge ﬂow along the
+charge-transfer coordinate (80). Finally, calculations of electronic transitions in the
+446 Krylov
+Annu. Rev. Phys. Chem. 2008.59:433-462. Downloaded from www.annualreviews.org
+ Access provided by University of Southern California (USC) on 05/19/17. For personal use only.
+
+=== page 15 ===
+ANRV340-PC59-18 ARI 26 February 2008 21:10
+cation are possible, as demonstrated by the stick electronic spectrum of the lowest-
+energy isomer in Figure 7. An interesting and important feature of these systems is
+the appearance of intense charge-resonance transitions that are unique to the ion-
+ized dimers and very sensitive to the geometries, which suggest their exploitation in
+experimental studies of charge localization dynamics.
+3.4. EOM-DIP and Beyond
+The nonparticle conserving approach can be taken even further—as in the double
+ionized EOM model (EOM-DIP) (40, 41), in which the excitation operators are of
+2h, 3h1p,... type. The initial benchmark examples included benzynes (82) and ozone
+(41), for which doubly attached dianion references have been employed. Although
+these types of wave functions are easily accessible by EOM-SF , the computational
+cost of EOM-DIP is lower, and the target wave functions are naturally spin adapted.
+Unfortunately (see Section 5), the performance of the straightforward implementa-
+tion of EOM-DIP has been found unsatisfactory owing to strong orbital-relaxation
+effects and the physical instability of the doubly attached references. Hopefully, fu-
+ture developments will resolve this problem, as the method offers an elegant solution
+for more sophisticated diradicals (e.g., CH2CH2O or O-Rg complexes), in which the
+low-lying states are of four-electrons-in-three-orbitals type and are, therefore, not
+well described by EOM-SF .
+4. FORMALISM: A DEEPER VIEW
+On no account allow a Vogon to read poetry at you.
+The Hitchhiker’s Guide to the Galaxy, Douglas Adams
+This section presents an abridged formal derivation of EOM-CC equations, which
+emphasizes the similarities with earlier EOM methods (83) and variational properties
+of EOM-CC (see Reference 10 for a more detailed version). For example, we do
+not invoke the projective approach (9) and demonstrate that the killer condition is
+rigorously satisﬁed in single-reference EOM-CC theories.
+Let us consider a general (not necessarily Hermitian) operator ¯H and two of its
+eigenstates, |0⟩ and | f ⟩, with eigenvalues E0 and E f , respectively:
+¯H|0⟩= E0|0⟩, (13)
+¯H| f ⟩= E f | f ⟩. (14)
+For a non-Hermitian operator, bra eigenstates are not Hermitian conjugates of ket
+eigenstates, ⟨k| ⁄= (|k⟩+), and neither bra nor ket eigenstates form an orthonormal set.
+However, they form a biorthogonal set,⟨k | l⟩= δkl , provided that the corresponding
+eigenvalues are nonzero. A general excitation operator R( f ) is deﬁned such that it
+promotes a system from the initial (or reference) state |0⟩ into the ﬁnal state | f ⟩:
+R( f )|0⟩=| f ⟩. (15)
+www.annualreviews.org • Equation-of-Motion Methods for Open Shells 447
+Annu. Rev. Phys. Chem. 2008.59:433-462. Downloaded from www.annualreviews.org
+ Access provided by University of Southern California (USC) on 05/19/17. For personal use only.
+
+=== page 16 ===
+ANRV340-PC59-18 ARI 26 February 2008 21:10
+No assumptions are made about the nature of the initial and ﬁnal states: They can
+be the ground and electronically excited states (or any two electronic states) of an N
+electron system, or states of anN electron and an ionized or detached system, and so
+on. It is convenient to represent the excitation operator R from Equation 15 by the
+following bra-ket form:
+R( f ) ≡| f ⟩⟨0|. (16)
+The so-deﬁned operator can act on any reference state |˜0⟩:
+R( f )|˜0⟩=| f ⟩⟨0|˜0⟩. (17)
+Therefore, for any state |˜0⟩ that has a nonzero overlap with the exact reference state
+⟨0|,
+[ ¯H, R( f )]|˜0⟩= ω0f R( f )|˜0⟩, (18)
+where [ ¯H, R( f )] = ¯HR ( f )− R( f ) ¯H, andω0f = E f − E0. The above equation shows
+that if no approximations have been made for the excitation operator R( f ), one can
+compute the exact energy difference ω0f without an explicit calculation of the initial
+and ﬁnal states.
+By introducing the de-excitation operator L( f ) =| 0⟩⟨ f |, we can write the tran-
+sition energy ω0f as a general expectation value of the non-Hermitian operator ¯H:
+ω0f = ⟨˜0|L( f )[ ¯H, R( f )]|˜0⟩⟨˜0|L( f )R( f )|˜0⟩ . (19)
+It is convenient to choose the bra reference state⟨˜0| to be a Hermitian conjugate of the
+ket reference state. Equation 19 provides a useful functional whose stationary values
+coincide with the eigenvalues of Equation 18 when the operatorR( f ) is represented
+in a complete operator basis set. However, the correspondingω’s do not provide upper
+bounds of the exact energy differences, even when a Hermitian operator (i.e., the bare
+Hamiltonian H ) is used in Equation 19, and the de-excitation operator is a Hermitian
+conjugate of the excitation operator [in this case, the corresponding total energies
+are upper bounds of the exact total energies given that a linear parameterization of
+the excitation operator R( f ) is used (84)].
+One can consider alternative functionals (83, 85, 86) that would yield results iden-
+tical to Equation 19 in the complete operator basis-set limit, or when the so-called
+killer condition is satisﬁed (83):
+L( f )|˜0⟩= 0. (20)
+The killer condition means that the reference state|˜0⟩ cannot be de-excited (i.e., the
+reference can be regarded as a vacuum). Alternatively, Equation 20 can be interpreted
+as orthogonality of the reference and ﬁnal states:
+L( f )|˜0⟩=| 0⟩⟨ f |˜0⟩= 0. (21)
+The killer condition (Equation 21) is satisﬁed when ( a) the exact initial state is used
+as the reference and the operator basis is complete with respect to the ﬁnal states,
+or (b) the single Slater determinant is used as the reference |˜0⟩, and the operator
+L is pure de-excitation operators with respect to the reference |˜0⟩ (i.e., does not
+448 Krylov
+Annu. Rev. Phys. Chem. 2008.59:433-462. Downloaded from www.annualreviews.org
+ Access provided by University of Southern California (USC) on 05/19/17. For personal use only.
+
+=== page 17 ===
+ANRV340-PC59-18 ARI 26 February 2008 21:10
+annihilate electrons from the occupied orbitals and does not create electrons in the
+virtual orbitals).
+At this point, we depart from the textbook EOM presentation (83). Instead of
+general excitation operators R( f ), L+( f ), which generate the exact ﬁnal state | f ⟩
+when acting on any reference state provided that⟨0|˜0⟩ ⁄= 0, we introduce less general
+operators ˜R( f ), ˜L+( f ) deﬁned with respect to the speciﬁc reference |˜0⟩:
+˜R( f ) =| f ⟩⟨˜0|,
+˜L( f ) =| ˜0⟩⟨ f |. (22)
+Unlike R( f ), ˜R( f ) does not yield the exact ﬁnal state when acting on a state|g⟩ with
+nonzero overlap with|0⟩ if ⟨˜0|g⟩= 0: ˜R( f )|g⟩=| f ⟩⟨˜0|g⟩= 0. Because commutator
+Equation 18 is no longer valid for ˜R (unless, of course, the reference|˜0⟩ happens to be
+the exact eigenstate |0⟩), the EOM functionals do not yield the exact ω0f even when
+the operators ˜R( f ) and ˜L+( f ) are expanded over the complete basis. However, the
+difference between the resulting ω0f and the exact one assumes the same constant
+value for all the target states| f ⟩ (see footnote 24 in Reference 10). Therefore, for an
+arbitrary reference |˜0⟩, the exact energy gap between any two target states | f ⟩ and
+|i⟩ is retrieved from Equation 19 in the limit when the operators ˜R( f ) and ˜L+( f )
+are expanded over the complete basis.
+In practice, excitation and de-excitation operators are expanded over a ﬁnite basis
+set. It is convenient to employ linear parameterization and expand the excitation and
+de-excitation operators over a set of operators ρk and λk:
+˜R( f ) = ∑
+k
+r fk ρk, (23)
+˜L( f ) = ∑
+k
+l fk λk. (24)
+When acting on the reference|˜0⟩, these operators generate a biorthogonal set of basis
+functions, and the completeness of the operator basis set {ρk,λ l } is derived from the
+completeness of the Hilbert space spanned by these functions. Only the completeness
+with respect to the target states | f ⟩ is required for the EOM functionals to yield the
+exact energy differences between the target states, whereas the Hilbert space can be
+incomplete with respect to other groups of eigenstates, provided that the target states
+are not interacting across the Hamiltonian with these groups (e.g., states of different
+point-group or spin symmetry, or with a different number of electrons).
+By considering the ﬁrst variation of the functional from Equation 19 with respect
+to right ˜R and left ˜L vectors, and assuming that variationsδ ˜R and δ ˜L are independent,
+we arrive at a non-Hermitian secular problem for the expansion coefﬁcients{rk} and
+{lk}:
+( ¯H − E0)R = RΩ, (25)
+L( ¯H − E0) = ΩL, (26)
+E0 =⟨ ˜0| ¯H|˜0⟩, (27)
+where matrices R and L are constructed from the expansion coefﬁcients {rk} and
+{lk}from Equations 23 and 24; the diagonal matrixΩ contains the transition energies,
+www.annualreviews.org • Equation-of-Motion Methods for Open Shells 449
+Annu. Rev. Phys. Chem. 2008.59:433-462. Downloaded from www.annualreviews.org
+ Access provided by University of Southern California (USC) on 05/19/17. For personal use only.
+
+=== page 18 ===
+ANRV340-PC59-18 ARI 26 February 2008 21:10
+Ωkk = ω0k; and ¯H is the matrix of the Hamiltonian operator ¯H in the basis of
+conﬁgurations generated by {ρk,λ l } from the reference |˜0⟩.
+At this point, we can specify the reference |˜0⟩, Hamiltonian ¯H, and the opera-
+tor basis ρk,λ k, which deﬁne an EOM model. The ﬁrst applications of the EOM
+formalism used the bare Hamiltonian H and employed correlated (e.g., MR) wave
+functions as the reference state |˜0⟩ (6, 87). By analogy, the ﬁrst applications of the
+EOM formalism to the CC models also used the bare Hamiltonian (e.g., 22, and
+references therein) and the CC wave function (35) as the reference |˜0⟩. In this ap-
+proach, the killer condition (Equation 20) is not satisﬁed, which makes the choice of
+an EOM functional rather arbitrary. Even more disturbing, a straightforward appli-
+cation of Equation 19 does not yield EOM-CC equations even if one replaces the
+bra reference by ⟨/Phi10| exp(−T) as opposed to ⟨/Phi10| exp(T+). That is why a projective
+approach has been traditionally used to derive the EOM equations (7, 9, 22), although
+variational properties of the EOM-CC theory have been recognized (9, 88).
+Alternatively, we chose ¯H to be the similarity transformed Hamiltonian, and a
+single Slater determinant |/Phi10⟩ as the reference state |˜0⟩, which greatly simpliﬁes
+the choice of the excitation operators ˜R, ˜L+, and easily satisﬁes the killer condition
+(Equation 20), although, in Surj´an terms, for the wrong reason (89). This immediately
+retrieves the single-reference EOM-CC equations from Section 2, where ˜R and ˜L+
+are denoted as R and L.
+Regardless the nature of T, similarity transformation does not change the eigen-
+values of the Hamiltonian—therefore, stationary values of Equation 19 yield exact
+energy differences between the target states when the excitation operators ˜R and ˜L+
+are expanded over the complete operator basis set. However, the exact ω0f can only
+be obtained when both the operator set is complete and |˜0⟩≡| 0⟩. The latter can be
+achieved by an appropriate choice ofT from the similarity transformation (i.e., when
+T is not truncated and satisﬁes the CC equations for the reference |˜0⟩, the single
+determinant |˜0⟩ becomes an eigenstate of ¯H ).
+For example, although EOM-IP/EA-CC yields the exact ionization energies/EA
+only under the same conditions as EOM-EE-CC, we can achieve the exact description
+of the target (ionized or attached) states with only the EOM operators expanded over
+the complete basis. For instance, the EOM-IP-CC description of the lithium atom
+is exact even with T = 0, provided that R includes up to 4h3p excitations.
+5. KNOWING YOUR WAY AROUND IN FOCK SPACE:
+LIMITATIONS, CAVEATS, AND SHORTCUTS
+He knew where his towel was.
+The Hitchhiker’s Guide to the Galaxy, Douglas Adams
+For any EOM model, the quality of the target-state wave functions depends on two
+factors. First, the reference state should be well described within a single-reference
+CC approach; that is, a single Slater determinant should provide a qualitatively cor-
+rect zero-order wave function. Second, the leading conﬁgurations in the target wave
+functions should appear at the same excitation level. For EOM-EE, both conditions
+450 Krylov
+Annu. Rev. Phys. Chem. 2008.59:433-462. Downloaded from www.annualreviews.org
+ Access provided by University of Southern California (USC) on 05/19/17. For personal use only.
+
+=== page 19 ===
+ANRV340-PC59-18 ARI 26 February 2008 21:10
+are easily satisﬁed for singly excited states of closed-shell molecules around their
+ground-state equilibrium geometries. A large HOMO-LUMO gap results in a single-
+conﬁgurational ground state and low-lying excited states that are of singly excited
+character. Similarly, excited states of doublet radicals dominated by excitations to or
+from half-ﬁlled orbitals are reasonably well described provided the reference spin
+contamination is moderate or, better yet, spin-restricted reference is employed.
+If, however, the reference state acquires considerable multiconﬁgurational char-
+acter (as, for example, happens along a bond-breaking coordinate, in diradicals, tran-
+sition metals, and other cases with small HOMO-LUMO gaps), the quality of the
+CC ground-state wave functions deteriorates, resulting in less accurate excitation
+energies. For example, in the extreme case of a molecule with a completely broken
+σ -bond, EOM-EE yields a negative excitation energy for the 3σσ ∗ state, which, in
+fact, is degenerate with the ground state.
+Nevertheless, even when the reference state is heavily multiconﬁgurational, some
+target EOM states may still be well described, provided that single excitations from
+the reference determinant produce all the leading conﬁgurations for the target states.
+For example, the open-shellππ ∗ singlet state of ethylene is well described by EOM-
+EE both at equilibrium, where the ground-state wave function is dominated by the
+single determinant, ( π)2, and at the barrier, where the reference-state wave func-
+tion becomes two-conﬁgurational, ( π)2 –( π∗)2. Moreover, the energy differences
+between the target EOM states may be reproduced rather accurately (as follows from
+the formal properties of EOM discussed in the previous section), even when the
+reference state is multiconﬁgurational and the absolute excitation energies are poor.
+For example, despite the diradical character of the reference singlet ˜a1A1 state, the
+˜a1Aa – X3B1(Ms = 0) energy gap in methylene is within 0.055 eV of the full CI
+value, and the error in the ˜b1B1 – X3B1(Ms = 0) energy difference is even smaller,
+0.024 eV (67). This allowed successful applications of EOM-EE to such a challenging
+multiconﬁgurational system as the NO dimer (47, 48).
+A small HOMO-LUMO gap also results in an increased doubly excited character
+in some of the states, as well as low-lying states dominated by double excitations.
+Even though doubly excited determinants are formally present in EOM-CCSD wave
+functions, the EOM description of these states is disastrous because the important
+conﬁgurations appear at a different excitation level and, therefore, are not treated
+in a balanced fashion. Good examples of this type include the second closed-shell
+singlet state of methylene ( ˜c 1A1), the Z-state in twisted ethylene, the doubly excited
+dark states in polyenes, and infrared excited states in the NO dimer. Similar effects—
+leading conﬁgurations appearing at different excitation levels—are responsible for
+a less accurate description and increased spin contamination of the excited states in
+doublet radicals dominated by excitations from doubly occupied to virtual orbitals.
+EOM-EE should be used with caution (if at all) when the reference state is ex-
+actly degenerate, even if the reference wave function is single conﬁgurational owing
+to symmetry constrains. For example, one of the two components of the doubly
+degenerate /Pi1 ground state of the OH radical is well described by CCSD. The EOM-
+EE-CCSD calculation from this reference yields a reasonably accurate description
+of some excited states, but not of the second component of the ground state, which
+www.annualreviews.org • Equation-of-Motion Methods for Open Shells 451
+Annu. Rev. Phys. Chem. 2008.59:433-462. Downloaded from www.annualreviews.org
+ Access provided by University of Southern California (USC) on 05/19/17. For personal use only.
+
+=== page 20 ===
+ANRV340-PC59-18 ARI 26 February 2008 21:10
+appears at nonzero excitation energy. Similarly, JT degeneracies are not reproduced
+if the calculations are set up using one of the degenerate components as the reference
+because within such a framework of the calculation, the two states appear at a different
+excitation level (one versus zero) and therefore are not treated in a balanced way.
+Although spin contamination of CCSD wave functions for open-shell references
+is usually quite small (90, 91), the EOM target states are much more sensitive. It
+appears that restricted open-shell Hartree-Fock references yield consistently better
+results than unrestricted Hartree-Fock, both for EOM-EE from doublets and for
+EOM-SF from triplets and quartets. In some cases (56), optimized-orbital CCD (92,
+93) produced the best results.
+However, even when using spin-pure reference, the target SF states exhibit small
+spin contamination, as all single and double excitations from an open-shell reference
+do not form a spin-complete set (additional spin contamination is present owing to the
+exponential form of the cluster operator). Although this residual spin contamination
+is rather small, it is desirable to implement spin-adapted versions of EOM-SF/EE to
+improve accuracy (65).
+With regard to bond-breaking applications of EOM-SF , enforcing the proper ref-
+erence along the entire PES might be difﬁcult if the desired triplet state is not the
+lowest triplet (68). Finally, SF excitations fail to yield a balanced set of determinants
+necessary to describe all low-lying states when orbital degeneracies are more exten-
+sive, for example, as in a Be atom (two electrons in three orbitals) (42) or in O-He
+(four electrons in four orbitals).
+With regard to the EOM-IP/EA/DIP family of methods, orbital-relaxation ef-
+fects are found to be more important than for particle-conserving EOM-EE/SF .
+Consequently, error bars for EOM-IP/EA-CCSD are larger than those of EOM-
+EE-CCSD; therefore, the inclusion of higher excitations (e.g., 3 h2p for EOM-IP)
+seems to be necessary (94, 95). This is further exacerbated in EOM-DIP , in which
+the doubly attached reference often does not correspond to a physically bound
+state.
+We can alleviate many of these problems (e.g., doubly excited states, spin contam-
+ination, and orbital relaxation) by including triples (or even higher excitations), at the
+price of the increased computational cost (e.g., full triples scale as N8). Alternatively,
+more practical solutions to many of these problems can be found in other regions of
+Fock space. Sometimes, a combination of several CC/EOM-CC schemes yields ex-
+cellent results [see, for example, suggested Fock-space detours for calculating EAs in
+challenging open-shell systems (57) or diradical and triradical stabilization energies
+(75)].
+6. CONCLUSIONS AND OUTLOOK: 53 MORE THINGS
+TO DO WITH EOM
+As illustrated by the examples above, the single-reference EOM approach can describe
+many multiconﬁgurational wave functions by exploiting the advantages of the Fock
+space formalism, that is, by conceptual separation of the target and reference states.
+A journey in Fock space begins by identifying a reference from which the leading
+452 Krylov
+Annu. Rev. Phys. Chem. 2008.59:433-462. Downloaded from www.annualreviews.org
+ Access provided by University of Southern California (USC) on 05/19/17. For personal use only.
+
+=== page 21 ===
+ANRV340-PC59-18 ARI 26 February 2008 21:10
+conﬁgurations of the target states of interest can be described by the same-level
+excitations—preferably, but not necessarily, by the low-level ones. Established EOM-
+CC methods—EOM-EE/SF/IP/EA/DIP—enable access to many important types
+of open-shell wave functions (e.g., singly excited states, JT and pseudo-JT systems,
+radicals, diradicals, triradicals, and charge-transfer systems).
+Of course, EOM does not offer a general solution to any imaginable open-shell
+situation. For example, multiple bond breaking and more extensive degeneracies in
+transition metals warrant explorations of other sectors of Fock space (e.g., double
+SF and SF-DEA), and I envision many successful ventures of this type in the future.
+However, some cases might remain accessible only through genuine MR approaches.
+The EOM models are size consistent, and we can systematically improve their
+accuracy by including higher excitations explicitly or perturbatively. Elegant single-
+reference formalism facilitates implementation of analytic gradients, second deriva-
+tives, and property calculations (9, 13, 96–101). Moreover, the EOM methods are
+multistate schemes—several target states are obtained in a single diagonalization
+step. This results in an improved accuracy owing to built-in error cancellation and
+greatly simpliﬁes the calculation of coupling matrix elements between states, such
+as nonadiabatic or spin-orbit couplings, or transition properties (e.g., Dyson orbitals
+for excited-state ionization) (102–104). The multistate nature of EOM along with
+the linear parameterization and simultaneous inclusion of dynamical and nondynam-
+ical correlation make EOM attractive for treating dense manifolds of states, conical
+intersections, and JT and pseudo-JT systems (18, 53), even though the theory’s non-
+Hermitian properties pose certain challenges for the intersections between states of
+the same symmetry (59, 60).
+Despite the impressive progress in EOM developments, more remains to be done,
+both technically and conceptually [e.g., second derivatives for EOM-SF , nonadiabatic
+couplings (105), and higher-order properties]. Other pressing issues include improv-
+ing the accuracy in the computationally feasible scheme, for example, through pertur-
+bative rather than explicit inclusion of triple excitations (106–113), or the methods-
+of-moments approach (114, 115). Using active-space triples (39, 116–119) and/or
+energy-additivity schemes offers a solution. The similarity-transformed EOM-CC
+approach is also promising (120, 121). Spin adaptation of open-shell-based EOM-CC
+is another important issue, especially for the extension of EOM to higher-multiplicity
+references. It is discussed in detail in Reference 18.
+Last, but not least, algorithmic improvements such as resolution-of-identity im-
+plementations (122–124), reduced-scaling algorithms (125, 126), and parallelization
+will address the scaling problem and extend EOM to larger systems.
+I hope this review encourages the community to more aggressively exploit the
+advantages of EOM-CC. Indeed, the methods are well documented, and efﬁcient
+EOM-CC codes are now available in many electronic-structure packages [e.g., Q-
+Chem (127), ACES II (128), MOLPRO (129), PSI3 (130), GAMESS (131), and
+DAL TON (132)]. Rich and fascinating, the electronic structure of open-shell and EE
+species deserves to be explored using the best computational tools. The conceptual
+simplicity of EOM-CC, the robustness of single-reference implementation, and the
+bulk of applications demonstrating the capabilities of EOM allow even nonexperts to
+www.annualreviews.org • Equation-of-Motion Methods for Open Shells 453
+Annu. Rev. Phys. Chem. 2008.59:433-462. Downloaded from www.annualreviews.org
+ Access provided by University of Southern California (USC) on 05/19/17. For personal use only.
+
+=== page 22 ===
+ANRV340-PC59-18 ARI 26 February 2008 21:10
+see the marvels of the open-shell universe on their own, without the close involvement
+of electronic-structure specialists. Happy hitchhiking!
+DISCLOSURE STATEMENT
+The author is not aware of any biases that might be perceived as affecting the objec-
+tivity of this review.
+ACKNOWLEDGMENTS
+This work was conducted in the framework of the IOpenShell Center for Compu-
+tational Studies of Electronic Structure and Spectroscopy of Open-Shell and Elec-
+tronically Excited Species supported by the National Science Foundation through
+the CRIF:CRF CHE-0625419 + 0624602 + 0625237 grant. The results from our
+group discussed in this review were obtained with support from the National Science
+Foundation and the Department of Energy.
+LITERATURE CITED
+1. Helgaker T, Jørgensen P, Olsen J. 2000. Molecular Electronic Structure Theory .
+New Y ork: Wiley & Sons
+2. Cramer CJ. 2002. Essentials of Computational Chemistry: Theories and Models. New
+Y ork: Wiley & Sons
+3. Hirao K, ed. 1999. Recent Advances in Multi-Reference Methods. Singapore: World
+Sci.
+4. Roos BO, T aylor PR, Siegbahn PEM. 1980. A complete active space SCF
+method (CASSCF) using a density matrix formulated super-CI approach.Chem.
+Phys. 48:157–73
+5. Ruedenberg K, Schmidt MW, Gilbert MM, Elbert ST. 1982. Are atoms intrin-
+sic to molecular wavefunction? I. The FORS model. Chem. Phys. 71:41–49
+6. Rowe DJ. 1968. Equations-of-motion method and the extended shell model.
+Rev. Mod. Phys. 40:153–66
+7. Emrich K. 1981. An extension of the coupled-cluster formalism to excited states
+(I). Nucl. Phys. A 351:379–96
+8. Geertsen J, Rittby M, Bartlett RJ. 1989. The equation-of-motion coupled-
+cluster method: excitation energies of Be and CO. Chem. Phys. Lett. 164:57–62
+9. Stanton JF, Bartlett RJ. 1993. The equation of motion coupled-cluster method:
+a systematic biorthogonal approach to molecular excitation energies, transition
+probabilities, and excited state properties. J. Chem. Phys. 98:7029–39
+10. Levchenko SV, Krylov AI. 2004. Equation-of-motion spin-ﬂip coupled-cluster
+model with single and double substitutions: theory and application to cyclobu-
+tadiene. J. Chem. Phys. 120:175–85
+11. Sinha D, Mukhopadhyay D, Mukherjee D. 1986. A note on the direct calculation
+of excitation energies by quasi-degenerate MBPT and coupled-cluster theory.
+Chem. Phys. Lett. 129:369–74
+454 Krylov
+Annu. Rev. Phys. Chem. 2008.59:433-462. Downloaded from www.annualreviews.org
+ Access provided by University of Southern California (USC) on 05/19/17. For personal use only.
+
+=== page 23 ===
+ANRV340-PC59-18 ARI 26 February 2008 21:10
+12. Pal S, Rittby M, Bartlett RJ, Sinha D, Mukherjee D. 1987. Multireference
+coupled-cluster methods using an incomplete model space: application to ion-
+ization potentials and excitation energies of formaldehyde. Chem. Phys. Lett.
+137:273–78
+13. Stanton JF, Gauss J. 1994. Analytic energy derivatives for ionized states de-
+scribed by the equation-of-motion coupled cluster method. J. Chem. Phys.
+101:8938–44
+14. Nooijen M, Bartlett RJ. 1995. Equation of motion coupled cluster method for
+electron attachment. J. Chem. Phys. 102:3629–47
+15. Reviews different
+MR-CC approaches
+including Fock-space
+methods and EOM.
+15. Mukherjee D, Pal S. 1989. Use of cluster expansion methods in the open-
+shell correlation problem. Adv. Q. Chem. 20:291–373
+16. Bartlett RJ, Stanton JF. 1994. Applications of post-Hartree-Fock methods: a
+tutorial. Rev. Comp. Chem. 5:65–169
+17. Discusses a relation
+between MR-CC, Fock
+space, and EOM methods.
+17. Bartlett RJ. 2002. To multireference or not to multireference: That is the
+question? Int. J. Mol. Sci. 3:579–603
+18. Discusses in detail
+vibronic interactions and
+spin adaptation of
+EOM-CC.
+18. Stanton JF, Gauss J. 2003. A discussion on some problems associated with
+the quantum mechanical treatment of open-shell molecules. Adv. Chem.
+Phys. 125:101–46
+19. Krylov AI. 2006. The spin-ﬂip equation-of-motion coupled-cluster electronic
+structure method for a description of excited states, bond breaking, diradicals,
+and triradicals. Acc. Chem. Res. 39:83–91
+20. Christiansen O. 2006. Coupled cluster theory with emphasis on selected new
+developments. Theor. Chim. Acta 116:106–23
+21. Monkhorst HJ. 1977. Calculation of properties with the coupled-cluster
+method. Int. J. Quant. Chem. Symp. 11:421–32
+22. Sekino H, Bartlett RJ. 1984. A linear response, coupled-cluster theory for ex-
+citation energy. Int. J. Quant. Chem. Symp. 18:255–65
+23. Koch H, Jensen HJAa, Jørgensen P, Helgaker T. 1990. Excitation energies from
+the coupled clusters singles and doubles linear response functions (CCSDLR):
+applications to Be, CH+, CO, and H2O. J. Chem. Phys. 93:3345–50
+24. Head-Gordon M, Lee TJ. 1997. Single reference coupled cluster and perturba-
+tion theories of electronic excitation energies. InModern Ideas in Coupled Cluster
+Theory, ed. RJ Bartlett, pp. 221–53. Singapore: World Sci.
+25. Nakatsuji H, Hirao K. 1978. Cluster expansion of the wavefunction: symmetry-
+adapted-cluster expansion, its variational determination, and extension of open-
+shell orbital theory. J. Chem. Phys. 68:2053–65
+26. Nakatsuji H. 1991. Description of two- and many-electron processes by the
+SAC-CI method. Chem. Phys. Lett. 177:331–37
+27. Jeziorski B, Monkhorst HJ. 1981. Coupled-cluster method for multidetermi-
+nantal reference states. Phys. Rev. A 24:1668–81
+28. Jeziorski B, Paldus J. 1989. Valence-universal exponential ansatz and the cluster
+structure of multireference conﬁguration interaction wave function. J. Chem.
+Phys. 90:2714–31 29. Provides an overviewof different MR-CC
+approaches and gives
+numerical examples.
+29. Evangelista FA, Allen WD, Schaefer HF. 2006. High-order excitations in
+state-universal and state-speciﬁc multireference coupled cluster theories:
+model systems. J. Chem. Phys. 125:154113
+www.annualreviews.org • Equation-of-Motion Methods for Open Shells 455
+Annu. Rev. Phys. Chem. 2008.59:433-462. Downloaded from www.annualreviews.org
+ Access provided by University of Southern California (USC) on 05/19/17. For personal use only.
+
+=== page 24 ===
+ANRV340-PC59-18 ARI 26 February 2008 21:10
+30. Olsen J. 2000. The initial implementation and applications of a general active
+space coupled cluster method. J. Chem. Phys. 113:7140–48
+31. Meissner L, Bartlett RJ. 1991. T ransformation of the Hamiltonian in ex-
+citation energy calculations: comparison between Fock-space multireference
+coupled-cluster and equation-of-motion coupled-cluster methods. J. Chem.
+Phys. 94:6670–76
+32. Nooijen M, Shamasundar KR, Mukherjee D. 2005. Reﬂections on size exten-
+sivity, size consistency, and generalized extensivity in many-body theory. Mol.
+Phys. 103:2277–98
+33. Stanton JF. 1994. Separability properties of reduced and effective density matri-
+ces in the equation-of-motion coupled cluster method.J. Chem. Phys.101:8928–
+37
+34. Koch H, Kobayashi R, de Mer ´as AS, Jørgensen P. 1994. Calculation of size-
+extensive transition moments from coupled cluster singles and doubles linear
+response function. J. Chem. Phys. 100:4393–400
+35. Cizek J. 1966. On the correlation problem in atomic and molecular systems: cal-
+culation of wavefunction components in Ursell-type expansion using quantum-
+ﬁeld theoretical methods. J. Chem. Phys. 45:4256–66
+36. Purvis GD, Bartlett RJ. 1982. A full coupled-cluster singles and doubles model:
+the inclusion of disconnected triples. J. Chem. Phys. 76:1910–18
+37. Kucharski SA, Wloch M, Musial M, Bartlett RJ. 2001. Coupled-cluster theory
+for excited electronic states: the full equation-of-motion coupled-cluster single,
+double, and triple excitation method. J. Chem. Phys. 115:8263–66
+38. Hirata S, Nooijen M, Bartlett RJ. 2000. High-order determinantal equation-
+of-motion coupled-cluster calculations for electronic excited states.Chem. Phys.
+Lett. 326:255–62
+39. Slipchenko L V, Krylov AI. 2005. Spin-conserving and spin-ﬂipping equation-
+of-motion coupled-cluster method with triple excitations. J. Chem. Phys.
+123:84107
+40. Wladyslawski M, Nooijen M. 2002. The photoelectron spectrum of the NO 3
+radical revisited: a theoretical investigation of potential energy surfaces and
+conical intersections. ACS Symp. Ser. 828:65–92
+41. Sattelmeyer KW, Schaefer HF, Stanton JF. 2003. Use of 2h and 3h-p like
+coupled-cluster T amm-Dancoff approaches for the equilibrium properties of
+ozone. Chem. Phys. Lett. 378:42–46
+42. Krylov AI. 2001. Size-consistent wave functions for bond-breaking: the
+equation-of-motion spin-ﬂip model. Chem. Phys. Lett. 338:375–84
+43. Larsen H, Hald K, Olsen J, Jørgensen P. 2001. T riplet excitation energies in full
+conﬁguration interaction and coupled-cluster theory.J. Chem. Phys. 115:3015–
+20
+44. Fedorov I, Koziol L, Li G, Parr JA, Krylov AI, Reisler H. 2007. Theoretical
+and experimental investigations of electronic Rydberg states of diazomethane:
+assignments and state interactions. J. Phys. Chem. A 111:4557–66
+45. Levchenko SV, Krylov AI. 2001. Electronic structure of halogen-substituted
+methyl radicals: excited states of CH 2Cl and CH2F. J. Chem. Phys. 115:7485–
+94
+456 Krylov
+Annu. Rev. Phys. Chem. 2008.59:433-462. Downloaded from www.annualreviews.org
+ Access provided by University of Southern California (USC) on 05/19/17. For personal use only.
+
+=== page 25 ===
+ANRV340-PC59-18 ARI 26 February 2008 21:10
+46. Levchenko SV, Demyanenko AV, Dribinski V, Potter AB, Krylov AI, Reisler H.
+2003. Rydberg-valence interactions in CH2Cl → CH2 + Cl photodissociation:
+dependence of absorption probability on ground state vibrational excitation.
+J. Chem. Phys. 118:9233–40
+47. Gessner O, Lee AMD, Shaffer JP, Reisler H, Levchenko S, et al. 2006.
+Femtosecond multidimensional imaging of a molecular dissociation. Science
+311:219–22
+48. Levchenko S, Reisler H, Krylov A, Gessner O, Stolow A, et al. 2006. Photodis-
+sociation dynamics of the NO dimer. I. Theoretical overview of the UV singlet
+excited states. J. Chem. Phys. 125:084301
+49. Koziol L, Levchenko SV, Krylov AI. 2006. Beyond vinyl: electronic structure
+of unsaturated propen-1-yl, propen-2-yl, 1-buten-2-yl, and trans-2-buten-2-yl
+hydrocarbon radicals. J. Phys. Chem. A 110:2746–58
+50. Mozhayskiy VA, Babikov D, Krylov AI. 2006. Conical and glancing Jahn-T eller
+intersections in the cyclic trinitrogen cation. J. Chem. Phys. 124:224309
+51. Babikov D, Mozhayskiy VA, Krylov AI. 2006. Photoelectron spectrum of elusive
+cyclic N3 and characterization of potential energy surface and vibrational states
+of the ion. J. Chem. Phys. 125:084306
+52. Dillon JJ, Yarkony DR. 2007. Seams near seams: the Jahn-T eller effect in the
+1E′′ state of N+3 . J. Chem. Phys. 126:124113
+53. Stanton JF. 2001. Coupled-cluster theory, pseudo-Jahn-T eller effects and con-
+ical intersections. J. Chem. Phys. 115:10382–93
+54. Stanton JF, Sattelmeyer KW, Gauss J, Allan M, Skalicky T, Bally T. 2001. On
+the photoelectron spectrum of p-benzoquinone. J. Chem. Phys. 115:1–4
+55. Ichino T, Gianola AJ, Lineberger WC, Stanton JF. 2006. Nonadiabatic effects
+in the photoelectron spectrum of the pyrazolide-d 3 anion: three-state interac-
+tions in the pyrazolyl-d3 radical. J. Chem. Phys. 125:084312
+56. Vanovschi V, Krylov AI, Wenthold PG. 2007. Structure, vibrational frequencies,
+ionization energies, and photoelectron spectrum of the para-benzyne radical
+anion. Theor. Chim. Acta. In press
+57. Calculates the EA of
+DMX by combining
+CCSD(T) and EOM-CC
+methods using
+computational schemes in
+the spirit of isodesmic
+reactions.
+57. Slipchenko LV, Krylov AI. 2006. Efﬁcient strategies for accurate calcula-
+tions of electronic excitation and ionization energies: theory and applica-
+tion to the dehydro-meta-xylylene anion. J. Phys. Chem. A 110:291–98
+58. Stanton JF. 2007. On the vibronic level structure in the NO 3 radical. I. The
+ground electronic state. J. Chem. Phys. 126:134309
+59. Formal analysis and
+numeric examples
+demonstrating how the
+non-Hermitian nature of
+EOM affects the topology
+of conical intersections.
+59. K ¨ohn A, Tajti A. 2007. Can coupled-cluster theory treat conical intersec-
+tions? J. Chem. Phys. 127:044105
+60. H ¨attig C. 2005. Structure optimizations for excited states with correlated
+second-order methods: CC2 and ADC(2). Adv. Quant. Chem. 50:37–60
+61. Szalay PG, Gauss J. 2000. Spin-restricted open-shell coupled-cluster theory for
+excited states. J. Chem. Phys. 112:4027–36
+62. Maurice D, Head-Gordon M. 1995. Conﬁguration interaction with single sub-
+stitutions for excited states of open-shell molecules. Int. J. Quant. Chem. Symp.
+29:361–70
+www.annualreviews.org • Equation-of-Motion Methods for Open Shells 457
+Annu. Rev. Phys. Chem. 2008.59:433-462. Downloaded from www.annualreviews.org
+ Access provided by University of Southern California (USC) on 05/19/17. For personal use only.
+
+=== page 26 ===
+ANRV340-PC59-18 ARI 26 February 2008 21:10
+63. Krylov AI, Sherrill CD. 2002. Perturbative corrections to the equation-of-
+motion spin-ﬂip SCF model: application to bond-breaking and equilibrium
+properties of diradicals. J. Chem. Phys. 116:3194–203
+64. Krylov AI. 2001. Spin-ﬂip conﬁguration interaction: an electronic structure
+model that is both variational and size consistent.Chem. Phys. Lett. 350:522–30
+65. Sears JS, Sherrill CD, Krylov AI. 2003. A spin-complete version of the spin-ﬂip
+approach to bond breaking: What is the impact of obtaining spin eigenfunc-
+tions? J. Chem. Phys. 118:9084–94
+66. Shao Y, Head-Gordon M, Krylov AI. 2003. The spin-ﬂip approach within
+time-dependent density functional theory: theory and applications to diradicals.
+J. Chem. Phys. 118:4807–18
+67. Slipchenko L V, Krylov AI. 2002. Singlet-triplet gaps in diradicals by the spin-
+ﬂip approach: a benchmark study. J. Chem. Phys. 117:4694–708
+68. Golubeva A, Nemukhin AV, Harding L, Klippenstein SJ, Krylov AI. 2007.
+Performance of spin-ﬂip and multireference methods for bond-breaking in hy-
+drocarbons: a benchmark study. J. Phys. Chem. A. In press
+69. Slipchenko L V, Krylov AI. 2003. Electronic structure of the trimethylen-
+emethane diradical in its ground and electronically excited states: bonding,
+equilibrium structures and vibrational frequencies. J. Chem. Phys. 118:6874–
+83
+70. Wang T, Krylov AI. 2005. The effect of substituents on singlet-triplet energy
+separations in meta-xylylene diradicals: qualitative insights from quantitative
+studies. J. Chem. Phys. 123:104304
+71. Krylov AI. 2005. T riradicals.J. Phys. Chem. A 109:10638–45
+72. Slipchenko L V, Krylov AI. 2003. Electronic structure of the 1,3,5,-
+tridehydrobenzene triradical in its ground and excited states. J. Chem. Phys.
+118:9614–22
+73. Slipchenko L V, Munsch TE, Wenthold PG, Krylov AI. 2004. 5-dehydro-
+1,3-quinodimethane: a hydrocarbon with an open-shell doublet ground state.
+Angew. Chem. Int. Ed. Engl. 43:742–45
+74. Munsch TE, Slipchenko L V, Krylov AI, Wenthold PG. 2004. Reactivity and
+structure of the 5-dehydro-m-xylylene anion. J. Org. Chem. 69:5735–41
+75. Develops and applies
+computational schemes
+for calculating accurate
+thermochemical values
+for the reactions involving
+diradicals and triradicals
+to characterize partial
+bonds between radical
+centers.
+75. Cristian AMC, Shao Y, Krylov AI. 2004. Bonding patterns in benzene tri-
+radicals from structural, spectroscopic, and thermochemical perspectives.
+J. Phys. Chem. A 108:6581–88
+76. Wang T, Krylov AI. 2006. Electronic structure of the two dehydro-meta-
+xylylene triradicals and their derivatives. Chem. Phys. Lett. 426:196–200
+77. Koziol L, Winkler M, Houk KN, Venkataramani S, Sander W, Krylov AI. 2007.
+The 1,2,3-tridehydrobenzene triradical:2Bo rn o t2B? The answer is2A! J. Phys.
+Chem. A 111:5071–80
+78. Saeh JC, Stanton JF. 1999. Application of an equation-of-motion coupled clus-
+ter method including higher-order corrections to potential energy surfaces of
+radicals. J. Chem. Phys. 111:8275–85
+79. Yang CH, Hsu CP. 2006. The dynamical correlation in spacer-mediated elec-
+tron transfer couplings. J. Chem. Phys. 124:244507
+458 Krylov
+Annu. Rev. Phys. Chem. 2008.59:433-462. Downloaded from www.annualreviews.org
+ Access provided by University of Southern California (USC) on 05/19/17. For personal use only.
+
+=== page 27 ===
+ANRV340-PC59-18 ARI 26 February 2008 21:10
+80. Pieniazek PA, Arnstein SA, Bradforth SE, Krylov AI, Sherrill CD. 2007. Bench-
+mark full conﬁguration interaction and EOM-IP-CCSD results for prototypical
+charge transfer systems: noncovalent ionized dimers.J. Chem. Phys.127:164110
+81. Pieniazek PA, Krylov AI, Bradforth SE. 2007. Electronic structure of the ben-
+zene dimer cation. J. Chem. Phys. 127:044317
+82. Nooijen M. 2002. State selective equation-of-motion coupled cluster theory:
+some preliminary results. Int. J. Mol. Sci. 3:656–75
+83. McWeeny R. 1992. Methods of Molecular Quantum Mechanics . New Y ork:
+Academic. 2nd ed.
+84. Epstein ST. 1974. The V ariation Method in Quantum Chemistry . New Y ork:
+Academic
+85. L ¨owdin P-O. 1982. On operators, superoperators, Hamiltonians and Liouvil-
+lians. Int. J. Quant. Chem. Symp. 16:485–560
+86. L ¨owdin P-O. 1985. Some aspects on the Hamiltonian and Liouvillian formal-
+ism, the special propagator methods, and the equation of motion approach.Adv.
+Q. Chem. 17:285–334
+87. McCurdy CW, Rescigno TN, Y eager DL, McKoy V. 1977. The equations of
+motion method: an approach to dynamical properties of atoms and molecules.
+In Modern Theoretical Chemistry, Vol. 3, pp. 339–86. New Y ork: Plenum
+88. Comeau DC, Bartlett RJ. 1993. The equation-of-motion coupled-cluster
+method: applications to open- and closed-shell reference states. Chem. Phys.
+Lett. 207:414–23
+89. Szekeres Z, Szabados ´A, K´allay M, Surj´an PR. 2001. On the “killer condition”
+in the equation-of-motion method: ionization potentials from multi-reference
+wave functions. Phys. Chem. Chem. Phys. 3:696–701
+90. Purvis GD III, Sekino H, Bartlett RJ. 1988. Multiplicity of many-body wave-
+functions using unrestricted Hartree-Fock reference functions. Collect. Czech.
+Chem. Commun. 53:2203–13
+91. Stanton JF. 1994. On the extent of spin contamination in open-shell coupled-
+cluster wave functions. J. Chem. Phys. 101:371–74
+92. Sherrill CD, Krylov AI, Byrd EFC, Head-Gordon M. 1998. Energies and ana-
+lytic gradients for a coupled-cluster doubles model using variational Brueckner
+orbitals: application to symmetry breaking in O+4 . J. Chem. Phys. 109:4171–81
+93. Krylov AI, Sherrill CD, Head-Gordon M. 2000. Excited states theory for opti-
+mized orbitals and valence optimized orbitals coupled-cluster doubles models.
+J. Chem. Phys. 113:6509–27
+94. Hirata S, Nooijen M, Bartlett RJ. 2000. High-order determinantal equation-
+of-motion coupled-cluster calculations for ionized and electron-attached states.
+Chem. Phys. Lett. 328:459–68
+95. Kamyia M, Hirata S. 2006. Higher-order equation-of-motion coupled-cluster
+methods for ionization processes. J. Chem. Phys. 125:074111
+96. Stanton JF. 1993. Many-body methods for excited state potential energy sur-
+faces. I. General theory of energy gradients for the equation-of-motion coupled-
+cluster method. J. Chem. Phys. 99:8840–47
+www.annualreviews.org • Equation-of-Motion Methods for Open Shells 459
+Annu. Rev. Phys. Chem. 2008.59:433-462. Downloaded from www.annualreviews.org
+ Access provided by University of Southern California (USC) on 05/19/17. For personal use only.
+
+=== page 28 ===
+ANRV340-PC59-18 ARI 26 February 2008 21:10
+97. Stanton JF, Gauss J. 1995. Many-body methods for excited state potential en-
+ergy surfaces. II. Analytic second derivatives for excited state energies in the
+equation-of-motion coupled-cluster method. J. Chem. Phys. 103:88931
+98. Levchenko SV, Wang T, Krylov AI. 2005. Analytic gradients for the spin-
+conserving and spin-ﬂipping equation-of-motion coupled-cluster models with
+single and double substitutions. J. Chem. Phys. 122:224106
+99. Gauss J, Stanton JF. 2002. Electron-correlated approaches for the calculation
+of NMR chemical shifts. Adv. Chem. Phys. 123:355–422
+100. Crawford TD. 2006. Ab initio calculation of molecular chiroptical properties.
+Theor. Chim. Acta 115:227–45
+101. H ¨attig C, Christiansen O, Jørgensen P. 1998. Multiphoton transition moments
+and absorption cross sections in coupled cluster response theory employing
+variational transition moment functionals. J. Chem. Phys. 108:8331–54
+102. Epifanovsky E, Krylov AI. 2007. Direct location of the minimum point on in-
+tersection seams of potential energy surfaces with equation-of-motion coupled-
+cluster methods. Mol. Phys. In press
+103. Christiansen O, Gauss J, Schimmelpfennig B. 2000. Spin-orbit coupling con-
+stants from coupled-cluster response theory. Phys. Chem. Chem. Phys. 2:965–71
+104. Oana M, Krylov AI. 2007. Dyson orbitals for ionization from the ground and
+electronically excited states within equation-of-motion formalism: theory, im-
+plementation and examples. J. Chem. Phys. In press
+105. Stanton JF, Gauss J. 2007. A quasidiabatic approach in equation-of-motion
+coupled cluster theory: perspective, derivations and preliminary applications.
+Private communication
+106. Noga J, Bartlett RJ, Urban M. 1987. T owards a full CCSDT model for electron
+correlation: CCSDT-n models. Chem. Phys. Lett. 134:126–32
+107. Watts JD, Bartlett RJ. 1995. Economical triple excitation equation-of-motion
+coupled-cluster methods for excitation energies. Chem. Phys. Lett. 233:81–87
+108. Watts JD, Bartlett RJ. 1996. Iterative and noniterative triple excitation cor-
+rections in coupled-cluster methods for excited electronic states: the EOM-
+CCSDT-3 and EOM-CCSD( ˜T) methods. Chem. Phys. Lett. 258:581–88
+109. Koch H, Christiansen O, Jørgensen P, de Meras AMS, Helgaker T. 1997. The
+CC3 model: an iterative coupled cluster approach including connected triples.
+J. Chem. Phys. 106:1808–18
+110. Koch H, Christiansen O, Jørgensen P, Olsen J. 1995. Excitation energies of
+BH, CH 2, and Ne in full conﬁguration interaction and the hierarchy CCS,
+CC2, CCSD, and CC3 of coupled cluster models. Chem. Phys. Lett. 244:75–82
+111. Christiansen O, Koch H, Jorgensen P. 1995. Response functions in the CC3
+iterative triple excitation model. J. Chem. Phys. 103:7429–41
+112. Smith CE, King RA, Crawford TD. 2005. Coupled cluster methods including
+triple excitations for excited states of radicals. J. Chem. Phys. 122:054110
+113. Sattelmeyer KW, Stanton JF, Olsen J, Gauss J. 2001. A comparison of excited
+state properties for iterative approximate triples linear response coupled cluster
+methods. Chem. Phys. Lett. 347:499–504
+460 Krylov
+Annu. Rev. Phys. Chem. 2008.59:433-462. Downloaded from www.annualreviews.org
+ Access provided by University of Southern California (USC) on 05/19/17. For personal use only.
+
+=== page 29 ===
+ANRV340-PC59-18 ARI 26 February 2008 21:10
+114. Piecuch P, Wloch M. 2005. Renormalized coupled-cluster methods exploit-
+ing left eigenstates of the similarity transformed Hamiltonian. J. Chem. Phys.
+123:224105
+115. Piecuch P, Kowalski K, Pimienta ISO, McGuire MJ. 2002. Recent advances in
+electronic structure theory: method of moments of coupled-cluster equations
+and renormalized coupled-cluster approaches. Int. Rev. Phys. Chem. 21:527–
+655
+116. Kowalski K, Piecuch P. 2000. The active-space equation-of-motion coupled-
+cluster methods for excited electronic states: the EOMCCSDt approach.
+J. Chem. Phys. 113:8490–502
+117. Kowalski K, Piecuch P. 2001. The active-space equation-of-motion coupled-
+cluster methods for excited electronic states: full EOMCCSDt. J. Chem. Phys.
+115:643–51
+118. Gour J, Piecuch P. 2006. Efﬁcient formulation and computer implementation
+of the active-space electron-attached and ionized equation-of-motion coupled-
+cluster methods. J. Chem. Phys. 125:234107
+119. Fan PD, Kamiya M, Hirata S. 2007. Active-space equation-of-motion coupled-
+cluster methods through quadruples for excited, ionized, and electron-attached
+states. J. Chem. Theory Comput. 3:1036–46
+120. Nooijen M, Bartlett RJ. 1997. Similarity transformed equation-of-motion
+coupled-cluster study of ionized, electron attached, and excited states of free
+base porphin. J. Chem. Phys. 106:6449–55
+121. Nooijen M, Bartlett RJ. 1997. Similarity transformed equation-of-motion
+coupled-cluster theory: details, examples, and comparisons. J. Chem. Phys.
+107:6812–30
+122. H ¨attig C, Hald K. 2002. Implementation of RI-CC2 triplet excitation ener-
+gies with an application to trans-azobenzene. Phys. Chem. Chem. Phys. 4:2111–
+18
+123. K ¨ohn A, H ¨attig C. 2003. Analytic gradients for excited states in the coupled-
+cluster model CC2 employing the resolution-of-the-identity approximation.
+J. Chem. Phys. 119:5021–36
+124. Rhee YM, Head-Gordon M. 2007. Scaled second-order perturbation correc-
+tions to conﬁguration interaction singles: efﬁcient and reliable excitation energy
+methods. J. Phys. Chem. A 111:5314–26
+125. Korona T, Werner HJ. 2003. Local treatment of electron excitations in the
+EOM-CCSD method. J. Chem. Phys. 118:3006–19
+126. Kats D, Korona T, Sch ¨utz M. 2006. Local CC2 electronic excitation energies
+for large molecules with density ﬁtting. J. Chem. Phys. 125:104106
+127. Shao Y, Molnar LF, Jung Y, Kussmann J, Ochsenfeld C, et al. 2006. Advances
+in methods and algorithms in a modern quantum chemistry program package.
+Phys. Chem. Chem. Phys. 8:3172–91
+128. Stanton JF, Gauss J, Watts JD, Lauderdale WJ, Bartlett RJ. 1993. ACES II
+software.
+129. Werner H-J, Knowles PJ, Lindh R, Manby FR, Sch ¨utz M, et al. 2007. Molpro
+version 2006.1. http://www.molpro.net
+www.annualreviews.org • Equation-of-Motion Methods for Open Shells 461
+Annu. Rev. Phys. Chem. 2008.59:433-462. Downloaded from www.annualreviews.org
+ Access provided by University of Southern California (USC) on 05/19/17. For personal use only.
+
+=== page 30 ===
+ANRV340-PC59-18 ARI 26 February 2008 21:10
+130. Crawford TD, Sherrill CD, Valeev EF, Fermann JT, King RA, et al. 2007.
+PSI3: an open-source ab initio electronic structure package. J. Comput. Chem.
+28:1610–16
+131. Schmidt MW, Baldridge KK, Boatz JA, Elbert ST, Gordon MS, et al. 1993.
+General atomic and molecular electronic structure system. J. Comput. Chem.
+14:1347–63
+132. DAL TON. 2005. Release 2.0. http://www.kjemi.uio.no/software/dalton/
+dalton.html
+462 Krylov
+Annu. Rev. Phys. Chem. 2008.59:433-462. Downloaded from www.annualreviews.org
+ Access provided by University of Southern California (USC) on 05/19/17. For personal use only.
+
+=== page 31 ===
+AR340-FM ARI 26 February 2008 21:26
+Annual Review of
+Physical Chemistry
+Volume 59, 2008Contents
+A Fortunate Life in Physical Chemistry
+Stuart A. Rice ppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppp 1
+Chemistry and Photochemistry of Mineral Dust Aerosol
+David M. Cwiertny, Mark A. Young, and Vicki H. Grassian pppppppppppppppppppppppppp 27
+Femtobiology
+Villy Sundstr¨ omppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppp 53
+Structures, Kinetics, Thermodynamics, and Biological Functions
+of RNA Hairpins
+Philip C. Bevilacqua and Joshua M. Blose ppppppppppppppppppppppppppppppppppppppppppppppp 79
+Understanding Protein Evolution: From Protein Physics
+to Darwinian Selection
+Konstantin B. Zeldovich and Eugene I. Shakhnovich pppppppppppppppppppppppppppppppppp 105
+Quasicrystal Surfaces
+Patricia A. Thiel ppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppp 129
+Molecular Ordering and Phase Behavior of Surfactants at Water-Oil
+Interfaces as Probed by X-Ray Surface Scattering
+Mark L. Schlossman and Aleksey M. Tikhonov ppppppppppppppppppppppppppppppppppppppp 153
+Extraordinary T ransmission of Metal Films with Arrays
+of Subwavelength Holes
+James V . Coe, Joseph M. Heer, Shannon T eeters-Kennedy, Hong Tian,
+and Kenneth R. Rodriguez pppppppppppppppppppppppppppppppppppppppppppppppppppppppppppp 179
+The Ultrafast Dynamics of Photodetachment
+Xiyi Chen and Stephen E. Bradforth ppppppppppppppppppppppppppppppppppppppppppppppppppp 203
+Energy Flow in Proteins
+David M. Leitner ppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppp 233
+Advances in Correlated Electronic Structure Methods for Solids,
+Surfaces, and Nanostructures
+Patrick Huang and Emily A. Carter ppppppppppppppppppppppppppppppppppppppppppppppppppp 261
+T wo-Dimensional Infrared Spectroscopy of Photoswitchable Peptides
+Peter Hamm, Jan Helbing, and Jens Bredenbeck pppppppppppppppppppppppppppppppppppppp 291
+ix
+Annu. Rev. Phys. Chem. 2008.59:433-462. Downloaded from www.annualreviews.org
+ Access provided by University of Southern California (USC) on 05/19/17. For personal use only.
+
+=== page 32 ===
+AR340-FM ARI 26 February 2008 21:26
+Wave-Packet Interferometry and Molecular State Reconstruction:
+Spectroscopic Adventures on the Left-Hand Side of the
+Schr ¨odinger Equation
+Jeffrey A. Cina pppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppp 319
+Ions at Aqueous Interfaces: From Water Surface to Hydrated Proteins
+Pavel Jungwirth and Bernd Winter pppppppppppppppppppppppppppppppppppppppppppppppppppp 343
+Nanografting for Surface Physical Chemistry
+Maozi Liu, Nabil A. Amro, and Gang-yu Liu pppppppppppppppppppppppppppppppppppppppp 367
+Extending X-Ray Crystallography to Allow the Imaging of
+Noncrystalline Materials, Cells, and Single Protein Complexes
+Jianwei Miao, T etsuya Ishikawa, Qun Shen, and Thomas Earnest pppppppppppppppppp 387
+Patterning Fluid and Elastomeric Surfaces Using Short-Wavelength
+UV Radiation and Photogenerated Reactive Oxygen Species
+Babak Sanii and Atul N. Parikh ppppppppppppppppppppppppppppppppppppppppppppppppppppppp 411
+Equation-of-Motion Coupled-Cluster Methods for Open-Shell
+and Electronically Excited Species: The Hitchhiker’s Guide
+to Fock Space
+Anna I. Krylov ppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppp 433
+Attosecond Electron Dynamics
+Matthias F . Kling and Marc J.J. Vrakkingpppppppppppppppppppppppppppppppppppppppppppp 463
+Functional Polymer Brushes in Aqueous Media from Self-Assembled
+and Surface-Initiated Polymers
+Ryan T oomey and Matthew Tirrellppppppppppppppppppppppppppppppppppppppppppppppppppppp 493
+Electronic Spectroscopy of Carbon Chains
+Evan B. Jochnowitz and John P . Maierpppppppppppppppppppppppppppppppppppppppppppppppp 519
+Multiscale Simulation of Soft Matter: From Scale Bridging
+to Adaptive Resolution
+Matej Praprotnik, Luigi Delle Site, and Kurt Kremer pppppppppppppppppppppppppppppppp 545
+Free Energies of Chemical Reactions in Solution and in Enzymes
+with Ab Initio Quantum Mechanics/Molecular Mechanics Methods
+Hao Hu and Weitao Y angppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppp 573
+Fluctuation Theorems
+E.M. Sevick, R. Prabhakar, Stephen R. Williams, and Debra J. Searles pppppppppppp 603
+Structure, Dynamics, and Assembly of Filamentous Bacteriophages
+by Nuclear Magnetic Resonance Spectroscopy
+Stanley J. Opella, Ana Carolina Zeri, and Sang Ho Park pppppppppppppppppppppppppppp 635
+Inside a Collapsing Bubble: Sonoluminescence and the Conditions
+During Cavitation
+Kenneth S. Suslick and David J. Flannigan ppppppppppppppppppppppppppppppppppppppppppp 659
+x Contents
+Annu. Rev. Phys. Chem. 2008.59:433-462. Downloaded from www.annualreviews.org
+ Access provided by University of Southern California (USC) on 05/19/17. For personal use only.
+
+=== page 33 ===
+AR340-FM ARI 26 February 2008 21:26
+Elastic Modeling of Biomembranes and Lipid Bilayers
+Frank L.H. Brown pppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppp 685
+Water in Nonpolar Conﬁnement: From Nanotubes to Proteins
+and Beyond
+Jayendran C. Rasaiah, Shekhar Garde, and Gerhard Hummer ppppppppppppppppppppp 713
+High-Resolution Spectroscopic Studies and Theory of Parity Violation
+in Chiral Molecules
+Martin Quack, Jürgen Stohner, and Martin Willeke ppppppppppppppppppppppppppppppppp 741
+Collapse Mechanisms of Langmuir Monolayers
+Ka Y ee C. Lee pppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppp 771
+Indexes
+Cumulative Index of Contributing Authors, Volumes 55–59 pppppppppppppppppppppppp 793
+Cumulative Index of Chapter Titles, Volumes 55–59 ppppppppppppppppppppppppppppppppp 796
+Errata
+An online log of corrections to Annual Review of Physical Chemistry articles may be
+found at http://physchem.annualreviews.org/errata.shtml
+Contents xi
+Annu. Rev. Phys. Chem. 2008.59:433-462. Downloaded from www.annualreviews.org
+ Access provided by University of Southern California (USC) on 05/19/17. For personal use only.

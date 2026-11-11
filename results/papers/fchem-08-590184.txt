@@ -1,0 +1,780 @@
+
+=== page 1 ===
+ORIGINAL RESEARCH
+published: 10 December 2020
+doi: 10.3389/fchem.2020.590184
+Frontiers in Chemistry | www.frontiersin.org 1 December 2020 | Volume 8 | Article 590184
+Edited by:
+Mohan Chen,
+Peking University, China
+Reviewed by:
+Igor Ying Zhang,
+Fudan University, China
+Jie Liu,
+University of Science and Technology
+of China, China
+*Correspondence:
+Chao Yang
+cyang@lbl.gov
+Specialty section:
+This article was submitted to
+Theoretical and Computational
+Chemistry,
+a section of the journal
+Frontiers in Chemistry
+Received: 31 July 2020
+Accepted: 28 September 2020
+Published: 10 December 2020
+Citation:
+Yang C, Brabec J, Veis L,
+Williams-Young DB and Kowalski K
+(2020) Solving Coupled Cluster
+Equations by the Newton Krylov
+Method. Front. Chem. 8:590184.
+doi: 10.3389/fchem.2020.590184
+Solving Coupled Cluster Equations
+by the Newton Krylov Method
+Chao Yang 1*, Jiri Brabec 2, Libor Veis 2, David B. Williams-Young 1 and Karol Kowalski 3
+1 Computational Research Division, Lawrence Berkeley Natio nal Laboratory, Berkeley, CA, United States, 2 J. Heyrovsky
+Institute of Physical Chemistry, Academy of Sciences, Pragu e, Czechia, 3 Paciﬁc Northwest National Laboratory, Richland,
+WA, United States
+We describe using the Newton Krylov method to solve the coupl ed cluster equation.
+The method uses a Krylov iterative method to compute the Newt on correction to
+the approximate coupled cluster amplitude. The multiplica tion of the Jacobian with
+a vector, which is required in each step of a Krylov iterative method such as the
+Generalized Minimum Residual (GMRES) method, is carried out through a ﬁnite difference
+approximation, and requires an additional residual evalua tion. The overall cost of the
+method is determined by the sum of the inner Krylov and outer N ewton iterations.
+We discuss the termination criterion used for the inner iter ation and show how to
+apply pre-conditioners to accelerate convergence. We will also examine the use of
+regularization technique to improve the stability of convergence and compare the method
+with the widely used direct inversion of iterative subspace (DIIS) methods through
+numerical examples.
+Keywords: couple cluster approximation, Newton-Krylov meth od, DIIS, precondition, nonlinear solver
+1. INTRODUCTION
+The coupled cluster (CC) theory, introduced to quantum chemi stry by ˇCížek (1966) , Paldus and
+Li (1999), and Bartlett and Musiał (2007) , over the past few decades has established itself as one of
+the most accurate ab initio method for electronic structure calculations. The systema tic inclusion
+of higher-rank excitations in the cluster operator allows on e to establish a hierarchy of more
+and more accurate approximations converging toward the full c onﬁguration interaction (FCI)
+limit ( Gauss, 1998 ). These standard approximations also provide a number of uniqu e features
+such as size-extensivity of the resulting energies, orbita l invariance of theory under separate
+rotations of occupied and virtual orbitals, the possibility o f approximating higher excitations by
+products of lower-rank clusters, which are especially importa nt in proper description of chemical
+transformations associated with bond forming and bond brea king processes. The CC theory is
+based on an exponential ansatz acting on the reference wave fu nction, typically Slater determinant
+obtained from Hartree–Fock (HF), density functional theory, or other independent particle models,
+which is assumed to provide a reasonable zeroth order descript ion of the correlated ground-state
+wave function. The CC wave function is determined by the so-c alled cluster amplitudes obtained
+by solving nonlinear energy-independent CC equations.
+The exponential ansatz ensures the size-extensivity of the C C method, but in contrast to
+conﬁguration interaction methods, the CC method is not vari ational (unless all excitations are
+included). In practice, to make CC approximation numerically f easible, the cluster operator is
+deﬁned by low-rank excitations. For example, one of the most w idely used coupled cluster single
+and double (CCSD) model includes single and double excitatio ns ( Purvis and Bartlett, 1982 ).
+=== page 2 ===
+Yang et al. Coupled Cluster by Newton Krylov
+The single-reference CCSD method and non-iterative techni que
+for the inclusion of collective triple excitations [the so-c alled
+CCSD(T) approach; Raghavachari et al., 1989 ] is currently
+considered as a “gold standard” of high-accuracy computatio nal
+chemistry. It is available in many program packages and
+employed widely in a wide variety of chemical applications. The
+numerical cost scales polynomially with the system size, whe re
+the numerical scaling of CCSD is proportional to O(N6), whereas
+for (T) correction is proportional to O(N7) ( N represents
+symbolically system size).
+For the treatment of the static correlation eﬀects, the
+multireference CC approach has been introduced, which
+generalizes the CC exponential parameterization of the wave
+function ( Lyakh et al., 2012 ). Out of many formulations
+of MRCC theories, the class of methods relevant to this
+work is externally corrected CC, which extracts informatio n
+about the most important higher excitations or active space
+single and double excitations from an “external” calculati on
+performed by a diﬀerent method such as complete active space
+self-consistent ﬁeld (CASSCF) or multireference conﬁgura tion
+interaction (MRCI) ( Li and Paldus, 1997; Li, 2001; Kinoshita
+et al., 2005 ). In this work, we employed the tailored CCSD
+(TCCSD) method, where the information for external correct ion
+is obtained from a density matrix renormalization group
+(DMRG) calculation. The TCC approach has been successfully
+applied ( Kinoshita et al., 2005; Lyakh et al., 2011 ) and
+generally performs well, although a large active space and
+CASSCF orbitals might be required for good accuracy.
+TCC also features the desirable property of being rigorously
+size extensive.
+The CCSD equations correspond to the polynomial set of
+equations of fourth order, whose solving for large number of
+cluster amplitudes (often exceeding 10 10) in the presence of
+strong correlation eﬀects may pose a signiﬁcant challenge and
+may adversely aﬀect the time to solution associated with solv ing
+CC equations, even when eﬃcient implementation of the CCSD
+method is available. Therefore, the design of fast convergi ng
+CC solvers is inextricably linked to the eﬀort of enabling CC
+methods at exa-scale. Currently, CC equations are typically
+solved via an inexact Newton (IN) method combined with
+an acceleration scheme called the direct inversion of itera tive
+space (DIIS) ( Pulay, 1980 ), which is also used in many other
+quantum chemical algorithms to accelerate the convergence , for
+example in the self-consistent ﬁeld (SCF) iterations for sol ving
+the HF equations. Several other algorithms such as reduced
+linear equation ( Purvis and Bartlett, 1981 ), quasilinearization of
+nonlinear terms techniques (Piecuch and Adamowicz, 1994), and
+multimodel Newton-type algorithms ( Kjønstad et al., 2020) have
+been tested especially in the context of solving CC equations
+involving high-rank clusters.
+In this paper, we describe using the Newton–Krylov (NK)
+method for solving the projected CC equation. The NK method is
+a widely used method for solving large-scale nonlinear equa tions
+in many ﬁelds ( Knoll and Keyes, 2004 ). Its use in quantum
+chemistry appears to be new. We will describe the basic steps of
+the method in the context of CCSD in section 3. We compare
+the method with DIIS in section 4 and discuss the possibility
+of combining the two methods together. In section 5, we
+demonstrate the performance of the NK method and compare
+it with DIIS.
+2. COUPLED CLUSTER EQUATIONS
+In this section, we brieﬂy discuss the algebraic form of the C C
+equations for cluster amplitudes. In general, a correlated wa ve
+function|/Psi1⟩ can be written as,
+|/Psi1⟩= /Omega1|/Phi1⟩ , (1)
+where|/Phi1⟩ is the reference wave function (typically the HF Slater
+determinant) and /Omega1 is the wave operator. In the CC method, the
+wave operator is assumed in an exponential form
+/Omega1= eT , (2)
+where T is the cluster operator deﬁned by excitations producing
+excited Slater determinant when acting on the reference function.
+This property of the cluster operator T assures the so-called
+intermediate normalization of the CC wave function, i.e.,
+⟨/Psi1|/Phi1⟩= 1 , (3)
+assuming that orthonormal molecular basis set was used to
+discretize many-body problem of interest. The cluster operator
+T is a sum of its many-body components
+T= T1+ T2+ ... , (4)
+where Tn is the linear combination of excitation operators, which
+corresponds to n-tuple excitations. Thus, for single- and double-
+excitations one can write
+T1=
+∑
+i,j
+tai a†aai (5)
+T2=
+∑
+i<j;a<b
+tabij a†aa†bajai , (6)
+. . . (7)
+The coeﬃcients tab..ij.. are the cluster amplitudes, which will be
+determined by solving CC equations. We use the standard
+notation, i.e., indices i, j denote occupied, a, b virtual, and p, q
+general molecular spin orbitals. a†p and aq are fermionic
+creation or annihilation operators which satisfy set of
+anticommutation relations
+{a†p, aq}= a†paq+ aqa†p= δpq (8)
+{a†p, a†q}={ ap, aq}= 0 . (9)
+In the context of deriving algebraic form of CC equations,
+particle-hole formalism is invoked ( Shavitt and Bartlett, 2009).
+Inserting the CC ansatz into the Schrödinger equation and
+pre-multiplying from the left by e−T yields
+e−THeT/Phi1= E/Phi1 . (10)
+Frontiers in Chemistry | www.frontiersin.org 2 December 2020 | Volume 8 | Article 590184
+=== page 3 ===
+Yang et al. Coupled Cluster by Newton Krylov
+To employ various diagrammatic techniques to derive CC
+equations, it is useful to introduce the normal product form o f
+the electronic Hamiltonian (HN) deﬁned as
+HN= H−⟨/Phi1|H|/Phi1⟩=
+∑
+pq
+FpqN{p†q}+ 14 ∑pqrs⟨pq||rs⟩N{p†q†sr} ,
+(11)
+Using the Baker–Campbell–Hausdorﬀ formula, we get
+e−THNeT= HN+ [HN, T]+ 12 [[HN, T], T]+
++ 13! [[[HN, T], T], T]+ 14! [[[[HN, T], T], T], T]
+≡ (HNeT)C , (12)
+where subscript “C” corresponds to a connected part of a
+given operator expression. Since electronic Hamiltonians ar e
+deﬁned by one- and two-body interactions, the above expansio n
+terminates after quadruple commutator (11). For the derivat ion
+of the correlation energy expression and amplitude equations,
+we project the e−THNeT|/Phi1⟩ term to the bra vectors ⟨/Phi1|,⟨/Phi1ai|,
+⟨/Phi1abij|, etc.:
+/Delta1Ecorr=⟨ /Phi1|HNeT|/Phi1⟩C , (13)
+⟨/Phi1ab...ij...|HNeT|/Phi1⟩C= 0 (14)
+where⟨/Phi1ai|,⟨/Phi1abij|, ... represent singly, doubly, etc., excited Slater
+determinants with respect to the reference function.
+The general TCC wave function employs the following split-
+amplitude ansatz
+/Omega1TCC= eText+Tact , (15)
+where Tact represents the active amplitudes obtained from the
+active space calculation. These amplitudes are kept constant
+when solving the amplitude equations, only Text are iterated. The
+Tact amplitudes are computed from the CI coeﬃcients, extracted
+from the matrix product states wave function optimized during
+the DMRG calculation. We will use t to denote, collectively, the
+CCSD amplitudes in Equations (5) and (6) that are contained
+in Text. These amplitudes satisfy a nonlinear equation that can
+be derived from Equation (14). In the rest of the paper, we will
+simply write this equation as,
+r(t)= 0. (16)
+3. ALGORITHMS FOR SOLVING THE CCSD
+EQUATION
+In this section, we begin with a short description of a general
+scheme for solving the CCSD nonlinear equation using an
+inexact Newton’s method. We review a commonly used diagonal
+approximation to the Jacobian, and then describe the NK method
+for solving the CCSD equation.
+3.1. Inexact Newton’s Method
+Even though Equation (16) is only a second-order nonlinear
+equation, it is not easy to solve due to the large number of
+variables contained in t. One should remember that in the state-
+of-the-art CCSD calculations, the total number of sought clu ster
+amplitudes exceeds 10 10. An iterative procedure is generally
+required to solve the equation numerically. The best known
+algorithm for solving a general system of nonlinear equatio ns is
+the Newton’s method. In thek+1st iteration of such a method, the
+approximation to the solution of Equation (16) is updated as
+t(k+1)= t(k)− [J(k)]−1 r(t(k)), (17)
+where t(k) is the approximate solution obtained from the kth
+iteration, and J(k) is the Jacobian of r(t) evaluated at t(k).
+Because it is not practical to write down the Jacobian of r(t)
+or its inverse analytically, we cannot use the Newton’s method
+directly to solve the CC equation. Instead, an IN algorithm of
+the form
+t(k+1)= t(k)− [ˆJ(k)]−1 r(t(k)) (18)
+whereˆJ(k) is an approximate Jacobian matrix evaluated at t(k), is
+often used. In Equations (17) and (18), we view t and r(t) as a
+column vector with all amplitudes in (5) and (6) enumerated in
+some speciﬁc order, and the contracted tensor amplitudes in r(t)
+enumerated in the same order.
+In CCSD calculation, a common practice is to choose ˆJ
+as a diagonal matrix with HF orbital energy diﬀerence as the
+diagonal elements. This is justiﬁed because J is known to be
+diagonal dominant in many cases, and the diagonal matrix of
+HF orbital energy diﬀerences contributes most to the diagona l
+of J. Replacing J withˆJ typically works well when the system
+is near equilibrium. In this case, the computational cost of the
+IN method is dominated by the tensor contraction cost for
+evaluating r(t(k)) for each k, which has the complexity of O(N6)
+where N is the number of atomic basis used to discretize HF
+molecular orbitals.
+For systems that do not satisfy this property, the diagonal
+approximation may not be suﬃcient. As a result, many IN
+iterations may be required to reach convergence, which is deﬁned
+by the norm of r(t) being less than a prescribed tolerance level τ .
+This will lead to extremely long wall clock time.
+3.2. Newton–Krylov Method
+Even though J is not explicitly available, it is possible to
+approximate the product of J(t) with any tensor w that has the
+same dimension as t. This can be done through a ﬁnite diﬀerence
+calculation of the form
+J(t)w≈ r(t+ δw)− r(t)δ , (19)
+where δ is a small constant.
+The possibility to approximate J(t)w by one extra function
+evaluation allows us to solve the Newton correction equatio n
+J(t(k))/Delta1=− r(t(k)), (20)
+Frontiers in Chemistry | www.frontiersin.org 3 December 2020 | Volume 8 | Article 590184
+=== page 4 ===
+Yang et al. Coupled Cluster by Newton Krylov
+by a Krylov subspace-based iterative method such as the GMRES
+algorithm ( Saad and Schultz, 1986 ) even when J(t) is not
+explicitly available. The solution /Delta1 is used to update the
+approximate amplitude via
+t(k+1)= t(k)+ /Delta1. (21)
+This approach is often referred to as the NK method.
+In Algorithm 1, we give a description of the simplest Newton-
+GMRES algorithm for solving the coupled clustered equation.
+We treat the CC amplitude t and tensors ( r, w) of the same
+dimension as vectors, and denote the inner product of t and r
+simply as ⟨t, r⟩. We treat a set of tensors as a matrix, and use
+V(:, j), i.e., the jth column of V, to denote the jth tensor in such a
+set. The vector e1 used in this algorithm denotes a unit vector of
+length jg+ 1 with 1 in the ﬁrst entry and 0 elsewhere.
+Input: Initial guess t(0) to the solution of the coupled
+cluster equation; convergence tolerance tol;
+Maximum number of GMRES iterations
+allowed (jg);
+Output: More accurate approximation t to solution of
+the coupled cluster equation that satisﬁes
+‖r(t)‖≤ tol;
+1: k= 0;
+2: while‖r(t(k))‖ > tol do
+3: β=‖ r(t(k))‖;
+4: V(:, 1)← r(t(k))/β;
+5: for j = 1, 2,...jg do
+6: w← r[t(k)+ δV(:, j)];
+7: w← (w− r(t(k)))/δ;
+8: H(:, 1 : j)←⟨ V(:, 1 : j), w⟩;
+9: w← w− V(:, 1 : j)H(1 : j, j);
+10: H(j+ 1, j)=‖ w‖;
+11: V(:, j+ 1)= w/H(j+ 1, j);
+12: end for
+Solve the projected linear least squares problem
+13: mins‖Hs− e1β‖
+14: t(k+1)= t(k)− V(:, 1 : jg)s;
+15: k← k+ 1;
+16: Evaluate r(t(k));
+17: end while
+Algorithm 1: A Newton–Krylov method for solving the
+coupled cluster equation.
+The outer k loop of Algorithm 1 performs the Newton update
+(21) in line 14, using /Delta1= Vs as the the approximate solution to
+the Newton correction equation, where V is an n× jg matrix,
+where n is the total number of CCSD amplitudes, and jg is
+the number of inner GMRES iterations. The inner j iteration
+of Algorithm 1 solves the Newton correction Equation (20)
+using the GMRES method. The GMRES method performs a
+Gram–Schmidt process to produce an orthonormal basis of the
+Krylvo subspace
+K(J, r0)≡{ r0, Jr0, J2r0, ..., Jjg r0},
+where J is the Jacobian evaluated at a particular approximation
+to the CCSD amplitudes t, and r0 is the function value of r
+in Equation (16) deﬁned at such a t. This orthonormal basis is
+stored in columns of theV matrix. In exact arithmetic, this matrix
+satisﬁes the equation
+JV=˜VH , (22)
+where V contains the leading jg columns of ˜V, which are
+orthonormal, i.e., VTV = I, and H is a ( jg+ 1)× jg upper
+Hessenberg matrix. The approximation to the solution of (20)
+is represented as /Delta1= Vs for some vector s of length jg. This
+vector can be solved from the least squares problem deﬁned by
+the Galerkin projection
+mins ‖˜VT(JVs− r0)‖ (23)
+It follows from Equation (22), ˜VT˜V = I, and the fact that the
+ﬁrst column of V is r0/‖r0‖, solving Equation (23) is equivalent
+to solving
+mins ‖Hs− βe1‖, (24)
+where β=‖ r0‖. This is the least squares problem solved on line
+13 of the algorithm. The solution is used in line 14 to update the
+CCSD amplitude.
+3.3. Precondition
+An iterative procedure for computing the solution to the Newton
+correction Equation (20) can be accelerated by using a pre-
+conditioner P. Instead solving (20), we solve
+P−1J(k)/Delta1=− P−1r(t(k)), (25)
+with the hope that P−1J(k) has a reduced conditioner number.
+The reduced condition number can lead to faster convergence .
+It is well-known that the Jacobian associated with the
+projected coupled cluster equation can be partitioned as
+J(t(k))= D+ E(t(k)), (26)
+where D is a diagonal matrix consisting of the diﬀerence between
+virtual and occupied HF orbital energies, and E is a complicated
+term that depends on the ﬂuctuation potential ( Helgaker et al.,
+2014). When the HF amplitude is relatively large, the ﬁrst term
+is dominant. Hence the diagonal matrix can be used as a pre-
+conditioner for the iterative solver of Equation (20).
+Applying such a pre-conditioner only requires adding an
+extra step before the while loop in Algorithm to compute the
+preconditioned right-hand side in Equation (25) and modifyi ng
+line 7 of the algorithm to apply P−1 to the W tensor.
+When D is ill conditioned due to the presence of near
+degenerate HF orbital energy levels, it may be necessary to
+Frontiers in Chemistry | www.frontiersin.org 4 December 2020 | Volume 8 | Article 590184
+=== page 5 ===
+Yang et al. Coupled Cluster by Newton Krylov
+introduce a shift σ and use D− σ I as the preconditioner. This
+regularization technique is similar to the level-shifting technique
+often used in HF SCF calculation ( Saunders and Hillier, 1973).
+When J is not dominated by D, i.e., when contribution from
+the HF amplitude is less signiﬁcant, it is desirable to constr uct
+alternative pre-conditioners to accelerate the convergenc e of the
+NK method.
+3.4. Stopping Criterion
+It is well-known that fast convergence of the IN algorithm ca n
+be achieved even when the Newton correction Equation (20) is
+not solved to full accuracy ( Eisenstat and Walker, 1994 ). This
+is especially true in earlier IN iterations in which the resid ual
+norm‖r(t)‖ is still relatively large. A general strategy proposed in
+Eisenstat and Walker (1994) is to solve the correction equation to
+satisfy the following condition:
+‖J(t(k))/Delta1+ r(t(k))‖≤ ηk‖r(t(k))‖, (27)
+for some small constant 0 < η k < 1. A sophisticated scheme
+was proposed in Eisenstat and Walker (1994) to ensure the so-
+called “global convergence.” However, such a scheme requir es
+backtracking and additional residual function evaluation s and
+is thus likely to increase the overall cost of the NK method.
+In this work, we use a simple strategy and set ηk to 10−1 with
+the left-hand side of Equation (27) estimated by the projecte d
+residual norm evaluated at the least squares solution to Equ ation
+(24). As the residual norm ‖r(t(k))‖ decreases in the outer
+iteration, the absolute error in the approximate solution to
+the correction equation also decreases when Equation (27) i s
+satisﬁed. Note that there is a trade-oﬀ between the number of
+inner GMRES iterations required to solve the Newton correctio n
+equation and the number of NK outer iterations. Setting ηk
+to a small number may result in too many GMRES iterations
+performed at each NK iteration and thus increase the overall
+cost the algorithm. In our implementation, we set a limit on th e
+maximum number of GMRES iterations allowed in each Newton
+iteration. Our computational experiments show that it is usua lly
+suﬃcient to limit the maximum number of GMRES iterations to
+5. Furthermore, ηk can also be chosen in a dynamic way with ηk
+being relatively large for small k and relatively small for large k.
+4. COMPARISON WITH DIIS
+The DIIS method (Pulay, 1980) is a commonly used technique to
+accelerate the convergence of iterative method for solving the CC
+equation. At the kth iteration, we form a new approximation as
+˜t(k+1)=
+k∑
+j=k−ℓ
+ωk−j
+[
+t(j)+ /Delta1(j)
+]
+, (28)
+for some constant ℓ < k, where ωj’s are chosen to be the solution
+to the following constrained minimization problem
+min∑
+j ωj=1
+‖
+∑
+j
+ωj/Delta1(k−j)‖. (29)
+The k+ 1st amplitude approximation is then computed from
+t(k+1)=˜t(k+1)−˜/Delta1(k+1), (30)
+where ˜/Delta1(k+1) is the approximate solution to the Newton
+correction Equation (20) or (25).
+Note that in some formulations of the DIIS algorithm, the
+/Delta1(k−j) term in the objective of Equation (29) are simply replaced
+by r(t(k−j)). Since ˜/Delta1(k−j) is often computed as D−1r(t(k−j)),
+where D is the diagonal component in Equation (26), these two
+formulations are equivalent up to a scaling matrix D.
+In some implementations of the DIIS acceleration method,
+one performs a ﬁxed number of IN iteration with D in
+Equation (26) as the approximate Jacobian matrix before the DIIS
+procedure is used to update t(k+1) according to Equation (30). In
+other implementations, DIIS is performed in each IN iteration .
+The convergence of the DIIS method and its connection
+with the Broyden’s method ( Dennis and Schabel, 1996 ) has
+been analyzed in Rohwedder and Schneider (2011) and
+Walker and Ni (2011) . The connection between DIIS and
+Krylov subspace method is made in Harrison (2004) and
+Ettenhuber and Jrgensen (2015).
+One of the practical issues one needs to consider when
+implementing the DIIS method is the solution of the constraine d
+minimization problem (29). A commonly used approach in
+existing quantum chemistry software is to write down the lin ear
+equation representing the ﬁrst-order necessary condition o f
+Equation (29) and solve the equation using a Cholesky or LU
+factorization based method. This approach is not numerically
+stable, especially when the set of{/Delta1(k−j)} becomes nearly linearly
+dependent. A more stable way to solve Equation (29) is to
+turn it into a unconstrained least squares problem and obtain
+the optimal solution via a rank-reveal QR factorization of th e
+matrix consisting of /Delta1(k−j) as its columns. However, applying
+rank-reveal QR to {/Delta1(k−j)} is rather costly. In comparison,
+performing a rank-reveal QR factorization for solving the
+projected least squares problem (24) in the NK method is
+relatively straightforward, and does not introduce signiﬁ cant
+overhead. To improve numerical stability and computational
+eﬃciency, it may be necessary to keep only a subset of {/Delta1(k−j)}’s
+for a small number of j’s.
+In terms of memory usage, NK is slightly more eﬃcient.
+In addition to storing the current approximation to the CC
+amplitudes and the residual, NK also stores orthonormal basis
+tensors of the Krylov subspace used to obtain approximate
+solution to the Newton’s correction equation. The DIIS meth od
+typically needs to store a set of {/Delta1(k−j)}’s as well as the
+corresponding set of previous amplitude approximations.
+Although one can view the DIIS method as a way to solve
+the Newton correction Equation (20) (Rohwedder and Schneider,
+2011), it is also possible to combine DIIS acceleration with the
+NK procedure. In such a hybrid scheme, we simply use GMRES
+to compute ˜/Delta1(k+1) correction in Equation (30) after ˜t(k+1) is
+obtained from a DIIS update.
+Frontiers in Chemistry | www.frontiersin.org 5 December 2020 | Volume 8 | Article 590184
+=== page 6 ===
+Yang et al. Coupled Cluster by Newton Krylov
+FIGURE 1 | A comparison of different CCSD solvers for the H 2O molecule.
+5. RESUL TS AND DISCUSSION
+In this section, we present a few numerical examples to
+demonstrate the eﬀectiveness of the NK method and compare
+with the inexact Newton method accelerated by DIIS. All
+algorithms compared below were implemented using the
+NWChem software (V aliev et al., 2010) version 6.6.
+5.1. H 2O Molecule
+In the ﬁrst example, we show how the NK algorithm behaves
+when it is applied to a simple water molecule in equilibrium. We
+use the cc-pvtz basis set to discretize the problem. We compare
+the NK algorithm with the IN method in which the Jacobian is
+approximated the diagonal matrix D in Equation (26), and the
+IN method accelerated by the DIIS procedure (labeled as DIIS) .
+When DIIS is used to accelerate convergence, it is applied ever y
+5 IN iterations. We set the convergence tolerance to 10 −7, i.e.,
+we terminate the IN, DIIS, and NK iterations when the Euclidean
+norm of the residual r(t) falls below 10−7.
+In Figure 1, we plot the change of residual norm of each
+method with respect to the cumulative number of CCSD
+residual function evaluations (tensor contractions). Not e that
+in the IN and DIIS runs, the number of function evaluations
+is equivalent to the number of IN iterations. However, in
+the NK run, the number of function evaluations is the total
+number of inner GMRES iterations and the number of outer
+NK iterations.
+We observe that for this relatively easy problem, the
+IN method converges without DIIS acceleration. It takes
+19 iterations (and 19 function evaluations) to reach
+convergence. The use of DIIS acceleration reduces the
+total number function evaluations to 16. This is also the
+number of function evaluations used in the NK method.
+By combining NK and DIIS, we reduce the number of
+functions by 1.
+FIGURE 2 | A comparison of different CCSD solvers for the Cr 2 molecule.
+5.2. Cr 2
+In this section, we show how NK performs on a Cr 2 molecular.
+The interatomic distance between two Cr atoms is set to 1.7
+angstrom, which is near equilibrium. We use the cc-pvdz basis
+set to discretized the problem.
+This is a relatively diﬃcult problem. As we can see from
+Figure 2, without DIIS acceleration, the IN iteration diverges
+quickly. Even when the DIIS acceleration is activated, which is
+applied every 5 IN iterations, the change of residual norm has
+a zig-zag pattern with the residual norm decreasing only afte r
+a DIIS step. It takes a total of 61 residual evaluations before
+convergence is reached. Both NK and the hybrid NK and DIIS
+converge rapidly. We used a maximum of 5 GMRES iterations in
+each NK iteration. The residual norm decreases monotonically in
+both runs. There is very little diﬀerence between the two.
+As we indicated earlier, there is a tradeoﬀ between performing
+more GMRES iterations in the inner loop of the NK method
+and the number of NK iterations. In Figure 3, we compare the
+total number of NK iterations and the total number of functio n
+evaluations for several NK runs in which diﬀerent numbers of
+GMRES iterations were performed in each outer NK iteration.
+We can see from Figure 3 that performing 3 GMRES
+iterations per NK iteration is not enough to achieve rapid
+convergence. On the other hand, taking too many GMRES
+iterations does not help either, especially in the ﬁrst few NK
+iterations when the residual norm is still relatively large. For this
+problem, setting the maximum number of GMRES iterations per
+NK iteration to 5 appears to yield best performance.
+In Figure 4, we also show the change of the relative GMRES
+residual norm deﬁned as‖Hs− βe1‖/β, where H, s, e1, and β are
+as deﬁned in Equation (24), with respect to the GMRES iteration
+number during the ﬁrst and the 10th NK iterations when the
+number of GMRES iterations is ﬁxed at 10. We observe that the
+GMRES iteration converge slowly in the ﬁrst NK iteration when
+the CCSD amplitudes are relatively far from the solution. As th e
+Frontiers in Chemistry | www.frontiersin.org 6 December 2020 | Volume 8 | Article 590184
+=== page 7 ===
+Yang et al. Coupled Cluster by Newton Krylov
+FIGURE 3 | A comparison of three Newton–Krylov (NK) runs that use 3, 5 an d
+10 Generalized Minimum Residual (GMRES) iterations per NK i teration.
+FIGURE 4 | The change of relative GMRES residual norm in the ﬁrst and 10th
+NK iterations.
+amplitudes become closer to the solution, the GMRES iteration
+converges faster.
+5.3. Trans-dimer Ti2O4
+The next example we use for testing the NK method
+is a titanium oxide system. Its geometry is shown in
+Figure 5. We use the aug-cc-pvtz basis set to discretize
+the problem.
+This is a diﬃcult problem. Figure 6 shows that DIIS fails to
+converge. In fact, the residual norm quickly increases. Thi s is
+mainly caused by the fact that the D matrix used in the IN
+method is extremely ill-conditioned. To overcome this diﬃc ulty,
+we regularize the NK calculation by subtracting a constant s hift
+σ from the diagonal of D. The same level-shifting is used in
+the IN accelerated by DIIS. Figure 6 shows that DIIS converges
+when σ is chosen to be 0.1. However, the convergence is rather
+FIGURE 5 | The atomic conﬁguration of the trans-dimer Ti 2O4 system.
+FIGURE 6 | A comparison of different CCSD solvers for the trans-dimer
+Ti2O4 molecule.
+slow with this choice of level shift. By setting σ to 0.5, we can
+achieve much faster convergence. The shift can also be applied
+to in NK when D− σ I is used as a preconditioner in the
+GMRES iteration. For this problem, the NK (combined with
+DIIS) converges with 41 residual function evaluations, whic h is
+fewer than the 47 function evaluations required in DIIS. Sim ilar
+convergence is observed for NK without DIIS (which we do not
+plot here) also.
+5.4. oxo-Mn (salen)
+We now compare the performance of NK and DIIS for
+an oxo-Mn (salen) molecule shown in Figure 7. In practical
+applications, this system catalyzes enantioselective epoxid ation
+of unfunctional oleﬁnes and represents an important substanc e
+Frontiers in Chemistry | www.frontiersin.org 7 December 2020 | Volume 8 | Article 590184
+=== page 8 ===
+Yang et al. Coupled Cluster by Newton Krylov
+FIGURE 7 | The atomic conﬁguration of the oxo-Mn (salen) molecule.
+FIGURE 8 | A comparison of direct inversion of iterative subspace (DIIS) and
+NK combined with DIIS (NKDIIS) convergence for the oxo-Mn (salen ) molecule.
+in industry. Due to the quasi-degeneracy of the lowest state s,
+this system is a considerable challenge even for multirefer ence
+methods and has been intensively studied recently ( Irie et al.,
+1990; Zhang et al., 1990; Antalík et al., 2019 ).
+We have performed TCCSD calculations in CAS(28,22)
+space, where external amplitudes were obtained from
+DMRG calculation.
+Figure 8 shows the convergence history of the IN iteration
+accelerated by DIIS, NK, and NK combined with DIIS
+(NKDIIS). For this example, the IN iteration appears to
+converge very fast. Both the NK and NKDIIS are slightly
+slower, but converges in 10 NK iterations.This example
+shows that for systems with multireference features, it is
+important to use an appropriate model that can treat the
+multireference character of the molecule eﬀectively. With
+such a model, the CCSD nonlinear equation can become
+easier to solve. Although NK may not oﬀer too much
+advantage in this case, it is still an eﬀective solver for such
+as model.
+5.5. The G2/97 Dataset
+In addition to testing the NK algorithm on the above
+representative molecules, we performed a more extensive test ing
+of the algorithm on a much wider range of molecules randomly
+selected from the G2/97 dataset ( Curtiss et al., 1997 ). Among
+130 systems we tested, NK performs better on 123 of them.
+On average, NK uses 12% fewer function evaluations when
+compared with DIIS. In the best case, NK uses 33% fewer
+function evaluations. In the worst case, NK uses 40% more
+function evaluations.
+6. CONCLUSION
+We presented a NK method for solving CC amplitude equations.
+In such a method, the Newton correction equation is solved
+by a Krylov subspace iterative method such as the GMRES
+method. Preconditioners can be applied in the iterative
+solver to accelerate convergence. We discussed the trade-
+oﬀ between performing more inner (GMRES) iteration and
+outer Newton iteration, and suggested an adaptive stopping
+criterion for the inner iteration. We compared the NK
+method with the widely used DIIS method and showed how
+the two methods can be combined. We presented several
+numerical examples to demonstrate the eﬀectiveness and
+robustness of the NK method not only for standard CCSD
+calculations but also for tailed CCSD calculations where
+the information for external correction is obtained from a
+DMRG calculation. Although the results we presented in
+this paper are on developments made in an older version
+NWChem software, the NK has been implemented in the next
+generation of NWChem software (NWChemEx) ( Richard
+et al., 2019 ) designed for exa-scale high-performance
+computing platforms.
+DATA AVAILABILITY STATEMENT
+The original contributions presented in the study are includ ed
+in the article/supplementary material, further inquiries can be
+directed to the corresponding author/s.
+AUTHOR CONTRIBUTIONS
+All authors listed have made a substantial, direct and intel lectual
+contribution to the work, and approved it for publication.
+ACKNOWLEDGMENTS
+This research was supported by the Exascale Computing
+Project (17-SC-20-SC), a collaborative eﬀort of the U.S.
+Department of Energy Oﬃce of 474 Science and the National
+Nuclear Security Administration (CY , DW-Y , and KK). This
+Frontiers in Chemistry | www.frontiersin.org 8 December 2020 | Volume 8 | Article 590184
+=== page 9 ===
+Yang et al. Coupled Cluster by Newton Krylov
+research used resources of the National Energy Scientiﬁc
+Computing Center (NERSC) and the Oak Ridge Leadership
+Computing Facility, which are DOE Oﬃce of Science User
+Facilities supported under Contracts DE-AC05-00OR22725. JB
+acknowledges support from the Czech Science Foundation
+(Grant No. 19-13126Y).
+REFERENCES
+Antalík, A., Veis, L., Brabec, J., Demel, O., Örs Legeza, and Pitt ner, J.
+(2019). Toward the eﬃcient local tailored coupled cluster approximatio n
+and the peculiar case of oxo-mn(salen). J. Chem. Phys . 151:084112.
+doi: 10.1063/1.5110477
+Bartlett, R. J., and Musiał, M. (2007). Coupled-cluster theory in q uantum
+chemistry. Rev. Mod. Phys. 79, 291–352. doi: 10.1103/RevModPhys.79.291
+ˇCížek, J. (1966). On the correlation problem in atomic and molecular
+systems. calculation of wavefunction components in ursell-type expa nsion
+using quantum-ﬁeld theoretical methods. J. Chem. Phys . 45, 4256–4266.
+doi: 10.1063/1.1727484
+Curtiss, L. A., Raghavachari, K., Redfern, P. C., and Pople, J. A. (1997). Assessment
+of Gaussian-2 and density functional theories for the computation of enthalpies
+of formation. J. Chem. Phys. 106, 1063–1079. doi: 10.1063/1.473182
+Dennis, J. E., and Schabel, R. B. (1996). Numerical Methods for Unconstrained
+Optimization and Nonlinear Equations . Philadelphia, PA: SIAM.
+doi: 10.1137/1.9781611971200
+Eisenstat, S. C. and Walker, H. F. (1994). Globally convergent ine xact Newton
+methods. SIAM J. Optimiz. 4, 393–422. doi: 10.1137/0804022
+Ettenhuber, P., and Jrgensen, P. (2015). Discarding informati on from previous
+iterations in an optimal way to solve the coupled cluster amplitude equa tions.
+J. Chem. Theory Comput. 11, 1518–1524. doi: 10.1021/ct501114q
+Gauss, J. (1998). “Coupled cluster theory, ” in The Encyclopedia of Computational
+Chemistry, eds V. R. Schleyer, P., Allinger, N. L., Clark, T., Gasteiger, J.,
+Kollman, P. A., Schaefer III, and P. R. Scheiner (Wiley: Chichest er), 615–636.
+Harrison, R. J. (2004). Krylov subspace accelerated inexact newton method
+for linear and nonlinear equations. J. Comput. Chem . 25, 328–334.
+doi: 10.1002/jcc.10108
+Helgaker, T., Jorgensen, P., and Olsen, J. (2014). Molecular Electronic-Structure
+Theory. Chichester: John Wiley & Sons, Ltd.
+Irie, R., Noda, K., Ito, Y., Matsumoto, N., and Katsuki, T. (199 0). Catalytic
+asymmetric epoxidation of unfunctionalized oleﬁns. Tetrahedron Lett . 31,
+7345–7348. doi: 10.1016/S0040-4039(00)88562-7
+Kinoshita, T., Hino, O., and Bartlett, R. J. (2005). Coupled-clust er method tailored
+by conﬁguration interaction. J. Chem. Phys . 123:074106. doi: 10.1063/1.20
+00251
+Kjønstad, E. F., Folkestad, S. D., and Koch, H. (2020). Accelerat ed multimodel
+newton-type algorithms for faster convergence of ground and exci ted state
+coupled cluster equations. J. Chem. Phys. 153:014104. doi: 10.1063/5.0010989
+Knoll, D., and Keyes, D. (2004). Jacobian-free Newton-Krylov meth ods: a
+survey of approaches and applications. J. Comput. Phys . 193, 357–397.
+doi: 10.1016/j.jcp.2003.08.010
+Li, X. (2001). Benchmark study of potential energies and vibratio nal levels using
+the reduced multireference coupled cluster method. The HF molecule. J. Mol.
+Struct. 547, 69–81. doi: 10.1016/S0166-1280(01)00460-2
+Li, X., and Paldus, J. (1997). Reduced multireference CCSD method: a n
+eﬀective approach to quasidegenerate states. J. Chem. Phys . 107, 6257–6269.
+doi: 10.1063/1.474289
+Lyakh, D. I., Lotrich, V. F., and Bartlett, R. J. (2011). The tailo red CCSD(T)
+description of the automerization of cyclobutadiene. Chem. Phys. Lett . 501,
+166–171. doi: 10.1016/j.cplett.2010.11.058
+Lyakh, D. I., Musiał, M., Lotrich, V. F., and Bartlett, R. J. (201 2). Multireference
+nature of chemistry: the coupled-cluster view. Chem. Rev . 112, 182–243.
+doi: 10.1021/cr2001417
+Paldus, J., and Li, X. (1999). A Critical Assessment of Coupled Cluster
+Method in Quantum Chemistry . Chichester: John Wiley & Sons, Ltd. 1–175.
+doi: 10.1002/9780470141694.ch1
+Piecuch, P., and Adamowicz, L. (1994). Solving the single-refere nce coupled-
+cluster equations involving highly excited clusters in quaside generate
+situations. J. Chem. Phys. 100, 5857–5869. doi: 10.1063/1.467149
+Pulay, P. (1980). Convergence acceleration of iterative sequen ces: the case of SCF
+iteration. Chem. Phys. Lett. 73, 393–398. doi: 10.1016/0009-2614(80)80396-4
+Purvis, G., and Bartlett, R. (1982). A full coupled-cluster singles and doubles
+model: the inclusion of disconnected triples. J. Chem. Phys . 76, 1910–1918.
+doi: 10.1063/1.443164
+Purvis, G. D. III, and Bartlett, R. J. (1981). The reduced linear e quation method in
+coupled cluster theory. J. Chem. Phys. 75, 1284–1292. doi: 10.1063/1.442131
+Raghavachari, K., Trucks, G. W., Pople, J. A., and Head-Gordon, M. (1989). A ﬁfth-
+order perturbation comparison of electron correlation theories. Chem. Phys.
+Lett. 157, 479–483. doi: 10.1016/S0009-2614(89)87395-6
+Richard, R. M., Bertoni, C., Boschen, J. S., Keipert, K., Pritchard , B., V aleev, E. F.,
+et al. (2019). Developing a computational chemistry framework for the exascale
+era. Comput. Sci. Eng. 21, 48–58. doi: 10.1109/MCSE.2018.2884921
+Rohwedder, T., and Schneider, R. (2011). An analysis for the D IIS acceleration
+method used in quantum chemistry calculations.J. Math. Chem. 49, 1889–1914.
+doi: 10.1007/s10910-011-9863-y
+Saad, Y., and Schultz, M. H. (1986). GMRES: A generalized minimal res idual
+algorithm for solving nonsymmetric linear systems. SIAM J. Sci. Stat. Comput .
+7, 856–869. doi: 10.1137/0907058
+Saunders, V. R., and Hillier, I. H. (1973). A level-shifting method f or converging
+closed shell Hartree-Fock wavefunctions. Int. J. Quantum Chem . 7, 699–705.
+doi: 10.1002/qua.560070407
+Shavitt, I., and Bartlett, R. J. (2009). Many-Body Methods in
+Chemistry and Physics: MBPT and Coupled-Cluster Theory .
+Cambridge: Cambridge University Press. doi: 10.1017/CBO9780511
+596834
+V aliev, M., Bylaska, E., Govind, N., Kowalski, K., Straatsma, T.,
+V an Dam, H., et al. (2010). NWChem: A comprehensive and
+scalable open-source solution for large scale molecular simulations.
+Comput. Phys. Commun . 181, 1477–1489. doi: 10.1016/j.cpc.2010.
+04.018
+Walker, H. W., and Ni, P. (2011). Anderson acceleration for ﬁxed- point iterations.
+SIAM J. Num. Anal. 49, 1715–1735. doi: 10.1137/10078356X
+Zhang, W., Loebach, J. L., Wilson, S. R., and Jacobsen, E. N. (1 990).
+Enantioselective epoxidation of unfunctionalized oleﬁns cata lyzed
+by salen manganese complexes. J. Am. Chem. Soc . 112, 2801–2803.
+doi: 10.1021/ja00163a052
+Conﬂict of Interest: The authors declare that the research was conducted in the
+absence of any commercial or ﬁnancial relationships that could be c onstrued as a
+potential conﬂict of interest.
+Copyright © 2020 Y ang, Brabec, Veis, Williams-Young and Kowalsk i. This is an
+open-access article distributed under the terms of the Creative Commons Attribution
+License (CC BY). The use, distribution or reproduction in ot her forums is permitted,
+provided the original author(s) and the copyright owner(s) a re credited and that the
+original publication in this journal is cited, in accordanc e with accepted academic
+practice. No use, distribution or reproduction is permitte d which does not comply
+with these terms.
+Frontiers in Chemistry | www.frontiersin.org 9 December 2020 | Volume 8 | Article 590184
